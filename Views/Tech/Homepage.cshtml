@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <title>Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .purple-bar {
+            background-color: purple;
+            font-size: 80px;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .option-button button {
+            background-color: white;
+            font-size: 80px;
+            color: purple;
+            text-align: center;
+            display: flex;
+            justify-content: flex-end;
+            width:100%
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="purple-bar">
+        <div>TechStore</div>
+        <form method="post" asp-controller="Tech" asp-action="Homepage">
+            <button type="submit" class="option-button">лаптопи<input hidden value="laptopsButton" name="optionbutton" /></button>
+        </form>
+        <form method="post" asp-controller="Tech" asp-action="Homepage">
+            <button type="submit" class="option-button">Телефони<input hidden value="smartphonesButton" name="optionButton" /></button>
+        </form>
+        <form method="post" asp-controller="Tech" asp-action="Homepage">
+            <button type="submit" class="option-button">Таблети<input hidden value="tabletsButton" name="optionButton" /></button>
+        </form>
+        <form method="post" asp-controller="Tech" asp-action="Homepage">
+            <button type="submit" class="option-button">Телевизори<input hidden value="tvsButton" name="optionButton" /></button>
+        </form>
+        <form method="post" asp-controller="Tech" asp-action="Homepage">
+            <button type="submit" class="option-button">Монитори<input hidden value="monitorsButton" name="optionButton" /></button>
+        </form>
+        <form method="post" asp-controller="Tech" asp-action="Homepage">
+            <button type="submit" class="option-button">Клавиатури<input hidden value="keyboardsButton" name="optionButton" /></button>
+        </form>
+        <form method="post" asp-controller="Tech" asp-action="Homepage">
+            <button type="submit" class="option-button">Мишки<input hidden value="miceButton" name="optionButton" /></button>
+        </form>
+        <form method="post" asp-controller="Tech" asp-action="Homepage">
+            <button type="submit" class="option-button">Слушалки<input hidden value="headphonesButton" name="optionButton" /></button>
+        </form>
+        <form method="post" asp-controller="Tech" asp-action="Homepage">
+            <button type="submit" class="option-button">Тонколони<input hidden value="speakersButton" name="optionButton" /></button>
+        </form>
+    </div>
+    <div class="content">
+    </div>
+</body>
+</html>
