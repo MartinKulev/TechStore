@@ -2,6 +2,7 @@
 <html>
 <head>
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <title>Homepage</title>
     <style>
         body {
@@ -32,9 +33,9 @@
             color: white;
         }
 
-        .mainHeader-Button:hover {
-            color: lightgray;
-        }
+            .mainHeader-Button:hover {
+                color: gray;
+            }
 
         .container-buttons {
             width: 100%;
@@ -52,20 +53,10 @@
             border-left: 1px solid black;
             padding-left: 5px;
             padding-right: 5px;
-            font-size: 17px;
+            font-size: 20px;
             color: white;
             padding-top: 12px;
-            width: 110px;
-        }
-
-        .shoppingCart-button {
-            border-left: 1px solid black;
-            padding-left: 5px;
-            padding-right: 5px;
-            font-size: 17px;
-            color: white;
-            padding-top: 12px;
-            width: 55px;
+            width: 140px;
         }
 
         .border-bottom {
@@ -81,10 +72,18 @@
             width: 100%;
         }
 
-        .shoppingCart-button:hover .border-bottom {
-            background-color: white;
-            width: 100%;
+        .shoppingCart-button {
+            border-left: 1px solid black;
+            padding-left: 5px;
+            padding-right: 5px;
+            font-size: 20px;
+            color: white;
+            width: 70px;
         }
+
+            .shoppingCart-button:hover {
+                color: gray;
+            }
 
         .content {
             padding: 20px;
@@ -93,7 +92,6 @@
 </head>
 <body>
     <div class="purple-bar">
-        @* <h1 class="main-header">TechStore</h1> *@
         <form class="button-form" method="post" asp-controller="Tech" asp-action="Homepage">
             <button type="submit" class="mainHeader-Button">
                 TechStore<input hidden value="homepageButton" name="optionbutton" />
@@ -156,8 +154,7 @@
             </form>
             <form class="button-form" method="post" asp-controller="Tech" asp-action="Homepage">
                 <button type="submit" class="shoppingCart-button">
-                    Н<input hidden value="shoppingCartButton" name="optionButton" />
-                    <div class="border-bottom"></div>
+                    <i class="fa-solid fa-cart-shopping"></i><input hidden value="shoppingCartButton" name="optionButton" />
                 </button>
             </form>
         </section>
