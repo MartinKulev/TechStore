@@ -2,7 +2,7 @@
 <html>
 <head>
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
-    <title>Homepage</title>
+    <title>Keyboards</title>
     <style>
         body {
             margin: 0;
@@ -17,11 +17,6 @@
             height: 100%;
         }
 
-        .main-header {
-            font-size: 60px;
-            padding: 10px;
-        }
-
         .purple-bar {
             background-color: purple;
             width: 100%;
@@ -29,6 +24,12 @@
             color: white;
             display: flex;
             justify-content: flex-start;
+        }
+
+        .mainHeader-Button {
+            font-size: 40px;
+            padding: 10px;
+            color: white;
         }
 
         .container-buttons {
@@ -88,7 +89,12 @@
 </head>
 <body>
     <div class="purple-bar">
-        <h1 class="main-header">TechStore</h1>
+        @* <h1 class="main-header">TechStore</h1> *@
+        <form class="button-form" method="post" asp-controller="Tech" asp-action="Homepage">
+            <button type="submit" class="mainHeader-Button">
+                TechStore<input hidden value="homepageButton" name="optionbutton" />
+            </button>
+        </form>
         <section class="container-buttons">
             <form class="button-form" method="post" asp-controller="Tech" asp-action="Homepage">
                 <button type="submit" class="option-button">

@@ -12,7 +12,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult Homepage(string optionButton)
         {
-            if (optionButton == "laptopsButton")
+            if (optionButton == "homepageButton")
+            {
+                return RedirectToAction("Homepage");
+            }
+            else if (optionButton == "laptopsButton")
             {
                 return RedirectToAction("Laptops");
             }
