@@ -92,6 +92,7 @@
 </head>
 <body>
     <div class="purple-bar">
+        <a class="mainHeader-Button"asp-action="Speakers" asp-controller="Tech">Тонколони</a>
         <form class="button-form" method="post" asp-controller="Tech" asp-action="Homepage">
             <button type="submit" class="mainHeader-Button">
                 TechStore<input hidden value="homepageButton" name="optionbutton" />
@@ -146,12 +147,12 @@
                     <div class="border-bottom"></div>
                 </button>
             </form>
-            <form class="button-form" method="post" asp-controller="Tech" asp-action="Homepage">
+@*             <form class="button-form" method="post" asp-controller="Tech" asp-action="Homepage">
                 <button type="submit" class="option-button">
                     Тонколони<input hidden value="speakersButton" name="optionButton" />
                     <div class="border-bottom"></div>
                 </button>
-            </form>
+            </form> *@
             <form class="button-form" method="post" asp-controller="Tech" asp-action="Homepage">
                 <button type="submit" class="shoppingCart-button">
                     <i class="fa-solid fa-cart-shopping"></i><input hidden value="shoppingCartButton" name="optionButton" />

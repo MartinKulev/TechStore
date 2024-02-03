@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechStore.Data.Entities
 {
@@ -26,7 +27,7 @@ namespace TechStore.Data.Entities
         public string ProductName { get; set; }
 
         [StringLength(200)] 
-        public int ShortDescription { get; set; }
+        public string ShortDescription { get; set; }
 
         public string LongDescription { get; set; }
 
@@ -44,7 +45,7 @@ namespace TechStore.Data.Entities
 
         public bool IsActive { get; set; }
 
-        public DateTime posted { get; set; }    
+        public DateTime Posted { get; set; }    
     }
 }
 

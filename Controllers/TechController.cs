@@ -413,46 +413,6 @@ namespace TechStore.Controllers
         }
         public IActionResult Speakers(string optionButton)
         {
-            if (optionButton == "laptopsButton")
-            {
-                return RedirectToAction("Laptops");
-            }
-            else if (optionButton == "smartphonesButton")
-            {
-                return RedirectToAction("Smartphones");
-            }
-            else if (optionButton == "tabletsButton")
-            {
-                return RedirectToAction("Tablets");
-            }
-            else if (optionButton == "tvsButton")
-            {
-                return RedirectToAction("TVs");
-            }
-            else if (optionButton == "monitorsButton")
-            {
-                return RedirectToAction("Monitors");
-            }
-            else if (optionButton == "keyboardsButton")
-            {
-                return RedirectToAction("Keyboards");
-            }
-            else if (optionButton == "miceButton")
-            {
-                return RedirectToAction("Mice");
-            }
-            else if (optionButton == "headphonesButton")
-            {
-                return RedirectToAction("Headphones");
-            }
-            else if (optionButton == "speakersButton")
-            {
-                return RedirectToAction("Speakers");
-            }
-            else if (optionButton == "shoppingCartButton")
-            {
-                return RedirectToAction("ShoppingCart");
-            }
             return View();
         }
         public IActionResult ShoppingCart(string optionButton)

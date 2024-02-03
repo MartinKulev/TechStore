@@ -182,3 +182,7 @@ C:\Users\Martin\Desktop\TechStore\obj\Debug\net8.0\refint\TechStore.dll
 C:\Users\Martin\Desktop\TechStore\obj\Debug\net8.0\TechStore.pdb
 C:\Users\Martin\Desktop\TechStore\obj\Debug\net8.0\TechStore.genruntimeconfig.cache
 C:\Users\Martin\Desktop\TechStore\obj\Debug\net8.0\ref\TechStore.dll
+C:\Users\Martin\Desktop\New folder (4)\TechStore\obj\Debug\net8.0\TechStore.csproj.AssemblyReference.cache
+C:\Users\Martin\Desktop\New folder (4)\TechStore\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Martin\Desktop\New folder (4)\TechStore\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Martin\Desktop\New folder (4)\TechStore\obj\Debug\net8.0\TechStore.csproj.Up2Date

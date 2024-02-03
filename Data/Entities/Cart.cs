@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechStore.Data.Entities
 {
@@ -6,7 +7,7 @@ namespace TechStore.Data.Entities
     {
         public Cart() { }
 
-        public Crart(int cartId, int productId, int quantity, int userId)
+        public Cart(int cartId, int productId, int quantity, int userId)
         {
             CartId = cartId;
             ProductId = productId;  
