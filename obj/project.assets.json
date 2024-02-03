@@ -8,19 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Martin\\.nuget\\packages\\": {}
+    "C:\\Users\\andgt\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Martin\\Desktop\\TechStore\\TechStore.csproj",
+      "projectUniqueName": "C:\\Users\\andgt\\Desktop\\save2\\TechStore\\TechStore.csproj",
       "projectName": "TechStore",
-      "projectPath": "C:\\Users\\Martin\\Desktop\\TechStore\\TechStore.csproj",
-      "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Martin\\Desktop\\TechStore\\obj\\",
+      "projectPath": "C:\\Users\\andgt\\Desktop\\save2\\TechStore\\TechStore.csproj",
+      "packagesPath": "C:\\Users\\andgt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andgt\\Desktop\\save2\\TechStore\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\andgt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -40,11 +46,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -61,15 +62,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200-preview.23624.5/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
