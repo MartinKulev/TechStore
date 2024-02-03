@@ -13,6 +13,7 @@ namespace TechStore.Data.Entities
             ContactEmail = contactEmail;
             Message = message;
         }
+        [Key]
         public int ContactId { get; set; }
 
         [StringLength(50)] 

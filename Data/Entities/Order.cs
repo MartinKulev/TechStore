@@ -19,6 +19,8 @@ namespace TechStore.Data.Entities
             OrderTime = orderTime;
             IsCancel = isCancel;
         }
+
+        [Key]
         public int OrderDetailsId { get; set; }
 
         public string OrderNum { get; set; }

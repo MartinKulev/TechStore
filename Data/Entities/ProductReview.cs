@@ -16,6 +16,7 @@ namespace TechStore.Data.Entities
             UserId = userId;
             CreatedDate = createdDate;
         }
+        [Key]
         public int ReviewId { get; set;}
 
         public int Rating { get; set; }

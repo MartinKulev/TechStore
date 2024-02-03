@@ -14,6 +14,7 @@ namespace TechStore.Data.Entities
             ImageUrl = imageUrl;
             ProductId = productId;
         }
+        [Key]
         public int ImageId { get; set; }
         public string ImageUrl { get; set; }
 

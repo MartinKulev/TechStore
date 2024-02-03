@@ -14,6 +14,7 @@ namespace TechStore.Data.Entities
             CategoryImageUrl = categoryImageUrl;
             IsActive = isActive;
         }
+        [Key]
         public int CategoryId { get; set; }
 
         [StringLength(100)] 

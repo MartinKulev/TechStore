@@ -16,6 +16,7 @@ namespace TechStore.Data.Entities
             Address = address;
             PaymentMode = paymentMode;
         }
+        [Key]
         public int PaymentId { get; set; }
 
         [StringLength(50)] 

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using TechStore.Data;
 
@@ -5,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<TechStoreContext>(c => c.UseMySQL("Server=localhost;Database=TechStore;Uid=root;"));
+builder.Services.AddDbContext<TechStoreContext>(c => c.UseMySQL("Server=localhost;Database=TechStore;Uid=root;Pwd=Martin1234;"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

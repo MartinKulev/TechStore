@@ -13,6 +13,7 @@ namespace TechStore.Data.Entities
             ProductId = productId;
             UserId = userId;
         }
+        [Key]
         public int WishlistId { get; set; }
 
         [ForeignKey(nameof(Product))]

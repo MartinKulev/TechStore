@@ -14,6 +14,7 @@ namespace TechStore.Data.Entities
             Quantity = quantity;
             UserId = userId;
         }
+        [Key]
         public int CartId { get; set;}
 
         [ForeignKey(nameof(Product))] 

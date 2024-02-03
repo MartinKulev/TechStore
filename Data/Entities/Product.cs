@@ -21,6 +21,7 @@ namespace TechStore.Data.Entities
             IsActive = isActive;
             Posted = posted;
         }
+        [Key]
         public int ProductId { get; set; }
 
         [StringLength(100)] 
