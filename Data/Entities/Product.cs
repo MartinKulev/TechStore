@@ -37,16 +37,17 @@ namespace TechStore.Data.Entities
         public int Quantity { get; set; }
 
         [StringLength(100)] 
-        public string CompanyName { get; set; }
+        public string CompanyName { get; set; } //Brand, instead of CompanyName?
 
         [ForeignKey(nameof(Category))] 
-        public int CategoryId { get; set; }
+        public int CategoryId { get; set; } //We need Category name only(So we know in which tab to put the product)
+                                            //This is the only thing we need from the Category table.
 
-        public bool Sold { get; set; }
+        public bool Sold { get; set; } //SoldOut, instead of Sold?
 
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } //Dont need this
 
-        public DateTime Posted { get; set; }    
+        public DateTime Posted { get; set; }    //Also don't need
     }
 }
 

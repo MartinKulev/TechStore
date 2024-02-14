@@ -4,7 +4,8 @@ namespace TechStore.Data.Entities
 {
     public class Payment
     {
-        public Payment() { }
+        public Payment() { } //When a user pays a cart we will count every information they give us as correct and every time a "succesful payment" windows will
+        // appear(We cant check if the information they give us is correct) Therefore why do we need a database table for the user's information?
 
         public Payment(int paymentId, string name, string cardNum, string expiryDate, int cvvNum, string address, string paymentMode)
         {

@@ -5,7 +5,7 @@ namespace TechStore.Data.Entities
 {
     public class ProductReview
     {
-        public ProductReview() { }      
+        public ProductReview() { } //We will implement this if we have time left
 
         public ProductReview(int reviewId, int rating, string comment, int productId, int userId, DateTime createdDate)
         {

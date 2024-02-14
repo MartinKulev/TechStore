@@ -18,7 +18,7 @@ namespace TechStore.Data
         public DbSet<User> User { get; set; }
         public DbSet<Wishlist> Wishlist { get; set; }
 
-        public TechStoreContext(DbContextOptions<TechStoreContext> options) //Add-Migration Tech //Update-Database
+        public TechStoreContext(DbContextOptions<TechStoreContext> options) 
             : base(options)
         { 
         }

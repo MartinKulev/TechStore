@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace TechStore.Data.Entities
 {
-    public class User : IdentityUser
+    public class User : IdentityUser //no idea how user works
     {
         [StringLength(50)] 
         public string Name { get; set; }  

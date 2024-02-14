@@ -15,14 +15,14 @@ namespace TechStore.Data.Entities
             UserId = userId;
         }
         [Key]
-        public int CartId { get; set;}
+        public int CartId { get; set;} //Do we need CardID if we have UserID? I am assuming one user wont have multiple carts
 
         [ForeignKey(nameof(Product))] 
-        public int ProductId { get; set; }
+        public int ProductId { get; set; } //List<int> of productIDs instead of int?
 
-        public int Quantity { get; set;}
+        public int Quantity { get; set;} 
 
         [ForeignKey(nameof(Product))] 
-        public int UserId { get; set;}
+        public int UserId { get; set;} //Name of Product in the foreign key?
     }
 }

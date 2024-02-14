@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechStore.Data.Entities
 {
-    public class Wishlist
+    public class Wishlist //We don't need a whishlist, when we have "cart" imo
     {
         public Wishlist() { }
 

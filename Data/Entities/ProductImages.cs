@@ -6,7 +6,8 @@ namespace TechStore.Data.Entities
 {
     public class ProductImages
     {
-        public ProductImages() { }
+        public ProductImages() { } //We can keep this table if we dont meet the minimal requirement for table count.
+                                   //Otherwise imageUrl will be in "Product" table
 
         public ProductImages(int imageId, string imageUrl, int productId)
         {

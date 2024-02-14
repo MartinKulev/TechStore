@@ -5,7 +5,7 @@ namespace TechStore.Data.Entities
 {
     public class Order
     {
-        public Order () { }
+        public Order () { } //We can implement this if we have remaining time - to be able to check your order history through your profile
 
         public Order(int orderDetailsId, string orderNum, int productId, int quantity, int userId, string status, int paymentId, DateTime orderTime, bool isCancel)
         {
