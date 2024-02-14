@@ -30,7 +30,7 @@ namespace TechStore.Data.Entities
         [StringLength(200)] 
         public string ShortDescription { get; set; }
 
-        public string LongDescription { get; set; }
+        public string LongDescription { get; set; } //Dont need
 
         public decimal Price { get; set; }
 

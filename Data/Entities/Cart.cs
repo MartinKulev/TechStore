@@ -23,6 +23,6 @@ namespace TechStore.Data.Entities
         public int Quantity { get; set;} 
 
         [ForeignKey(nameof(Product))] 
-        public int UserId { get; set;} //Name of Product in the foreign key?
+        public int UserId { get; set;} //Name of Product in the foreign key(There is no "UserID" in "Product")?
     }
 }
