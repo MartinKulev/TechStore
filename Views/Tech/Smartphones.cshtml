@@ -1,1 +1,79 @@
 ﻿<title>Smartphones</title>
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        overflow: auto;
+    }
+
+    .product-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        margin: 10px;
+        height: 400px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+        border-radius: 15px;
+    }
+
+    .product-top {
+        cursor: pointer;
+    }
+
+    .product-image {
+        max-width: 100%;
+        max-height: 100%;
+        margin-bottom: 10px;
+    }
+
+    .product-text {
+        font-weight: bold;
+    }
+
+    .product-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-price {
+        font-size: 150%;
+        font-weight: bold;
+        color: red;
+    }
+
+    .product-cart-button {
+        cursor: pointer;
+        border-radius: 15px;
+        background-color: blue;
+        height: 50px;
+        width: 50px;
+    }
+
+    .product-cart-icon {
+        font-size: 150%;
+        color: white;
+    }
+</style>
+<section class="grid-container">
+    <div class="product-box">
+        <div class="product-top">
+            <img class="product-image" src="https://s13emagst.akamaized.net/products/64817/64816454/images/res_77def1f199ad6f0779f5c7e562f97e5b.jpg?width=450&height=450&hash=A2C90F159431E535B9D0F413245293E8">
+            <div class="product-text">Смартфон Samsung Galaxy S24 Ultra, Dual SIM, 12GB RAM, 512GB, 5G, Titanium Grey</div>
+        </div>
+        <div class="product-bottom">
+            <div class="product-price">1991.00 лв.</div>
+            <button class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></button>
+        </div>
+    </div>
+    @for (int a = 0; a < 7; a++)
+    {
+        <div class="product-box">
+        </div>
+    }
+</section>

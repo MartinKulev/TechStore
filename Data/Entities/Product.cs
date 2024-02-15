@@ -37,7 +37,7 @@ namespace TechStore.Data.Entities
         public int Quantity { get; set; }
 
         [StringLength(100)] 
-        public string CompanyName { get; set; } //Brand, instead of CompanyName?
+        public string CompanyName { get; set; } //Brand, instead of CompanyName? ++add a Model entity
 
         [ForeignKey(nameof(Category))] 
         public int CategoryId { get; set; } //We need Category name only(So we know in which tab to put the product)
