@@ -68,5 +68,10 @@ namespace TechStore.Controllers
         {
             return View();
         }
+
+        public IActionResult AddProduct()
+        {
+            return View();
+        }
     }
 }
