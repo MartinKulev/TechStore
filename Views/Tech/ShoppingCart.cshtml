@@ -1,1 +1,108 @@
 ﻿<title>ShoppingCart</title>
+<style>
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 20px;
+        height: 200px;
+        width: 80%;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+        border-radius: 15px;
+    }
+
+    .product-image {
+        max-width: 90%;
+        max-height: 90%;
+        margin: 20px; /*margin s procenti?*/
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 70%;
+        height: 100%;
+        margin: 20px;
+    }
+
+    .product-text {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .product-price {
+        font-size: 20px; /*font-size s procenti?*/
+        color: red;
+        font-weight: bold;
+    }
+
+    .product-quantity {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-quantity-label {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .product-quantity-count {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+
+    .product-remove-button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .product-remove-button {
+        cursor: pointer;
+        border-radius: 15px;
+        background-color: red;
+        height: 70px;
+        width: 70px;
+    }
+
+    .product-remove-button-icon {
+        font-size: 250%;
+        color: white;
+    }
+
+</style>
+<section class="flex-container">
+    <div class="product-box">
+        <img class="product-image" src="https://s13emagst.akamaized.net/products/64817/64816454/images/res_77def1f199ad6f0779f5c7e562f97e5b.jpg?width=450&height=450&hash=A2C90F159431E535B9D0F413245293E8">
+        <div class="product-info">
+            <div class="product-text">Смартфон Samsung Galaxy S24 Ultra, Dual SIM, 12GB RAM, 512GB, 5G, Titanium Grey</div>
+            <div class="product-price">Цена: 1991.00лв</div>
+        </div>
+        <div class="product-quantity">
+            <div class="product-quantity-label">Количество:</div>
+            <div class="product-quantity-count">1</div>
+            <div class="product-remove-button-container">
+                <button class="product-remove-button">
+                <i class="product-remove-button-icon fa-solid fa-trash-can"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    @for (int a = 0; a < 7; a++)
+    {
+        <div class="product-box">
+        </div>
+    }
+</section>

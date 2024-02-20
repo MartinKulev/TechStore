@@ -48,7 +48,6 @@
             font-size: 200%;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
-            border-radius: 15px;
             height: 30%;
             margin-bottom: 40px;
         }
@@ -67,12 +66,33 @@
             font-size: 60%;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
-            border-radius: 10px;
             height: 100%;
             width: 100%;
         }
 
+        .create-product-button-container {
+            display:flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            height: 30%;
+        }
+
         .create-product-button {
+            display: flex;
+            align-items: center;
+            width: 500px;
+            height: 100px;
+            background-color: purple;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .create-product-button-text {
+            margin: 0 auto;
+            color: white;
+            font-weight: bold;
+            font-size: 200%;
         }
 
     </style>
@@ -86,7 +106,7 @@
             <input class="description-box">
             <div class="brandModel-text-container">Марка:<input class="brandModel-box"></div>
             <div class="brandModel-text-container">Модел:<input class="brandModel-box"></div>
-            <div class="create-product-button"></div>
+            <div class="create-product-button-container"><div class="create-product-button"><div class="create-product-button-text">Създай продукт</div></div></div>
         </div>  
     </section>
 </body>

@@ -3745,11 +3745,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New folder (2)\\TechStore\\TechStore.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New folder (3)\\TechStore\\TechStore.csproj",
       "projectName": "TechStore",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\New folder (2)\\TechStore\\TechStore.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\New folder (3)\\TechStore\\TechStore.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\New folder (2)\\TechStore\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\New folder (3)\\TechStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
