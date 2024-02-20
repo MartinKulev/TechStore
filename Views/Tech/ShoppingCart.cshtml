@@ -28,9 +28,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        width: 70%;
+        width: 300%;
         height: 100%;
-        margin: 20px;
+        margin-right: 40px;
+        margin-left: 40px;
     }
 
     .product-text {
@@ -47,8 +48,9 @@
     .product-quantity {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        height: 100%;
     }
 
     .product-quantity-label {
@@ -59,14 +61,16 @@
 
     .product-quantity-count {
         font-size: 30px;
-        margin-bottom: 40px;
     }
 
     .product-remove-button-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-end;
+        align-items: flex-end;
+        height: 90%;
         width: 100%;
+        padding: 20px;
     }
 
     .product-remove-button {
@@ -93,11 +97,11 @@
         <div class="product-quantity">
             <div class="product-quantity-label">Количество:</div>
             <div class="product-quantity-count">1</div>
-            <div class="product-remove-button-container">
-                <button class="product-remove-button">
+        </div>
+        <div class="product-remove-button-container">
+            <button class="product-remove-button">
                 <i class="product-remove-button-icon fa-solid fa-trash-can"></i>
-                </button>
-            </div>
+            </button>
         </div>
     </div>
     @for (int a = 0; a < 7; a++)

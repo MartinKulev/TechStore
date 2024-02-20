@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace TechStore.Data.Entities
 {
-    public class User : IdentityUser //Will add the products manually for now, will add login if there is time left
+    public class User : IdentityUser 
     {
         [StringLength(50)] 
         public string Name { get; set; }  

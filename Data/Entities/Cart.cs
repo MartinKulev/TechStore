@@ -7,22 +7,23 @@ namespace TechStore.Data.Entities
     {
         public Cart() { }
 
-        public Cart(int cartId, int productId, int quantity, int userId)
+        public Cart(int cartID, int productID, int quantity, int userID)
         {
-            CartId = cartId;
-            ProductId = productId;  
+            CartID = cartID;
+            ProductID = productID;  
             Quantity = quantity;
-            UserId = userId;
+            UserID = userID;
         }
+
         [Key]
-        public int CartId { get; set;} //Do we need CardID if we have UserID? I am assuming one user wont have multiple carts
+        public int CartID { get; set;}
 
         [ForeignKey(nameof(Product))] 
-        public int ProductId { get; set; } //List<int> of productIDs instead of int?
+        public int ProductID { get; set; } 
 
         public int Quantity { get; set;} 
 
-        [ForeignKey(nameof(Product))] 
-        public int UserId { get; set;} //Name of Product in the foreign key(There is no "UserID" in "Product")?
+        [ForeignKey(nameof(User))] 
+        public int UserID { get; set;} 
     }
 }

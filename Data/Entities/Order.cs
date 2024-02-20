@@ -5,43 +5,34 @@ namespace TechStore.Data.Entities
 {
     public class Order
     {
-        public Order () { } //We can implement this if we have remaining time - to be able to check your order history through your profile
+        public Order () { }
 
-        public Order(int orderDetailsId, string orderNum, int productId, int quantity, int userId, string status, int paymentId, DateTime orderTime, bool isCancel)
+        public Order(int orderID, int productID, int quantity, int userID, int cardNum, DateTime orderTime)
         {
-            OrderDetailsId = orderDetailsId;
-            OrderNum = orderNum;
-            ProductId = productId;
+            OrderID = orderID;
+            ProductID = productID;
             Quantity = quantity;
-            UserId = userId;
-            Status = status;
-            PaymentId = paymentId;
+            UserID = userID;
+            CardNum = cardNum;
             OrderTime = orderTime;
-            IsCancel = isCancel;
         }
 
         [Key]
-        public int OrderDetailsId { get; set; }
-
-        public string OrderNum { get; set; }
+        public int OrderID { get; set; } //RNG 8 cifri
 
         [ForeignKey(nameof(Product))] 
-        public int ProductId { get; set; }
+        public int ProductID { get; set; }
 
         public int Quantity { get; set; }
 
         [ForeignKey(nameof(User))]
-        public int UserId { get; set; }
-
-        [StringLength(255)] 
-        public string Status { get; set; }
+        public int UserID { get; set; }
 
         [ForeignKey(nameof(Payment))]
-        public int PaymentId { get; set; }
+        public int CardNum { get; set; }
 
         public DateTime OrderTime { get; set; }
 
-        public bool IsCancel { get; set; }
     }
     
 }
