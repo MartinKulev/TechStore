@@ -7,15 +7,15 @@ namespace TechStore.Data.Entities
     {
         public Cart() { }
 
-        public Cart(int cartID, int productID, int quantity, int userID)
+        public Cart(int productID, int quantity, int userID)
         {
-            CartID = cartID;
             ProductID = productID;  
             Quantity = quantity;
             UserID = userID;
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CartID { get; set;}
 
         [ForeignKey(nameof(Product))] 

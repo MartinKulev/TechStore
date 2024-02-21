@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechStore.Data.Entities
 {
@@ -6,9 +7,8 @@ namespace TechStore.Data.Entities
     {
         public Payment() { }
 
-        public Payment(int paymentID, string name, string cardNum, string expiryDate, int cvvNum, string address)
+        public Payment(string name, string cardNum, string expiryDate, int cvvNum, string address)
         {
-            PaymentID = paymentID;
             Name = name;
             CardNum = cardNum;
             ExpiryDate = expiryDate;
@@ -17,6 +17,7 @@ namespace TechStore.Data.Entities
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PaymentID { get; set; }
 
         [StringLength(50)] 

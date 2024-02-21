@@ -7,9 +7,8 @@ namespace TechStore.Data.Entities
     {
         public Order () { }
 
-        public Order(int orderID, int productID, int quantity, int userID, int cardNum, DateTime orderTime)
+        public Order(int productID, int quantity, int userID, int cardNum, DateTime orderTime)
         {
-            OrderID = orderID;
             ProductID = productID;
             Quantity = quantity;
             UserID = userID;
@@ -18,6 +17,7 @@ namespace TechStore.Data.Entities
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderID { get; set; } //RNG 8 cifri
 
         [ForeignKey(nameof(Product))] 

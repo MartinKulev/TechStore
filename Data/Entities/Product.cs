@@ -7,9 +7,8 @@ namespace TechStore.Data.Entities
     {
         public Product() { }
 
-        public Product(int productID, string productName, string description, decimal price, int quantity, string brand, int categoryID)
+        public Product(string productName, string description, decimal price, int quantity, string brand, int categoryID)
         {
-            ProductID = productID;
             ProductName = productName;
             Description = description;
             Price = price;
@@ -19,6 +18,7 @@ namespace TechStore.Data.Entities
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductID { get; set; }
 
         [StringLength(100)] 

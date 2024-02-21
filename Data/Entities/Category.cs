@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace TechStore.Data.Entities
@@ -7,13 +8,13 @@ namespace TechStore.Data.Entities
     {
         public Category() { } 
 
-        public Category(int categoryID, string categoryName)
+        public Category(string categoryName)
         {
-            CategoryID = categoryID;
             CategoryName = categoryName;
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CategoryID { get; set; }
 
         [StringLength(100)] 

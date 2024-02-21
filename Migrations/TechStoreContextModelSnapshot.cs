@@ -21,113 +21,69 @@ namespace TechStore.Migrations
 
             modelBuilder.Entity("TechStore.Data.Entities.Cart", b =>
                 {
-                    b.Property<int>("CartId")
+                    b.Property<int>("CartID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
+                    b.Property<int>("ProductID")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("UserID")
                         .HasColumnType("int");
 
-                    b.HasKey("CartId");
+                    b.HasKey("CartID");
 
                     b.ToTable("Cart");
                 });
 
             modelBuilder.Entity("TechStore.Data.Entities.Category", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("CategoryID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    b.Property<string>("CategoryImageUrl")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.HasKey("CategoryId");
+                    b.HasKey("CategoryID");
 
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("TechStore.Data.Entities.Contact", b =>
-                {
-                    b.Property<int>("ContactId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("ContactEmail")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("ContactName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("ContactId");
-
-                    b.ToTable("Contact");
-                });
-
             modelBuilder.Entity("TechStore.Data.Entities.Order", b =>
                 {
-                    b.Property<int>("OrderDetailsId")
+                    b.Property<int>("OrderID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsCancel")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("OrderNum")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("CardNum")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("OrderTime")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("PaymentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
+                    b.Property<int>("ProductID")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int>("UserId")
+                    b.Property<int>("UserID")
                         .HasColumnType("int");
 
-                    b.HasKey("OrderDetailsId");
+                    b.HasKey("OrderID");
 
                     b.ToTable("Order");
                 });
 
             modelBuilder.Entity("TechStore.Data.Entities.Payment", b =>
                 {
-                    b.Property<int>("PaymentId")
+                    b.Property<int>("PaymentID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -153,39 +109,29 @@ namespace TechStore.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("PaymentMode")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.HasKey("PaymentId");
+                    b.HasKey("PaymentID");
 
                     b.ToTable("Payment");
                 });
 
             modelBuilder.Entity("TechStore.Data.Entities.Product", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<int>("ProductID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CompanyName")
+                    b.Property<string>("Brand")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("int");
 
-                    b.Property<string>("LongDescription")
+                    b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("Posted")
-                        .HasColumnType("datetime(6)");
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -198,40 +144,34 @@ namespace TechStore.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<string>("ShortDescription")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<bool>("Sold")
-                        .HasColumnType("tinyint(1)");
-
-                    b.HasKey("ProductId");
+                    b.HasKey("ProductID");
 
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("TechStore.Data.Entities.ProductImages", b =>
+            modelBuilder.Entity("TechStore.Data.Entities.Promotion", b =>
                 {
-                    b.Property<int>("ImageId")
+                    b.Property<int>("PromotionID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<decimal>("NewPrice")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ProductId")
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductID")
                         .HasColumnType("int");
 
-                    b.HasKey("ImageId");
+                    b.HasKey("PromotionID");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("Promotion");
                 });
 
-            modelBuilder.Entity("TechStore.Data.Entities.ProductReview", b =>
+            modelBuilder.Entity("TechStore.Data.Entities.Review", b =>
                 {
-                    b.Property<int>("ReviewId")
+                    b.Property<int>("ReviewID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -242,18 +182,18 @@ namespace TechStore.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("ProductId")
+                    b.Property<int>("ProductID")
                         .HasColumnType("int");
 
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("UserID")
                         .HasColumnType("int");
 
-                    b.HasKey("ReviewId");
+                    b.HasKey("ReviewID");
 
-                    b.ToTable("ProductReview");
+                    b.ToTable("Review");
                 });
 
             modelBuilder.Entity("TechStore.Data.Entities.Role", b =>
@@ -347,23 +287,6 @@ namespace TechStore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
-                });
-
-            modelBuilder.Entity("TechStore.Data.Entities.Wishlist", b =>
-                {
-                    b.Property<int>("WishlistId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("WishlistId");
-
-                    b.ToTable("Wishlist");
                 });
 #pragma warning restore 612, 618
         }

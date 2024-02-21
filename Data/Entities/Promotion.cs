@@ -7,15 +7,15 @@ namespace TechStore.Data.Entities
     {
         public Promotion() { }
 
-        public Promotion(int promotionID,  int productID, decimal price, decimal newPrice)
+        public Promotion(int productID, decimal price, decimal newPrice)
         {
-            PromotionID = promotionID;
             ProductID = productID;
             Price = price;
             NewPrice = newPrice;
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PromotionID { get; set; }
 
         [ForeignKey(nameof(Product))]

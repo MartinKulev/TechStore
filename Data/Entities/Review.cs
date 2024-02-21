@@ -7,9 +7,8 @@ namespace TechStore.Data.Entities
     {
         public Review() { } 
 
-        public Review(int reviewID, int rating, string comment, int productID, int userID, DateTime createdDate)
+        public Review(int rating, string comment, int productID, int userID, DateTime createdDate)
         {
-            ReviewID = reviewID;
             Rating = rating;
             Comment = comment;
             ProductID = productID;
@@ -18,6 +17,7 @@ namespace TechStore.Data.Entities
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ReviewID { get; set;}
 
         public int Rating { get; set; }

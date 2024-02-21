@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (4)\\techstore\\data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (4)\\techstore\\controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (4)\\techstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Migrations\\20240221180751_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240221180751_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (4)\\techstore\\data\\entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,16 +47,12 @@
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (4)\\techstore\\data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (4)\\techstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (4)\\techstore\\controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (4)\\techstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (4)\\techstore\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -98,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,124 +114,111 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "20240221180751_Initial.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Migrations\\20240221180751_Initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240221180751_Initial.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Migrations\\20240221180751_Initial.cs",
+              "RelativeToolTip": "Migrations\\20240221180751_Initial.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-21T18:07:51.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Cart.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Cart.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Cart.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Cart.cs",
               "RelativeToolTip": "Data\\Entities\\Cart.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T09:10:40.767Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TechController.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Controllers\\TechController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TechController.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Controllers\\TechController.cs",
-              "RelativeToolTip": "Controllers\\TechController.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAD4AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T15:48:28.519Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAAAHEAAAB2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-15T14:55:41.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 11,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Category.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Category.cs",
               "RelativeToolTip": "Data\\Entities\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T09:12:02.755Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Order.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Order.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Order.cs",
               "RelativeToolTip": "Data\\Entities\\Order.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T09:12:13.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Payment.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Payment.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Payment.cs",
               "RelativeToolTip": "Data\\Entities\\Payment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAqAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T20:42:09.702Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Promotion.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Promotion.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Promotion.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Promotion.cs",
               "RelativeToolTip": "Data\\Entities\\Promotion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T20:48:18.193Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Product.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Product.cs",
               "RelativeToolTip": "Data\\Entities\\Product.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-15T18:20:41.732Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Review.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Review.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Review.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Review.cs",
               "RelativeToolTip": "Data\\Entities\\Review.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T20:46:02.564Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\Role.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Role.cs",
@@ -240,20 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Data\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\User.cs",
-              "RelativeToolTip": "Data\\Entities\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T20:46:44.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
@@ -266,7 +244,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TechController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Controllers\\TechController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TechController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Controllers\\TechController.cs",
+              "RelativeToolTip": "Controllers\\TechController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-15T15:48:28.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-15T14:55:41.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\Entities\\User.cs",
+              "RelativeToolTip": "Data\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T20:46:44.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
@@ -274,12 +291,11 @@
               "RelativeToolTip": "Views\\Account\\Register.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-20T21:01:27.731Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-20T21:01:27.731Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
@@ -287,12 +303,11 @@
               "RelativeToolTip": "Views\\Account\\Login.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-20T21:01:28.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-20T21:01:28.879Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "TechStoreContext.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Data\\TechStoreContext.cs",
               "RelativeDocumentMoniker": "Data\\TechStoreContext.cs",
@@ -300,12 +315,11 @@
               "RelativeToolTip": "Data\\TechStoreContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T20:55:27.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-20T20:55:27.414Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Headphones.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Tech\\Headphones.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Headphones.cshtml",
@@ -317,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Smartphones.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Tech\\Smartphones.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Smartphones.cshtml",
@@ -329,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Product.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Tech\\Product.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Product.cshtml",
@@ -341,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ShoppingCart.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Tech\\ShoppingCart.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\ShoppingCart.cshtml",
@@ -353,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "AddProduct.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Tech\\AddProduct.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\AddProduct.cshtml",
@@ -365,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Homepage.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Views\\Tech\\Homepage.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Homepage.cshtml",
@@ -377,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (4)\\TechStore\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
