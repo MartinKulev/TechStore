@@ -15,15 +15,15 @@ namespace TechStore.Controllers
 
         public IActionResult Homepage()
         {
-            Category category1 = new Category(1, "Лаптопи");
-            Category category2 = new Category(2, "Телефони");
-            Category category3 = new Category(3, "Таблети");
-            Category category4 = new Category(4, "Телевизори");
-            Category category5 = new Category(5, "Монитори");
-            Category category6 = new Category(6, "Клавиатури");
-            Category category7 = new Category(7, "Мишки");
-            Category category8 = new Category(8, "Слушалки");
-            Category category9 = new Category(9, "Тонколони");
+            Category category1 = new Category("Лаптопи");
+            Category category2 = new Category("Телефони");
+            Category category3 = new Category("Таблети");
+            Category category4 = new Category("Телевизори");
+            Category category5 = new Category("Монитори");
+            Category category6 = new Category("Клавиатури");
+            Category category7 = new Category("Мишки");
+            Category category8 = new Category("Слушалки");
+            Category category9 = new Category("Тонколони");
             techService.AddCategory(category1);
             techService.AddCategory(category2);
             techService.AddCategory(category3);
@@ -93,6 +93,14 @@ namespace TechStore.Controllers
 
         public IActionResult AddProduct()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SuccesfulyAddedProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
+        {
+            Product product = new Product(imageURL, categoryName, description, brand, model, price);
+            techService.AddProduct(product);
             return View();
         }
     }

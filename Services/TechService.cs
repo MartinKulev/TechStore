@@ -21,5 +21,11 @@ namespace TechStore.Services
                 context.SaveChanges();
             }
         }
+
+        public void AddProduct(Product product)
+        {
+            context.Product.Add(product);
+            context.SaveChanges();
+        }
     }
 }

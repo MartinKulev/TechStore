@@ -8,16 +8,13 @@ namespace TechStore.Data.Entities
     {
         public Category() { } 
 
-        public Category(int categoryID, string categoryName)
+        public Category(string categoryName)
         {
             CategoryName = categoryName;
-            CategoryID = categoryID;
         }
 
         [Key]
-        public int CategoryID { get; set; }
-
-        [StringLength(100)] 
+        [StringLength(100)]
         public string CategoryName { get; set; }
     }
 

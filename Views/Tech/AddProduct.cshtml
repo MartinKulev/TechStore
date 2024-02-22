@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<title>AddProduct</title>
 <html>
 <head>
     <style>
@@ -24,6 +25,34 @@
             margin-right: 50px;
             display: flex;
             justify-content: center;
+            align-items: center;
+        }
+
+        .upload-image-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            border-radius: 50%;
+            color: white;
+            font-size: 240px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #myFile {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #uploadedImage {
+            max-width: 80%;
+            max-height: 80%;
         }
 
         .product-info {
@@ -37,9 +66,17 @@
             flex-direction: column;
         }
 
+        select-category {
+            font-size: 13px;
+            color: #333;
+            font-family: Verdana,Helvetica,Sans-Serif;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
         .description-text-container {
             font-weight: bold;
-            font-size: 300%;    
+            font-size: 200%;
             display: flex;
             flex-direction: row;
         }
@@ -49,36 +86,41 @@
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
             height: 30%;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
-        .brandModel-text-container {
-            font-weight: bold;
-            font-size: 300%;
+        .brandModelPrice-container {
+            font-size: 200%;
             margin-bottom: 20px;
             margin-top: 20px;
             display: flex;
             flex-direction: row;
-            align-content: center;
+            justify-content: space-between;
         }
 
-        .brandModel-box {
-            font-size: 60%;
+        .brandModelPrice-text {
+            font-weight: bold;
+        }
+
+        .brandModelPrice-box {
+            font-size: 50%;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
             height: 100%;
-            width: 100%;
+            width: 80%;
         }
 
         .create-product-button-container {
-            display:flex;
+            display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            height: 30%;
+            width: 100%;
         }
 
         .create-product-button {
+            margin-top: 20px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             width: 500px;
@@ -98,16 +140,55 @@
     </style>
 </head>
 <body>
-    <section class="product-box">
-        <div class="product-image-container">
-        </div>
-        <div class="product-info">
-            <div class="description-text-container">Описание:</div>
-            <textarea class="description-box"></textarea>
-            <div class="brandModel-text-container">Марка:<textarea class="brandModel-box"></textarea></div>
-            <div class="brandModel-text-container">Модел:<textarea class="brandModel-box"></textarea></div>
-            <div class="create-product-button-container"><div class="create-product-button"><div class="create-product-button-text">Създай продукт</div></div></div>
-        </div>  
-    </section>
+    <form method="post" asp-controller="Tech" asp-action="SuccesfulyAddedProduct">
+        <section class="product-box">
+            <div class="product-image-container">
+                <div class="upload-image-button" action="/action_page.php">
+                    <input type="file" id="myFile" name="imageURL" onchange="displayImage(this)" required>
+                </div>
+                <div id="imageContainer">
+                </div>
+            </div>
+            <div class="product-info">
+                <select class="select-category" name="categoryName" onchange="javascript:changemm(document.search.topmenu,document.search.f5,document.search.f6,'2','1','Избери',27)" required>
+                    <option selected="" value="">Избери Категория</option>
+                    <option value="Лаптопи">Лаптопи</option>
+                    <option value="Телефони">Телефони</option>
+                    <option value="Таблети">Таблети</option>
+                    <option value="Телевизори">Телевизори</option>
+                    <option value="Монитори">Монитори</option>
+                    <option value="Клавиатури">Клавиатури</option>
+                    <option value="Мишки">Мишки</option>
+                    <option value="Слушалки">Слушалки</option>
+                    <option value="Тонколони">Тонколони</option>
+                </select>
+                <div class="description-text-container">Описание:</div>
+                <textarea class="description-box" name="description" required></textarea>
+                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Марка:</div><input class="brandModelPrice-box" name="brand" maxlength="28" required></input></div>@*better way tham maxlength?*@
+                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Модел:</div><input class="brandModelPrice-box" name="model" maxlength="28" required></input></div>@*dsds*@
+                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Цена:</div><input class="brandModelPrice-box" name="price" maxlength="28" type="number" required></input></div>@*лв in the input box*@
+                <div class="create-product-button-container"><button class="create-product-button" type="submit"><div class="create-product-button-text">Създай продукт</div></button></div>
+            </div>
+        </section>
+        <script>
+            function displayImage(input) {
+                var file = input.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var imageContainer = document.getElementById('imageContainer');
+                        var img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.id = 'uploadedImage';
+                        imageContainer.innerHTML = '';
+                        imageContainer.appendChild(img);
+                        var uploadButton = document.querySelector('.upload-image-button');
+                        uploadButton.style.display = 'none';
+                    }
+                    reader.readAsDataURL(file);
+                }
+            }
+        </script>
+    </form>
 </body>
 </html>

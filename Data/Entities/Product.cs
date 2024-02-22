@@ -7,35 +7,35 @@ namespace TechStore.Data.Entities
     {
         public Product() { }
 
-        public Product(string productName, string description, decimal price, int quantity, string brand, int categoryID)
+        public Product(string imageURL, string categoryName, string description, string brand, string model, decimal price)
         {
-            ProductName = productName;
+            ImageURL = imageURL;
+            CategoryName = categoryName;
             Description = description;
-            Price = price;
-            Quantity = quantity;
             Brand = brand;
-            CategoryID = categoryID;
+            Model = model;
+            Price = price;
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductID { get; set; }
 
-        [StringLength(100)] 
-        public string ProductName { get; set; }
+        [ForeignKey(nameof(Category))]
+        public string CategoryName { get; set; }
+
+        public string ImageURL { get; set; }
 
         [StringLength(200)] 
         public string Description { get; set; }
 
-        public decimal Price { get; set; }
-
-        public int Quantity { get; set; }
-
         [StringLength(100)] 
         public string Brand { get; set; }
 
-        [ForeignKey(nameof(Category))] 
-        public int CategoryID { get; set; } 
+        [StringLength(100)]
+        public string Model { get; set; }
+
+        public decimal Price { get; set; }
     }
 }
 
