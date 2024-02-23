@@ -7,7 +7,10 @@ namespace TechStore.Data.Entities
     public class User : IdentityUser 
     {
         [StringLength(50)] 
-        public string Name { get; set; }  
+        public string Name { get; set; }
+
+
+        public  DateTime BirthDate { get; set; }
 
         public string Address { get; set; }
 
