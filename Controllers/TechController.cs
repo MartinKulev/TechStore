@@ -38,47 +38,56 @@ namespace TechStore.Controllers
 
         public IActionResult Laptops()
         {
-            return View();
+            List<Product> products = techService.GetProducts("Лаптопи");
+            return View(products);
         }
 
         public IActionResult Smartphones()
         {
-            return View();
+            List<Product> products = techService.GetProducts("Смартфони");
+            return View(products);
         }
 
         public IActionResult Tablets()
         {
-            return View();
+            List<Product> products = techService.GetProducts("Таблети");
+            return View(products);
         }
 
         public IActionResult TVs()
         {
-            return View();
+            List<Product> products = techService.GetProducts("Телевизори");
+            return View(products);
         }
 
         public IActionResult Monitors()
         {
-            return View();
+            List<Product> products = techService.GetProducts("Монитори");
+            return View(products);
         }
 
         public IActionResult Keyboards()
         {
-            return View();
+            List<Product> products = techService.GetProducts("Клавиатури");
+            return View(products);
         }
 
         public IActionResult Mice()
         {
-            return View();
+            List<Product> products = techService.GetProducts("Мишки");
+            return View(products);
         }
 
         public IActionResult Headphones()
         {
-            return View();
+            List<Product> products = techService.GetProducts("Слушалки");
+            return View(products);
         }
 
         public IActionResult Speakers()
         {
-            return View();
+            List<Product> products = techService.GetProducts("Високоговорители");
+            return View(products);
         }
 
         public IActionResult ShoppingCart()

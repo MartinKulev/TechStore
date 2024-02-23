@@ -27,5 +27,19 @@ namespace TechStore.Services
             context.Product.Add(product);
             context.SaveChanges();
         }
+
+        public List<Product> GetProducts(string category)
+        {
+            if (context.Product.Any(p => p.CategoryName == category))
+            {
+                List<Product> products = context.Product.Where(p => p.CategoryName == category).ToList();
+                return products;
+            }
+            else
+            {
+                return new List<Product>();
+            }
+            
+        }
     }
 }
