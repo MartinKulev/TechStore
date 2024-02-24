@@ -1,1 +1,90 @@
 ﻿<title>Headphones</title>
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        overflow: auto;
+    }
+
+    .product-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 10px;
+        margin: 10px;
+        height: 400px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+        border-radius: 15px;
+    }
+
+    .product-top {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        height: 100%;
+    }
+
+    .product-image-container {
+        height: 60%;
+        margin-bottom: 5px;
+    }
+
+    .product-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .product-text-container {
+        height: 40%;
+        margin-top: 5px;
+    }
+
+    .product-text {
+        color: black;
+        font-weight: bold;
+    }
+
+    .product-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-price {
+        font-size: 150%;
+        font-weight: bold;
+        color: red;
+    }
+
+    .product-cart-button {
+        cursor: pointer;
+        border-radius: 15px;
+        background-color: blue;
+        height: 50px;
+        width: 50px;
+    }
+
+    .product-cart-icon {
+        font-size: 150%;
+        color: white;
+    }
+</style>
+<section class="grid-container">
+    @foreach (var product in Model)
+    {
+        <div class="product-box">
+            <a class="product-top" asp-action="Product" asp-controller="Tech">
+                <div class="product-image-container"><img class="product-image" src=@product.ImageURL></div>
+                <div class="product-text-container"><div class="product-text">@product.Description</div></div>
+            </a>
+            <div class="product-bottom">
+                <div class="product-price">@product.Price лв.</div>
+                <button class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+    }
+</section>

@@ -136,18 +136,18 @@
             font-weight: bold;
             font-size: 200%;
         }
-
     </style>
 </head>
 <body>
     <form method="post" asp-controller="Tech" asp-action="SuccesfulyAddedProduct">
         <section class="product-box">
             <div class="product-image-container">
-                <div class="upload-image-button" action="/action_page.php">
+                @* <div class="upload-image-button" action="/action_page.php">
                     <input type="file" id="myFile" name="imageURL" onchange="displayImage(this)" required>
                 </div>
                 <div id="imageContainer">
-                </div>
+                </div> *@
+                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Снимка:</div><input class="brandModelPrice-box" name="imageURL" required></input></div>@*better way tham maxlength?*@
             </div>
             <div class="product-info">
                 <select class="select-category" name="categoryName" onchange="javascript:changemm(document.search.topmenu,document.search.f5,document.search.f6,'2','1','Избери',27)" required>
@@ -163,10 +163,10 @@
                     <option value="Тонколони">Тонколони</option>
                 </select>
                 <div class="description-text-container">Описание:</div>
-                <textarea class="description-box" name="description" required></textarea>
+                <textarea class="description-box" name="description" required maxlength="200"></textarea>
                 <div class="brandModelPrice-container"><div class="brandModelPrice-text">Марка:</div><input class="brandModelPrice-box" name="brand" maxlength="28" required></input></div>@*better way tham maxlength?*@
                 <div class="brandModelPrice-container"><div class="brandModelPrice-text">Модел:</div><input class="brandModelPrice-box" name="model" maxlength="28" required></input></div>@*dsds*@
-                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Цена:</div><input class="brandModelPrice-box" name="price" maxlength="28" type="number" required></input></div>@*лв in the input box*@
+                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Цена:</div><input class="brandModelPrice-box" name="price" maxlength="28" type="number" step=".01" required></input></div>@*лв in the input box*@
                 <div class="create-product-button-container"><button class="create-product-button" type="submit"><div class="create-product-button-text">Създай продукт</div></button></div>
             </div>
         </section>

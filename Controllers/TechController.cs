@@ -44,7 +44,7 @@ namespace TechStore.Controllers
 
         public IActionResult Smartphones()
         {
-            List<Product> products = techService.GetProducts("Смартфони");
+            List<Product> products = techService.GetProducts("Телефони");
             return View(products);
         }
 
@@ -86,7 +86,7 @@ namespace TechStore.Controllers
 
         public IActionResult Speakers()
         {
-            List<Product> products = techService.GetProducts("Високоговорители");
+            List<Product> products = techService.GetProducts("Тонколони");
             return View(products);
         }
 

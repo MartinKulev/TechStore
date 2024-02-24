@@ -11,7 +11,7 @@
     .product-box {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-end;
         padding: 10px;
         margin: 10px;
         height: 400px;
@@ -21,13 +21,25 @@
     }
 
     .product-top {
+        display: flex;
+        flex-direction: column;
         cursor: pointer;
+        height: 100%;
+    }
+
+    .product-image-container {
+        height: 60%;
+        margin-bottom: 5px;
     }
 
     .product-image {
         max-width: 100%;
         max-height: 100%;
-        margin-bottom: 10px;
+    }
+
+    .product-text-container {
+        height: 40%;
+        margin-top: 5px;
     }
 
     .product-text {
@@ -62,19 +74,17 @@
     }
 </style>
 <section class="grid-container">
-    <div class="product-box">
-        <a class="product-top" asp-action="Product" asp-controller="Tech">
-            <img class="product-image" src="https://s13emagst.akamaized.net/products/64817/64816454/images/res_77def1f199ad6f0779f5c7e562f97e5b.jpg?width=450&height=450&hash=A2C90F159431E535B9D0F413245293E8">
-            <div class="product-text">Смартфон Samsung Galaxy S24 Ultra, Dual SIM, 12GB RAM, 512GB, 5G, Titanium Grey</div>
-        </a>
-        <div class="product-bottom">
-            <div class="product-price">1991.00 лв.</div>
-            <button class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></button>
-        </div>
-    </div>
-    @for (int a = 0; a < 7; a++)
+    @foreach (var product in Model)
     {
         <div class="product-box">
+            <a class="product-top" asp-action="Product" asp-controller="Tech">
+                <div class="product-image-container"><img class="product-image" src=@product.ImageURL></div>
+                <div class="product-text-container"><div class="product-text">@product.Description</div></div>
+            </a>
+            <div class="product-bottom">
+                <div class="product-price">@product.Price лв.</div>
+                <button class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></button>
+            </div>
         </div>
     }
 </section>
