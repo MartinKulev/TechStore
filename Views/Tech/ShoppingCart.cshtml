@@ -74,6 +74,7 @@
         align-items: flex-end;
         height: 90%;
         padding: 20px;
+        
     }
 
     .product-remove-button {
@@ -89,6 +90,83 @@
         color: white;
     }
 
+    .final-price-container {
+        margin: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+
+    .final-price {
+        font-size: 50px;
+        color: red;
+        font-weight: bold;
+    }
+
+    .promocode-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .promocode-box {
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 20px;
+        border: 1px solid #999;
+        height: 50px;
+        width: 300px;
+    }
+
+    .promocode-apply-button {
+        display: flex;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        background-color: purple;
+        cursor: pointer;
+    }
+
+    .promocode-apply-button-text {
+        margin: 0 auto;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .product-button {
+        margin: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+        height: 100px;
+        background-color: purple;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    .product-cart-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+    }
+
+    .product-cart-icon {
+        font-size: 300%;
+        color: white;
+    }
+
+    .product-cart-text {
+        margin: 0 auto;
+        color: white;
+        font-weight: bold;
+        font-size: 200%;
+    }
 </style>
 <section class="flex-container">
     <div class="product-box">
@@ -112,4 +190,15 @@
         <div class="product-box">
         </div>
     }
+    <div class="final-price-container">
+        <div class="final-price">Общо: 1991.00 лв.</div>
+        <div class="promocode-container">
+            <input class="promocode-box" placeholder="Въведете промокод">
+            <div class="promocode-apply-button"><div class="promocode-apply-button-text">Приложи</div></div>
+        </div>       
+    </div>
+    <button class="product-button">
+        <div class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></div>
+        <div class="product-cart-text">Kъм касата</div>
+    </button>
 </section>
