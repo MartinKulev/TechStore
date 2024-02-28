@@ -27,11 +27,16 @@
         height: 85%;
     }
 
+    .product-button {
+        height: 100%
+    }
+
     .product-image-container {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 60%;
+        width: 100%;
         margin-bottom: 5px;
     }
 
@@ -46,6 +51,7 @@
     }
 
     .product-text {
+        text-align: left;
         color: black;
         font-weight: bold;
     }
@@ -81,10 +87,13 @@
     @foreach (var product in Model)
     {
         <div class="product-box">
-            <a class="product-top" asp-action="Product" asp-controller="Tech">
-                <div class="product-image-container"><img class="product-image" src=@product.ImageURL></div>
-                <div class="product-text-container"><div class="product-text">@product.Description</div></div>
-            </a>
+            <form method="post" class="product-top" asp-action="Product" asp-controller="Tech">
+                <button class="product-button">
+                    <input type="hidden" name="productID" value="@product.ProductID">
+                    <div class="product-image-container"><img class="product-image" src=@product.ImageURL></div>
+                    <div class="product-text-container"><div class="product-text">@product.Description</div></div>
+                </button>
+            </form>
             <div class="product-bottom">
                 <div class="product-price">@product.Price лв.</div>
                 <button class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></button>

@@ -106,16 +106,16 @@
 <body>
     <section class="product-box">
         <div class="product-image-container">
-            <img class="product-image" src="https://s13emagst.akamaized.net/products/64817/64816454/images/res_77def1f199ad6f0779f5c7e562f97e5b.jpg?width=450&height=450&hash=A2C90F159431E535B9D0F413245293E8">
+            <img class="product-image" src="@Model.ImageURL">
         </div>
         <div class="product-info">
             <div class="product-text-container">
-                <div>Смартфон Samsung Galaxy S24 Ultra, Dual SIM, 12GB RAM, 512GB, 5G, Titanium Grey</div>
-                <div>• Марка: <span class="product-text-info">Samsung</span></div>
-                <div>• Модел: <span  class="product-text-info">Galaxy S24 Ultra</span></div>
+                <div>@Model.Description</div>
+                <div>• Марка: <span class="product-text-info">@Model.Brand</span></div>
+                <div>• Модел: <span class="product-text-info">@Model.Model</span></div>
             </div>
             <div class="product-price-container">
-                <div class="product-price">Цена: 1991.00 лв.</div>
+                <div class="product-price">Цена: @Model.Price лв.</div>
                 <button class="product-button">
                     <div class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></div>
                     <div class="product-cart-text">Добави в количката</div>

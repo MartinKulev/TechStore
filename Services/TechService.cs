@@ -28,7 +28,7 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public List<Product> GetProducts(string category)
+        public List<Product> GetProductsByCategories(string category)
         {
             if (context.Product.Any(p => p.CategoryName == category))
             {
@@ -40,6 +40,12 @@ namespace TechStore.Services
                 return new List<Product>();
             }
             
+        }
+
+        public Product GetProductByID(int productID)
+        {
+            Product product = context.Product.First(p => p.ProductID == productID);
+            return product;
         }
     }
 }

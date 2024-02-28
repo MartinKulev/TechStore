@@ -38,55 +38,55 @@ namespace TechStore.Controllers
 
         public IActionResult Laptops()
         {
-            List<Product> products = techService.GetProducts("Лаптопи");
+            List<Product> products = techService.GetProductsByCategories("Лаптопи");
             return View(products);
         }
 
         public IActionResult Smartphones()
         {
-            List<Product> products = techService.GetProducts("Телефони");
+            List<Product> products = techService.GetProductsByCategories("Телефони");
             return View(products);
         }
 
         public IActionResult Tablets()
         {
-            List<Product> products = techService.GetProducts("Таблети");
+            List<Product> products = techService.GetProductsByCategories("Таблети");
             return View(products);
         }
 
         public IActionResult TVs()
         {
-            List<Product> products = techService.GetProducts("Телевизори");
+            List<Product> products = techService.GetProductsByCategories("Телевизори");
             return View(products);
         }
 
         public IActionResult Monitors()
         {
-            List<Product> products = techService.GetProducts("Монитори");
+            List<Product> products = techService.GetProductsByCategories("Монитори");
             return View(products);
         }
 
         public IActionResult Keyboards()
         {
-            List<Product> products = techService.GetProducts("Клавиатури");
+            List<Product> products = techService.GetProductsByCategories("Клавиатури");
             return View(products);
         }
 
         public IActionResult Mice()
         {
-            List<Product> products = techService.GetProducts("Мишки");
+            List<Product> products = techService.GetProductsByCategories("Мишки");
             return View(products);
         }
 
         public IActionResult Headphones()
         {
-            List<Product> products = techService.GetProducts("Слушалки");
+            List<Product> products = techService.GetProductsByCategories("Слушалки");
             return View(products);
         }
 
         public IActionResult Speakers()
         {
-            List<Product> products = techService.GetProducts("Тонколони");
+            List<Product> products = techService.GetProductsByCategories("Тонколони");
             return View(products);
         }
 
@@ -95,9 +95,12 @@ namespace TechStore.Controllers
             return View();
         }
 
-        public IActionResult Product()
+        [HttpPost]
+        [Route("{productID}/Product")]
+        public IActionResult Product(int productID)
         {
-            return View();
+            Product product = techService.GetProductByID(productID);
+            return View(product);
         }
 
         public IActionResult AddProduct()
