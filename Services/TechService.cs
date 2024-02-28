@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using System.Linq;
 using TechStore.Data;
 using TechStore.Data.Entities;
 
@@ -13,14 +14,20 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        public void AddCategory(Category category)
-        {
-            if (!context.Category.Contains(category))
-            {
-                context.Category.Add(category);
-                context.SaveChanges();
-            }
-        }
+        //public List<Category> GetAllCategories()
+        //{
+        //    List<Category> categories = context.Category.ToList();
+        //    return categories;
+        //}
+
+        //public void AddCategory(Category category)
+        //{
+        //    if (!context.Category.Contains(category))
+        //    {
+        //        context.Category.Add(category);
+        //        context.SaveChanges();
+        //    }
+        //}
 
         public void AddProduct(Product product)
         {
