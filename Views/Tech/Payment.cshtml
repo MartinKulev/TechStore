@@ -1,5 +1,60 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<!DOCTYPE html>
+<title>Payment</title>
+<html>
+<head>
+    <style>
+        body {
+            background-color: green;
+        }
+        .payment-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+            border-radius: 15px;
+            position: relative;
+            height: 100%;
+        }
+
+        .payment-title-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-content: flex-start;
+            height: 100%;
+            width: 20%;
+        }
+
+        .payment-title {
+            color: green;
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+        .information-container {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        .information-box {
+            width: 50%;
+            height: 50px;
+            border: 1px solid #999;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-box">
+        <div class="payment-title-container"><div class="payment-title">Payment</div></div>
+        <div class="information-container">Name: <input class="information-box"></input></div>
+    </div>
+</body>
+</html>
