@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin.PC-9\\Desktop\\New folder (3)\\TechStore\\TechStore.csproj": {}
+    "C:\\Users\\Martin\\Desktop\\TechStore\\TechStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin.PC-9\\Desktop\\New folder (3)\\TechStore\\TechStore.csproj": {
+    "C:\\Users\\Martin\\Desktop\\TechStore\\TechStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin.PC-9\\Desktop\\New folder (3)\\TechStore\\TechStore.csproj",
+        "projectUniqueName": "C:\\Users\\Martin\\Desktop\\TechStore\\TechStore.csproj",
         "projectName": "TechStore",
-        "projectPath": "C:\\Users\\admin.PC-9\\Desktop\\New folder (3)\\TechStore\\TechStore.csproj",
-        "packagesPath": "C:\\Users\\admin.PC-9\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin.PC-9\\Desktop\\New folder (3)\\TechStore\\obj\\",
+        "projectPath": "C:\\Users\\Martin\\Desktop\\TechStore\\TechStore.csproj",
+        "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Martin\\Desktop\\TechStore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admin.PC-9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -75,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
