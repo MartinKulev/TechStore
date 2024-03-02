@@ -10,23 +10,17 @@ namespace TechStore.Data.Entities
         public Payment(string name, string cardNum, string expiryDate, int cvvNum, string address)
         {
             Name = name;
-            CardNum = cardNum;
+            CardNum = cardNum;      
             ExpiryDate = expiryDate;
             CvvNum = cvvNum;
             Address = address;
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PaymentID { get; set; }
-
-        [StringLength(50)] 
-        public string Name { get; set; }
-
-        [StringLength(50)] 
         public string CardNum { get; set; }
 
-        [StringLength(50)] 
+        public string Name { get; set; }
+
         public string ExpiryDate { get; set;}
 
         public int CvvNum { get; set; }

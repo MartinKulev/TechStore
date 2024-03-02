@@ -42,8 +42,7 @@ namespace TechStore.Migrations
             modelBuilder.Entity("TechStore.Data.Entities.Category", b =>
                 {
                     b.Property<string>("CategoryName")
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("CategoryName");
 
@@ -78,33 +77,25 @@ namespace TechStore.Migrations
 
             modelBuilder.Entity("TechStore.Data.Entities.Payment", b =>
                 {
-                    b.Property<int>("PaymentID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("CardNum")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<string>("CardNum")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
 
                     b.Property<int>("CvvNum")
                         .HasColumnType("int");
 
                     b.Property<string>("ExpiryDate")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("longtext");
 
-                    b.HasKey("PaymentID");
+                    b.HasKey("CardNum");
 
                     b.ToTable("Payment");
                 });
@@ -117,8 +108,7 @@ namespace TechStore.Migrations
 
                     b.Property<string>("Brand")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("CategoryName")
                         .IsRequired()
@@ -126,8 +116,7 @@ namespace TechStore.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("ImageURL")
                         .IsRequired()
@@ -135,8 +124,7 @@ namespace TechStore.Migrations
 
                     b.Property<string>("Model")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("longtext");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -227,6 +215,9 @@ namespace TechStore.Migrations
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .HasColumnType("longtext");

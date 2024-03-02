@@ -116,29 +116,29 @@
     </style>
 </head>
 <body>
-    <div class="payment-box">
+    <form method="post" class="payment-box" asp-action="SuccessfulPayment" asp-controller="Tech">
         <div class="payment-title-container"><div class="payment-title">Payment</div></div>
         <div class="information-container">
             <div class="information-box">
                 <div class="information-text">Name:</div>
-                <input class="name-input-box">
+                <input class="name-input-box" name="name" required>
             </div>
             <div class="information-box">
                 <div class="information-text">Card Number:</div>
-                <input class="card-input-box" placeholder="XXXX XXXX XXXX XXXX">
+                <input class="card-input-box" placeholder="XXXX XXXX XXXX XXXX" name="cardNumber" minlength="19" maxlength="19" required>
             </div>
             <div class="information-box">
                 <div class="information-text">Expiry Date:</div>
-                <input class="expiryDate-input-box" placeholder="MM/YY">
+                <input class="expiryDate-input-box" placeholder="MM/YY" name="expiryDate" minlength="5" maxlength="5" required>
                 <div class="information-text">CVV:</div>
-                <input class="CVV-input-box" placeholder="XXX">
+                <input class="CVV-input-box" placeholder="XXX" name="cvvNum" minlength="3" maxlength="3" required>
             </div>
             <div class="information-box">
                 <div class="information-text">Adress:</div>
-                <input class="adress-input-box">
+                <input class="adress-input-box" name="adress" required>
             </div>
         </div>
         <div class="pay-buttton-container"><button class="pay-button"><div class="pay-button-text">Pay</div></button></div>
-    </div>
+    </form>
 </body>
 </html>

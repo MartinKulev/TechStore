@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Martin\\Desktop\\TechStore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\successfulpayment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulpayment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\successfulyaddedproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulyaddedproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Martin\\Desktop\\TechStore\\Migrations\\20240302150532_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240302150532_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,12 +31,56 @@
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:services\\techservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\keyboards.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\keyboards.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\headphones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -31,24 +91,8 @@
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\monitors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\monitors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -57,10 +101,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\tvs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -91,20 +131,12 @@
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\succesfulyaddedproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\succesfulyaddedproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\techstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\techstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -119,10 +151,6 @@
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Martin\\Desktop\\TechStore\\Migrations\\20240222195402_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240222195402_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -131,28 +159,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240222195324_Initial].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Martin\\Desktop\\TechStore\\Migrations\\20240222195121_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240222195121_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\data\\entities\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\entities\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -165,10 +173,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\migrations\\20240222195903_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:migrations\\20240222195903_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -178,7 +182,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -190,45 +194,290 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Payment.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Payment.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Payment.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Payment.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Payment.cshtml",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAAAHMAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-28T19:49:03.935Z",
+              "DocumentIndex": 3,
+              "Title": "20240302150532_Initial.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Migrations\\20240302150532_Initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240302150532_Initial.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Migrations\\20240302150532_Initial.cs",
+              "RelativeToolTip": "Migrations\\20240302150532_Initial.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAABMAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-02T15:05:33.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Payment.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Payment.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Payment.cs",
               "RelativeToolTip": "Data\\Entities\\Payment.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwB8AAAAnAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T20:42:09.702Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "Payment.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Payment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Payment.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Payment.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Payment.cshtml",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAAAIIAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-28T19:49:03.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TechController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\TechController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TechController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\TechController.cs",
+              "RelativeToolTip": "Controllers\\TechController.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAAAIMAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-15T15:48:28.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ShoppingCart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\ShoppingCart.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\ShoppingCart.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\ShoppingCart.cshtml",
+              "RelativeToolTip": "Views\\Tech\\ShoppingCart.cshtml",
+              "ViewState": "AQIAAK8AAAAAAAAAAAAAAMQAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-15T18:02:13.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TechService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\TechService.cs",
+              "RelativeDocumentMoniker": "Services\\TechService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\TechService.cs",
+              "RelativeToolTip": "Services\\TechService.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADsAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-21T19:01:51.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SuccessfulyAddedProduct.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyAddedProduct.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulyAddedProduct.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyAddedProduct.cshtml",
+              "RelativeToolTip": "Views\\Tech\\SuccessfulyAddedProduct.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-22T20:06:11.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SuccessfulPayment.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\SuccessfulPayment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulPayment.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\SuccessfulPayment.cshtml",
+              "RelativeToolTip": "Views\\Tech\\SuccessfulPayment.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAB8AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-02T14:51:32.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AddProduct.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\AddProduct.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\AddProduct.cshtml",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\AddProduct.cshtml",
               "RelativeToolTip": "Views\\Tech\\AddProduct.cshtml",
-              "ViewState": "AQIAAJoAAAAAAAAAAAAuwMIAAAAAAAAA",
+              "ViewState": "AQIAAK8AAAAAAAAAAAAuwKUAAABdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-19T08:05:40.01Z"
+              "WhenOpened": "2024-02-19T08:05:40.01Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\User.cs",
+              "RelativeToolTip": "Data\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T20:46:44.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Role.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Role.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Role.cs",
+              "RelativeToolTip": "Data\\Entities\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T20:46:43.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Promotion.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Promotion.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Promotion.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Promotion.cs",
+              "RelativeToolTip": "Data\\Entities\\Promotion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T20:48:18.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Order.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Order.cs",
+              "RelativeToolTip": "Data\\Entities\\Order.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T09:12:13.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Review.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Review.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Review.cs",
+              "RelativeToolTip": "Data\\Entities\\Review.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T20:46:02.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Product.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Product.cs",
+              "RelativeToolTip": "Data\\Entities\\Product.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-15T18:20:41.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Category.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Category.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Category.cs",
+              "RelativeToolTip": "Data\\Entities\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T09:12:02.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Cart.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Cart.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Cart.cs",
+              "RelativeToolTip": "Data\\Entities\\Cart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T09:10:40.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Keyboards.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Keyboards.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Keyboards.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Keyboards.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Keyboards.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAowF8AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-22T20:12:30.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Profile.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Profile.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-28T19:49:20.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T20:59:11.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Headphones.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Headphones.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Headphones.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Headphones.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Headphones.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-15T15:22:45.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Homepage.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Homepage.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Homepage.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Homepage.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Homepage.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-15T15:28:30.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "Monitors.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Monitors.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Monitors.cshtml",
@@ -240,72 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Homepage.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Homepage.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Homepage.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Homepage.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Homepage.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-15T15:28:30.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Headphones.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Headphones.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Headphones.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Headphones.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Headphones.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-15T15:22:45.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Keyboards.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Keyboards.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Keyboards.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Keyboards.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Keyboards.cshtml",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAowGYAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-22T20:12:30.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T20:59:11.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TechService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\TechService.cs",
-              "RelativeDocumentMoniker": "Services\\TechService.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\TechService.cs",
-              "RelativeToolTip": "Services\\TechService.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACEAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T19:01:51.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -317,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 24,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -329,31 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TechController.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\TechController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TechController.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\TechController.cs",
-              "RelativeToolTip": "Controllers\\TechController.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAAAHYAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T15:48:28.519Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Cart.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Cart.cs",
-              "RelativeDocumentMoniker": "Data\\Entities\\Cart.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Cart.cs",
-              "RelativeToolTip": "Data\\Entities\\Cart.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T09:10:40.767Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "TVs.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\TVs.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\TVs.cshtml",
@@ -365,19 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ShoppingCart.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\ShoppingCart.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\ShoppingCart.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\ShoppingCart.cshtml",
-              "RelativeToolTip": "Views\\Tech\\ShoppingCart.cshtml",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAHoAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-15T18:02:13.839Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 26,
               "Title": "Tablets.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Tablets.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Tablets.cshtml",
@@ -389,7 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "Smartphones.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Smartphones.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Smartphones.cshtml",
@@ -401,19 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Profile.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Profile.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Profile.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Profile.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-28T19:49:20.121Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 29,
               "Title": "Mice.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Mice.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Mice.cshtml",
@@ -425,7 +561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 30,
               "Title": "Laptops.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Laptops.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Laptops.cshtml",
@@ -437,7 +573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 27,
               "Title": "Speakers.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Speakers.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Speakers.cshtml",
@@ -449,7 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 31,
               "Title": "Product.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Product.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Product.cshtml",
@@ -461,19 +597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "SuccesfulyAddedProduct.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\SuccesfulyAddedProduct.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\SuccesfulyAddedProduct.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\SuccesfulyAddedProduct.cshtml",
-              "RelativeToolTip": "Views\\Tech\\SuccesfulyAddedProduct.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-22T20:06:11.096Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 32,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -485,7 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 33,
               "Title": "TechStoreContext.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\TechStoreContext.cs",
               "RelativeDocumentMoniker": "Data\\TechStoreContext.cs",
@@ -497,19 +621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Product.cs",
-              "RelativeDocumentMoniker": "Data\\Entities\\Product.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Product.cs",
-              "RelativeToolTip": "Data\\Entities\\Product.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-15T18:20:41.732Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 34,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
@@ -521,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 35,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
@@ -533,7 +645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 36,
               "Title": "Logout.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Logout.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Logout.cshtml",
@@ -545,7 +657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 39,
               "Title": "20240222195121_Initial.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Migrations\\20240222195121_Initial.cs",
               "RelativeDocumentMoniker": "Migrations\\20240222195121_Initial.cs",
@@ -557,7 +669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "20240222195324_Initial].cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Migrations\\20240222195324_Initial].cs",
               "RelativeDocumentMoniker": "Migrations\\20240222195324_Initial].cs",
@@ -569,7 +681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 37,
               "Title": "20240222195402_Initial.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Migrations\\20240222195402_Initial.cs",
               "RelativeDocumentMoniker": "Migrations\\20240222195402_Initial.cs",
@@ -581,91 +693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "20240222195903_Initial.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Migrations\\20240222195903_Initial.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240222195903_Initial.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Migrations\\20240222195903_Initial.cs",
-              "RelativeToolTip": "Migrations\\20240222195903_Initial.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T19:59:03.469Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Category.cs",
-              "RelativeDocumentMoniker": "Data\\Entities\\Category.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Category.cs",
-              "RelativeToolTip": "Data\\Entities\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T09:12:02.755Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Order.cs",
-              "RelativeDocumentMoniker": "Data\\Entities\\Order.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Order.cs",
-              "RelativeToolTip": "Data\\Entities\\Order.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T09:12:13.813Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Role.cs",
-              "RelativeDocumentMoniker": "Data\\Entities\\Role.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Role.cs",
-              "RelativeToolTip": "Data\\Entities\\Role.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T20:46:43.411Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Review.cs",
-              "RelativeDocumentMoniker": "Data\\Entities\\Review.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Review.cs",
-              "RelativeToolTip": "Data\\Entities\\Review.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T20:46:02.564Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Promotion.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Promotion.cs",
-              "RelativeDocumentMoniker": "Data\\Entities\\Promotion.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Promotion.cs",
-              "RelativeToolTip": "Data\\Entities\\Promotion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T20:48:18.193Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Data\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\User.cs",
-              "RelativeToolTip": "Data\\Entities\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T20:46:44.41Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "jquery.js",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\jquery\\dist\\jquery.js",
               "RelativeDocumentMoniker": "wwwroot\\lib\\jquery\\dist\\jquery.js",
@@ -677,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
@@ -689,7 +717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",

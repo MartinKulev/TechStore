@@ -18,7 +18,7 @@ namespace TechStore.Data.Entities
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int OrderID { get; set; } //RNG 8 cifri
+        public int OrderID { get; set; } 
 
         [ForeignKey(nameof(Product))] 
         public int ProductID { get; set; }

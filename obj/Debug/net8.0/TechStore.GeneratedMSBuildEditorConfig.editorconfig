@@ -102,8 +102,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxTcGVha2Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/TechStore/Views/Tech/SuccesfulyAddedProduct.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxTdWNjZXNmdWx5QWRkZWRQcm9kdWN0LmNzaHRtbA==
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/SuccessfulPayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxTdWNjZXNzZnVsUGF5bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/SuccessfulyAddedProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxTdWNjZXNzZnVseUFkZGVkUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Martin/Desktop/TechStore/Views/Tech/Tablets.cshtml]

@@ -25,14 +25,11 @@ namespace TechStore.Data.Entities
         public string CategoryName { get; set; }
 
         public string ImageURL { get; set; }
-
-        [StringLength(200)] 
+ 
         public string Description { get; set; }
-
-        [StringLength(100)] 
+ 
         public string Brand { get; set; }
 
-        [StringLength(100)]
         public string Model { get; set; }
 
         public decimal Price { get; set; }

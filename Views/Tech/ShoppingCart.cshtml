@@ -197,8 +197,10 @@
             <div class="promocode-apply-button"><div class="promocode-apply-button-text">Приложи</div></div>
         </div>       
     </div>
-    <button class="checkout-button">
-        <div class="checkout-cart-button"><i class="checkout-cart-icon fa-solid fa-cart-shopping"></i></div>
-        <div class="checkout-cart-text">Kъм касата</div>
-    </button>
+    <form method="post" asp-action="Payment" asp-controller="Tech">
+        <button class="checkout-button">
+            <div class="checkout-cart-button"><i class="checkout-cart-icon fa-solid fa-cart-shopping"></i></div>
+            <div class="checkout-cart-text">Kъм касата</div>
+        </button>
+    </form>
 </section>

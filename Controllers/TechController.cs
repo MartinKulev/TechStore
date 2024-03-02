@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TechStore.Data.Entities;
 using TechStore.Services;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 namespace TechStore.Controllers
 {
@@ -111,7 +112,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccesfulyAddedProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
+        public IActionResult SuccessfulyAddedProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
         {
             Product product = new Product(imageURL, categoryName, description, brand, model, price);
             techService.AddProduct(product);
@@ -120,6 +121,14 @@ namespace TechStore.Controllers
 
         public IActionResult Payment()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SuccessfulPayment(string name, string cardNumber, string expiryDate, int cvvNum, string adress)
+        {
+            Payment payment = new Payment(name, cardNumber, expiryDate, cvvNum, adress);
+            techService.AddPayment(payment);
             return View();
         }
 

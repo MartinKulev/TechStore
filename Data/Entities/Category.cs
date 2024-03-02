@@ -14,7 +14,6 @@ namespace TechStore.Data.Entities
         }
 
         [Key]
-        [StringLength(100)]
         public string CategoryName { get; set; }
     }
 

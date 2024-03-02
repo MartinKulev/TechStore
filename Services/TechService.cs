@@ -54,5 +54,11 @@ namespace TechStore.Services
             Product product = context.Product.First(p => p.ProductID == productID);
             return product;
         }
+
+        public void AddPayment(Payment payment)
+        {
+            context.Payment.Add(payment);
+            context.SaveChanges();
+        }
     }
 }
