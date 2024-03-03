@@ -1,5 +1,90 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<title>Profile</title>
+<style>
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1 1 auto;
+        overflow: auto;
+    }
+
+    .order-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 20px;
+        height: 200px;
+        min-height: 200px;
+        width: 80%;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+        border-radius: 15px;
+    }
+
+    .order-info {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+    .order-text {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .order-price-container {
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between
+    }
+
+    .order-price {
+        font-size: 20px;
+        color: red;
+        font-weight: bold;
+    }
+
+    .order-dateTime-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .order-dateTime-label {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .order-dateTime {
+        font-size: 20px;
+    }
+</style>
+<section class="flex-container">
+    <div class="order-box">
+        <div class="order-info">
+            <div class="order-text">Поръчка № 3</div>
+            <div class="order-price-container"><div class="order-price">Платено: 1991.00лв</div><div>Банкова карта: 1234 5678 9123 4567</div></div>
+        </div>
+        <div class="order-dateTime-container">
+            <div class="order-dateTime-label">Дата на поръчванe:</div>
+            <div class="order-dateTime">03.03.24</div>
+            <div class="order-dateTime">11:47:45</div>
+        </div>
+    </div>
+    @for (int a = 0; a < 7; a++)
+    {
+        <div class="order-box">
+        </div>
+    }
+</section>
