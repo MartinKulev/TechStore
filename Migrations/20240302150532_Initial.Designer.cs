@@ -10,7 +10,7 @@ using TechStore.Data;
 
 namespace TechStore.Migrations
 {
-    [DbContext(typeof(TechStoreContext))]
+    [DbContext(typeof(TechStoreDbContext))]
     [Migration("20240302150532_Initial")]
     partial class Initial
     {

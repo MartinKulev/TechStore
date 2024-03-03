@@ -9,7 +9,7 @@ using TechStore.Data;
 
 namespace TechStore.Migrations
 {
-    [DbContext(typeof(TechStoreContext))]
+    [DbContext(typeof(TechStoreDbContext))]
     partial class TechStoreContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

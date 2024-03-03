@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<TechStoreContext>(c => c.UseMySQL("Server=localhost;Database=TechStore;Uid=root;Pwd=Martin1234;"));
-
+builder.Services.AddDbContext<TechStoreDbContext>(options =>
+    options.UseMySQL("Server=localhost;Database=TechStore;Uid=root;Pwd=RmisSexybeast12.;"));
 builder.Services.AddScoped<TechService>();
 
 var app = builder.Build();
@@ -17,8 +17,7 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseHsts(); // Consider configuring HSTS as appropriate for your production environment.
 }
 
 app.UseHttpsRedirection();

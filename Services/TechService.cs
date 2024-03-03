@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using System.Linq;
 using TechStore.Data;
-using TechStore.Data.Entities;
+using TechStore.Models.Entities;
 
 namespace TechStore.Services
 {
     public class TechService
     {
-        private TechStoreContext context;
+        private TechStoreDbContext context;
 
-        public TechService(TechStoreContext context)
+        public TechService(TechStoreDbContext context)
         {
             this.context = context;
         }

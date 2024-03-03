@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TechStore.Data.Entities;
+using TechStore.Models.Entities;
 using TechStore.Services;
 using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 

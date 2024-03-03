@@ -1,78 +1,32 @@
-﻿@page
-@model RegisterModel
-@{
-    ViewData["Title"] = "Register";
-}
+﻿@model RegisterModel
 
-<h2>@ViewData["Title"]</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-<div class="row">
-    <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h5>Create a new account</h5>
-            <hr />
+    @Html.LabelFor(m => m.FirstName)
+    @Html.TextBoxFor(m => m.FirstName)
+    @Html.ValidationMessageFor(m => m.FirstName)
 
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
-            <div>
-                <label asp-for="Input.Name"></label>
-                <input asp-for="Input.Name" class="form-control" autocomplete="username" aria-required="true" />
-                <span asp-validation-for="Input.Name" class="text-danger"></span>
-                <label></label>
-            </div>
-            
-            <div>
-                <label asp-for="Input.Gender">Gender</label>
-                <select asp-for="Input.Gender" class="form-control" aria-required="true">
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
-                <span asp-validation-for="Input.Gender" class="text-danger"></span>
-                <label></label>
-            </div>
+    @Html.LabelFor(m => m.LastName)
+    @Html.TextBoxFor(m => m.LastName)
+    @Html.ValidationMessageFor(m => m.LastName)
 
-            <div>
-                <label asp-for="Input.BirthDate"></label>
-                <input asp-for="Input.BirthDate" class="form-control" aria-required="true" />
-                <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
-                <label></label>
-            </div>
-            
-            <div>
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" aria-required="true" /> @*autocomplete="email"*@
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-                <label></label>
-            </div>
-            
-            <div>
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-                <label></label>
-            </div>
-            
-            <div>
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-                <label></label>
-            </div>
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
+    @Html.ValidationMessageFor(m => m.Email)
 
-            <div>
-                <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
-                <label></label>
-            </div>
+    @Html.LabelFor(m => m.PhoneNumber)
+    @Html.TextBoxFor(m => m.PhoneNumber)
+    @Html.ValidationMessageFor(m => m.PhoneNumber)
 
-            <div>
-                <p>
-                    <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Login</a>
-                </p>
-            </div>
-        </form>
-    </div>
-</div>
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password)
+    @Html.ValidationMessageFor(m => m.Password)
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    @Html.LabelFor(m => m.ConfirmPassword)
+    @Html.PasswordFor(m => m.ConfirmPassword)
+    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+
+    <input type="submit" value="Register" />
 }

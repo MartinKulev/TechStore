@@ -1,59 +1,16 @@
-﻿@page
-@model LoginModel
+﻿@model LoginModel
 
-@{
-    ViewData["Title"] = "Log in";
-}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-<h2>@ViewData["Title"]</h2>
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
+    @Html.ValidationMessageFor(m => m.Email)
 
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form id="account" method="post">
-                <h5>Use a local account to log in</h5>
-                <hr />
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password)
+    @Html.ValidationMessageFor(m => m.Password)
 
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                
-                <div>
-                    <label asp-for="Input.Name" class="form-label"></label>
-                    <input asp-for="Input.Name" class="form-control" autocomplete="username" aria-required="true" />
-                    <span asp-validation-for="Input.Name" class="text-danger"></span>
-                    <label></label>
-                </div>
-                
-                <div>
-                    <label asp-for="Input.Password" class="form-label"></label>
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                    <label></label>
-                </div>
-                
-                <div>
-                    <div class="checkbox">
-                        <label asp-for="Input.RememberMe" class="form-label">
-                            <input class="form-check-input" asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
-                    </div>
-                </div>
-                
-                <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                    <label></label>
-                </div>
-                
-                <div>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register</a>
-                    </p>
-                </div>
-            </form>
-        </section>
-    </div>
-</div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <input type="submit" value="Login" />
 }
