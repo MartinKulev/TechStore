@@ -27,7 +27,7 @@ namespace TechStore.Models.Entities
         [ForeignKey(nameof(Product))]
         public int ProductID { get; set; }
 
-        [ForeignKey(nameof(User))]
+        [ForeignKey(nameof(ApplicationUser))]
         public int UserID { get; set; }
 
         public DateTime CreatedDate { get; set; }

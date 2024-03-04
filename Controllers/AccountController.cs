@@ -3,82 +3,148 @@ using Microsoft.AspNetCore.Mvc;
 using TechStore.Models.ViewModels;
 using TechStore.Models.Entities;
 using TechStore.Data;
+using Microsoft.AspNetCore.Identity;
+using TechStore.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using System.Text.Encodings.Web;
+using Microsoft.AspNetCore.Authorization;
 
-public class AccountController : Controller
+namespace TechStore.Controllers
 {
-    // Assuming you have a DbContext to interact with your database
-    private readonly TechStoreDbContext _context;
-
-    public ActionResult Register()
+    public class AccountController : Controller
     {
-        return View();
-    }
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly ISenderEmail _emailSender;
 
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public ActionResult Register(RegisterModel model)
-    {
-        if (ModelState.IsValid)
+        // Constructor injection of UserManager and SignInManager
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender)
         {
-            var user = new User
-            {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Email = model.Email,
-                PhoneNumber = model.PhoneNumber,
-                PasswordHash = HashPassword(model.Password) // Make sure to hash the password
-            };
-
-            _context.User.Add(user);
-            _context.SaveChanges();
-
-            return RedirectToAction("Login");
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _emailSender = emailSender;
         }
 
-        return View(model);
-    }
-
-    public ActionResult Login()
-    {
-        return View();
-    }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public ActionResult Login(LoginModel model)
-    {
-        if (ModelState.IsValid)
+        public IActionResult Register()
         {
-            var user = _context.User.FirstOrDefault(u => u.Email == model.Email);
-            // Verify the hashed password. The VerifyHashedPassword method is a placeholder for whatever hash verification method you use.
-            if (user != null && VerifyHashedPassword(user.PasswordHash, model.Password))
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterModel model)
+        {
+            if (ModelState.IsValid)
             {
-                // Implement your session or authentication mechanism here
-                // For example, FormsAuthentication.SetAuthCookie(model.Email, false);
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email, // UserName is often set to the email in many systems
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Email = model.Email,
+                    PhoneNumber = model.PhoneNumber,
+                };
+
+                // Create the user with UserManager
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(user, "User");
+                    await SendConfirmationEmail(model.Email, user);
+
+                    return RedirectToAction("Login");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+
+            return View(model);
+        }
+
+        private async Task SendConfirmationEmail(string? email, ApplicationUser? user)
+        {
+            //Generate the Token
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+            //Build the Email Confirmation Link which must include the Callback URL
+            var ConfirmationLink = Url.Action("ConfirmEmail", "Account",
+            new { userId = user.Id, token = token }, protocol: HttpContext.Request.Scheme);
+
+            //Send the Confirmation Email to the User Email Id
+            await _emailSender.SendEmailAsync(email, "Confirm Your Email", $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(ConfirmationLink)}'>clicking here</a>.", true);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            if (userId == null || token == null)
+            {
                 return RedirectToAction("Index", "Home");
             }
-            ModelState.AddModelError("", "Invalid login attempt.");
+
+            //Find the User By Id
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound($"Unable to load user with ID '{userId}'.");
+            }
+
+            //Call the ConfirmEmailAsync Method which will mark the Email as Confirmed
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Login");
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
-        return View(model);
-    }
+        public IActionResult Login()
+        {
+            return View();
+        }
 
-    public ActionResult Logout()
-    {
-        // Implement your logout mechanism here
-        // For example, FormsAuthentication.SignOut();
-        return RedirectToAction("Index", "Home");
-    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginModel model, string returnUrl = null)
+        {
+            if (ModelState.IsValid)
+            {
+                // Sign in the user with SignInManager
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: false, lockoutOnFailure: false);
 
-    private string HashPassword(string password)
-    {
-        // Implement password hashing here
-        return password; // Placeholder
-    }
+                if (result.Succeeded)
+                {
+                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                }
+            }
 
-    private bool VerifyHashedPassword(string hashedPassword, string password)
-    {
-        // Implement password verification here
-        return true; // Placeholder
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            // Sign out the user
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

@@ -1,8 +1,27 @@
-﻿@model RegisterModel
+﻿@model TechStore.Models.ViewModels.RegisterModel
+
+<style>
+    .validation-summary-valid {
+        display: none;
+    }
+
+    .validation-summary-errors {
+        color: red;
+        border: 1px solid #ff0000;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .field-validation-error {
+        color: red;
+    }
+</style>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
 
     @Html.LabelFor(m => m.FirstName)
     @Html.TextBoxFor(m => m.FirstName)

@@ -1,8 +1,27 @@
-﻿@model LoginModel
+﻿@model TechStore.Models.ViewModels.LoginModel
+
+<style>
+    .validation-summary-valid {
+        display: none;
+    }
+
+    .validation-summary-errors {
+        color: red;
+        border: 1px solid #ff0000;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .field-validation-error {
+        color: red;
+    }
+</style>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
 
     @Html.LabelFor(m => m.Email)
     @Html.TextBoxFor(m => m.Email)

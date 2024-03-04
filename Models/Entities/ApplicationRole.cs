@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Identity;
 
 namespace TechStore.Models.Entities
 {
-    public class Role : IdentityRole
+    public class ApplicationRole : IdentityRole
     {
-        public string Color { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using TechStore.Models.Entities;
 
 namespace TechStore.Data
 {
-    public class TechStoreDbContext : DbContext
+    public class TechStoreDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         public DbSet<Cart> Cart { get; set; }
         public DbSet<Category> Category { get; set; }        
@@ -13,8 +14,8 @@ namespace TechStore.Data
         public DbSet<Product> Product { get; set; }
         public DbSet<Promotion> Promotion { get; set; }
         public DbSet<Review> Review { get; set; }
-        public DbSet<Role> Role { get; set; }
-        public DbSet<User> User { get; set; }
+        public DbSet<ApplicationRole> Role { get; set; }
+        public DbSet<ApplicationUser> User { get; set; }
 
         public TechStoreDbContext(DbContextOptions<TechStoreDbContext> options) 
             : base(options)

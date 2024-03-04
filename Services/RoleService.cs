@@ -1,0 +1,25 @@
+﻿using Microsoft.AspNetCore.Identity;
+using TechStore.Models.Entities;
+
+namespace TechStore.Services
+{
+    public class RoleService
+    {
+        public static async Task CreateRoles(IServiceProvider serviceProvider)
+        {
+            var _roleManager = serviceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
+
+            string[] roleNames = { "Admin", "User" };
+            string[] roleDescs = { "Admin giving full rights.", "Standard user with limited rights." };
+            
+            for (int i = 0; i < roleNames.Length; i++)
+            {
+                var roleExist = await _roleManager.RoleExistsAsync(roleNames[i]);
+                if (!roleExist)
+                {
+                    await _roleManager.CreateAsync(new ApplicationRole { Name = roleNames[i], Description = roleDescs[i] });
+                }
+            }
+        }
+    }
+}

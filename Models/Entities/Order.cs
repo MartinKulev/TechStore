@@ -25,7 +25,7 @@ namespace TechStore.Models.Entities
 
         public int Quantity { get; set; }
 
-        [ForeignKey(nameof(User))]
+        [ForeignKey(nameof(ApplicationUser))]
         public int UserID { get; set; }
 
         [ForeignKey(nameof(Payment))]
