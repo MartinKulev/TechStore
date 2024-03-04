@@ -106,7 +106,7 @@ namespace TechStore.Controllers
             return View(product);
         }
 
-        public IActionResult AddProduct()
+        public IActionResult AdministrationPanel()
         {
             return View();
         }
@@ -133,6 +133,11 @@ namespace TechStore.Controllers
         }
 
         public IActionResult Profile()
+        {
+            return View();
+        }
+
+        public IActionResult SuccessfulRegister()
         {
             return View();
         }

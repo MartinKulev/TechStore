@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<title>AdministrationPanel</title>
+<html>
+<head>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1 1 auto;
+            overflow: auto;
+        }
+
+        .product-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 50px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+            border-radius: 15px;
+            height: 700px;
+            min-height: 700px;
+            width: 80%;
+        }
+
+        .product-image-container {
+            width: 50%;
+            height: 80%;
+            margin-right: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .upload-image-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            border-radius: 50%;
+            color: white;
+            font-size: 240px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #myFile {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #uploadedImage {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .product-info {
+            padding: 20px;
+            height: 90%;
+            width: 50%;
+            background-color: cyan;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        select-category {
+            font-size: 13px;
+            color: #333;
+            font-family: Verdana,Helvetica,Sans-Serif;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .description-text-container {
+            font-weight: bold;
+            font-size: 200%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .description-box {
+            font-size: 200%;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+            height: 30%;
+            margin-bottom: 20px;
+        }
+
+        .brandModelPrice-container {
+            font-size: 200%;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .brandModelPrice-text {
+            font-weight: bold;
+        }
+
+        .brandModelPrice-box {
+            font-size: 50%;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+            height: 100%;
+            width: 80%;
+        }
+
+        .create-product-button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+        }
+
+        .create-product-button {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            width: 500px;
+            height: 100px;
+            background-color: purple;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .create-product-button-text {
+            margin: 0 auto;
+            color: white;
+            font-weight: bold;
+            font-size: 200%;
+        }
+
+        .promocodeUser-container {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .promocode-table {
+            width: 100%;
+        }
+
+            .promocode-table th, .promocode-table td {
+                padding: 8px;
+                text-align: center;
+                font-weight: bold;
+                border: 1px solid #ddd;
+            }
+
+            .promocode-table th {
+                color: purple;
+                font-size: 150%;
+            }
+
+        .promocode-box {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: #e2e2e2;
+        }
+
+        .remove-button {
+            cursor: pointer;
+            background-color: red;
+            height: 20px;
+            width: 20px;
+        }
+
+        .remove-icon {
+            color: white;
+        }
+    </style>
+    <script>
+        function displayImage(input) {
+            var file = input.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var imageContainer = document.getElementById('imageContainer');
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.id = 'uploadedImage';
+                    imageContainer.innerHTML = '';
+                    imageContainer.appendChild(img);
+                    var uploadButton = document.querySelector('.upload-image-button');
+                    uploadButton.style.display = 'none';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</head>
+<body>
+    <section class="flex-container">
+        <form method="post" class="product-box" asp-controller="Tech" asp-action="SuccessfulyAddedProduct">
+            <div class="product-image-container">
+                @* <div class="upload-image-button" action="/action_page.php">
+                <input type="file" id="myFile" name="imageURL" onchange="displayImage(this)" required>
+                </div>
+                <div id="imageContainer">
+                </div> *@
+                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Снимка:</div><input class="brandModelPrice-box" name="imageURL" required></input></div>
+            </div>
+            <div class="product-info">
+                <select class="select-category" name="categoryName" onchange="javascript:changemm(document.search.topmenu,document.search.f5,document.search.f6,'2','1','Избери',27)" required>
+                    <option selected="" value="">Избери Категория</option>
+                    <option value="Лаптопи">Лаптопи</option>
+                    <option value="Телефони">Телефони</option>
+                    <option value="Таблети">Таблети</option>
+                    <option value="Телевизори">Телевизори</option>
+                    <option value="Монитори">Монитори</option>
+                    <option value="Клавиатури">Клавиатури</option>
+                    <option value="Мишки">Мишки</option>
+                    <option value="Слушалки">Слушалки</option>
+                    <option value="Тонколони">Тонколони</option>
+                </select>
+                <div class="description-text-container">Описание:</div>
+                <textarea class="description-box" name="description" required maxlength="200"></textarea>
+                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Марка:</div><input class="brandModelPrice-box" name="brand" maxlength="28" required></input></div>@*better way tham maxlength?*@
+                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Модел:</div><input class="brandModelPrice-box" name="model" maxlength="28" required></input></div>@*dsds*@
+                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Цена:</div><input class="brandModelPrice-box" name="price" maxlength="28" type="number" step=".01" required></input></div>@*лв in the input box*@
+                <div class="create-product-button-container"><button class="create-product-button" type="submit"><div class="create-product-button-text">Създай продукт</div></button></div>
+            </div>
+        </form>
+        <section class="promocodeUser-container">
+            <section class="promocode-container">
+                <form>
+                </form>
+                <table class="promocode-table">
+                    <tbody>
+                        <tr>
+                            <th>Promocode</th>
+                            <th>Discount percentage</th>                      
+                        </tr>
+                        <tr>
+                            <td>winter15</td>
+                            <td>15%</td>
+                            <td class="remove-button"><i class="remove-icon fa-solid fa-trash-can"></i></td>
+                        </tr>
+                        <tr>
+                            <td>spring10</td>
+                            <td>10%</td>
+                            <td class="remove-button"><i class="remove-icon fa-solid fa-trash-can"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="promocode-container">
+                <form>
+                </form>
+                <table class="promocode-table">
+                    <tbody>
+                        <tr>
+                            <th>Promocode</th>
+                            <th>Discount percentage</th>
+                        </tr>
+                        <tr>
+                            <td>winter15</td>
+                            <td>15%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+</body>
+</html>
