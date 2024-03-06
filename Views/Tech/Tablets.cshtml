@@ -88,8 +88,7 @@
     {
         <div class="product-box">
             <form method="post" class="product-top" asp-action="Product" asp-controller="Tech">
-                <button class="product-button">
-                    <input type="hidden" name="productID" value="@product.ProductID">
+                <button class="product-button" name="productID" value="@product.ProductID">
                     <div class="product-image-container"><img class="product-image" src=@product.ImageURL></div>
                     <div class="product-text-container"><div class="product-text">@product.Description</div></div>
                 </button>

@@ -35,6 +35,27 @@
             align-items: center;
         }
 
+        .product-image-Subcontainer {
+            font-size: 200%;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .product-image-text {
+            font-weight: bold;
+        }
+
+        .product-image-box {
+            font-size: 50%;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+            height: 32px;
+            width: 400px;
+        }
+
         .upload-image-button {
             display: flex;
             justify-content: center;
@@ -258,7 +279,7 @@
                 </div>
                 <div id="imageContainer">
                 </div> *@
-                <div class="brandModelPrice-container"><div class="brandModelPrice-text">Снимка:</div><input class="brandModelPrice-box" name="imageURL" required></input></div>
+                <div class="product-image-Subcontainer"><div class="product-image-text">Снимка:</div><input class="product-image-box" name="imageURL" required></input></div>
             </div>
             <div class="product-info">
                 <select class="select-category" name="categoryName" onchange="javascript:changemm(document.search.topmenu,document.search.f5,document.search.f6,'2','1','Избери',27)" required>
