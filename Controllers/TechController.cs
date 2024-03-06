@@ -108,6 +108,24 @@ namespace TechStore.Controllers
 
         public IActionResult AdministrationPanel()
         {
+            List<Promocode> promocodes = techService.GetAllPromocodes();
+            return View(promocodes);
+        }
+
+        [HttpPost]
+        public IActionResult SuccessfulyCreatedPromocode(string promocodeName, decimal discount)
+        {
+
+            Promocode promocode = new Promocode(promocodeName, discount);
+            techService.CreatePromocode(promocode);
+            return View();
+        }
+
+        [HttpPost]
+        [Route("{promocodeName}/SuccessfulyDeletedPromocode")]
+        public IActionResult SuccessfulyDeletedPromocode(string promocodeName)
+        {
+            techService.RemovePromocode(promocodeName);
             return View();
         }
 

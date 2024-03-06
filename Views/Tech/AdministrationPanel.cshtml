@@ -152,6 +152,50 @@
             margin-bottom: 50px;
         }
 
+
+        .create-promocode-title-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .create-promocode-title {
+            font-size: 30px;
+            color: black;
+            font-weight: bold;
+        }
+
+        .create-promocode-form {
+            margin-top: 20px;
+            margin-bottom: 40px;
+
+        }
+
+        .promocodeName-input-box {
+            height: 30px;
+            width: 200px;
+            border: 1px solid #999;
+            font-size: 20px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .promocodePercentage-input-box {
+            height: 30px;
+            width: 50px;
+            border: 1px solid #999;
+            font-size: 20px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .create-promocode-button {
+            background-color: purple;
+            border-radius: 5px;
+            height: 30px;
+            width: 100px;
+            color: white;
+        }
+
         .promocode-table {
             width: 100%;
         }
@@ -239,24 +283,25 @@
         </form>
         <section class="promocodeUser-container">
             <section class="promocode-container">
-                <form>
+                <div class="create-promocode-title-container"><div class="create-promocode-title">Създай промокод:</div></div>
+                <form class="create-promocode-form" method="post" asp-action="SuccessfulyCreatedPromocode" asp-controller="Tech">
+                    Име на промокода: <input class="promocodeName-input-box" name="promocodeName"/>
+                    Процент отстъпка: <input class="promocodePercentage-input-box" name="discount" />
+                    <button class="create-promocode-button"><div>Създай</div></button>
                 </form>
                 <table class="promocode-table">
                     <tbody>
                         <tr>
-                            <th>Promocode</th>
-                            <th>Discount percentage</th>                      
-                        </tr>
-                        <tr>
-                            <td>winter15</td>
-                            <td>15%</td>
-                            <td class="remove-button"><i class="remove-icon fa-solid fa-trash-can"></i></td>
-                        </tr>
-                        <tr>
-                            <td>spring10</td>
-                            <td>10%</td>
-                            <td class="remove-button"><i class="remove-icon fa-solid fa-trash-can"></i></td>
-                        </tr>
+                            <th>Промокод</th>
+                            <th>Процент отстъпка</th>                      
+                        @foreach (var promocode in Model)
+                        {
+                            <tr>
+                                <td>@promocode.PromocodeName</td>
+                                <td>@promocode.Discount %</td>
+                                <td class="remove-button"><form method="post" asp-action="SuccessfulyDeletedPromocode" asp-controller="Tech"><button name="promocodeName" value="@promocode.PromocodeName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </section>

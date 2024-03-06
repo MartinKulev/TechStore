@@ -338,6 +338,19 @@ namespace TechStore.Migrations
                     b.ToTable("Product");
                 });
 
+            modelBuilder.Entity("TechStore.Models.Entities.Promocode", b =>
+                {
+                    b.Property<string>("PromocodeName")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<decimal>("Discount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("PromocodeName");
+
+                    b.ToTable("Promocode");
+                });
+
             modelBuilder.Entity("TechStore.Models.Entities.Promotion", b =>
                 {
                     b.Property<int>("PromotionID")

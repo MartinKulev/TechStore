@@ -60,5 +60,24 @@ namespace TechStore.Services
             context.Payment.Add(payment);
             context.SaveChanges();
         }
+
+        public void CreatePromocode(Promocode promocode)
+        {
+            context.Promocode.Add(promocode);
+            context.SaveChanges();
+        }
+
+        public List<Promocode> GetAllPromocodes()
+        {
+            List<Promocode> promocodes = context.Promocode.ToList();
+            return promocodes;
+        }
+
+        public void RemovePromocode(string promocodeName)
+        {
+            Promocode promocode = context.Promocode.First(p => p.PromocodeName == promocodeName);
+            context.Promocode.Remove(promocode);
+            context.SaveChanges();
+        }
     }
 }
