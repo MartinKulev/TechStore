@@ -79,5 +79,24 @@ namespace TechStore.Services
             context.Promocode.Remove(promocode);
             context.SaveChanges();
         }
+
+        public void CreateUser(ApplicationUser user)
+        {
+            context.User.Add(user);
+            context.SaveChanges();
+        }
+
+        public List<ApplicationUser> GetAllUsers()
+        {
+            List<ApplicationUser> users = context.User.ToList();
+            return users;
+        }
+
+        public void RemoveUser(string userId)
+        {
+            ApplicationUser user = context.User.First(p => p.Id == userId);
+            context.User.Remove(user);
+            context.SaveChanges();
+        }
     }
 }

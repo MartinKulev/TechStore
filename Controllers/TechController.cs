@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TechStore.Models.Entities;
+using TechStore.Models.ViewModels;
 using TechStore.Services;
 using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
@@ -109,7 +110,15 @@ namespace TechStore.Controllers
         public IActionResult AdministrationPanel()
         {
             List<Promocode> promocodes = techService.GetAllPromocodes();
-            return View(promocodes);
+            List<ApplicationUser> users = techService.GetAllUsers();
+
+            var viewModel = new AdminPanelViewModel
+            {
+                Promocodes = promocodes,
+                Users = users
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -126,6 +135,22 @@ namespace TechStore.Controllers
         public IActionResult SuccessfulyDeletedPromocode(string promocodeName)
         {
             techService.RemovePromocode(promocodeName);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SuccessfulyCreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
+        {
+            //ApplicationUser user = new ApplicationUser();
+            //techService.CreateUser(user);
+            return View();
+        }
+
+        [HttpPost]
+        [Route("{userID}/SuccessfulyDeletedUser")]
+        public IActionResult SuccessfulyDeletedUser(string userID)
+        {
+            techService.RemoveUser(userID);
             return View();
         }
 
@@ -159,7 +184,5 @@ namespace TechStore.Controllers
         {
             return View();
         }
-
-
     }
 }

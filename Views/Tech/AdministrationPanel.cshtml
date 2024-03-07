@@ -174,33 +174,32 @@
         }
 
 
-        .create-promocode-title-container {
+        .create-promocodeUser-title-container {
             display: flex;
             justify-content: center;
         }
 
-        .create-promocode-title {
+        .create-promocodeUser-title {
             font-size: 30px;
             color: black;
             font-weight: bold;
         }
 
-        .create-promocode-form {
+        .create-promocodeUser-form {
             margin-top: 20px;
             margin-bottom: 40px;
-
         }
 
-        .promocodeName-input-box {
+        .input-box {
             height: 30px;
             width: 200px;
             border: 1px solid #999;
             font-size: 20px;
             border-radius: 5px;
-            margin-right: 20px;
+            /*             margin-right: 20px; */
         }
 
-        .promocodePercentage-input-box {
+        .mini-input-box {
             height: 30px;
             width: 50px;
             border: 1px solid #999;
@@ -209,7 +208,7 @@
             margin-right: 20px;
         }
 
-        .create-promocode-button {
+        .create-promocodeUser-button {
             background-color: purple;
             border-radius: 5px;
             height: 30px;
@@ -217,27 +216,21 @@
             color: white;
         }
 
-        .promocode-table {
+        .promocodeUser-table {
             width: 100%;
         }
 
-            .promocode-table th, .promocode-table td {
+            .promocodeUser-table th, .promocodeUser-table td {
                 padding: 8px;
                 text-align: center;
                 font-weight: bold;
                 border: 1px solid #ddd;
             }
 
-            .promocode-table th {
+            .promocodeUser-table th {
                 color: purple;
                 font-size: 150%;
             }
-
-        .promocode-box {
-            display: inline-block;
-            padding: 4px 8px;
-            background-color: #e2e2e2;
-        }
 
         .remove-button {
             cursor: pointer;
@@ -249,6 +242,35 @@
         .remove-icon {
             color: white;
         }
+
+        .create-user-button-container {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .info-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: center;
+            width: 100%;
+        }
+
+        .info-subContainer {
+            width: 45%;
+            display: flex;
+            justify-content: flex-end;
+            align-content: center;
+            flex-direction: row;
+        }
+
+        .info-text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
     </style>
     <script>
         function displayImage(input) {
@@ -303,42 +325,74 @@
             </div>
         </form>
         <section class="promocodeUser-container">
-            <section class="promocode-container">
-                <div class="create-promocode-title-container"><div class="create-promocode-title">Създай промокод:</div></div>
-                <form class="create-promocode-form" method="post" asp-action="SuccessfulyCreatedPromocode" asp-controller="Tech">
-                    Име на промокода: <input class="promocodeName-input-box" name="promocodeName"/>
-                    Процент отстъпка: <input class="promocodePercentage-input-box" name="discount" />
-                    <button class="create-promocode-button"><div>Създай</div></button>
+            <section>
+                <div class="create-promocodeUser-title-container"><div class="create-promocodeUser-title">Създай промокод:</div></div>
+                <form class="create-promocodeUser-form" method="post" asp-action="SuccessfulyCreatedPromocode" asp-controller="Tech">
+                    Име на промокода: <input class="input-box" name="promocodeName" />
+                    Процент отстъпка: <input class="mini-input-box" name="discount" />
+                    <button class="create-promocodeUser-button"><div>Създай</div></button>
                 </form>
-                <table class="promocode-table">
+                <table class="promocodeUser-table">
                     <tbody>
                         <tr>
                             <th>Промокод</th>
-                            <th>Процент отстъпка</th>                      
-                        @foreach (var promocode in Model)
-                        {
+                            <th>Процент отстъпка</th>
+                            @foreach (var promocode in Model.Promocodes)
+                            {
                             <tr>
                                 <td>@promocode.PromocodeName</td>
                                 <td>@promocode.Discount %</td>
                                 <td class="remove-button"><form method="post" asp-action="SuccessfulyDeletedPromocode" asp-controller="Tech"><button name="promocodeName" value="@promocode.PromocodeName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
                             </tr>
-                        }
+                            }
                     </tbody>
                 </table>
             </section>
-            <section class="promocode-container">
-                <form>
+            <section>
+                <div class="create-promocodeUser-title-container"><div class="create-promocodeUser-title">Създай потребител:</div></div>
+                <form class="create-promocodeUser-form" method="post" asp-action="SuccessfulyCreatedUser" asp-controller="Tech">
+                    <div class="info-container">
+                        <div class="info-subContainer">
+                            <div class="info-text-container"><div>Име: </div></div><input class="input-box" name="firstName" />
+                        </div>
+                        <div class="info-subContainer">
+                            <div class="info-text-container"><div>Фамилия: </div></div><input class="input-box" name="lastName" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="info-container">
+                        <div class="info-subContainer">
+                            <div class="info-text-container"><div>Имейл: </div></div><input class="input-box" name="email" />
+                        </div>
+                        <div class="info-subContainer">
+                            <div class="info-text-container"><div>Телефон: </div></div><input class="input-box" name="phoneNumber" />
+                        </div>
+                    </div>
+                    <div class="info-container">
+                        <div class="info-subContainer">
+                            <div class="info-text-container"><div>Парола: </div></div><input class="input-box" name="password" />
+                        </div>
+                        <div class="info-subContainer">
+                            <div class="info-text-container"><div>Потвърди парола: </div></div><input class="input-box" name="confirmPassword" />
+                        </div>
+                    </div>
+                    <div class="create-user-button-container">
+                        <button class="create-promocodeUser-button"><div>Създай</div></button>
+                    </div>
                 </form>
-                <table class="promocode-table">
+                <table class="promocodeUser-table">
                     <tbody>
                         <tr>
-                            <th>Promocode</th>
-                            <th>Discount percentage</th>
-                        </tr>
-                        <tr>
-                            <td>winter15</td>
-                            <td>15%</td>
-                        </tr>
+                            <th>Потребителско ID</th>
+                            <th>Потребителско име</th>
+                            @foreach (var user in Model.Users)
+                            {
+                            <tr>
+                                <td>@user.Id</td>
+                                <td>@user.UserName</td>
+                                <td class="remove-button"><form method="post" asp-action="SuccessfulyDeletedUser" asp-controller="Tech"><button name="userID" value="@user.Id"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
+                            </tr>
+                            }
                     </tbody>
                 </table>
             </section>
