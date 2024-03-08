@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -8,6 +10,17 @@
         @Html.AntiForgeryToken()
         <button type="submit" style="cursor:pointer">Logout</button>
     </form>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <p>Welcome, Admin!</p>
+        <!-- Admin-specific content -->
+    }
+    else
+    {
+        <p>Welcome, Regular User!</p>
+        <!-- Regular user content -->
+    }
 }
 else
 {
