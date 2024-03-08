@@ -95,7 +95,15 @@
             </form>
             <div class="product-bottom">
                 <div class="product-price">@product.Price лв.</div>
-                <button class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></button>
+                @if (User.IsInRole("Admin"))
+                {
+                    <button class="product-cart-button"><i class="remove-icon fa-solid fa-trash-can"></i></button>
+                    
+                }
+                else
+                {
+                    <button class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></button>
+                }
             </div>
         </div>
     }

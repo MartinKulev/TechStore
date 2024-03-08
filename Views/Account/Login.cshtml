@@ -1,35 +1,104 @@
 ﻿@model TechStore.Models.ViewModels.LoginModel
+<title>Login</title>
+<html>
+<head>
+    <style>
+        .validation-summary-valid {
+            display: none;
+        }
 
-<style>
-    .validation-summary-valid {
-        display: none;
+        .validation-summary-errors {
+            color: red;
+            border: 1px solid #ff0000;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .field-validation-error {
+            color: red;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sub-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 20%;
+        }
+
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .info-text-container {
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .input-box {
+            height: 30px;
+            width: 250px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        .login-button-container {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .login-button {
+            background-color: purple;
+            border-radius: 5px;
+            height: 50px;
+            width: 150px;
+            color: white;
+        }
+
+        .errors-container {
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
+
+        <section class="container">
+            <section class="sub-container">
+                <div class="info-container">
+                    <div class="info-text-container">@Html.LabelFor(m => m.Email, "Имейл:")</div>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "input-box", name = "email" })
+                </div>
+                <div class="info-container">
+                    <div class="info-text-container">@Html.LabelFor(m => m.Password, "Парола:")</div>
+                    @Html.TextBoxFor(m => m.Password, new { @class = "input-box", name = "password" })
+                </div>
+                <div class="errors-container">@Html.ValidationMessageFor(m => m.Email)</div>
+                <div class="errors-container">@Html.ValidationMessageFor(m => m.Password)</div>
+                <div class="login-button-container">
+                    <button type="submit" value="Login" class="login-button"><div>Login</div></button>
+                </div>
+            </section>
+        </section>
     }
-
-    .validation-summary-errors {
-        color: red;
-        border: 1px solid #ff0000;
-        padding: 10px;
-        margin-bottom: 20px;
-    }
-
-    .field-validation-error {
-        color: red;
-    }
-</style>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
-
-    @Html.LabelFor(m => m.Email)
-    @Html.TextBoxFor(m => m.Email)
-    @Html.ValidationMessageFor(m => m.Email)
-
-    @Html.LabelFor(m => m.Password)
-    @Html.PasswordFor(m => m.Password)
-    @Html.ValidationMessageFor(m => m.Password)
-
-    <input type="submit" value="Login" />
-}
+</body>
+</html>
