@@ -31,7 +31,6 @@ namespace TechStore.Models.Entities
         public int UserID { get; set; }
 
         public DateTime CreatedDate { get; set; }
-
     }
 }
 

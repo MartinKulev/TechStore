@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using TechStore.Data;
 using TechStore.Models.Entities;
@@ -23,11 +24,7 @@ namespace TechStore.Services
 
         //public void AddCategory(Category category)
         //{
-        //    if (!context.Category.Contains(category))
-        //    {
-        //        context.Category.Add(category);
-        //        context.SaveChanges();
-        //    }
+        //    if (!context.Category.Contains(category)) 
         //}
 
         public void AddProduct(Product product)
@@ -115,5 +112,36 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
+        public void AddReview(int productId, int userId, int rating, string comment)
+        {
+            var review = new Review
+            {
+                ProductID = productId,
+                UserID = userId,
+                Rating = rating,
+                Comment = comment,
+                CreatedDate = DateTime.Now
+            };
+
+            context.Review.Add(review);
+            context.SaveChanges();
+        }
+
+        public List<Review> GetAllReviews(int productId)
+        {
+            return context.Review
+                   .Where(r => r.ProductID == productId)
+                   .Select(r => new Review { UserID = r.UserID })  // Assuming UserID is a property in the Review class
+                   .ToList();
+        }
+
+        public decimal GetProductAverageRating(int productId)
+        {
+            var averageRating = context.Review
+                .Where(r => r.ProductID == productId)
+                .Average(r => r.Rating);
+
+            return (decimal)Math.Round(averageRating, 2);
+        }
     }
 }

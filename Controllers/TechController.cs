@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using TechStore.Models.Entities;
 using TechStore.Models.ViewModels;
 using TechStore.Services;
@@ -18,26 +19,6 @@ namespace TechStore.Controllers
 
         public IActionResult Homepage()
         {
-            //Category category1 = new Category("Лаптопи");
-            //Category category2 = new Category("Телефони");
-            //Category category3 = new Category("Таблети");
-            //Category category4 = new Category("Телевизори");
-            //Category category5 = new Category("Монитори");
-            //Category category6 = new Category("Клавиатури");
-            //Category category7 = new Category("Мишки");
-            //Category category8 = new Category("Слушалки");
-            //Category category9 = new Category("Тонколони");
-            //techService.AddCategory(category1);
-            //techService.AddCategory(category2);
-            //techService.AddCategory(category3);
-            //techService.AddCategory(category4);
-            //techService.AddCategory(category5);
-            //techService.AddCategory(category6);
-            //techService.AddCategory(category7);
-            //techService.AddCategory(category8);
-            //techService.AddCategory(category9);
-            //List<Category> categories = techService.GetAllCategories();
-            //ViewBag.ItemsList = categories;
             return View();
         }
 
@@ -105,7 +86,17 @@ namespace TechStore.Controllers
         public IActionResult Product(int productID)
         {
             Product product = techService.GetProductByID(productID);
-            return View(product);
+            List<Review> reviews = techService.GetAllReviews(productID);
+            List<ApplicationUser> users = techService.GetAllUsers();
+
+            var viewModel = new ProductViewModel
+            {
+                Reviews = reviews,
+                Users = users,
+                Product = product
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult AdministrationPanel()
@@ -206,5 +197,15 @@ namespace TechStore.Controllers
             techService.RemoveProduct(productID);
             return View();
         }
+        [HttpPost]
+        public IActionResult SuccessfulyAddedReview(int productId, int rate, string reviewText)
+        {
+            int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            techService.AddReview(productId, userId, rate, reviewText);
+
+            return RedirectToAction("Product", new { productID = productId });
+        }
+
     }
 }
