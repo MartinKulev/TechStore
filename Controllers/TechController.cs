@@ -184,5 +184,11 @@ namespace TechStore.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult SuccessfulyAddedReview(string reviewText, int rate)
+        {
+            return View();
+        }
     }
 }
