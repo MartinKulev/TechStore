@@ -13,5 +13,6 @@ namespace TechStore.Models.ViewModels
         public List<Product> Brand { get; set; }
         public List<Product> Model { get; set; }
         public List<Product> Price { get; set; }
+        public List<Product> ProductID { get; set; }
     }
 }
