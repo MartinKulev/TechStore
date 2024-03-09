@@ -198,5 +198,13 @@ namespace TechStore.Controllers
             techService.RemoveProduct(productID);
             return View();
         }
+
+        [HttpPost]
+        public IActionResult SuccessfulyAddedPromotion(decimal newPrice, int productID)
+        {
+            techService.AddPromotion(newPrice, productID);
+            techService.RemoveProduct(productID);
+            return View();
+        }
     }
 }

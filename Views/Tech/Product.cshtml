@@ -243,6 +243,54 @@
             border-radius: 5px;
             height: 100px;
         }
+
+        .add-to-promotion-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-right: 100px;
+            margin-left: 100px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .add-to-promotion-text-container {
+            margin-right: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .add-to-promotion-text {
+            
+        }
+
+        .add-to-promotion-box {
+            height: 30px;
+            width: 60px;
+            border: 1px solid #999;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+
+        .add-to-promotion-button {
+            background-color: purple;
+            border-radius: 5px;
+            height: 30px;
+            width: 100px;
+            color: white;
+        }
+
+        .add-to-promotion-title {
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+        .add-to-promotion-title-container {
+            display: flex;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
@@ -266,6 +314,17 @@
                 </div>
             </div>
         </section>
+        @if (User.IsInRole("Admin"))
+        {
+            <section class="add-to-promotion-title-container"><div class="add-to-promotion-title">Create a promotion:</div></section>
+            <form class="add-to-promotion-container" method="post" asp-action="SuccessfulyAddedPromotion" asp-controller="Tech">
+                <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Discounted Price:</div></div>
+                <input class="add-to-promotion-box" name="newPrice" required/>
+                <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Лв.</div></div>
+                <button class="add-to-promotion-button">Create</button>
+                <input hidden name="productID" value=@Model.ProductID />
+            </form>
+        }        
         <form class="add-review-container" method="post" asp-action="SuccessfulyAddedReview" asp-controller="Tech">@*make the logic of adding a review in this method "SuccessfulyAddedReview*@
             <div class="information-container">
                 <div class="profile-container">

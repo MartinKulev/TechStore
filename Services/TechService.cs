@@ -106,5 +106,14 @@ namespace TechStore.Services
             context.Product.Remove(product);
             context.SaveChanges();
         }
+
+        public void AddPromotion(decimal newPrice, int productID)
+        {
+            Product product = context.Product.First(p => p.ProductID == productID);
+            Promotion promotion = new Promotion(newPrice, product.Price, product.ImageURL, product.Description, product.Brand, product.Model);
+            context.Promotion.Add(promotion);
+            context.SaveChanges();
+        }
+
     }
 }
