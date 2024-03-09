@@ -80,9 +80,9 @@
             align-items: center;
             justify-content: center;
             border-left: 1px solid black;
-            font-size: 20px;
+            font-size: 25px;
             color: white;
-            width: 120px;
+            width: 150px;
             text-decoration: none;
             padding-top: 10px;
         }
@@ -106,9 +106,9 @@
             justify-content: center;
             border-left: 1px solid black;
             padding: 10px;
-            font-size: 20px;
+            font-size: 25px;
             color: white;
-            width: 60px;
+            width: 75px;
         }
 
             .icon-button:hover {
@@ -143,8 +143,16 @@
             <a class="option-button" asp-action="Mice" asp-controller="Tech">Мишки<div class="border-bottom"></div></a>
             <a class="option-button" asp-action="Headphones" asp-controller="Tech">Слушалки<div class="border-bottom"></div></a>
             <a class="option-button" asp-action="Speakers" asp-controller="Tech">Тонколони<div class="border-bottom"></div></a>
-            <a class="icon-button" asp-action="ShoppingCart" asp-controller="Tech"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a class="icon-button" asp-action="AdministrationPanel" asp-controller="Tech"><i class="fa-solid fa-user"></i></a>
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="icon-button" asp-action="AdministrationPanel" asp-controller="Tech"><i class="fa-solid fa-gear"></i></a>
+            }
+            else
+            {
+                <a class="icon-button" asp-action="ShoppingCart" asp-controller="Tech"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon-button" asp-action="Profile" asp-controller="Tech"><i class="fa-solid fa-user"></i></a>
+            }
+            
         </section>
     </div>    
     @RenderBody()

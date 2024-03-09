@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TechStore.Models.Entities;
 using TechStore.Models.ViewModels;
 using TechStore.Services;
@@ -188,6 +189,13 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulyAddedReview(string reviewText, int rate)
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SuccessfulyDeletedProduct(int productID)
+        {
+            techService.RemoveProduct(productID);
             return View();
         }
     }

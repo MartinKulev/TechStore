@@ -82,6 +82,20 @@
         font-size: 150%;
         color: white;
     }
+
+    .product-bin-button {
+        cursor: pointer;
+        border-radius: 15px;
+        background-color: red;
+        height: 50px;
+        width: 50px;
+    }
+
+    .product-bin-icon {
+        font-size: 150%;
+        color: white;
+    }
+
 </style>
 <section class="grid-container">
     @foreach (var product in Model)
@@ -97,8 +111,9 @@
                 <div class="product-price">@product.Price лв.</div>
                 @if (User.IsInRole("Admin"))
                 {
-                    <button class="product-cart-button"><i class="remove-icon fa-solid fa-trash-can"></i></button>
-                    
+                    <form method="post" class="product-top" asp-action="SuccessfulyDeletedProduct" asp-controller="Tech">
+                        <button class="product-bin-button" name="productID" value="@product.ProductID"><i class="product-bin-icon fa-solid fa-trash-can"></i></button>
+                    </form>              
                 }
                 else
                 {

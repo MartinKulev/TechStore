@@ -2,6 +2,7 @@
 using System.Linq;
 using TechStore.Data;
 using TechStore.Models.Entities;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace TechStore.Services
 {
@@ -46,7 +47,7 @@ namespace TechStore.Services
             {
                 return new List<Product>();
             }
-            
+
         }
 
         public Product GetProductByID(int productID)
@@ -96,6 +97,13 @@ namespace TechStore.Services
         {
             ApplicationUser user = context.User.First(p => p.Id == userId);
             context.User.Remove(user);
+            context.SaveChanges();
+        }
+
+        public void RemoveProduct(int productID)
+        {
+            Product product = context.Product.First(p => p.ProductID == productID);
+            context.Product.Remove(product);
             context.SaveChanges();
         }
     }
