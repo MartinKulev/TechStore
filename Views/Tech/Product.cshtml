@@ -298,16 +298,16 @@
     <section class="flex-container">
         <section class="product-box">
             <div class="product-image-container">
-                <img class="product-image" src="@Model.ImageURL">
+                <img class="product-image" src="@Model.Product.ImageURL">
             </div>
             <div class="product-info">
                 <div class="product-text-container">
-                    <div>@Model.Description</div>
-                    <div>• Марка: <span class="product-text-info">@Model.Brand</span></div>
-                    <div>• Модел: <span class="product-text-info">@Model.Model</span></div>
+                    <div>@Model.Product.Description</div>
+                    <div>• Марка: <span class="product-text-info">@Model.Product.Brand</span></div>
+                    <div>• Модел: <span class="product-text-info">@Model.Product.Model</span></div>
                 </div>
                 <div class="product-price-container">
-                    <div class="product-price">Цена: @Model.Price лв.</div>
+                    <div class="product-price">Цена: @Model.Product.Price лв.</div>
                     <button class="product-button">
                         <div class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></div>
                         <div class="product-cart-text">Добави в количката</div>
