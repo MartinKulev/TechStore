@@ -322,7 +322,7 @@
                 <input class="add-to-promotion-box" name="newPrice" required />
                 <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Лв.</div></div>
                 <button class="add-to-promotion-button">Create</button>
-                <input hidden name="productID" value=@Model.ProductID />
+                <input type="hidden" name="productId" value="@Model.Product.ProductID" />
             </form>
         }
         @if (User.Identity.IsAuthenticated)
