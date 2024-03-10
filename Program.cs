@@ -6,7 +6,7 @@ using TechStore.Models.Entities;
 using TechStore.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//y
 builder.Services.AddDbContext<TechStoreDbContext>(options =>
     options.UseMySQL("Server=localhost;Database=TechStore;Uid=root;Pwd=Martin1234;"));
 
