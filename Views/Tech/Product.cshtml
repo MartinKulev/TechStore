@@ -291,7 +291,6 @@
             display: flex;
             justify-content: center;
         }
-
     </style>
 </head>
 <body>
@@ -323,7 +322,7 @@
                 <input class="add-to-promotion-box" name="newPrice" required/>
                 <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Лв.</div></div>
                 <button class="add-to-promotion-button">Create</button>
-                <input hidden name="productID" value=@Model.ProductID />
+                <input hidden name="productID" value=@Model.Product.ProductID />
             </form>
         }        
         <form class="add-review-container" method="post" asp-action="SuccessfullyAddedReview" asp-controller="Tech">

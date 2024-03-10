@@ -7,31 +7,19 @@ namespace TechStore.Models.Entities
     {
         public Promotion() { }
 
-        public Promotion(decimal price, decimal newPrice, string imageURL, string description, string brand, string model)
+        public Promotion(int productID, decimal newPrice)
         {
-            Price = price;
+            ProductID = productID;
             NewPrice = newPrice;
-            ImageURL = imageURL;
-            Description = description;
-            Brand = brand;
-            Model = model;
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PromotionID { get; set; }
 
-        public decimal Price { get; set; }
+        [ForeignKey(nameof(Product))]
+        public int ProductID { get; set; }
 
         public decimal NewPrice { get; set; }
-
-        public string ImageURL { get; set; }
-
-        public string Description { get; set; }
-
-        public string Brand { get; set; }
-
-        public string Model { get; set; }
-
     }
 }

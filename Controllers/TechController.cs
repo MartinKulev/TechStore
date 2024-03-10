@@ -19,7 +19,19 @@ namespace TechStore.Controllers
 
         public IActionResult Homepage()
         {
-            return View();
+            List<Promotion> promotions = techService.GetAllPromotions();
+            List<Product> products = new List<Product>();
+            foreach (var promotion in promotions)
+            {
+                Product product = techService.GetProductByID(promotion.ProductID);
+                products.Add(product);
+            }
+            var viewModel = new HomepageViewModel
+            {
+                Promotions = promotions,
+                Products = products
+            };
+            return View(viewModel);
         }
 
         public IActionResult Laptops()
@@ -194,7 +206,6 @@ namespace TechStore.Controllers
         public IActionResult SuccessfulyAddedPromotion(decimal newPrice, int productID)
         {
             techService.AddPromotion(newPrice, productID);
-            techService.RemoveProduct(productID);
             return View();
         }
         [HttpPost]
@@ -205,6 +216,13 @@ namespace TechStore.Controllers
             techService.AddReview(productId, userId, rate, reviewText);
 
             return RedirectToAction("Product", new { productID = productId });
+        }
+
+        [HttpPost]
+        public IActionResult SuccessfulyDeletedPromotion(int productID)
+        {
+            techService.RemovePromotion(productID);
+            return View();
         }
 
     }

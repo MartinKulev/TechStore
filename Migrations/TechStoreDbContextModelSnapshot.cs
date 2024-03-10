@@ -326,6 +326,9 @@ namespace TechStore.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<bool>("IsInPromotion")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -357,27 +360,11 @@ namespace TechStore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Brand")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("ImageURL")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<decimal>("NewPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
 
                     b.HasKey("PromotionID");
 

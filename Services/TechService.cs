@@ -107,7 +107,9 @@ namespace TechStore.Services
         public void AddPromotion(decimal newPrice, int productID)
         {
             Product product = context.Product.First(p => p.ProductID == productID);
-            Promotion promotion = new Promotion(newPrice, product.Price, product.ImageURL, product.Description, product.Brand, product.Model);
+            product.IsInPromotion = true;
+            context.Update(product);
+            Promotion promotion = new Promotion(productID, newPrice);
             context.Promotion.Add(promotion);
             context.SaveChanges();
         }
@@ -142,6 +144,19 @@ namespace TechStore.Services
                 .Average(r => r.Rating);
 
             return (decimal)Math.Round(averageRating, 2);
+        }
+
+        public List<Promotion> GetAllPromotions()
+        {
+            List<Promotion> promotions = context.Promotion.ToList();
+            return promotions;
+        }
+
+        public void RemovePromotion(int productId)
+        {
+            Promotion promotion = context.Promotion.First(p => p.PromotionID == productId);
+            context.Promotion.Remove(promotion);
+            context.SaveChanges();
         }
     }
 }
