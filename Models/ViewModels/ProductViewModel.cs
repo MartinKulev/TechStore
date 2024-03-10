@@ -4,6 +4,7 @@ namespace TechStore.Models.ViewModels
 {
     public class ProductViewModel
     {
+        public List<Promotion> Promotions { get; set; }
         public List<Review> Reviews { get; set; }
         public Product Product { get; set; }
         public List<ApplicationUser> Users { get; set; }
@@ -14,5 +15,7 @@ namespace TechStore.Models.ViewModels
         public List<Product> Model { get; set; }
         public List<Product> Price { get; set; }
         public List<Product> ProductID { get; set; }
+
+       
     }
 }

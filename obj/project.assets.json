@@ -3919,11 +3919,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Martin\\Desktop\\TechStore\\TechStore.csproj",
+      "projectUniqueName": "C:\\Users\\Martin\\Desktop\\New folder (6)\\TechStore\\TechStore.csproj",
       "projectName": "TechStore",
-      "projectPath": "C:\\Users\\Martin\\Desktop\\TechStore\\TechStore.csproj",
+      "projectPath": "C:\\Users\\Martin\\Desktop\\New folder (6)\\TechStore\\TechStore.csproj",
       "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Martin\\Desktop\\TechStore\\obj\\",
+      "outputPath": "C:\\Users\\Martin\\Desktop\\New folder (6)\\TechStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",

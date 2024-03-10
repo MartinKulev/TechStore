@@ -152,9 +152,10 @@ namespace TechStore.Services
             return promotions;
         }
 
-        public void RemovePromotion(int productId)
+        public void RemovePromotion(int productID, int promotionID)
         {
-            Promotion promotion = context.Promotion.First(p => p.PromotionID == productId);
+            RemoveProduct(productID);
+            Promotion promotion = context.Promotion.First(p => p.PromotionID == promotionID);
             context.Promotion.Remove(promotion);
             context.SaveChanges();
         }

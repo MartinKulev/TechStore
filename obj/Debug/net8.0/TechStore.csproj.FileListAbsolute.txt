@@ -1510,3 +1510,9 @@ C:\Users\andgt\Desktop\TechStoreRev\obj\Debug\net8.0\refint\TechStore.dll
 C:\Users\andgt\Desktop\TechStoreRev\obj\Debug\net8.0\TechStore.pdb
 C:\Users\andgt\Desktop\TechStoreRev\obj\Debug\net8.0\TechStore.genruntimeconfig.cache
 C:\Users\andgt\Desktop\TechStoreRev\obj\Debug\net8.0\ref\TechStore.dll
+C:\Users\Martin\Desktop\New folder (6)\TechStore\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Martin\Desktop\New folder (6)\TechStore\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Martin\Desktop\New folder (6)\TechStore\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Martin\Desktop\New folder (6)\TechStore\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Martin\Desktop\New folder (6)\TechStore\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Martin\Desktop\New folder (6)\TechStore\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

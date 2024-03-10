@@ -100,12 +100,14 @@ namespace TechStore.Controllers
             Product product = techService.GetProductByID(productID);
             List<Review> reviews = techService.GetAllReviews(productID);
             List<ApplicationUser> users = techService.GetAllUsers();
+            List<Promotion> promotions = techService.GetAllPromotions();
 
             var viewModel = new ProductViewModel
             {
                 Reviews = reviews,
                 Users = users,
-                Product = product
+                Product = product,
+                Promotions = promotions
             };
 
             return View(viewModel);
@@ -202,6 +204,7 @@ namespace TechStore.Controllers
             techService.AddPromotion(newPrice, productID);
             return View();
         }
+
         [HttpPost]
         public IActionResult SuccessfulyAddedReview(int productId, int rate, string reviewText)
         {
@@ -211,6 +214,13 @@ namespace TechStore.Controllers
 
             return View("SuccessfulyAddedReview");
         }
-        
+
+        [HttpPost]
+        public IActionResult SuccessfulyDeletedPromotion(int productId, int promotionID)
+        {
+            techService.RemovePromotion(productId, promotionID);
+            return View();
+        }
+
     }
 }

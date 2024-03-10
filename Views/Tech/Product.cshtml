@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <style>
@@ -305,7 +304,20 @@
                     <div>• Модел: <span class="product-text-info">@Model.Product.Model</span></div>
                 </div>
                 <div class="product-price-container">
-                    <div class="product-price">Цена: @Model.Product.Price лв.</div>
+                    @if (Model.Product.IsInPromotion)
+                    {
+                        @foreach (var promotion in Model.Promotions)
+                        {
+                            @if (promotion.ProductID == Model.Product.ProductID)
+                            {
+                                <div class="product-price">Цена: @promotion.NewPrice лв.</div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <div class="product-price">Цена: @Model.Product.Price лв.</div>
+                    }
                     <button class="product-button">
                         <div class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></div>
                         <div class="product-cart-text">Добави в количката</div>
@@ -313,16 +325,19 @@
                 </div>
             </div>
         </section>
-        @if (User.IsInRole("Admin"))
+        @if (!Model.Product.IsInPromotion)
         {
-            <section class="add-to-promotion-title-container"><div class="add-to-promotion-title">Create a promotion:</div></section>
-            <form class="add-to-promotion-container" method="post" asp-action="SuccessfulyAddedPromotion" asp-controller="Tech">
-                <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Discounted Price:</div></div>
-                <input class="add-to-promotion-box" name="newPrice" required />
-                <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Лв.</div></div>
-                <button class="add-to-promotion-button">Create</button>
-                <input hidden name="productID" value=@Model.Product.ProductID />
-            </form>
+            @if (User.IsInRole("Admin"))
+            {
+                <section class="add-to-promotion-title-container"><div class="add-to-promotion-title">Create a promotion:</div></section>
+                <form class="add-to-promotion-container" method="post" asp-action="SuccessfulyAddedPromotion" asp-controller="Tech">
+                    <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Discounted Price:</div></div>
+                    <input class="add-to-promotion-box" name="newPrice" required />
+                    <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Лв.</div></div>
+                    <button class="add-to-promotion-button">Create</button>
+                    <input hidden name="productID" value=@Model.Product.ProductID />
+                </form>
+            }
         }
         @if (User.Identity.IsAuthenticated)
         {
@@ -355,38 +370,36 @@
         }
 
         <!-- Display reviews -->
-        <section class="reviews-title-container">
-            <div class="reviews-title">Reviews:</div>
+        <section class="reviews-title-container"><div class="reviews-title">Reviews:</div></section>
 
-            @foreach (var review in Model.Reviews)
-            {
-                <section class="posted-reviews-container">
-                    <div class="information-container">
-                        <div class="profile-container">
-                            <div class="profile-picture"></div>
-                            <div class="user-name-container">
-                                <div class="user-name">@review.User.FirstName @review.User.LastName</div>
-                            </div>
-                        </div>
-                        <div class="rating-container">
-                            <div class="rating">
-                                <!-- Dynamic stars for individual review rating -->
-                                @for (int i = 5; i >= 1; i--)
-                                {
-                                    <i class="fa @(review.Rating > i ? "fa-solid fa-star" : "fa-thin fa-star-o")" title="text"></i>
-                                }
-                            </div>
+        @foreach (var review in Model.Reviews)
+        {
+            <section class="posted-reviews-container">
+                <div class="information-container">
+                    <div class="profile-container">
+                        <div class="profile-picture"></div>
+                        <div class="user-name-container">
+                            <div class="user-name">@review.User.FirstName @review.User.LastName</div>
                         </div>
                     </div>
-                    <div class="review-output-box">@review.Comment</div>
-                </section>
-            }
-        </section>
+                    <div class="rating-container">
+                        <div class="rating">
+                            <!-- Dynamic stars for individual review rating -->
+                            @for (int i = 5; i >= 1; i--)
+                            {
+                                <i class="fa @(review.Rating > i ? "fa-solid fa-star" : "fa-thin fa-star-o")" title="text"></i>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="review-output-box">@review.Comment</div>
+            </section>
+        }
+
 
         @section scripts {
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
             <script src="https://kit.fontawesome.com/6ca2cc534d.js" crossorigin="anonymous"></script>
-
             <script>
                 // jQuery script for handling star rating input
                 $(document).ready(function () {
@@ -398,7 +411,6 @@
                 });
             </script>
         }
-
         }
     </section>
 </body>
