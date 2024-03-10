@@ -146,7 +146,7 @@
             margin: 20px;
         }
 
-        .user-name{
+        .user-name {
             align-items: center;
             justify-content: center;
             font-weight: bold;
@@ -263,7 +263,6 @@
         }
 
         .add-to-promotion-text {
-            
         }
 
         .add-to-promotion-box {
@@ -298,16 +297,16 @@
     <section class="flex-container">
         <section class="product-box">
             <div class="product-image-container">
-                <img class="product-image" src="@Model.ImageURL">
+                <img class="product-image" src="@Model.Product.ImageURL">
             </div>
             <div class="product-info">
                 <div class="product-text-container">
-                    <div>@Model.Description</div>
-                    <div>• Марка: <span class="product-text-info">@Model.Brand</span></div>
-                    <div>• Модел: <span class="product-text-info">@Model.Model</span></div>
+                    <div>@Model.Product.Description</div>
+                    <div>• Марка: <span class="product-text-info">@Model.Product.Brand</span></div>
+                    <div>• Модел: <span class="product-text-info">@Model.Product.Model</span></div>
                 </div>
                 <div class="product-price-container">
-                    <div class="product-price">Цена: @Model.Price лв.</div>
+                    <div class="product-price">Цена: @Model.Product.Price лв.</div>
                     <button class="product-button">
                         <div class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></div>
                         <div class="product-cart-text">Добави в количката</div>
@@ -320,84 +319,81 @@
             <section class="add-to-promotion-title-container"><div class="add-to-promotion-title">Create a promotion:</div></section>
             <form class="add-to-promotion-container" method="post" asp-action="SuccessfulyAddedPromotion" asp-controller="Tech">
                 <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Discounted Price:</div></div>
-                <input class="add-to-promotion-box" name="newPrice" required/>
+                <input class="add-to-promotion-box" name="newPrice" required />
                 <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Лв.</div></div>
                 <button class="add-to-promotion-button">Create</button>
                 <input hidden name="productID" value=@Model.ProductID />
             </form>
-        }        
-        <form class="add-review-container" method="post" asp-action="SuccessfullyAddedReview" asp-controller="Tech">
-            <div class="information-container">
-                <div class="profile-container">
-                    <div class="profile-picture"></div>
-                    <div class="user-name-container">
-                        <div class="user-name">@User.Identity.Name</div>
-                    </div>
-                </div>
-                <div class="rating-container">
-                    <div class="rating">
-                        <!-- Dynamic stars for rating input -->
-                        @for (int i = 5; i >= 1; i--)
-                        {
-                            <input value="@i" name="rate" id="star_@i" type="radio">
-                            <label title="text" for="star_@i"></label>
-                        }
-                    </div>
-                </div>
-            </div>
-            <textarea class="review-input-box" placeholder="Write a review about the product..." name="reviewText" required></textarea>
-            <div class="post-review-button-container"><button class="post-review-button">Post</button></div>
-        </form>
-
-        <!-- Display reviews -->
-        <section class="reviews-title-container">
-            <div class="reviews-title">Reviews:</div>
-            <div class="average-rating-container">
-@*                 <p>Average Rating: @Model.AverageRating.ToString("0.##")</p>
- *@                <!-- Dynamic stars for average rating -->
-       @*          <div class="rating">
-                    @for (int i = 5; i >= 1; i--)
-                    {
-                        <i class="fa fa-star@(Model.AverageRating >= i ? " filled" : "")"></i>
-                    } *@
-                </div>
-            </div>
-        </section>
-
-        @foreach (var review in Model.Reviews)
+        }
+        @if (User.Identity.IsAuthenticated)
         {
-            <section class="posted-reviews-container">
+            <form class="add-review-container" method="post" asp-action="SuccessfulyAddedReview" asp-controller="Tech">
+                @Html.AntiForgeryToken()
+
+                <input type="hidden" name="productId" value="@Model.Product.ProductID" />
+
                 <div class="information-container">
                     <div class="profile-container">
                         <div class="profile-picture"></div>
                         <div class="user-name-container">
-                            <div class="user-name">@review.User.FirstName @review.User.LastName</div>
+                            <div class="user-name">@User.Identity.Name</div>
                         </div>
                     </div>
                     <div class="rating-container">
                         <div class="rating">
-                            <!-- Dynamic stars for individual review rating -->
+                            <!-- Dynamic stars for rating input -->
                             @for (int i = 5; i >= 1; i--)
                             {
-                                <i class="fa fa-star@(review.Rating >= i ? " filled" : "")" title="text"></i>
+                                <input value="@i" name="rate" id="star_@i" type="radio">
+                                <label title="@i" for="star_@i"></label>
                             }
                         </div>
                     </div>
                 </div>
-                <div class="review-output-box">@review.Comment</div>
-            </section>
+                <textarea class="review-input-box" placeholder="Write a review about the product..." name="reviewText" required></textarea>
+                <div class="post-review-button-container"><button class="post-review-button">Post</button></div>
+            </form>
         }
+
+        <!-- Display reviews -->
+        <section class="reviews-title-container">
+            <div class="reviews-title">Reviews:</div>
+
+            @foreach (var review in Model.Reviews)
+            {
+                <section class="posted-reviews-container">
+                    <div class="information-container">
+                        <div class="profile-container">
+                            <div class="profile-picture"></div>
+                            <div class="user-name-container">
+                                <div class="user-name">@review.User.FirstName @review.User.LastName</div>
+                            </div>
+                        </div>
+                        <div class="rating-container">
+                            <div class="rating">
+                                <!-- Dynamic stars for individual review rating -->
+                                @for (int i = 5; i >= 1; i--)
+                                {
+                                    <i class="fa @(review.Rating > i ? "fa-solid fa-star" : "fa-thin fa-star-o")" title="text"></i>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-output-box">@review.Comment</div>
+                </section>
+            }
+        </section>
 
         @section scripts {
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+            <script src="https://kit.fontawesome.com/6ca2cc534d.js" crossorigin="anonymous"></script>
 
             <script>
                 // jQuery script for handling star rating input
                 $(document).ready(function () {
                     $('.rating input').click(function () {
                         var ratingValue = $(this).val();
-                        alert('Selected rating: ' + ratingValue);
+                        // alert('Selected rating: ' + ratingValue);
                         // You can customize this part to store the selected rating in a hidden input or perform other actions
                     });
                 });

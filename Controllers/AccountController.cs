@@ -17,7 +17,7 @@ namespace TechStore.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ISenderEmail _emailSender;
 
-        // Constructor injection of UserManager and SignInManager
+       
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender)
         {
             _userManager = userManager;
@@ -38,14 +38,14 @@ namespace TechStore.Controllers
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.Email, // UserName is often set to the email in many systems
+                    UserName = model.Email, 
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
                 };
 
-                // Create the user with UserManager
+                
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -67,7 +67,7 @@ namespace TechStore.Controllers
 
         private async Task SendConfirmationEmail(string? email, ApplicationUser? user)
         {
-            //Generate the Token
+         
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
             //Build the Email Confirmation Link which must include the Callback URL

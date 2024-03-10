@@ -73,6 +73,10 @@
             display: flex;
             justify-content: center;
         }
+
+        .login-hyperlink {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -119,6 +123,7 @@
                 <div class="register-button-container">
                     <button type="submit" value="Register" class="register-button"><div>Register</div></button>
                 </div>
+                <a asp-action="Login" asp-controller="Account"><div class="login-hyperlink">Already have an account? Login.</div></a>
             </section>
         </section>
     }

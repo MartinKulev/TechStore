@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechStore.Models.Entities
@@ -7,7 +8,7 @@ namespace TechStore.Models.Entities
     {
         public Review() { }
 
-        public Review(int rating, string comment, int productID, int userID, DateTime createdDate)
+        public Review(int rating, string comment, int productID, string userID, DateTime createdDate)
         {
             Rating = rating;
             Comment = comment;
@@ -28,9 +29,12 @@ namespace TechStore.Models.Entities
         public int ProductID { get; set; }
 
         [ForeignKey(nameof(ApplicationUser))]
-        public int UserID { get; set; }
+        public string UserID { get; set; }
 
         public DateTime CreatedDate { get; set; }
+
+        // Navigation properties
+        public virtual Product Product { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
-

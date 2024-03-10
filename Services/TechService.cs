@@ -112,7 +112,7 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public void AddReview(int productId, int userId, int rating, string comment)
+        public void AddReview(int productId, string userId, int rating, string comment)
         {
             var review = new Review
             {
@@ -131,7 +131,7 @@ namespace TechStore.Services
         {
             return context.Review
                    .Where(r => r.ProductID == productId)
-                   .Select(r => new Review { UserID = r.UserID })  // Assuming UserID is a property in the Review class
+                   .Include(r => r.User)
                    .ToList();
         }
 
