@@ -190,12 +190,6 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyAddedReview(string reviewText, int rate)
-        {
-            return View();
-        }
-
-        [HttpPost]
         public IActionResult SuccessfulyDeletedProduct(int productID)
         {
             techService.RemoveProduct(productID);
@@ -211,19 +205,12 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulyAddedReview(int productId, int rate, string reviewText)
         {
-            int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             techService.AddReview(productId, userId, rate, reviewText);
 
-            return RedirectToAction("Product", new { productID = productId });
+            return View("SuccessfulyAddedReview");
         }
-
-        [HttpPost]
-        public IActionResult SuccessfulyDeletedPromotion(int productID)
-        {
-            techService.RemovePromotion(productID);
-            return View();
-        }
-
+        
     }
 }

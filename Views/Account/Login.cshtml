@@ -95,7 +95,7 @@
                 </div>
                 <div class="info-container">
                     <div class="info-text-container">@Html.LabelFor(m => m.Password, "Парола:")</div>
-                    @Html.TextBoxFor(m => m.Password, new { @class = "input-box", name = "password" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "input-box", name = "password" })
                 </div>
                 <div class="errors-container">@Html.ValidationMessageFor(m => m.Email)</div>
                 <div class="errors-container">@Html.ValidationMessageFor(m => m.Password)</div>
