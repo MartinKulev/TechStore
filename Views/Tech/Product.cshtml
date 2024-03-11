@@ -190,6 +190,10 @@
             color: #ffa723;
         }
 
+        .star-color {
+            color: #ff9e0b;
+        }
+
         .review-input-box {
             padding: 5px;
             margin-top: 10px;
@@ -262,6 +266,7 @@
         }
 
         .add-to-promotion-text {
+
         }
 
         .add-to-promotion-box {
@@ -293,7 +298,6 @@
         .product-discounted-price {
             font-size: 40px;
             font-weight: bold;
-
         }
     </style>
 </head>
@@ -392,9 +396,9 @@
                     <div class="rating-container">
                         <div class="rating">
                             <!-- Dynamic stars for individual review rating -->
-                            @for (int i = 5; i >= 1; i--)
+                            @for (int i = 1; i <= 5; i++)
                             {
-                                <i class="fa @(review.Rating > i ? "fa-solid fa-star" : "fa-thin fa-star-o")" title="text"></i>
+                                <i class="fa @(review.Rating >= i ? "fa-solid fa-star star-color" : "fa-thin fa-star-o star-color")"></i>
                             }
                         </div>
                     </div>
