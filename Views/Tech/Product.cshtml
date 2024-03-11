@@ -248,7 +248,7 @@
             height: 100px;
         }
 
-        .add-to-promotion-container {
+        .command-promotion-container {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -266,7 +266,6 @@
         }
 
         .add-to-promotion-text {
-
         }
 
         .add-to-promotion-box {
@@ -285,12 +284,12 @@
             color: white;
         }
 
-        .add-to-promotion-title {
+        .command-promotion-title {
             font-weight: bold;
             font-size: 50px;
         }
 
-        .add-to-promotion-title-container {
+        .command-promotion-title-container {
             display: flex;
             justify-content: center;
         }
@@ -336,17 +335,34 @@
                 </div>
             </div>
         </section>
-        @if (!Model.Product.IsInPromotion)
+        @if (User.IsInRole("Admin"))
         {
-            @if (User.IsInRole("Admin"))
+            @if (!Model.Product.IsInPromotion)
             {
-                <section class="add-to-promotion-title-container"><div class="add-to-promotion-title">Create a promotion:</div></section>
-                <form class="add-to-promotion-container" method="post" asp-action="SuccessfulyAddedPromotion" asp-controller="Tech">
+
+                <section class="command-promotion-title-container"><div class="command-promotion-title">Create a promotion:</div></section>
+                <form class="command-promotion-container" method="post" asp-action="SuccessfulyAddedPromotion" asp-controller="Tech">
                     <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Discounted Price:</div></div>
                     <input class="add-to-promotion-box" name="newPrice" required />
                     <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Лв.</div></div>
                     <button class="add-to-promotion-button">Create</button>
                     <input hidden name="productID" value=@Model.Product.ProductID />
+                </form>
+
+            }
+            else
+            {
+                <section class="command-promotion-title-container"><div class="command-promotion-title">Revert a promotion:</div></section>
+                <form class="command-promotion-container" method="post" asp-action="SuccessfulyRevertedPromotion" asp-controller="Tech">
+                    <button class="add-to-promotion-button">Revert</button>
+                    <input hidden name="productID" value=@Model.Product.ProductID />
+                    @foreach (var promotion in Model.Promotions)
+                    {
+                        @if (promotion.ProductID == Model.Product.ProductID)
+                        {
+                            <input hidden name="promotionID" value=@promotion.PromotionID />
+                        }
+                    }
                 </form>
             }
         }

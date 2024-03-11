@@ -222,5 +222,12 @@ namespace TechStore.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult SuccessfulyRevertedPromotion(int productId, int promotionID)
+        {
+            techService.RevertPromotion(productId, promotionID);
+            return View();
+        }
+
     }
 }

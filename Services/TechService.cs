@@ -159,5 +159,15 @@ namespace TechStore.Services
             context.Promotion.Remove(promotion);
             context.SaveChanges();
         }
+
+        public void RevertPromotion(int productID, int promotionID)
+        {
+            Product product = context.Product.First(p => p.ProductID == productID);
+            product.IsInPromotion = false;
+            context.Update(product);
+            Promotion promotion = context.Promotion.First(p => p.PromotionID == promotionID);
+            context.Promotion.Remove(promotion);
+            context.SaveChanges();
+        }
     }
 }
