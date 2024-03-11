@@ -289,6 +289,12 @@
             display: flex;
             justify-content: center;
         }
+
+        .product-discounted-price {
+            font-size: 40px;
+            font-weight: bold;
+
+        }
     </style>
 </head>
 <body>
@@ -310,6 +316,7 @@
                         {
                             @if (promotion.ProductID == Model.Product.ProductID)
                             {
+                                <s class="product-discounted-price">@Model.Product.Price лв.</s>
                                 <div class="product-price">Цена: @promotion.NewPrice лв.</div>
                             }
                         }
