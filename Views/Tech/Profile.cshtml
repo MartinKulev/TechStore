@@ -171,34 +171,51 @@
 </style>
 <section class="flex-container">
     <div class="profile-box">
-        <div class="profile-title-container"><div class="profile-title">Welcome, Regular user</div></div>
+        <div class="profile-title-container">
+            <div class="profile-title">
+                @if (User.IsInRole("Admin"))
+                {
+                    <p>Welcome, Admin!</p>
+                }
+                else
+                {
+                    <p>Welcome, Regular User!</p>
+                }
+            </div>
+        </div>
         <div class="profile-information-container">
             <div class="profilePicture-Username-Logout-container">
                 <div class="profile-picture"></div>
-                <div class="user-name-container"><div>Martin Kulev</div></div>
-                <form class="logout-button-container"><button class="logout-button">Logout</button></form>
+                <div class="user-name-container"><div>@Model.User.FirstName @Model.User.LastName</div></div>
+                <form class="logout-button-container" asp-controller="Account" asp-action="Logout" method="post">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
             </div>
             <div class="information-container">
-                <div class="information-sub-container"><div class="information-label">Email:</div><div class="information-text"> martindkulev@gmail.com</div></div>
-                <div class="information-sub-container"><div class="information-label">Phone Number:</div><div class="information-text"> 0879059920</div></div>
+                <div class="information-sub-container"><div class="information-label">Email:</div><div class="information-text">@Model.User.Email</div></div>
+                <div class="information-sub-container"><div class="information-label">Phone Number:</div><div class="information-text">@Model.User.PhoneNumber</div></div>
             </div>
         </div>     
     </div>
-    <div class="orders-title">Поръчки:</div>
-    <div class="order-box">
-        <div class="order-info">
-            <div class="order-text">Поръчка № 3</div>
-            <div class="order-price-container"><div class="order-price">Платено: 1991.00лв</div><div>Банкова карта: 1234 5678 9123 4567</div></div>
-        </div>
-        <div class="order-dateTime-container">
-            <div class="order-dateTime-label">Дата на поръчванe:</div>
-            <div class="order-dateTime">03.03.24</div>
-            <div class="order-dateTime">11:47:45</div>
-        </div>
-    </div>
-    @for (int a = 0; a < 7; a++)
+    @if (!User.IsInRole("Admin"))
     {
+        <div class="orders-title">Поръчки:</div>
         <div class="order-box">
+            <div class="order-info">
+                <div class="order-text">Поръчка № 3</div>
+                <div class="order-price-container"><div class="order-price">Платено: 1991.00лв</div><div>Банкова карта: 1234 5678 9123 4567</div></div>
+            </div>
+            <div class="order-dateTime-container">
+                <div class="order-dateTime-label">Дата на поръчванe:</div>
+                <div class="order-dateTime">03.03.24</div>
+                <div class="order-dateTime">11:47:45</div>
+            </div>
         </div>
-    }
+        @for (int a = 0; a < 7; a++)
+        {
+            <div class="order-box">
+            </div>
+        }
+    }    
 </section>

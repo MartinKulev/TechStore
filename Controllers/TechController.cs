@@ -183,7 +183,13 @@ namespace TechStore.Controllers
 
         public IActionResult Profile()
         {
-            return View();
+            ApplicationUser user = techService.GetUserByID();
+            var viewModel = new ProfileViewModel
+            {
+                User = user
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult SuccessfulRegister()

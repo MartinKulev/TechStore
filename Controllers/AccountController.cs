@@ -17,7 +17,7 @@ namespace TechStore.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ISenderEmail _emailSender;
 
-       
+
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender)
         {
             _userManager = userManager;
@@ -38,14 +38,14 @@ namespace TechStore.Controllers
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.Email, 
+                    UserName = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
                 };
 
-                
+
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -67,7 +67,7 @@ namespace TechStore.Controllers
 
         private async Task SendConfirmationEmail(string? email, ApplicationUser? user)
         {
-         
+
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
             //Build the Email Confirmation Link which must include the Callback URL
@@ -101,7 +101,7 @@ namespace TechStore.Controllers
                 return RedirectToAction("Login");
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Profile", "Tech");
         }
 
         public IActionResult Login()
@@ -126,7 +126,7 @@ namespace TechStore.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Profile", "Tech");                       
                     }
                 }
                 else
@@ -144,7 +144,7 @@ namespace TechStore.Controllers
         {
             // Sign out the user
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
     }
 }

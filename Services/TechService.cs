@@ -169,5 +169,11 @@ namespace TechStore.Services
             context.Promotion.Remove(promotion);
             context.SaveChanges();
         }
+
+        public ApplicationUser GetUserByID()//public ApplicationUser GetUserByID(int ID)
+        {
+            ApplicationUser user = context.User.First();//ApplicationUser user = context.User.First(p => p.ID == ID);
+            return user;
+        }
     }
 }

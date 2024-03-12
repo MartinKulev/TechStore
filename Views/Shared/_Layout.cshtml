@@ -146,6 +146,7 @@
             @if (User.IsInRole("Admin"))
             {
                 <a class="icon-button" asp-action="AdministrationPanel" asp-controller="Tech"><i class="fa-solid fa-gear"></i></a>
+                <a class="icon-button" asp-action="Profile" asp-controller="Tech"><i class="fa-solid fa-user"></i></a>
             }
             else
             {
@@ -158,7 +159,7 @@
                 {
                     <a class="icon-button" asp-action="Login" asp-controller="Account"><i class="fa-solid fa-user"></i></a>
                 }
-            }
+            }           
         </section>
     </div>
     @RenderBody()
