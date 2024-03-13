@@ -79,6 +79,7 @@
         display: flex;
         flex-direction: column;
         margin: 20px;
+        padding: 10px;
         height: 400px;
         min-height: 400px;
         width: 80%;
@@ -86,6 +87,7 @@
         box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
         border-radius: 15px;
         margin-bottom: 200px;
+        position: relative;
     }
 
     .profile-information-container {
@@ -108,7 +110,6 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-
     }
 
     .profile-picture {
@@ -183,15 +184,15 @@
                 }
             </div>
         </div>
-        <div class="profile-information-container">
-            <div class="profilePicture-Username-Logout-container">
-                <div class="profile-picture"></div>
-                <div class="user-name-container"><div>@Model.User.FirstName @Model.User.LastName</div></div>
-                <form class="logout-button-container" asp-controller="Account" asp-action="Logout" method="post">
-                    @Html.AntiForgeryToken()
-                    <button type="submit" class="logout-button">Logout</button>
-                </form>
-            </div>
+        <div class="profilePicture-Username-Logout-container">
+            <div class="profile-picture"></div>
+            <div class="user-name-container"><div>@Model.User.FirstName @Model.User.LastName</div></div>
+            <form class="logout-button-container" asp-controller="Account" asp-action="Logout" method="post">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        </div>
+        <div class="profile-information-container">            
             <div class="information-container">
                 <div class="information-sub-container"><div class="information-label">Email:</div><div class="information-text">@Model.User.Email</div></div>
                 <div class="information-sub-container"><div class="information-label">Phone Number:</div><div class="information-text">@Model.User.PhoneNumber</div></div>
