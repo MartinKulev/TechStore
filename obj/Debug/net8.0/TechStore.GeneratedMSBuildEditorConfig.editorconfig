@@ -118,12 +118,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxTdWNjZXNzZnVseUFkZGVkUmV2aWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/SuccessfulyCreatedCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxTdWNjZXNzZnVseUNyZWF0ZWRDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Martin/Desktop/TechStore/Views/Tech/SuccessfulyCreatedPromocode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxTdWNjZXNzZnVseUNyZWF0ZWRQcm9tb2NvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Martin/Desktop/TechStore/Views/Tech/SuccessfulyCreatedUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxTdWNjZXNzZnVseUNyZWF0ZWRVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/SuccessfulyDeletedCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxTdWNjZXNzZnVseURlbGV0ZWRDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Martin/Desktop/TechStore/Views/Tech/SuccessfulyDeletedProduct.cshtml]

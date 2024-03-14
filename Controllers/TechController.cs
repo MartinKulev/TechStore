@@ -50,60 +50,6 @@ namespace TechStore.Controllers
             return View(products);
         }
 
-        //public IActionResult Laptops()
-        //{
-        //    List<Product> products = techService.GetProductsByCategories("Лаптопи");
-        //    return View(products);
-        //}
-
-        //public IActionResult Smartphones()
-        //{
-        //    List<Product> products = techService.GetProductsByCategories("Телефони");
-        //    return View(products);
-        //}
-
-        //public IActionResult Tablets()
-        //{
-        //    List<Product> products = techService.GetProductsByCategories("Таблети");
-        //    return View(products);
-        //}
-
-        //public IActionResult TVs()
-        //{
-        //    List<Product> products = techService.GetProductsByCategories("Телевизори");
-        //    return View(products);
-        //}
-
-        //public IActionResult Monitors()
-        //{
-        //    List<Product> products = techService.GetProductsByCategories("Монитори");
-        //    return View(products);
-        //}
-
-        //public IActionResult Keyboards()
-        //{
-        //    List<Product> products = techService.GetProductsByCategories("Клавиатури");
-        //    return View(products);
-        //}
-
-        //public IActionResult Mice()
-        //{
-        //    List<Product> products = techService.GetProductsByCategories("Мишки");
-        //    return View(products);
-        //}
-
-        //public IActionResult Headphones()
-        //{
-        //    List<Product> products = techService.GetProductsByCategories("Слушалки");
-        //    return View(products);
-        //}
-
-        //public IActionResult Speakers()
-        //{
-        //    List<Product> products = techService.GetProductsByCategories("Тонколони");
-        //    return View(products);
-        //}
-
         public IActionResult ShoppingCart()
         {
             List<Category> categories = techService.GetAllCategories();
@@ -142,11 +88,13 @@ namespace TechStore.Controllers
 
             List<Promocode> promocodes = techService.GetAllPromocodes();
             List<ApplicationUser> users = techService.GetAllUsers();
+            //List<Category> categories = techService.GetAllCategories();
 
             var viewModel = new AdminPanelViewModel
             {
                 Promocodes = promocodes,
-                Users = users
+                Users = users,
+                Categories = categories
             };
 
             return View(viewModel);
@@ -298,6 +246,27 @@ namespace TechStore.Controllers
             ViewBag.ItemsList = categories;
 
             techService.RevertPromotion(productId, promotionID);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SuccessfulyCreatedCategory(string categoryName)
+        {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+            Category category = new Category(categoryName);
+            techService.AddCategory(category);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SuccessfulyDeletedCategory(string categoryName)
+        {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+            techService.DeleteCategory(categoryName);
             return View();
         }
 

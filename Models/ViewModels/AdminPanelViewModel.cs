@@ -6,5 +6,6 @@ namespace TechStore.Models.ViewModels
     {
         public List<Promocode> Promocodes { get; set; }
         public List<ApplicationUser> Users { get; set; }
+        public List<Category> Categories { get; set; }
     }
 }

@@ -53,6 +53,24 @@ namespace TechStore.Services
             }
         }
 
+        public void DeleteCategory(string categoryName)
+        {
+            Category category = context.Category.First(p => p.CategoryName == categoryName);
+            context.Category.Remove(category);
+            DeleteAllProductsFromACategory(categoryName);
+            context.SaveChanges();
+        }
+
+        public void DeleteAllProductsFromACategory(string categoryName)
+        {
+            List<Product> products = context.Product.Where(p => p.CategoryName == categoryName).ToList();
+            foreach (var product in products)
+            {
+                context.Product.Remove(product);
+            }
+            context.SaveChanges();
+        }
+
         public void AddProduct(Product product)
         {
             context.Product.Add(product);

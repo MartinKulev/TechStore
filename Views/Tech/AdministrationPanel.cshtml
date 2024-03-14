@@ -165,7 +165,7 @@
             font-size: 200%;
         }
 
-        .promocodeUser-container {
+        .entity-container {
             width: 80%;
             display: flex;
             flex-direction: row;
@@ -174,18 +174,18 @@
         }
 
 
-        .create-promocodeUser-title-container {
+        .create-entity-title-container {
             display: flex;
             justify-content: center;
         }
 
-        .create-promocodeUser-title {
+        .create-entity-title {
             font-size: 30px;
             color: black;
             font-weight: bold;
         }
 
-        .create-promocodeUser-form {
+        .create-entity-form {
             margin-top: 20px;
             margin-bottom: 40px;
         }
@@ -208,7 +208,7 @@
             margin-right: 20px;
         }
 
-        .create-promocodeUser-button {
+        .create-entity-button {
             background-color: purple;
             border-radius: 5px;
             height: 30px;
@@ -216,18 +216,18 @@
             color: white;
         }
 
-        .promocodeUser-table {
+        .entity-table {
             width: 100%;
         }
 
-            .promocodeUser-table th, .promocodeUser-table td {
+            .entity-table th, .entity-table td {
                 padding: 8px;
                 text-align: center;
                 font-weight: bold;
                 border: 1px solid #ddd;
             }
 
-            .promocodeUser-table th {
+            .entity-table th {
                 color: purple;
                 font-size: 150%;
             }
@@ -271,6 +271,10 @@
             justify-content: center;
         }
 
+        .entity {
+            margin-bottom: 100px;
+        }
+
     </style>
     <script>
         function displayImage(input) {
@@ -306,15 +310,10 @@
             <div class="product-info">
                 <select class="select-category" name="categoryName" onchange="javascript:changemm(document.search.topmenu,document.search.f5,document.search.f6,'2','1','Избери',27)" required>
                     <option selected="" value="">Избери Категория</option>
-                    <option value="Лаптопи">Лаптопи</option>
-                    <option value="Телефони">Телефони</option>
-                    <option value="Таблети">Таблети</option>
-                    <option value="Телевизори">Телевизори</option>
-                    <option value="Монитори">Монитори</option>
-                    <option value="Клавиатури">Клавиатури</option>
-                    <option value="Мишки">Мишки</option>
-                    <option value="Слушалки">Слушалки</option>
-                    <option value="Тонколони">Тонколони</option>
+                    @foreach(var category in Model.Categories)
+                    {
+                        <option value="@category.CategoryName">@category.CategoryName</option>
+                    }
                 </select>
                 <div class="description-text-container">Описание:</div>
                 <textarea class="description-box" name="description" required maxlength="200"></textarea>
@@ -324,33 +323,55 @@
                 <div class="create-product-button-container"><button class="create-product-button" type="submit"><div class="create-product-button-text">Създай продукт</div></button></div>
             </div>
         </form>
-        <section class="promocodeUser-container">
+        <section class="entity-container">
             <section>
-                <div class="create-promocodeUser-title-container"><div class="create-promocodeUser-title">Създай промокод:</div></div>
-                <form class="create-promocodeUser-form" method="post" asp-action="SuccessfulyCreatedPromocode" asp-controller="Tech">
-                    Име на промокода: <input class="input-box" name="promocodeName" />
-                    Процент отстъпка: <input class="mini-input-box" name="discount" />
-                    <button class="create-promocodeUser-button"><div>Създай</div></button>
-                </form>
-                <table class="promocodeUser-table">
-                    <tbody>
-                        <tr>
-                            <th>Промокод</th>
-                            <th>Процент отстъпка</th>
-                            @foreach (var promocode in Model.Promocodes)
-                            {
+                <section class="entity">
+                    <div class="create-entity-title-container"><div class="create-entity-title">Създай промокод:</div></div>
+                    <form class="create-entity-form" method="post" asp-action="SuccessfulyCreatedPromocode" asp-controller="Tech">
+                        Име на промокода: <input class="input-box" name="promocodeName" />
+                        Процент отстъпка: <input class="mini-input-box" name="discount" />
+                        <button class="create-entity-button"><div>Създай</div></button>
+                    </form>
+                    <table class="entity-table">
+                        <tbody>
                             <tr>
-                                <td>@promocode.PromocodeName</td>
-                                <td>@promocode.Discount %</td>
-                                <td class="remove-button"><form method="post" asp-action="SuccessfulyDeletedPromocode" asp-controller="Tech"><button name="promocodeName" value="@promocode.PromocodeName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
-                            </tr>
-                            }
-                    </tbody>
-                </table>
+                                <th>Промокод</th>
+                                <th>Процент отстъпка</th>
+                                @foreach (var promocode in Model.Promocodes)
+                                {
+                                <tr>
+                                    <td>@promocode.PromocodeName</td>
+                                    <td>@promocode.Discount %</td>
+                                    <td class="remove-button"><form method="post" asp-action="SuccessfulyDeletedPromocode" asp-controller="Tech"><button name="promocodeName" value="@promocode.PromocodeName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
+                                </tr>
+                                }
+                        </tbody>
+                    </table>
+                </section>
+                <section class ="entity">
+                    <div class="create-entity-title-container"><div class="create-entity-title">Създай категория:</div></div>
+                    <form class="create-entity-form" method="post" asp-action="SuccessfulyCreatedCategory" asp-controller="Tech">
+                        Име на категорията: <input class="input-box" name="categoryName" />
+                        <button class="create-entity-button"><div>Създай</div></button>
+                    </form>
+                    <table class="entity-table">
+                        <tbody>
+                            <tr>
+                                <th>Категория</th>
+                                @foreach (var category in Model.Categories)
+                                {
+                                <tr>
+                                    <td>@category.CategoryName</td>
+                                    <td class="remove-button"><form method="post" asp-action="SuccessfulyDeletedCategory" asp-controller="Tech"><button name="categoryName" value="@category.CategoryName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
+                                </tr>
+                                }
+                        </tbody>
+                    </table>
+                </section>
             </section>
-            <section>
-                <div class="create-promocodeUser-title-container"><div class="create-promocodeUser-title">Създай потребител:</div></div>
-                <form class="create-promocodeUser-form" method="post" asp-action="SuccessfulyCreatedUser" asp-controller="Tech">
+            <section class="entity">
+                <div class="create-entity-title-container"><div class="create-entity-title">Създай потребител:</div></div>
+                <form class="create-entity-form" method="post" asp-action="SuccessfulyCreatedUser" asp-controller="Tech">
                     <div class="info-container">
                         <div class="info-subContainer">
                             <div class="info-text-container"><div>Име: </div></div><input class="input-box" name="firstName" />
@@ -377,10 +398,10 @@
                         </div>
                     </div>
                     <div class="create-user-button-container">
-                        <button class="create-promocodeUser-button"><div>Създай</div></button>
+                        <button class="create-entity-button"><div>Създай</div></button>
                     </div>
                 </form>
-                <table class="promocodeUser-table">
+                <table class="entity-table">
                     <tbody>
                         <tr>
                             <th>Потребителско ID</th>

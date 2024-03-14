@@ -125,20 +125,7 @@
                     <input type="hidden" name="categoryName" value="@category.CategoryName" />
                     <button type="submit" class="option-button">@category.CategoryName<div class="border-bottom"></div></button>
                 </form>
-
-                @* <form method="post" asp-action="Category" asp-controller="Tech">
-                    <button class="option-button" type="submit" name="categoryName" value="@category.CategoryName">@category.CategoryName<div class="border-bottom"></div></button>
-                </form> *@
             }
-            @* <a class="option-button" asp-action="Laptops" asp-controller="Tech">Лаптопи<div class="border-bottom"></div></a>
-            <a class="option-button" asp-action="Smartphones" asp-controller="Tech">Телефони<div class="border-bottom"></div></a>
-            <a class="option-button" asp-action="Tablets" asp-controller="Tech">Таблети<div class="border-bottom"></div></a>
-            <a class="option-button" asp-action="TVs" asp-controller="Tech">Телевизори<div class="border-bottom"></div></a>
-            <a class="option-button" asp-action="Monitors" asp-controller="Tech">Монитори<div class="border-bottom"></div></a>
-            <a class="option-button" asp-action="Keyboards" asp-controller="Tech">Клавиатури<div class="border-bottom"></div></a>
-            <a class="option-button" asp-action="Mice" asp-controller="Tech">Мишки<div class="border-bottom"></div></a>
-            <a class="option-button" asp-action="Headphones" asp-controller="Tech">Слушалки<div class="border-bottom"></div></a>
-            <a class="option-button" asp-action="Speakers" asp-controller="Tech">Тонколони<div class="border-bottom"></div></a>  *@
             @if (User.IsInRole("Admin"))
             {
                 <a class="icon-button" asp-action="AdministrationPanel" asp-controller="Tech"><i class="fa-solid fa-gear"></i></a>
