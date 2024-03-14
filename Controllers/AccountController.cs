@@ -16,17 +16,20 @@ namespace TechStore.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ISenderEmail _emailSender;
+        private TechService techService;
 
-
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender, TechService techService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
+            this.techService = techService;
         }
 
         public IActionResult Register()
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
             return View();
         }
 
@@ -34,6 +37,9 @@ namespace TechStore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterModel model)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser
@@ -106,6 +112,9 @@ namespace TechStore.Controllers
 
         public IActionResult Login()
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             return View();
         }
 
@@ -113,6 +122,9 @@ namespace TechStore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model, string returnUrl = null)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             if (ModelState.IsValid)
             {
                 // Sign in the user with SignInManager

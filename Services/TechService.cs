@@ -16,16 +16,42 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        //public List<Category> GetAllCategories()
-        //{
-        //    List<Category> categories = context.Category.ToList();
-        //    return categories;
-        //}
+        public void AddАrtificiallyCategories()//this method exists for developing purposes only
+        {
+            Category category1 = new Category("Laptops");
+            Category category2 = new Category("Smartphones");
+            Category category3 = new Category("Tablets");
+            Category category4 = new Category("TVs");
+            Category category5 = new Category("Displays");
+            Category category6 = new Category("Keyboards");
+            Category category7 = new Category("Mice");
+            Category category8 = new Category("Headphones");
+            Category category9 = new Category("Speakers");
+            AddCategory(category1);
+            AddCategory(category2);
+            AddCategory(category3);
+            AddCategory(category4);
+            AddCategory(category5);
+            AddCategory(category6);
+            AddCategory(category7);
+            AddCategory(category8);
+            AddCategory(category9);
+        }
 
-        //public void AddCategory(Category category)
-        //{
-        //    if (!context.Category.Contains(category)) 
-        //}
+        public List<Category> GetAllCategories()
+        {
+            List<Category> categories = context.Category.ToList();
+            return categories;
+        }
+
+        public void AddCategory(Category category)
+        {
+            if (!context.Category.Contains(category))
+            {
+                context.Category.Add(category);
+                context.SaveChanges();
+            }
+        }
 
         public void AddProduct(Product product)
         {
@@ -175,5 +201,7 @@ namespace TechStore.Services
             ApplicationUser user = context.User.First();//ApplicationUser user = context.User.First(p => p.ID == ID);
             return user;
         }
+
+
     }
 }

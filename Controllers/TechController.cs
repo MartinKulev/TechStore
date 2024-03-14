@@ -19,6 +19,11 @@ namespace TechStore.Controllers
 
         public IActionResult Homepage()
         {
+            techService.AddАrtificiallyCategories(); //this method exists for developing purposes only
+            
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             List<Promotion> promotions = techService.GetAllPromotions();
             List<Product> products = new List<Product>();
             foreach (var promotion in promotions)
@@ -26,6 +31,7 @@ namespace TechStore.Controllers
                 Product product = techService.GetProductByID(promotion.ProductID);
                 products.Add(product);
             }
+
             var viewModel = new HomepageViewModel
             {
                 Promotions = promotions,
@@ -34,62 +40,75 @@ namespace TechStore.Controllers
             return View(viewModel);
         }
 
-        public IActionResult Laptops()
+        [HttpPost]
+        public IActionResult Category(string categoryName)
         {
-            List<Product> products = techService.GetProductsByCategories("Лаптопи");
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+            List<Product> products = techService.GetProductsByCategories(categoryName);
             return View(products);
         }
 
-        public IActionResult Smartphones()
-        {
-            List<Product> products = techService.GetProductsByCategories("Телефони");
-            return View(products);
-        }
+        //public IActionResult Laptops()
+        //{
+        //    List<Product> products = techService.GetProductsByCategories("Лаптопи");
+        //    return View(products);
+        //}
 
-        public IActionResult Tablets()
-        {
-            List<Product> products = techService.GetProductsByCategories("Таблети");
-            return View(products);
-        }
+        //public IActionResult Smartphones()
+        //{
+        //    List<Product> products = techService.GetProductsByCategories("Телефони");
+        //    return View(products);
+        //}
 
-        public IActionResult TVs()
-        {
-            List<Product> products = techService.GetProductsByCategories("Телевизори");
-            return View(products);
-        }
+        //public IActionResult Tablets()
+        //{
+        //    List<Product> products = techService.GetProductsByCategories("Таблети");
+        //    return View(products);
+        //}
 
-        public IActionResult Monitors()
-        {
-            List<Product> products = techService.GetProductsByCategories("Монитори");
-            return View(products);
-        }
+        //public IActionResult TVs()
+        //{
+        //    List<Product> products = techService.GetProductsByCategories("Телевизори");
+        //    return View(products);
+        //}
 
-        public IActionResult Keyboards()
-        {
-            List<Product> products = techService.GetProductsByCategories("Клавиатури");
-            return View(products);
-        }
+        //public IActionResult Monitors()
+        //{
+        //    List<Product> products = techService.GetProductsByCategories("Монитори");
+        //    return View(products);
+        //}
 
-        public IActionResult Mice()
-        {
-            List<Product> products = techService.GetProductsByCategories("Мишки");
-            return View(products);
-        }
+        //public IActionResult Keyboards()
+        //{
+        //    List<Product> products = techService.GetProductsByCategories("Клавиатури");
+        //    return View(products);
+        //}
 
-        public IActionResult Headphones()
-        {
-            List<Product> products = techService.GetProductsByCategories("Слушалки");
-            return View(products);
-        }
+        //public IActionResult Mice()
+        //{
+        //    List<Product> products = techService.GetProductsByCategories("Мишки");
+        //    return View(products);
+        //}
 
-        public IActionResult Speakers()
-        {
-            List<Product> products = techService.GetProductsByCategories("Тонколони");
-            return View(products);
-        }
+        //public IActionResult Headphones()
+        //{
+        //    List<Product> products = techService.GetProductsByCategories("Слушалки");
+        //    return View(products);
+        //}
+
+        //public IActionResult Speakers()
+        //{
+        //    List<Product> products = techService.GetProductsByCategories("Тонколони");
+        //    return View(products);
+        //}
 
         public IActionResult ShoppingCart()
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             return View();
         }
 
@@ -97,6 +116,9 @@ namespace TechStore.Controllers
         [Route("{productID}/Product")]
         public IActionResult Product(int productID)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             Product product = techService.GetProductByID(productID);
             List<Review> reviews = techService.GetAllReviews(productID);
             List<ApplicationUser> users = techService.GetAllUsers();
@@ -115,6 +137,9 @@ namespace TechStore.Controllers
 
         public IActionResult AdministrationPanel()
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             List<Promocode> promocodes = techService.GetAllPromocodes();
             List<ApplicationUser> users = techService.GetAllUsers();
 
@@ -130,6 +155,8 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulyCreatedPromocode(string promocodeName, decimal discount)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
 
             Promocode promocode = new Promocode(promocodeName, discount);
             techService.CreatePromocode(promocode);
@@ -140,6 +167,9 @@ namespace TechStore.Controllers
         [Route("{promocodeName}/SuccessfulyDeletedPromocode")]
         public IActionResult SuccessfulyDeletedPromocode(string promocodeName)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             techService.RemovePromocode(promocodeName);
             return View();
         }
@@ -147,6 +177,9 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulyCreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             //ApplicationUser user = new ApplicationUser();
             //techService.CreateUser(user);
             return View();
@@ -156,6 +189,9 @@ namespace TechStore.Controllers
         [Route("{userID}/SuccessfulyDeletedUser")]
         public IActionResult SuccessfulyDeletedUser(string userID)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             techService.RemoveUser(userID);
             return View();
         }
@@ -163,6 +199,9 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulyAddedProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             Product product = new Product(imageURL, categoryName, description, brand, model, price);
             techService.AddProduct(product);
             return View();
@@ -170,12 +209,18 @@ namespace TechStore.Controllers
 
         public IActionResult Payment()
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             return View();
         }
 
         [HttpPost]
         public IActionResult SuccessfulPayment(string name, string cardNumber, string expiryDate, int cvvNum, string adress)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             Payment payment = new Payment(name, cardNumber, expiryDate, cvvNum, adress);
             techService.AddPayment(payment);
             return View();
@@ -183,6 +228,9 @@ namespace TechStore.Controllers
 
         public IActionResult Profile()
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             ApplicationUser user = techService.GetUserByID();
             var viewModel = new ProfileViewModel
             {
@@ -194,12 +242,18 @@ namespace TechStore.Controllers
 
         public IActionResult SuccessfulRegister()
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             return View();
         }
 
         [HttpPost]
         public IActionResult SuccessfulyDeletedProduct(int productID)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             techService.RemoveProduct(productID);
             return View();
         }
@@ -207,6 +261,9 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulyAddedPromotion(decimal newPrice, int productID)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             techService.AddPromotion(newPrice, productID);
             return View();
         }
@@ -214,6 +271,9 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulyAddedReview(int productId, int rate, string reviewText)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             techService.AddReview(productId, userId, rate, reviewText);
@@ -224,6 +284,9 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulyDeletedPromotion(int productId, int promotionID)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             techService.RemovePromotion(productId, promotionID);
             return View();
         }
@@ -231,9 +294,14 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulyRevertedPromotion(int productId, int promotionID)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             techService.RevertPromotion(productId, promotionID);
             return View();
         }
+
+
 
     }
 }
