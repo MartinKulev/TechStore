@@ -8,7 +8,7 @@ using TechStore.Services;
 var builder = WebApplication.CreateBuilder(args);
 //y
 builder.Services.AddDbContext<TechStoreDbContext>(options =>
-    options.UseMySQL("Server=localhost;Database=TechStore;Uid=root;Pwd=RmisSexybeast12.;"));
+    options.UseMySQL("Server=localhost;Database=TechStore;Uid=root;Pwd=Martin1234;"));
 
 // Setting up ASP.NET Core Identity
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)

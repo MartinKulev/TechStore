@@ -1,185 +1,188 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\andgt\\Desktop\\TechStore\\",
+  "WorkspaceRootPath": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\administrationpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\administrationpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\services\\techservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\services\\techservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:services\\techservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\andgt\\Desktop\\TechStore\\Migrations\\20240315113239_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240315113239_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\administrationpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\administrationpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\successfulyrevertedpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulyrevertedpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\viewmodels\\adminpanelviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\viewmodels\\adminpanelviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\successfulydeleteduser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulydeleteduser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\smartphones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\smartphones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\monitors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\monitors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\mice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\mice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\keyboards.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\keyboards.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\headphones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\headphones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\successfulydeletedcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulydeletedcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\viewmodels\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\viewmodels\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\viewmodels\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\viewmodels\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\successfulycreatedcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulycreatedcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\successfulydeletedpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulydeletedpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\data\\techstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\data\\techstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:data\\techstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\successfulyrevertedpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulyrevertedpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\viewmodels\\adminpanelviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\viewmodels\\adminpanelviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\successfulydeleteduser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulydeleteduser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\smartphones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\smartphones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\monitors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\monitors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\mice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\mice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\keyboards.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\keyboards.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\headphones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\headphones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\successfulydeletedcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulydeletedcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\viewmodels\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\viewmodels\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\viewmodels\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\viewmodels\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\successfulycreatedcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulycreatedcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\successfulydeletedpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulydeletedpromotion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\viewmodels\\homepageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\viewmodels\\homepageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\viewmodels\\homepageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\viewmodels\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\viewmodels\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\viewmodels\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\TechStore\\Migrations\\20240311074554_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\entities\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\entities\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\entities\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\tablets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\tablets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\tablets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\tvs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\tvs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\tvs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\speakers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\speakers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\speakers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\laptops.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\laptops.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\laptops.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\entities\\promocode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\entities\\promocode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\entities\\promocode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\models\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\models\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:models\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\views\\tech\\successfulydeletedpromocode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\views\\tech\\successfulydeletedpromocode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\successfulydeletedpromocode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\andgt\\desktop\\techstore\\services\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\services\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:services\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\new folder (8)\\techstore\\migrations\\20240315113239_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:migrations\\20240315113239_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -189,43 +192,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "20240315113239_initial.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Migrations\\20240315113239_initial.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240315113239_initial.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Migrations\\20240315113239_initial.cs",
-              "RelativeToolTip": "Migrations\\20240315113239_initial.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T11:32:40.144Z",
-              "EditorCaption": ""
+              "Title": "AdministrationPanel.cshtml",
+              "DocumentMoniker": "F:\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml",
+              "ToolTip": "F:\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml",
+              "ViewState": "AQIAANkBAAAAAAAAAAAiwAACAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-15T16:16:52.153Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "TechController.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Controllers\\TechController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Controllers\\TechController.cs",
               "RelativeDocumentMoniker": "Controllers\\TechController.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Controllers\\TechController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Controllers\\TechController.cs",
               "RelativeToolTip": "Controllers\\TechController.cs",
-              "ViewState": "AQIAAOoAAAAAAAAAAAAQwCkBAAAAAAAA",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAQwMoAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-10T08:37:42.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "TechService.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Services\\TechService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Services\\TechService.cs",
               "RelativeDocumentMoniker": "Services\\TechService.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Services\\TechService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Services\\TechService.cs",
               "RelativeToolTip": "Services\\TechService.cs",
-              "ViewState": "AQIAAIIAAAAAAAAAAAAmwMIAAAAMAAAA",
+              "ViewState": "AQIAAMUAAAAAAAAAAAAawNoAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-10T10:34:32.565Z",
               "EditorCaption": ""
@@ -234,243 +242,94 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AdministrationPanel.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\AdministrationPanel.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml",
               "RelativeToolTip": "Views\\Tech\\AdministrationPanel.cshtml",
-              "ViewState": "AQIAAGwBAAAAAAAAAAAAAKYBAAAAAAAA",
+              "ViewState": "AQIAAOcBAAAAAAAAAAAmwPQBAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-03-10T12:07:53.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SuccessfulyRevertedPromotion.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyRevertedPromotion.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulyRevertedPromotion.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyRevertedPromotion.cshtml",
-              "RelativeToolTip": "Views\\Tech\\SuccessfulyRevertedPromotion.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-11T20:13:11.792Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAHwAAAAAAAAAAAAAAHwAAABgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-10T08:38:58.906Z",
-              "EditorCaption": ""
+              "DocumentIndex": 10,
+              "Title": "AdminPanelViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\AdminPanelViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\AdminPanelViewModel.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\AdminPanelViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\AdminPanelViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T11:40:12.742Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "AdminPanelViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\AdminPanelViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ViewModels\\AdminPanelViewModel.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\AdminPanelViewModel.cs",
-              "RelativeToolTip": "Models\\ViewModels\\AdminPanelViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T11:40:12.742Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Program.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAABXAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T08:25:06.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SuccessfulyDeletedUser.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyDeletedUser.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulyDeletedUser.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyDeletedUser.cshtml",
-              "RelativeToolTip": "Views\\Tech\\SuccessfulyDeletedUser.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-11T20:13:22.78Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Smartphones.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Smartphones.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Smartphones.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Smartphones.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Smartphones.cshtml",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAG8AAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-10T11:55:17.414Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ShoppingCart.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\ShoppingCart.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\ShoppingCart.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\ShoppingCart.cshtml",
-              "RelativeToolTip": "Views\\Tech\\ShoppingCart.cshtml",
-              "ViewState": "AQIAAJ8AAAAAAAAAAAAAAA0AAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-11T08:45:39.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-10T08:25:06.499Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Profile.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Profile.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Profile.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Profile.cshtml",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAAFEAAAAWAAAA",
+              "Title": "SuccessfulyDeletedUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyDeletedUser.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulyDeletedUser.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyDeletedUser.cshtml",
+              "RelativeToolTip": "Views\\Tech\\SuccessfulyDeletedUser.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-10T08:44:34.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T20:13:22.78Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
               "Title": "Product.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Product.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Product.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Product.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Product.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Product.cshtml",
               "RelativeToolTip": "Views\\Tech\\Product.cshtml",
               "ViewState": "AQIAADUBAAAAAAAAAAAAAEQBAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-10T08:36:04.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-10T08:36:04.734Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Monitors.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Monitors.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Monitors.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Monitors.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Monitors.cshtml",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAHwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-10T11:54:25.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Mice.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Mice.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Mice.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Mice.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Mice.cshtml",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAmwHwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-10T10:37:08.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Keyboards.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Keyboards.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Keyboards.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Keyboards.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Keyboards.cshtml",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAHwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-10T11:49:10.989Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Category.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Category.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Category.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Category.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Category.cshtml",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAAAGEAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-13T15:30:30.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Headphones.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Headphones.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Headphones.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Headphones.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Headphones.cshtml",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAmwH8AAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-10T11:53:31.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "SuccessfulyDeletedCategory.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyDeletedCategory.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulyDeletedCategory.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyDeletedCategory.cshtml",
-              "RelativeToolTip": "Views\\Tech\\SuccessfulyDeletedCategory.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-14T15:40:37.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ProductViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\ProductViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ViewModels\\ProductViewModel.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\ProductViewModel.cs",
-              "RelativeToolTip": "Models\\ViewModels\\ProductViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "TechStoreDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Data\\TechStoreDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\TechStoreDbContext.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Data\\TechStoreDbContext.cs",
+              "RelativeToolTip": "Data\\TechStoreDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T14:10:55.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-14T13:31:25.643Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "LoginModel.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\LoginModel.cs",
-              "RelativeDocumentMoniker": "Models\\ViewModels\\LoginModel.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\LoginModel.cs",
-              "RelativeToolTip": "Models\\ViewModels\\LoginModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T09:24:25.149Z",
-              "EditorCaption": ""
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAAAHwAAABgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T08:38:58.906Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 5,
               "Title": "RoleController.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Controllers\\RoleController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Controllers\\RoleController.cs",
               "RelativeDocumentMoniker": "Controllers\\RoleController.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Controllers\\RoleController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Controllers\\RoleController.cs",
               "RelativeToolTip": "Controllers\\RoleController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -478,11 +337,167 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 9,
+              "Title": "SuccessfulyRevertedPromotion.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyRevertedPromotion.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulyRevertedPromotion.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyRevertedPromotion.cshtml",
+              "RelativeToolTip": "Views\\Tech\\SuccessfulyRevertedPromotion.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-11T20:13:11.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "20240315113239_initial.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Migrations\\20240315113239_initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240315113239_initial.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Migrations\\20240315113239_initial.cs",
+              "RelativeToolTip": "Migrations\\20240315113239_initial.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T11:32:40.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Smartphones.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Smartphones.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Smartphones.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Smartphones.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Smartphones.cshtml",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAAAG8AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T11:55:17.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ShoppingCart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\ShoppingCart.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\ShoppingCart.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\ShoppingCart.cshtml",
+              "RelativeToolTip": "Views\\Tech\\ShoppingCart.cshtml",
+              "ViewState": "AQIAAJ8AAAAAAAAAAAAAAA0AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-11T08:45:39.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Profile.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Profile.cshtml",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAFEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T08:44:34.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Monitors.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Monitors.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Monitors.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Monitors.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Monitors.cshtml",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAAAHwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T11:54:25.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Mice.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Mice.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Mice.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Mice.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Mice.cshtml",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAmwHwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T10:37:08.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Keyboards.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Keyboards.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Keyboards.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Keyboards.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Keyboards.cshtml",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAAAHwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T11:49:10.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Category.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Category.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Category.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Category.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Category.cshtml",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAGEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-13T15:30:30.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Headphones.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Headphones.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Headphones.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Headphones.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Headphones.cshtml",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAmwH8AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T11:53:31.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SuccessfulyDeletedCategory.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyDeletedCategory.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulyDeletedCategory.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyDeletedCategory.cshtml",
+              "RelativeToolTip": "Views\\Tech\\SuccessfulyDeletedCategory.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-14T15:40:37.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ProductViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\ProductViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\ProductViewModel.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\ProductViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\ProductViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T14:10:55.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\LoginModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\LoginModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T09:24:25.149Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Controllers\\AccountController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -492,9 +507,9 @@
               "$type": "Document",
               "DocumentIndex": 26,
               "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Account\\Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "Views\\Account\\Login.cshtml",
               "ViewState": "AQIAAE0AAAAAAAAAAAAmwF8AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -502,11 +517,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "SuccessfulyCreatedCategory.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyCreatedCategory.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyCreatedCategory.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulyCreatedCategory.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyCreatedCategory.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyCreatedCategory.cshtml",
               "RelativeToolTip": "Views\\Tech\\SuccessfulyCreatedCategory.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -516,9 +531,9 @@
               "$type": "Document",
               "DocumentIndex": 28,
               "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\Entities\\Category.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Category.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\Entities\\Category.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\Entities\\Category.cs",
               "RelativeToolTip": "Models\\Entities\\Category.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -526,11 +541,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "SuccessfulyDeletedPromotion.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyDeletedPromotion.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyDeletedPromotion.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulyDeletedPromotion.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyDeletedPromotion.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyDeletedPromotion.cshtml",
               "RelativeToolTip": "Views\\Tech\\SuccessfulyDeletedPromotion.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -538,23 +553,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "TechStoreDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Data\\TechStoreDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\TechStoreDbContext.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Data\\TechStoreDbContext.cs",
-              "RelativeToolTip": "Data\\TechStoreDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T13:31:25.643Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 32,
               "Title": "ProfileViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\ProfileViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\ProfileViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\ProfileViewModel.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\ProfileViewModel.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\ProfileViewModel.cs",
               "RelativeToolTip": "Models\\ViewModels\\ProfileViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -564,9 +567,9 @@
               "$type": "Document",
               "DocumentIndex": 27,
               "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\Entities\\Product.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Product.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\Entities\\Product.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\Entities\\Product.cs",
               "RelativeToolTip": "Models\\Entities\\Product.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -576,9 +579,9 @@
               "$type": "Document",
               "DocumentIndex": 31,
               "Title": "RegisterModel.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\RegisterModel.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\RegisterModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\RegisterModel.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\RegisterModel.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\RegisterModel.cs",
               "RelativeToolTip": "Models\\ViewModels\\RegisterModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -588,9 +591,9 @@
               "$type": "Document",
               "DocumentIndex": 30,
               "Title": "HomepageViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\HomepageViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\HomepageViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ViewModels\\HomepageViewModel.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\ViewModels\\HomepageViewModel.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\ViewModels\\HomepageViewModel.cs",
               "RelativeToolTip": "Models\\ViewModels\\HomepageViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -600,9 +603,9 @@
               "$type": "Document",
               "DocumentIndex": 29,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -612,9 +615,9 @@
               "$type": "Document",
               "DocumentIndex": 33,
               "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Account\\Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Account\\Register.cshtml",
               "RelativeToolTip": "Views\\Account\\Register.cshtml",
               "ViewState": "AQIAAGwAAAAAAAAAAAAAAIIAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -624,9 +627,9 @@
               "$type": "Document",
               "DocumentIndex": 34,
               "Title": "Homepage.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Homepage.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Homepage.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Homepage.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Homepage.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Homepage.cshtml",
               "RelativeToolTip": "Views\\Tech\\Homepage.cshtml",
               "ViewState": "AQIAAGoAAAAAAAAAAAAmwIgAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -637,9 +640,9 @@
               "DocumentIndex": 35,
               "Title": "20240311074554_Initial.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\TechStore\\Migrations\\20240311074554_Initial.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Admin\\Desktop\\TechStore\\Migrations\\20240311074554_Initial.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Admin\\Desktop\\TechStore\\Migrations\\20240311074554_Initial.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\TechStore\\Migrations\\20240311074554_Initial.cs",
-              "RelativeToolTip": "..\\..\\..\\Admin\\Desktop\\TechStore\\Migrations\\20240311074554_Initial.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Admin\\Desktop\\TechStore\\Migrations\\20240311074554_Initial.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-11T07:45:56.156Z"
@@ -648,9 +651,9 @@
               "$type": "Document",
               "DocumentIndex": 36,
               "Title": "Promotion.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\Entities\\Promotion.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\Entities\\Promotion.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Promotion.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\Entities\\Promotion.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\Entities\\Promotion.cs",
               "RelativeToolTip": "Models\\Entities\\Promotion.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -660,9 +663,9 @@
               "$type": "Document",
               "DocumentIndex": 38,
               "Title": "TVs.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\TVs.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\TVs.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\TVs.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\TVs.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\TVs.cshtml",
               "RelativeToolTip": "Views\\Tech\\TVs.cshtml",
               "ViewState": "AQIAAFgAAAAAAAAAAABBwHAAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -672,9 +675,9 @@
               "$type": "Document",
               "DocumentIndex": 40,
               "Title": "Laptops.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Laptops.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Laptops.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Laptops.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Laptops.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Laptops.cshtml",
               "RelativeToolTip": "Views\\Tech\\Laptops.cshtml",
               "ViewState": "AQIAAFgAAAAAAAAAAABBwGcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -684,9 +687,9 @@
               "$type": "Document",
               "DocumentIndex": 39,
               "Title": "Speakers.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Speakers.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Speakers.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Speakers.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Speakers.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Speakers.cshtml",
               "RelativeToolTip": "Views\\Tech\\Speakers.cshtml",
               "ViewState": "AQIAAF4AAAAAAAAAAABBwHwAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -696,9 +699,9 @@
               "$type": "Document",
               "DocumentIndex": 37,
               "Title": "Tablets.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Tablets.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Tablets.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\Tablets.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\Tablets.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\Tablets.cshtml",
               "RelativeToolTip": "Views\\Tech\\Tablets.cshtml",
               "ViewState": "AQIAAFgAAAAAAAAAAABBwGMAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -708,9 +711,9 @@
               "$type": "Document",
               "DocumentIndex": 41,
               "Title": "Promocode.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\Entities\\Promocode.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\Entities\\Promocode.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Promocode.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\Entities\\Promocode.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\Entities\\Promocode.cs",
               "RelativeToolTip": "Models\\Entities\\Promocode.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -720,9 +723,9 @@
               "$type": "Document",
               "DocumentIndex": 42,
               "Title": "Payment.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\Entities\\Payment.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\Entities\\Payment.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Payment.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Models\\Entities\\Payment.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Models\\Entities\\Payment.cs",
               "RelativeToolTip": "Models\\Entities\\Payment.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -732,9 +735,9 @@
               "$type": "Document",
               "DocumentIndex": 43,
               "Title": "SuccessfulyDeletedPromocode.cshtml",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyDeletedPromocode.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyDeletedPromocode.cshtml",
               "RelativeDocumentMoniker": "Views\\Tech\\SuccessfulyDeletedPromocode.cshtml",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Views\\Tech\\SuccessfulyDeletedPromocode.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Views\\Tech\\SuccessfulyDeletedPromocode.cshtml",
               "RelativeToolTip": "Views\\Tech\\SuccessfulyDeletedPromocode.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -744,9 +747,9 @@
               "$type": "Document",
               "DocumentIndex": 44,
               "Title": "RoleService.cs",
-              "DocumentMoniker": "C:\\Users\\andgt\\Desktop\\TechStore\\Services\\RoleService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Services\\RoleService.cs",
               "RelativeDocumentMoniker": "Services\\RoleService.cs",
-              "ToolTip": "C:\\Users\\andgt\\Desktop\\TechStore\\Services\\RoleService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\New folder (8)\\TechStore\\Services\\RoleService.cs",
               "RelativeToolTip": "Services\\RoleService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -179,7 +179,8 @@ namespace TechStore.Controllers
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            ApplicationUser user = techService.GetUserByID();
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ApplicationUser user = techService.GetUserByID(userId);
             var viewModel = new ProfileViewModel
             {
                 User = user
@@ -289,16 +290,16 @@ namespace TechStore.Controllers
             return View("SuccessfulyCreatedUser");
         }
 
-        [HttpPost]
-        [Route("{userID}/SuccessfulyDeletedUser")]
-        public IActionResult SuccessfulyCreatedUser(string userID)
-        {
-            List<Category> categories = techService.GetAllCategories();
-            ViewBag.ItemsList = categories;
+        //[HttpPost]
+        //[Route("{userID}/SuccessfulyDeletedUser")]
+        //public IActionResult SuccessfulyCreatedUser(string userID)
+        //{
+        //    List<Category> categories = techService.GetAllCategories();
+        //    ViewBag.ItemsList = categories;
 
-            techService.RemoveUser(userID);
-            return View("SuccessfulyDeletedUser");
-        }
+        //    techService.RemoveUser(userID);
+        //    return View("SuccessfulyDeletedUser");
+        //}
 
 
     }

@@ -214,9 +214,9 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public ApplicationUser GetUserByID()//public ApplicationUser GetUserByID(int ID)
+        public ApplicationUser GetUserByID(string id)
         {
-            ApplicationUser user = context.User.First();//ApplicationUser user = context.User.First(p => p.ID == ID);
+            ApplicationUser user = context.User.First(p => p.Id == id);
             return user;
         }
 
