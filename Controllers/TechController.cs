@@ -123,7 +123,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyCreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
+        public IActionResult SuccessfullyCreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -270,6 +270,35 @@ namespace TechStore.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult SuccessfulyCreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
+        {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+            var user = new ApplicationUser
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                UserName = email,
+                Email = email,
+                PhoneNumber = phoneNumber
+            };
+
+            techService.CreateUser(user);
+            return View("SuccessfulyCreatedUser");
+        }
+
+        [HttpPost]
+        [Route("{userID}/SuccessfulyDeletedUser")]
+        public IActionResult SuccessfulyCreatedUser(string userID)
+        {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+            techService.RemoveUser(userID);
+            return View("SuccessfulyDeletedUser");
+        }
 
 
     }

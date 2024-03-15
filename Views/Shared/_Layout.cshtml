@@ -122,7 +122,7 @@
             @foreach (var category in ViewBag.ItemsList)
             {
                 <form method="post" asp-action="Category" asp-controller="Tech">
-                    <input type="hidden" name="categoryName" value="@category.CategoryName" />
+                    <input type="hidden" name="categoryName" value="@category.CategoryName" />  
                     <button type="submit" class="option-button">@category.CategoryName<div class="border-bottom"></div></button>
                 </form>
             }
