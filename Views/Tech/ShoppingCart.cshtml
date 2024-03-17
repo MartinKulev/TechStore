@@ -169,36 +169,64 @@
     }
 </style>
 <section class="flex-container">
-    <div class="product-box">
-        <img class="product-image" src="https://s13emagst.akamaized.net/products/64817/64816454/images/res_77def1f199ad6f0779f5c7e562f97e5b.jpg?width=450&height=450&hash=A2C90F159431E535B9D0F413245293E8">
-        <div class="product-info">
-            <div class="product-text">Смартфон Samsung Galaxy S24 Ultra, Dual SIM, 12GB RAM, 512GB, 5G, Titanium Grey</div>
-            <div class="product-price">Цена: 1991.00лв</div>
-        </div>
-        <div class="product-quantity">
-            <div class="product-quantity-label">Количество:</div>
-            <div class="product-quantity-count">1</div>
-        </div>
-        <div class="product-remove-button-container">
-            <button class="product-remove-button">
-                <i class="product-remove-button-icon fa-solid fa-trash-can"></i>
-            </button>
-        </div>
-    </div>
-    @for (int a = 0; a < 7; a++)
+    @foreach (var cart in Model)
     {
         <div class="product-box">
+            <img class="product-image" src="@cart.ImageURL">
+            <div class="product-info">
+                <div class="product-text">@cart.Description</div>
+                <div class="product-price">Цена: @cart.Price лв</div>
+            </div>
+            <div class="product-quantity">
+                <div class="product-quantity-label">Количество:</div>
+                <div class="product-quantity-count">@cart.Quantity</div>
+            </div>
+            <div class="product-remove-button-container">
+                <button class="product-remove-button">
+                    <i class="product-remove-button-icon fa-solid fa-trash-can"></i>
+                </button>
+            </div>
         </div>
     }
     <div class="final-price-container">
-        <div class="final-price">Общо: 1991.00 лв.</div>
+        <div class="final-price">Общо: @ViewBag.TotalPrice лв.</div>
         <div class="promocode-container">
-            <input class="promocode-box" placeholder="Въведете промокод">
-            <div class="promocode-apply-button"><div class="promocode-apply-button-text">Приложи</div></div>
-        </div>       
+            <form id="promoForm" class="promocode-container" method="post" asp-action="ApplyPromoCode" asp-controller="Tech">
+                <input class="promocode-box" placeholder="Въведи Код" name="promoCode" />
+                <input type="hidden" name="ID" value=0 />
+                <button type="button" class="promocode-apply-button">Проложи</button>
+            </form>
+            <div id="discountMessage">
+                @if (ViewBag.DiscountMessage != null)
+                {
+                    <p>@ViewBag.DiscountMessage</p>
+                }
+            </div>
+        </div>
+
+        @section Scripts {
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $('.promocode-apply-button').click(function () {
+                        $.ajax({
+                            url: '@Url.Action("ApplyPromoCode", "Tech")',
+                            type: 'POST',
+                            data: $('#promoForm').serialize(),
+                            success: function (response) {
+                                $('#discountMessage').html(response);
+                            },
+                            error: function () {
+                                $('#discountMessage').html('An error occurred.');
+                            }
+                        });
+                    });
+                });
+            </script>
+        }
     </div>
-    <form method="post" asp-action="Payment" asp-controller="Tech">
-        <button class="checkout-button">
+    <form method="post" asp-action="AddToTempOrder" asp-controller="Tech">
+        <button type="submit" class="checkout-button">
             <div class="checkout-cart-button"><i class="checkout-cart-icon fa-solid fa-cart-shopping"></i></div>
             <div class="checkout-cart-text">Kъм касата</div>
         </button>

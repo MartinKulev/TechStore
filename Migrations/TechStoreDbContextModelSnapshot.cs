@@ -229,6 +229,17 @@ namespace TechStore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ImageURL")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
 
@@ -270,6 +281,9 @@ namespace TechStore.Migrations
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("UserID")
                         .HasColumnType("int");
@@ -401,6 +415,29 @@ namespace TechStore.Migrations
                     b.HasIndex("UserID");
 
                     b.ToTable("Review");
+                });
+
+            modelBuilder.Entity("TechStore.Models.Entities.TempOrder", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("OrderTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderID");
+
+                    b.ToTable("TempOrder");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

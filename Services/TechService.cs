@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using TechStore.Data;
 using TechStore.Models.Entities;
+using TechStore.Models.ViewModels;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace TechStore.Services
@@ -95,6 +96,20 @@ namespace TechStore.Services
         {
             Product product = context.Product.First(p => p.ProductID == productID);
             return product;
+        }
+
+        public Cart GetCartByID(int cartID)
+        {
+            Cart cart = context.Cart.First(c => c.CartID == cartID);
+            return cart;
+        }
+
+        public List<Product> GetAllDescriptions(int productId)
+        {
+            return context.Product
+                   .Where(d => d.ProductID == productId)
+                   .Include(d => d.Description)
+                   .ToList();
         }
 
         public void AddPayment(Payment payment)
@@ -220,7 +235,196 @@ namespace TechStore.Services
             return user;
         }
 
+        public List<Product> GetAllProducts()
+        {
+            return context.Product.ToList();
+        }
+
+        public bool AddProductToCart(int userID, int productID, int quantity, decimal price, string description, string imageURL)
+        {
+            try
+            {
+                if (productID <= 0 || quantity <= 0)
+                {
+                    Console.WriteLine("Invalid input parameters for adding product to cart.");
+                    return false;
+                }
+
+                var existingCartItem = context.Cart
+                    .FirstOrDefault(c => c.UserID == userID && c.ProductID == productID);
+
+                if (existingCartItem != null)
+                {
+                    existingCartItem.Quantity += quantity;
+                    existingCartItem.Price += price;
+                }
+                else
+                {
+                    Cart newCartItem = new Cart
+                    {
+                        UserID = userID,
+                        ProductID = productID,
+                        Quantity = quantity,
+                        Price = price,
+                        Description = description,
+                        ImageURL = imageURL
+                    };
+                    context.Cart.Add(newCartItem);
+                }
+
+                context.SaveChanges();
+                return true;
+            }
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine($"Database error occurred while adding the product to the cart: {ex.Message}");
+                return false;
+            }
+
+            catch (Exception ex)
+            {
+
+                Console.WriteLine($"An error occurred while adding the product to the cart: {ex.Message}");
+                return false;
+            }
+        }
+
+        public Promocode GetPromoCode(string promoCode)
+        {
+            return context.Promocode.FirstOrDefault(p => p.PromocodeName == promoCode);
+        }
+
+        public decimal GetTotalCartPrice(int userId)
+        {
+            var cartItems = context.Cart
+                                  .Where(c => c.UserID == userId)
+                                  .ToList();
 
 
+            decimal totalPrice = 0;
+            foreach (var cartItem in cartItems)
+            {
+                var product = context.Product.FirstOrDefault(p => p.ProductID == cartItem.ProductID);
+                if (product != null)
+                {
+                    decimal itemPrice = product.Price * cartItem.Quantity;
+                    totalPrice += itemPrice;
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Product with ID {cartItem.ProductID} not found.");
+                }
+            }
+
+            return totalPrice;
+        }
+
+        public int GetUserIdFromCart()
+        {
+            var cartItem = context.Cart.FirstOrDefault();
+            if (cartItem != null)
+            {
+                return cartItem.UserID;
+            }
+
+            throw new InvalidOperationException("UserID not found in Cart table.");
+        }
+
+
+        public List<CartViewModel> GetCartItems(int userId)
+        {
+            var cartItems = context.Cart.Where(c => c.UserID == userId).ToList();
+            var cartItemViewModels = new List<CartViewModel>();
+
+            foreach (var cartItem in cartItems)
+            {
+                var product = context.Product.FirstOrDefault(p => p.ProductID == cartItem.ProductID);
+                if (product != null)
+                {
+                    cartItemViewModels.Add(new CartViewModel
+                    {
+                        ProductID = product.ProductID,
+                        ImageURL = product.ImageURL,
+                        Description = product.Description,
+                        Price = product.Price,
+                        Quantity = cartItem.Quantity
+                    });
+                }
+            }
+
+            return cartItemViewModels;
+        }
+
+        public void AddToTempOrder(TempOrder tempOrder)
+        {
+
+            context.TempOrder.Add(tempOrder);
+            context.SaveChanges();
+        }
+
+        public List<TempOrder> GetTempOrders(int userId)
+        {
+
+            return context.TempOrder.Where(to => to.UserID == userId).ToList();
+        }
+
+        public void AddOrder(Order order)
+        {
+
+            context.Order.Add(order);
+            context.SaveChanges();
+        }
+
+        public void ClearTempOrders(int userId)
+        {
+
+            var tempOrders = context.TempOrder.Where(to => to.UserID == userId);
+            context.TempOrder.RemoveRange(tempOrders);
+            context.SaveChanges();
+        }
+
+        public void DeleteCartItems(int userId)
+        {
+            var cartItems = context.Cart.Where(c => c.UserID == userId);
+            context.Cart.RemoveRange(cartItems);
+            context.SaveChanges();
+        }
+
+        public List<OrderViewModel> GetOrders(int userId)
+        {
+            // Retrieve orders associated with the user from the database
+            var orders = context.Order
+                                .Where(o => o.UserID == userId)
+                                .ToList();
+
+            // Initialize a list to store the view models
+            var orderViewModels = new List<OrderViewModel>();
+
+            // Iterate through each order and create corresponding view models
+            foreach (var order in orders)
+            {
+                // Retrieve product information for the order
+                var product = context.Product.FirstOrDefault(p => p.ProductID == order.ProductID);
+
+                // If product exists, create order view model
+                if (product != null)
+                {
+                    orderViewModels.Add(new OrderViewModel
+                    {
+                        OrderID = order.OrderID,
+                        TotalPrice = order.TotalPrice,
+                        CardNum = order.Quantity,
+                        OrderTime = order.OrderTime
+                    });
+                }
+            }
+
+            return orderViewModels;
+        }
     }
 }
+
+
+
+    
+

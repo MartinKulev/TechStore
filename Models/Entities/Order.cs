@@ -7,13 +7,14 @@ namespace TechStore.Models.Entities
     {
         public Order() { }
 
-        public Order(int productID, int quantity, int userID, int cardNum, DateTime orderTime)
+        public Order(int productID, int quantity, int userID, int cardNum, DateTime orderTime, decimal totalPrice)
         {
             ProductID = productID;
             Quantity = quantity;
             UserID = userID;
             CardNum = cardNum;
             OrderTime = orderTime;
+            TotalPrice = totalPrice;
         }
 
         [Key]
@@ -32,6 +33,8 @@ namespace TechStore.Models.Entities
         public int CardNum { get; set; }
 
         public DateTime OrderTime { get; set; }
+
+        public decimal TotalPrice { get; set; }
 
     }
 

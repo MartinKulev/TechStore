@@ -201,21 +201,21 @@
     </div>
     @if (!User.IsInRole("Admin"))
     {
-        <div class="orders-title">Поръчки:</div>
-        <div class="order-box">
-            <div class="order-info">
-                <div class="order-text">Поръчка № 3</div>
-                <div class="order-price-container"><div class="order-price">Платено: 1991.00лв</div><div>Банкова карта: 1234 5678 9123 4567</div></div>
-            </div>
-            <div class="order-dateTime-container">
-                <div class="order-dateTime-label">Дата на поръчванe:</div>
-                <div class="order-dateTime">03.03.24</div>
-                <div class="order-dateTime">11:47:45</div>
-            </div>
-        </div>
-        @for (int a = 0; a < 7; a++)
+        @foreach (var order in Model)
         {
             <div class="order-box">
+                <div class="order-info">
+                    <div class="order-text">Поръчка № @order.OrderID</div>
+                    <div class="order-price-container">
+                        <div class="order-price">Платено: @order.TotalPrice лв</div>
+                        <div>Банкова карта: @order.CardNumber</div>
+                    </div>
+                </div>
+                <div class="order-dateTime-container">
+                    <div class="order-dateTime-label">Дата на поръчванe:</div>
+                    <div class="order-dateTime">@order.OrderTime.ToShortDateString()</div>
+                    <div class="order-dateTime">@order.OrderTime.ToShortTimeString()</div>
+                </div>
             </div>
         }
     }    

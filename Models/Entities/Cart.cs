@@ -7,11 +7,14 @@ namespace TechStore.Models.Entities
     {
         public Cart() { }
 
-        public Cart(int productID, int quantity, int userID)
+        public Cart(int productID, int quantity, int userID, string description, string imageURL, decimal price)
         {
             ProductID = productID;
             Quantity = quantity;
             UserID = userID;
+            Description = description;
+            ImageURL = imageURL;
+            Price = price;
         }
 
         [Key]
@@ -25,5 +28,14 @@ namespace TechStore.Models.Entities
 
         [ForeignKey(nameof(ApplicationUser))]
         public int UserID { get; set; }
+
+        [ForeignKey(nameof(Product))]
+        public string Description { get; set; }
+
+        [ForeignKey(nameof(Product))]
+        public string ImageURL { get; set; }
+
+        [ForeignKey(nameof(Product))]
+        public decimal Price { get; set; }
     }
 }

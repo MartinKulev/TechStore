@@ -17,6 +17,7 @@ namespace TechStore.Data
         public DbSet<Review> Review { get; set; }
         public DbSet<ApplicationRole> Role { get; set; }
         public DbSet<ApplicationUser> User { get; set; }
+        public DbSet<TempOrder> TempOrder { get; set; }
 
         public TechStoreDbContext(DbContextOptions<TechStoreDbContext> options) 
             : base(options)

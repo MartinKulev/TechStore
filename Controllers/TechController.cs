@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Mysqlx.Crud;
 using System.Security.Claims;
 using TechStore.Models.Entities;
 using TechStore.Models.ViewModels;
@@ -50,12 +51,22 @@ namespace TechStore.Controllers
             return View(products);
         }
 
-        public IActionResult ShoppingCart()
+        public IActionResult ShoppingCart(int cartID)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
+            var cartItems = techService.GetCartItems(cartID);
 
-            return View();
+
+            var cartViewModels = cartItems.Select(item => new CartViewModel
+            {
+                ImageURL = item.ImageURL,
+                Description = item.Description,
+                Price = item.Price,
+                Quantity = item.Quantity
+            }).ToList();
+
+            return View(cartViewModels);
         }
 
         [HttpPost]
@@ -174,7 +185,7 @@ namespace TechStore.Controllers
             return View();
         }
 
-        public IActionResult Profile()
+        public IActionResult Profile(int orderId)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -185,6 +196,16 @@ namespace TechStore.Controllers
             {
                 User = user
             };
+            var ordersFromDatabase = techService.GetOrders(orderId);// Retrieve orders from your database or another data source
+
+            
+            var OrderViewModel = ordersFromDatabase.Select(order => new OrderViewModel
+            {
+                OrderID = order.OrderID,
+                TotalPrice = order.TotalPrice,
+                CardNum = order.CardNum,
+                OrderTime = order.OrderTime
+            }).ToList();
 
             return View(viewModel);
         }
@@ -300,6 +321,157 @@ namespace TechStore.Controllers
         //    techService.RemoveUser(userID);
         //    return View("SuccessfulyDeletedUser");
         //}
+
+        public IActionResult Index()
+        {
+
+            var products = techService.GetAllProducts();
+
+            return View(products);
+        }
+
+        [HttpPost]
+        public IActionResult AddToCart(int userId, int productId, int quantity, decimal price, string description, string imageURL)
+        {
+            try
+            {
+
+                bool success = techService.AddProductToCart(userId, productId, quantity, price, description, imageURL);
+
+                if (success)
+                {
+
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+
+                    ModelState.AddModelError("", "Failed to add the product to the cart.");
+                    return RedirectToAction("Mice", "Tech");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                ModelState.AddModelError("", $"An error occurred while adding the product to the cart: {ex.Message}");
+                return RedirectToAction("Laptops", "Tech");
+            }
+        }
+
+
+        [HttpPost]
+        public IActionResult ApplyPromoCode(string promoCode)
+        {
+            int userId = techService.GetUserIdFromCart();
+
+
+            decimal totalPrice = techService.GetTotalCartPrice(userId);
+
+            ViewBag.TotalPrice = totalPrice;
+            var promo = techService.GetPromoCode(promoCode);
+            if (promo != null)
+            {
+                decimal discountAmount = totalPrice * (promo.Discount / 100);
+                decimal discountedPrice = totalPrice - discountAmount;
+
+
+                ViewBag.TotalPrice = discountedPrice;
+
+
+                ViewBag.DiscountMessage = $"Отстъпка: {promo.Discount}%";
+            }
+            else
+            {
+
+                ViewBag.TotalPrice = totalPrice;
+
+
+                ViewBag.DiscountMessage = "Грешен код";
+            }
+
+            return PartialView("DiscountMessagePartial");
+        }
+
+
+
+        [HttpPost]
+        public IActionResult AddToTempOrder()
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            var userId = 3;
+
+
+            var cartItems = techService.GetCartItems(userId);
+
+
+            foreach (var item in cartItems)
+            {
+                var tempOrder = new TempOrder
+                {
+                    ProductID = item.ProductID,
+                    Quantity = item.Quantity,
+                    UserID = userId,
+                    OrderTime = DateTime.Now
+                };
+
+                techService.AddToTempOrder(tempOrder);
+            }
+
+
+            return View("Payment");
+        }
+
+        [HttpPost]
+        public IActionResult ProcessPayment(string name, int cardNumber, string expiryDate, string cvvNum, string adress)
+        {
+
+            var userId = 0;
+
+
+            var tempOrders = techService.GetTempOrders(userId);
+
+
+            foreach (var tempOrder in tempOrders)
+            {
+                var order = new TechStore.Models.Entities.Order
+                {
+                    ProductID = tempOrder.ProductID,
+                    Quantity = tempOrder.Quantity,
+                    UserID = userId,
+                    CardNum = cardNumber,
+                    OrderTime = tempOrder.OrderTime
+                };
+
+                techService.AddOrder(order);
+            }
+
+
+            techService.ClearTempOrders(userId);
+
+            techService.DeleteCartItems(userId);
+
+            return View("Profile");
+        }
+
+        private int GetUserID()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var userIdClaim = User.FindFirst("UserId");
+                if (userIdClaim != null)
+                {
+                    if (int.TryParse(userIdClaim.Value, out int userId))
+                    {
+                        return userId;
+                    }
+                }
+            }
+
+            return -1;
+        }
 
 
     }
