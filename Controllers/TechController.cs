@@ -48,7 +48,15 @@ namespace TechStore.Controllers
             ViewBag.ItemsList = categories;
 
             List<Product> products = techService.GetProductsByCategories(categoryName);
-            return View(products);
+            List<Promotion> promotions = techService.GetAllPromotions();
+
+            var viewModel = new HomepageViewModel
+            {
+                Promotions = promotions,
+                Products = products
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult ShoppingCart(int cartID)
