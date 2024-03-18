@@ -201,7 +201,7 @@
     </div>
     @if (!User.IsInRole("Admin"))
     {
-        @foreach (var order in Model)
+        @* @foreach (var order in Model)
         {
             <div class="order-box">
                 <div class="order-info">
@@ -217,6 +217,6 @@
                     <div class="order-dateTime">@order.OrderTime.ToShortTimeString()</div>
                 </div>
             </div>
-        }
+        } *@
     }    
 </section>

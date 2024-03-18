@@ -68,6 +68,11 @@ namespace TechStore.Services
             foreach (var product in products)
             {
                 context.Product.Remove(product);
+                if(product.IsInPromotion)
+                {
+                    Promotion promotion = context.Promotion.First(p => p.ProductID == product.ProductID);
+                    context.Promotion.Remove(promotion);
+                }
             }
             context.SaveChanges();
         }

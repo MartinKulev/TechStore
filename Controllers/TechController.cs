@@ -311,17 +311,6 @@ namespace TechStore.Controllers
             return View("SuccessfulyCreatedUser");
         }
 
-        //[HttpPost]
-        //[Route("{userID}/SuccessfulyDeletedUser")]
-        //public IActionResult SuccessfulyCreatedUser(string userID)
-        //{
-        //    List<Category> categories = techService.GetAllCategories();
-        //    ViewBag.ItemsList = categories;
-
-        //    techService.RemoveUser(userID);
-        //    return View("SuccessfulyDeletedUser");
-        //}
-
         public IActionResult Index()
         {
 
