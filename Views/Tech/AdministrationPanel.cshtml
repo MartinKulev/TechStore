@@ -130,7 +130,7 @@
             font-size: 20px;
             height: 100px;
             background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);        
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
         }
 
         .brandModelPrice-container {
@@ -197,7 +197,6 @@
             margin-bottom: 100px;
             height: fit-content;
             width: 40%;
-            
         }
 
         .create-entity-title-container {
@@ -265,7 +264,7 @@
             height: 32px;
         }
 
-        .remove-button-form {           
+        .remove-button-form {
             height: 100%;
         }
 
@@ -333,6 +332,35 @@
             margin-bottom: 50px;
         }
 
+        .entity-button {
+            width: 100%;
+        }
+
+        .entity-text-box {
+            width: 100%;
+            text-align: left;
+        }
+
+        .entity-button {
+            width: 100%;
+        }
+
+        .edit-button-container {
+            cursor: pointer;
+            background-color: blue;
+            width: 32px;
+            padding: 0px !important;
+            height: 32px;
+        }
+
+        .edit-button {
+            height: 100%;
+            width: 100%;
+        }
+
+        .edit-icon {
+            color: white;
+        }
     </style>
     <script>
         function displayImage(input) {
@@ -352,6 +380,29 @@
                 reader.readAsDataURL(file);
             }
         }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var textBoxes = document.querySelectorAll(".entity-text-box");
+            textBoxes.forEach(function (textBox) {
+                textBox.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                });
+            });
+
+            var entityButtons = document.querySelectorAll(".entity-button");
+            entityButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    var textBox = this.querySelector(".entity-text-box");
+                    var entityLabel = this.querySelector(".entity-label");
+
+                    entityLabel.style.display = "none";
+                    textBox.style.display = "inline-block";
+                    textBox.focus();
+                });
+            });
+        });
     </script>
 </head>
 <body>
@@ -432,25 +483,71 @@
                 </form>
                 <table class="entity-table">
                     <tbody>
+                    <th>Потребителско ID</th>
+                    <th>Потребителско име</th>
+                    <th>Име</th>
+                    <th>Фамилия</th>
+                    <th>Имейл</th>
+                    <th>Телефон</th>
+                        @foreach (var user in Model.Users)
+                        {                       
                         <tr>
-                            <th>Потребителско ID</th>
-                            <th>Потребителско име</th>
-                            <th>Име</th>
-                            <th>Фамилия</th>
-                            <th>Имейл</th>
-                            <th>Телефон</th>
-                            @foreach (var user in Model.Users)
-                            {
-                            <tr>
-                                <td>@user.Id</td>
-                                <td>@user.UserName</td>
-                                <td>@user.FirstName</td>
-                                <td>@user.LastName</td>
-                                <td>@user.Email</td>
-                                <td>@user.PhoneNumber</td>
-                                <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfulyDeletedUser" asp-controller="Tech"><button class="remove-button" name="userID" value="@user.Id"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>                                
-                            </tr>
-                            }
+                            <form method="post" asp-action="SuccessfulyEditedUser" asp-controller="Tech">
+                            <td>
+                                <button type="button" class="entity-button">
+                                    <p class="entity-label">
+                                                @user.Id
+                                    </p>
+                                    <input class="entity-text-box" type="text" name="newUserID" style="display: none;" />
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="entity-button">
+                                    <p class="entity-label">
+                                                @user.UserName
+                                    </p>
+                                    <input class="entity-text-box" type="text" name="newUserName" style="display: none;" />
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="entity-button">
+                                    <p class="entity-label">
+                                                @user.FirstName
+                                    </p>
+                                    <input class="entity-text-box" type="text" name="newFirstName" style="display: none;" />
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="entity-button">
+                                    <p class="entity-label">
+                                                @user.LastName
+                                    </p>
+                                    <input class="entity-text-box" type="text" name="newLastName" style="display: none;" />
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="entity-button">
+                                    <p class="entity-label">
+                                                @user.Email
+                                    </p>
+                                    <input class="entity-text-box" type="text" name="newEmail" style="display: none;" />
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="entity-button">
+                                    <p class="entity-label">
+                                                @user.PhoneNumber
+                                    </p>
+                                    <input class="entity-text-box" type="text" name="newPhoneNumber" style="display: none;" />
+                                </button>
+                            </td>
+                            <td class="edit-button-container"><button class="edit-button"><i class="edit-icon fa-solid fa-pen-to-square"></i></button></td>
+                            <input hidden name="oldUserID" value="@user.Id" />
+                            </form>
+                            <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfulyDeletedUser" asp-controller="Tech"><button class="remove-button" name="userID" value="@user.Id"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
+                        </tr>
+                        
+                        }
                     </tbody>
                 </table>
             </section>

@@ -426,6 +426,38 @@ namespace TechStore.Services
 
             return orderViewModels;
         }
+
+        public void EditUser(string oldUserID, string newUserID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
+        {
+            ApplicationUser oldUser = GetUserByID(oldUserID);
+            if(newUserID != null)
+            {
+                oldUser.Id = newUserID;
+            }
+            if (newUserName != null)
+            {
+                oldUser.UserName = newUserName;
+            }
+            if (newFirstName != null)
+            { 
+                oldUser.FirstName = newFirstName;
+            }
+            if (newLastName != null)
+            {
+                oldUser.LastName = newLastName;
+            }
+            if (newEmail != null) 
+            { 
+                oldUser.Email = newEmail;
+            }
+            if (newPhoneNumber != null)
+            { 
+                oldUser.PhoneNumber = newPhoneNumber;
+            }
+
+            context.Update(oldUser);
+            context.SaveChanges();
+        }
     }
 }
 
