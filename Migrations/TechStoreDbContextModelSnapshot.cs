@@ -256,10 +256,15 @@ namespace TechStore.Migrations
 
             modelBuilder.Entity("TechStore.Models.Entities.Category", b =>
                 {
-                    b.Property<string>("CategoryName")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.HasKey("CategoryName");
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("CategoryId");
 
                     b.ToTable("Category");
                 });
@@ -357,13 +362,18 @@ namespace TechStore.Migrations
 
             modelBuilder.Entity("TechStore.Models.Entities.Promocode", b =>
                 {
-                    b.Property<string>("PromocodeName")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("PromocodeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Discount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("PromocodeName");
+                    b.Property<string>("PromocodeName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("PromocodeId");
 
                     b.ToTable("Promocode");
                 });

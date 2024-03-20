@@ -427,13 +427,9 @@ namespace TechStore.Services
             return orderViewModels;
         }
 
-        public void EditUser(string oldUserID, string newUserID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
+        public void EditUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
         {
-            ApplicationUser oldUser = GetUserByID(oldUserID);
-            if(newUserID != null)
-            {
-                oldUser.Id = newUserID;
-            }
+            ApplicationUser oldUser = GetUserByID(userID);
             if (newUserName != null)
             {
                 oldUser.UserName = newUserName;
@@ -458,6 +454,48 @@ namespace TechStore.Services
             context.Update(oldUser);
             context.SaveChanges();
         }
+
+        public void EditPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount)
+        {
+            Promocode promocode = GetPromocodeByID(promocodeID);
+            if (newPromocodeName != null)
+            {
+                promocode.PromocodeName = newPromocodeName;
+            }
+            if (newPromocodeDiscount != 0)
+            {
+                promocode.Discount = newPromocodeDiscount;
+            }
+
+            context.Update(promocode);
+            context.SaveChanges();
+        }
+
+        public void EditCategory(int categoryID, string newCategoryName)
+        {
+            Category category = GetCategoryByID(categoryID);
+            if (newCategoryName != null)
+            {
+                category.CategoryName = newCategoryName;
+            }
+
+            context.Update(category);
+            context.SaveChanges();
+        }
+
+        public Promocode GetPromocodeByID(int promocodeID)
+        {
+            Promocode promocode = context.Promocode.First(p => p.PromocodeId == promocodeID);
+            return promocode;
+        }
+
+        public Category GetCategoryByID(int categoryID)
+        {
+            Category category = context.Category.First(p => p.CategoryId == categoryID);
+            return category;
+        }
+
+
     }
 }
 

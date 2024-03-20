@@ -337,12 +337,13 @@
         }
 
         .entity-text-box {
-            width: 100%;
-            text-align: left;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
         }
 
-        .entity-button {
-            width: 100%;
+        .entity-label {
+            font-size: 18px;
         }
 
         .edit-button-container {
@@ -361,7 +362,10 @@
         .edit-icon {
             color: white;
         }
+
+        
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function displayImage(input) {
             var file = input.files[0];
@@ -380,9 +384,7 @@
                 reader.readAsDataURL(file);
             }
         }
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+
         document.addEventListener("DOMContentLoaded", function () {
             var textBoxes = document.querySelectorAll(".entity-text-box");
             textBoxes.forEach(function (textBox) {
@@ -403,15 +405,9 @@
                 });
             });
         });
-    </script>
+    </script>    
 </head>
 <body>
-    @* <div class="info-subContainer">
-    <div class="info-text-container">
-    <div>Име: </div>
-    </div>
-    <div class="input-box" name="firstName"></div>
-    </div> *@
     <section class="flex-container">
         <section class="product-box-container">
             <div class="product-box">
@@ -490,17 +486,10 @@
                     <th>Имейл</th>
                     <th>Телефон</th>
                         @foreach (var user in Model.Users)
-                        {                       
+                        {
                         <tr>
                             <form method="post" asp-action="SuccessfulyEditedUser" asp-controller="Tech">
-                            <td>
-                                <button type="button" class="entity-button">
-                                    <p class="entity-label">
-                                                @user.Id
-                                    </p>
-                                    <input class="entity-text-box" type="text" name="newUserID" style="display: none;" />
-                                </button>
-                            </td>
+                            <td>@user.Id</td>
                             <td>
                                 <button type="button" class="entity-button">
                                     <p class="entity-label">
@@ -542,11 +531,10 @@
                                 </button>
                             </td>
                             <td class="edit-button-container"><button class="edit-button"><i class="edit-icon fa-solid fa-pen-to-square"></i></button></td>
-                            <input hidden name="oldUserID" value="@user.Id" />
+                            <input hidden name="userID" value="@user.Id" />
                             </form>
                             <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfulyDeletedUser" asp-controller="Tech"><button class="remove-button" name="userID" value="@user.Id"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
                         </tr>
-                        
                         }
                     </tbody>
                 </table>
@@ -574,8 +562,26 @@
                             @foreach (var promocode in Model.Promocodes)
                             {
                             <tr>
-                                <td>@promocode.PromocodeName</td>
-                                <td>@promocode.Discount %</td>
+                                <form method="post" asp-action="SuccessfulyEditedPromocode" asp-controller="Tech">
+                                <td>
+                                    <button type="button" class="entity-button">
+                                        <p class="entity-label">
+                                                    @promocode.PromocodeName
+                                        </p>
+                                        <input class="entity-text-box" type="text" name="newPromocodeName" style="display: none;" />
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="entity-button">
+                                        <p class="entity-label">
+                                                    @promocode.Discount %
+                                        </p>
+                                        <input class="entity-text-box" type="text" name="newPromocodeDiscount" style="display: none;" />
+                                    </button>
+                                </td>                                
+                                <td class="edit-button-container"><button class="edit-button"><i class="edit-icon fa-solid fa-pen-to-square"></i></button></td>
+                                <input hidden name="promocodeID" value="@promocode.PromocodeId" />
+                                </form>
                                 <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfulyDeletedPromocode" asp-controller="Tech"><button class="remove-button" name="promocodeName" value="@promocode.PromocodeName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
                             </tr>
                             }
@@ -597,15 +603,26 @@
                         <tr>
                             <th>Категория</th>
                             @foreach (var category in Model.Categories)
-                            {
+                            {                              
                             <tr>
-                                <td>@category.CategoryName</td>
+                                <form method="post" asp-action="SuccessfulyEditedCategory" asp-controller="Tech">
+                                <td>
+                                    <button type="button" class="entity-button">
+                                        <p class="entity-label">
+                                                    @category.CategoryName
+                                        </p>
+                                        <input class="entity-text-box" type="text" name="newCategoryName" style="display: none;" />
+                                    </button>
+                                </td>
+                                <td class="edit-button-container"><button class="edit-button"><i class="edit-icon fa-solid fa-pen-to-square"></i></button></td>
+                                <input hidden name="categoryID" value="@category.CategoryId" />
+                                </form>
                                 <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfulyDeletedCategory" asp-controller="Tech"><button class="remove-button" name="categoryName" value="@category.CategoryName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
                             </tr>
                             }
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </section>
             </section>
-        </section>
-</body>
-</html>
+    </body>
+    </html>

@@ -20,7 +20,7 @@ namespace TechStore.Controllers
 
         public IActionResult Homepage()
         {
-            techService.AddАrtificiallyCategories(); //this method exists for developing purposes only
+            //techService.AddАrtificiallyCategories(); //This method exists for developing purposes only. Uncomment and run it once to add categories.
             
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -468,12 +468,34 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyEditedUser(string oldUserID, string newUserID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
+        public IActionResult SuccessfulyEditedUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            techService.EditUser(oldUserID, newUserID, newUserName, newFirstName, newLastName, newEmail, newPhoneNumber);
+            techService.EditUser(userID, newUserName, newFirstName, newLastName, newEmail, newPhoneNumber);
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SuccessfulyEditedPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount)
+        {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+            techService.EditPromocode(promocodeID, newPromocodeName, newPromocodeDiscount);
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SuccessfulyEditedCategory(int categoryID, string newCategoryName)
+        {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+            techService.EditCategory(categoryID, newCategoryName);
 
             return View();
         }
