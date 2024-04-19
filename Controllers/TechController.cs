@@ -119,7 +119,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyCreatedPromocode(string promocodeName, decimal discount)
+        public IActionResult SuccessfullyCreatedPromocode(string promocodeName, decimal discount)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -130,7 +130,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyDeletedPromocode(string promocodeName)
+        public IActionResult SuccessfullyDeletedPromocode(string promocodeName)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -140,18 +140,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfullyCreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
-        {
-            List<Category> categories = techService.GetAllCategories();
-            ViewBag.ItemsList = categories;
-
-            //ApplicationUser user = new ApplicationUser();
-            //techService.CreateUser(user);
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult SuccessfulyDeletedUser(string userID)
+        public IActionResult SuccessfullyDeletedUser(string userID)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -161,7 +150,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyAddedProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
+        public IActionResult SuccessfullyAddedProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -224,7 +213,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyDeletedProduct(int productID)
+        public IActionResult SuccessfullyDeletedProduct(int productID)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -234,7 +223,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyAddedPromotion(decimal newPrice, int productID)
+        public IActionResult SuccessfullyAddedPromotion(decimal newPrice, int productID)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -244,7 +233,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyAddedReview(int productId, int rate, string reviewText)
+        public IActionResult SuccessfullyAddedReview(int productId, int rate, string reviewText)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -253,11 +242,11 @@ namespace TechStore.Controllers
 
             techService.AddReview(productId, userId, rate, reviewText);
 
-            return View("SuccessfulyAddedReview");
+            return View("SuccessfullyAddedReview");
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyDeletedPromotion(int productId, int promotionID)
+        public IActionResult SuccessfullyDeletedPromotion(int productId, int promotionID)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -267,7 +256,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyRevertedPromotion(int productId, int promotionID)
+        public IActionResult SuccessfullyRevertedPromotion(int productId, int promotionID)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -277,7 +266,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyCreatedCategory(string categoryName)
+        public IActionResult SuccessfullyCreatedCategory(string categoryName)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -288,7 +277,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyDeletedCategory(string categoryName)
+        public IActionResult SuccessfullyDeletedCategory(string categoryName)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -298,7 +287,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyCreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
+        public IActionResult SuccessfullyCreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -313,7 +302,7 @@ namespace TechStore.Controllers
             };
 
             techService.CreateUser(user);
-            return View("SuccessfulyCreatedUser");
+            return View("SuccessfullyCreatedUser");
         }
 
         public IActionResult Index()
@@ -468,7 +457,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyEditedUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
+        public IActionResult SuccessfullyEditedUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -479,7 +468,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyEditedPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount)
+        public IActionResult SuccessfullyEditedPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
@@ -490,7 +479,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulyEditedCategory(int categoryID, string newCategoryName)
+        public IActionResult SuccessfullyEditedCategory(int categoryID, string newCategoryName)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;

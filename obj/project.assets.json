@@ -3919,11 +3919,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Martin\\Desktop\\TechStore\\TechStore.csproj",
+      "projectUniqueName": "C:\\Users\\Martin\\Desktop\\New folder\\TechStore\\TechStore.csproj",
       "projectName": "TechStore",
-      "projectPath": "C:\\Users\\Martin\\Desktop\\TechStore\\TechStore.csproj",
+      "projectPath": "C:\\Users\\Martin\\Desktop\\New folder\\TechStore\\TechStore.csproj",
       "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Martin\\Desktop\\TechStore\\obj\\",
+      "outputPath": "C:\\Users\\Martin\\Desktop\\New folder\\TechStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3995,7 +3995,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300-preview.24203.14/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

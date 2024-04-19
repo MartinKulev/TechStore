@@ -309,9 +309,9 @@
             <div class="product-info">
                 <div class="product-text-container">
                     <div>@Model.Product.Description</div>
-                    <div>• Марка: <span class="product-text-info">@Model.Product.Brand</span></div>
-                    <div>• Модел: <span class="product-text-info">@Model.Product.Model</span></div>
-                    <div>• Категория: <span class="product-text-info">@Model.Product.CategoryName</span></div>
+                    <div>• Brand: <span class="product-text-info">@Model.Product.Brand</span></div>
+                    <div>• Model: <span class="product-text-info">@Model.Product.Model</span></div>
+                    <div>• Category: <span class="product-text-info">@Model.Product.CategoryName</span></div>
                 </div>
                 <div class="product-price-container">
                     @if (Model.Product.IsInPromotion)
@@ -320,18 +320,18 @@
                         {
                             @if (promotion.ProductID == Model.Product.ProductID)
                             {
-                                <s class="product-discounted-price">@Model.Product.Price лв.</s>
-                                <div class="product-price">Цена: @promotion.NewPrice лв.</div>
+                                <s class="product-discounted-price">$@Model.Product.Price</s>
+                                <div class="product-price">Цена: $@promotion.NewPrice</div>
                             }
                         }
                     }
                     else
                     {
-                        <div class="product-price">Цена: @Model.Product.Price лв.</div>
+                        <div class="product-price">Цена: $@Model.Product.Price</div>
                     }
                     <button class="product-button">
                         <div class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></div>
-                        <div class="product-cart-text">Добави в количката</div>
+                        <div class="product-cart-text">Add to cart</div>
                     </button>
                 </div>
             </div>
@@ -342,10 +342,10 @@
             {
 
                 <section class="command-promotion-title-container"><div class="command-promotion-title">Create a promotion:</div></section>
-                <form class="command-promotion-container" method="post" asp-action="SuccessfulyAddedPromotion" asp-controller="Tech">
+                <form class="command-promotion-container" method="post" asp-action="SuccessfullyAddedPromotion" asp-controller="Tech">
                     <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Discounted Price:</div></div>
                     <input class="add-to-promotion-box" name="newPrice" required />
-                    <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Лв.</div></div>
+                    <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">$</div></div>
                     <button class="add-to-promotion-button">Create</button>
                     <input hidden name="productID" value=@Model.Product.ProductID />
                 </form>
@@ -354,7 +354,7 @@
             else
             {
                 <section class="command-promotion-title-container"><div class="command-promotion-title">Revert a promotion:</div></section>
-                <form class="command-promotion-container" method="post" asp-action="SuccessfulyRevertedPromotion" asp-controller="Tech">
+                <form class="command-promotion-container" method="post" asp-action="SuccessfullyRevertedPromotion" asp-controller="Tech">
                     <button class="add-to-promotion-button">Revert</button>
                     <input hidden name="productID" value=@Model.Product.ProductID />
                     @foreach (var promotion in Model.Promotions)
@@ -369,7 +369,7 @@
         }
         @if (User.Identity.IsAuthenticated)
         {
-            <form class="add-review-container" method="post" asp-action="SuccessfulyAddedReview" asp-controller="Tech">
+            <form class="add-review-container" method="post" asp-action="SuccessfullyAddedReview" asp-controller="Tech">
                 @Html.AntiForgeryToken()
 
                 <input type="hidden" name="productId" value="@Model.Product.ProductID" />

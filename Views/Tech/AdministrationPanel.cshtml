@@ -411,30 +411,30 @@
     <section class="flex-container">
         <section class="product-box-container">
             <div class="product-box">
-                <div class="product-title">Създай продукт:</div>
-                <form method="post" class="product-information" asp-controller="Tech" asp-action="SuccessfulyAddedProduct">
+                <div class="product-title">Create product:</div>
+                <form method="post" class="product-information" asp-controller="Tech" asp-action="SuccessfullyAddedProduct">
                     <div class="product-image-container">
                         @* <div class="upload-image-button" action="/action_page.php">
                         <input type="file" id="myFile" name="imageURL" onchange="displayImage(this)" required>
                         </div>
                         <div id="imageContainer">
                         </div> *@
-                        <div class="product-image-Subcontainer"><div class="product-image-text">Снимка:</div><input class="product-image-box" name="imageURL" required></input></div>
+                        <div class="product-image-Subcontainer"><div class="product-image-text">Photo:</div><input class="product-image-box" name="imageURL" required></input></div>
                     </div>
                     <div class="product-info">
                         <select class="select-category" name="categoryName" onchange="javascript:changemm(document.search.topmenu,document.search.f5,document.search.f6,'2','1','Избери',27)" required>
-                            <option selected="" value="">Избери Категория</option>
+                            <option selected="" value="">Choose category</option>
                             @foreach (var category in Model.Categories)
                             {
                                 <option value="@category.CategoryName">@category.CategoryName</option>
                             }
                         </select>
-                        <div class="description-text-container">Описание:</div>
+                        <div class="description-text-container">Description:</div>
                         <textarea class="description-box" name="description" required maxlength="200"></textarea>
-                        <div class="brandModelPrice-container"><div class="brandModelPrice-text">Марка:</div><input class="brandModelPrice-box" name="brand" maxlength="28" required></input></div>@*better way tham maxlength?*@
-                        <div class="brandModelPrice-container"><div class="brandModelPrice-text">Модел:</div><input class="brandModelPrice-box" name="model" maxlength="28" required></input></div>@*dsds*@
-                        <div class="brandModelPrice-container"><div class="brandModelPrice-text">Цена:</div><input class="brandModelPrice-box" name="price" maxlength="28" type="number" step=".01" required></input></div>@*лв in the input box*@
-                        <div class="create-product-button-container"><button class="create-product-button" type="submit"><div class="create-product-button-text">Създай продукт</div></button></div>
+                        <div class="brandModelPrice-container"><div class="brandModelPrice-text">Brand:</div><input class="brandModelPrice-box" name="brand" maxlength="28" required></input></div>@*better way tham maxlength?*@
+                        <div class="brandModelPrice-container"><div class="brandModelPrice-text">Model:</div><input class="brandModelPrice-box" name="model" maxlength="28" required></input></div>@*dsds*@
+                        <div class="brandModelPrice-container"><div class="brandModelPrice-text">Price:</div><input class="brandModelPrice-box" name="price" maxlength="28" type="number" step=".01" required></input></div>@*лв in the input box*@
+                        <div class="create-product-button-container"><button class="create-product-button" type="submit"><div class="create-product-button-text">Create Product</div></button></div>
                     </div>
                 </form>
             </div>
@@ -442,53 +442,53 @@
         <section class="user-container">
             <section class="user-entity">
                 <div class="create-entity-title-container">
-                    <div class="create-entity-title">Създай потребител:</div>
+                    <div class="create-entity-title">Create user:</div>
                 </div>
-                <form class="create-entity-form" method="post" asp-action="SuccessfulyCreatedUser" asp-controller="Tech">
+                <form class="create-entity-form" method="post" asp-action="SuccessfullyCreatedUser" asp-controller="Tech">
                     <div class="info-container">
                         <div class="info-subContainer">
                             <div class="info-text-container">
-                                <div>Име: </div>
+                                <div>First name: </div>
                             </div>
                             <input class="input-box" name="firstName" />
                         </div>
                         <div class="info-subContainer">
                             <div class="info-text-container">
-                                <div>Фамилия: </div>
+                                <div>Last name: </div>
                             </div>
                             <input class="input-box" name="lastName" />
                         </div>
                         <div class="info-subContainer">
-                            <div class="info-text-container"><div>Имейл: </div></div><input class="input-box" name="email" />
+                            <div class="info-text-container"><div>Email: </div></div><input class="input-box" name="email" />
                         </div>
                         <div class="info-subContainer">
-                            <div class="info-text-container"><div>Телефон: </div></div><input class="input-box" name="phoneNumber" />
+                            <div class="info-text-container"><div>Phone number: </div></div><input class="input-box" name="phoneNumber" />
                         </div>
                         <div class="info-subContainer">
-                            <div class="info-text-container"><div>Парола: </div></div><input class="input-box" name="password" />
+                            <div class="info-text-container"><div>Pasword: </div></div><input class="input-box" name="password" />
                         </div>
                         <div class="info-subContainer">
-                            <div class="info-text-container"><div>Потвърди парола: </div></div><input class="input-box" name="confirmPassword" />
+                            <div class="info-text-container"><div>Confirm Password: </div></div><input class="input-box" name="confirmPassword" />
                         </div>
                     </div>
                     <div>
                         <div class="create-button-container">
-                            <button class="create-entity-button"><div>Създай</div></button>
+                            <button class="create-entity-button"><div>Create</div></button>
                         </div>
                     </div>
                 </form>
                 <table class="entity-table">
                     <tbody>
-                    <th>Потребителско ID</th>
-                    <th>Потребителско име</th>
-                    <th>Име</th>
-                    <th>Фамилия</th>
-                    <th>Имейл</th>
-                    <th>Телефон</th>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Phone number</th>
                         @foreach (var user in Model.Users)
                         {
                         <tr>
-                            <form method="post" asp-action="SuccessfulyEditedUser" asp-controller="Tech">
+                            <form method="post" asp-action="SuccessfullyEditedUser" asp-controller="Tech">
                             <td>@user.Id</td>
                             <td>
                                 <button type="button" class="entity-button">
@@ -533,7 +533,7 @@
                             <td class="edit-button-container"><button class="edit-button"><i class="edit-icon fa-solid fa-pen-to-square"></i></button></td>
                             <input hidden name="userID" value="@user.Id" />
                             </form>
-                            <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfulyDeletedUser" asp-controller="Tech"><button class="remove-button" name="userID" value="@user.Id"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
+                            <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfullyDeletedUser" asp-controller="Tech"><button class="remove-button" name="userID" value="@user.Id"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
                         </tr>
                         }
                     </tbody>
@@ -542,27 +542,27 @@
         </section>
         <section class="entity-container">
             <section class="entity">
-                <div class="create-entity-title-container"><div class="create-entity-title">Създай промокод:</div></div>
-                <form class="create-entity-form" method="post" asp-action="SuccessfulyCreatedPromocode" asp-controller="Tech">
+                <div class="create-entity-title-container"><div class="create-entity-title">Create promocode:</div></div>
+                <form class="create-entity-form" method="post" asp-action="SuccessfullyCreatedPromocode" asp-controller="Tech">
                     <div class="info-container">
                         <div class="info-subContainer">
-                            <div class="info-text-container"><div>Име на промокода: </div></div><input class="input-box" name="promocodeName" />
+                            <div class="info-text-container"><div>Promocode: </div></div><input class="input-box" name="promocodeName" />
                         </div>
                         <div class="info-subContainer">
-                            <div class="info-text-container"><div>Процент отстъпка: </div></div><input class="mini-input-box" name="discount" />
+                            <div class="info-text-container"><div>Promocode discount: </div></div><input class="mini-input-box" name="discount" />
                         </div>
                     </div>
-                    <div class="create-button-container"><button class="create-entity-button"><div>Създай</div></button></div>
+                    <div class="create-button-container"><button class="create-entity-button"><div>Create</div></button></div>
                 </form>
                 <table class="entity-table">
                     <tbody>
                         <tr>
-                            <th>Промокод</th>
-                            <th>Процент отстъпка</th>
+                            <th>Promocode</th>
+                            <th>Promocode discount</th>
                             @foreach (var promocode in Model.Promocodes)
                             {
                             <tr>
-                                <form method="post" asp-action="SuccessfulyEditedPromocode" asp-controller="Tech">
+                                <form method="post" asp-action="SuccessfullyEditedPromocode" asp-controller="Tech">
                                 <td>
                                     <button type="button" class="entity-button">
                                         <p class="entity-label">
@@ -582,30 +582,30 @@
                                 <td class="edit-button-container"><button class="edit-button"><i class="edit-icon fa-solid fa-pen-to-square"></i></button></td>
                                 <input hidden name="promocodeID" value="@promocode.PromocodeId" />
                                 </form>
-                                <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfulyDeletedPromocode" asp-controller="Tech"><button class="remove-button" name="promocodeName" value="@promocode.PromocodeName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
+                                <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfullyDeletedPromocode" asp-controller="Tech"><button class="remove-button" name="promocodeName" value="@promocode.PromocodeName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
                             </tr>
                             }
                     </tbody>
                 </table>
             </section>
             <section class="entity">
-                <div class="create-entity-title-container"><div class="create-entity-title">Създай категория:</div></div>
-                <form class="create-entity-form" method="post" asp-action="SuccessfulyCreatedCategory" asp-controller="Tech">
+                <div class="create-entity-title-container"><div class="create-entity-title">Create category:</div></div>
+                <form class="create-entity-form" method="post" asp-action="SuccessfullyCreatedCategory" asp-controller="Tech">
                     <div class="category-info-container">
                         <div class="info-subContainer">
-                            <div class="info-text-container"><div>Име на категорията: </div></div><input class="input-box" name="categoryName" />
+                            <div class="info-text-container"><div>Category name: </div></div><input class="input-box" name="categoryName" />
                         </div>
                     </div>
-                    <div class="create-button-container"><button class="create-entity-button"><div>Създай</div></button></div>
+                    <div class="create-button-container"><button class="create-entity-button"><div>Create</div></button></div>
                 </form>
                 <table class="entity-table">
                     <tbody>
                         <tr>
-                            <th>Категория</th>
+                            <th>Category</th>
                             @foreach (var category in Model.Categories)
                             {                              
                             <tr>
-                                <form method="post" asp-action="SuccessfulyEditedCategory" asp-controller="Tech">
+                                <form method="post" asp-action="SuccessfullyEditedCategory" asp-controller="Tech">
                                 <td>
                                     <button type="button" class="entity-button">
                                         <p class="entity-label">
@@ -617,7 +617,7 @@
                                 <td class="edit-button-container"><button class="edit-button"><i class="edit-icon fa-solid fa-pen-to-square"></i></button></td>
                                 <input hidden name="categoryID" value="@category.CategoryId" />
                                 </form>
-                                <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfulyDeletedCategory" asp-controller="Tech"><button class="remove-button" name="categoryName" value="@category.CategoryName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
+                                <td class="remove-button-container"><form class="remove-button-form" method="post" asp-action="SuccessfullyDeletedCategory" asp-controller="Tech"><button class="remove-button" name="categoryName" value="@category.CategoryName"><i class="remove-icon fa-solid fa-trash-can"></i></button></form></td>
                             </tr>
                             }
                         </tbody>

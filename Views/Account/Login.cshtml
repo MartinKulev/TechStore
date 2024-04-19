@@ -90,11 +90,11 @@
         <section class="container">
             <section class="sub-container">
                 <div class="info-container">
-                    <div class="info-text-container">@Html.LabelFor(m => m.Email, "Имейл:")</div>
+                    <div class="info-text-container">@Html.LabelFor(m => m.Email, "Email:")</div>
                     @Html.TextBoxFor(m => m.Email, new { @class = "input-box", name = "email" })
                 </div>
                 <div class="info-container">
-                    <div class="info-text-container">@Html.LabelFor(m => m.Password, "Парола:")</div>
+                    <div class="info-text-container">@Html.LabelFor(m => m.Password, "Password:")</div>
                     @Html.PasswordFor(m => m.Password, new { @class = "input-box", name = "password" })
                 </div>
                 <div class="errors-container">@Html.ValidationMessageFor(m => m.Email)</div>
