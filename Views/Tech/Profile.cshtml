@@ -168,6 +168,20 @@
         width: 100px;
         color: white;
     }
+
+    .orders-button {
+        margin: 50px;
+        background-color: green;
+        border-radius: 5px;
+        height: 50px;
+        width: 200px;
+    }
+
+    .orders-button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
     
 </style>
 <section class="flex-container">
@@ -201,22 +215,8 @@
     </div>
     @if (!User.IsInRole("Admin"))
     {
-        @* @foreach (var order in Model)
-        {
-            <div class="order-box">
-                <div class="order-info">
-                    <div class="order-text">Поръчка № @order.OrderID</div>
-                    <div class="order-price-container">
-                        <div class="order-price">Платено: @order.TotalPrice лв</div>
-                        <div>Банкова карта: @order.CardNumber</div>
-                    </div>
-                </div>
-                <div class="order-dateTime-container">
-                    <div class="order-dateTime-label">Дата на поръчванe:</div>
-                    <div class="order-dateTime">@order.OrderTime.ToShortDateString()</div>
-                    <div class="order-dateTime">@order.OrderTime.ToShortTimeString()</div>
-                </div>
-            </div>
-        } *@
+        <form class="orders-button-container" asp-controller="Tech" asp-action="Orders" method="post">
+            <button type="submit" class="orders-button">Your orders</button>
+        </form>
     }    
 </section>

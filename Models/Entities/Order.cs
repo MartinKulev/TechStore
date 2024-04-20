@@ -7,7 +7,7 @@ namespace TechStore.Models.Entities
     {
         public Order() { }
 
-        public Order(int productID, int quantity, int userID, int cardNum, DateTime orderTime, decimal totalPrice)
+        public Order(int productID, int quantity, string userID, int cardNum, DateTime orderTime, decimal totalPrice)
         {
             ProductID = productID;
             Quantity = quantity;
@@ -27,7 +27,7 @@ namespace TechStore.Models.Entities
         public int Quantity { get; set; }
 
         [ForeignKey(nameof(ApplicationUser))]
-        public int UserID { get; set; }
+        public string UserID { get; set; }
 
         [ForeignKey(nameof(Payment))]
         public int CardNum { get; set; }

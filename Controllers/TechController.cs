@@ -59,10 +59,11 @@ namespace TechStore.Controllers
             return View(viewModel);
         }
 
-        public IActionResult ShoppingCart(int cartID)
+        public IActionResult ShoppingCart(string cartID)
         {
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
+
             var cartItems = techService.GetCartItems(cartID);
 
 
@@ -190,16 +191,6 @@ namespace TechStore.Controllers
             {
                 User = user
             };
-            var ordersFromDatabase = techService.GetOrders(orderId);// Retrieve orders from your database or another data source
-
-            
-            var OrderViewModel = ordersFromDatabase.Select(order => new OrderViewModel
-            {
-                OrderID = order.OrderID,
-                TotalPrice = order.TotalPrice,
-                CardNum = order.CardNum,
-                OrderTime = order.OrderTime
-            }).ToList();
 
             return View(viewModel);
         }
@@ -307,6 +298,8 @@ namespace TechStore.Controllers
 
         public IActionResult Index()
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
 
             var products = techService.GetAllProducts();
 
@@ -314,8 +307,11 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddToCart(int userId, int productId, int quantity, decimal price, string description, string imageURL)
+        public IActionResult AddToCart(string userId, int productId, int quantity, decimal price, string description, string imageURL)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             try
             {
 
@@ -324,7 +320,7 @@ namespace TechStore.Controllers
                 if (success)
                 {
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("ShoppingCart", "Tech");
                 }
                 else
                 {
@@ -345,7 +341,10 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult ApplyPromoCode(string promoCode)
         {
-            int userId = techService.GetUserIdFromCart();
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+           string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
 
             decimal totalPrice = techService.GetTotalCartPrice(userId);
@@ -380,11 +379,14 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult AddToTempOrder()
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             if (!User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Login", "Account");
             }
-            var userId = 3;
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
 
             var cartItems = techService.GetCartItems(userId);
@@ -410,8 +412,10 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult ProcessPayment(string name, int cardNumber, string expiryDate, string cvvNum, string adress)
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
 
-            var userId = 0;
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
 
             var tempOrders = techService.GetTempOrders(userId);
@@ -441,6 +445,9 @@ namespace TechStore.Controllers
 
         private int GetUserID()
         {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
             if (User.Identity.IsAuthenticated)
             {
                 var userIdClaim = User.FindFirst("UserId");
@@ -487,6 +494,28 @@ namespace TechStore.Controllers
             techService.EditCategory(categoryID, newCategoryName);
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Orders(int orderID)
+        {
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+            var orders = techService.GetOrders();
+
+
+            var orderViewModels = orders.Select(order => new OrderViewModel
+            {
+
+                TotalPrice = order.TotalPrice,
+                CardNum = order.CardNum,
+                OrderTime = order.OrderTime
+
+            }).ToList();
+
+
+            return View(orderViewModels);
         }
     }
 }

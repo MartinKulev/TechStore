@@ -7,7 +7,7 @@ namespace TechStore.Models.Entities
     {
         public Cart() { }
 
-        public Cart(int productID, int quantity, int userID, string description, string imageURL, decimal price)
+        public Cart(int productID, int quantity, string userID, string description, string imageURL, decimal price)
         {
             ProductID = productID;
             Quantity = quantity;
@@ -27,7 +27,7 @@ namespace TechStore.Models.Entities
         public int Quantity { get; set; }
 
         [ForeignKey(nameof(ApplicationUser))]
-        public int UserID { get; set; }
+        public string UserID { get; set; }
 
         [ForeignKey(nameof(Product))]
         public string Description { get; set; }

@@ -7,7 +7,7 @@ namespace TechStore.Models.Entities
     {
         public TempOrder() { }
 
-        public TempOrder(int productID, int quantity, int userID, DateTime orderTime)
+        public TempOrder(int productID, int quantity, string userID, DateTime orderTime)
         {
             ProductID = productID;
             Quantity = quantity;
@@ -25,7 +25,7 @@ namespace TechStore.Models.Entities
         public int Quantity { get; set; }
 
         [ForeignKey(nameof(ApplicationUser))]
-        public int UserID { get; set; }
+        public string UserID { get; set; }
 
         public DateTime OrderTime { get; set; }
 

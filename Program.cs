@@ -8,7 +8,7 @@ using TechStore.Services;
 var builder = WebApplication.CreateBuilder(args);
 //y
 builder.Services.AddDbContext<TechStoreDbContext>(options =>
-    options.UseMySQL("Server=mysql-210770ab-techstore.b.aivencloud.com;Database=techstore;Uid=avnadmin;Pwd=AVNS_ECNjUML_9rCSuGwr_PA;Port=15039"));
+    options.UseMySQL("Server=mysql-210770ab-techstore.b.aivencloud.com;Database=techstore;Uid=avnadmin;Pwd=AVNS_ECNjUML_9rCSuGwr_PA;Port=15039\""));
 
 // Setting up ASP.NET Core Identity
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)

@@ -245,7 +245,7 @@ namespace TechStore.Services
             return context.Product.ToList();
         }
 
-        public bool AddProductToCart(int userID, int productID, int quantity, decimal price, string description, string imageURL)
+        public bool AddProductToCart(string userID, int productID, int quantity, decimal price, string description, string imageURL)
         {
             try
             {
@@ -299,7 +299,7 @@ namespace TechStore.Services
             return context.Promocode.FirstOrDefault(p => p.PromocodeName == promoCode);
         }
 
-        public decimal GetTotalCartPrice(int userId)
+        public decimal GetTotalCartPrice(string userId)
         {
             var cartItems = context.Cart
                                   .Where(c => c.UserID == userId)
@@ -324,19 +324,9 @@ namespace TechStore.Services
             return totalPrice;
         }
 
-        public int GetUserIdFromCart()
-        {
-            var cartItem = context.Cart.FirstOrDefault();
-            if (cartItem != null)
-            {
-                return cartItem.UserID;
-            }
-
-            throw new InvalidOperationException("UserID not found in Cart table.");
-        }
 
 
-        public List<CartViewModel> GetCartItems(int userId)
+        public List<CartViewModel> GetCartItems(string userId)
         {
             var cartItems = context.Cart.Where(c => c.UserID == userId).ToList();
             var cartItemViewModels = new List<CartViewModel>();
@@ -367,7 +357,7 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public List<TempOrder> GetTempOrders(int userId)
+        public List<TempOrder> GetTempOrders(string userId)
         {
 
             return context.TempOrder.Where(to => to.UserID == userId).ToList();
@@ -380,7 +370,7 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public void ClearTempOrders(int userId)
+        public void ClearTempOrders(string userId)
         {
 
             var tempOrders = context.TempOrder.Where(to => to.UserID == userId);
@@ -388,30 +378,30 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public void DeleteCartItems(int userId)
+        public void DeleteCartItems(string userId)
         {
             var cartItems = context.Cart.Where(c => c.UserID == userId);
             context.Cart.RemoveRange(cartItems);
             context.SaveChanges();
         }
 
-        public List<OrderViewModel> GetOrders(int userId)
+        public List<OrderViewModel> GetOrders(string userId)
         {
-            // Retrieve orders associated with the user from the database
+            
             var orders = context.Order
                                 .Where(o => o.UserID == userId)
                                 .ToList();
 
-            // Initialize a list to store the view models
+            
             var orderViewModels = new List<OrderViewModel>();
 
-            // Iterate through each order and create corresponding view models
+           
             foreach (var order in orders)
             {
-                // Retrieve product information for the order
+                
                 var product = context.Product.FirstOrDefault(p => p.ProductID == order.ProductID);
 
-                // If product exists, create order view model
+                
                 if (product != null)
                 {
                     orderViewModels.Add(new OrderViewModel
@@ -495,6 +485,10 @@ namespace TechStore.Services
             return category;
         }
 
+        public List<Order> GetOrders()
+        {
+            return context.Order.ToList();
+        }
 
     }
 }
