@@ -225,20 +225,12 @@ namespace TechStore.Migrations
 
             modelBuilder.Entity("TechStore.Models.Entities.Cart", b =>
                 {
-                    b.Property<int>("CartID")
+                    b.Property<string>("CartID")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("PaymentID")
                         .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("ImageURL")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
@@ -246,8 +238,9 @@ namespace TechStore.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("CartID");
 
@@ -269,41 +262,17 @@ namespace TechStore.Migrations
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("TechStore.Models.Entities.Order", b =>
+            modelBuilder.Entity("TechStore.Models.Entities.Payment", b =>
                 {
-                    b.Property<int>("OrderID")
+                    b.Property<int>("PaymentID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CardNum")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("OrderTime")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("ProductID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
-
-                    b.HasKey("OrderID");
-
-                    b.ToTable("Order");
-                });
-
-            modelBuilder.Entity("TechStore.Models.Entities.Payment", b =>
-                {
-                    b.Property<string>("CardNum")
-                        .HasColumnType("varchar(255)");
-
                     b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("CardNum")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -318,7 +287,17 @@ namespace TechStore.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("CardNum");
+                    b.Property<DateTime>("OrderTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("PaymentID");
 
                     b.ToTable("Payment");
                 });
@@ -425,29 +404,6 @@ namespace TechStore.Migrations
                     b.HasIndex("UserID");
 
                     b.ToTable("Review");
-                });
-
-            modelBuilder.Entity("TechStore.Models.Entities.TempOrder", b =>
-                {
-                    b.Property<int>("OrderID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("OrderTime")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("ProductID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
-
-                    b.HasKey("OrderID");
-
-                    b.ToTable("TempOrder");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

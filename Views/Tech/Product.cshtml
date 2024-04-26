@@ -327,12 +327,14 @@
                     }
                     else
                     {
-                        <div class="product-price">Цена: $@Model.Product.Price</div>
+                        <div class="product-price">Price: $@Model.Product.Price</div>
                     }
-                    <button class="product-button">
-                        <div class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></div>
-                        <div class="product-cart-text">Add to cart</div>
-                    </button>
+                    <form method="post" asp-action="SuccessfullyAddedToCart" asp-controller="Tech">
+                        <button class="product-button" name="productID" value="@Model.Product.ProductID">
+                            <div class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></div>
+                            <div class="product-cart-text">Add to cart</div>
+                        </button>
+                    </form>                    
                 </div>
             </div>
         </section>

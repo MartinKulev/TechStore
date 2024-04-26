@@ -1,13 +1,11 @@
-﻿namespace TechStore.Models.ViewModels
+﻿using TechStore.Models.Entities;
+
+namespace TechStore.Models.ViewModels
 {
     public class CartViewModel
     {
-
-        public string ImageURL { get; set; }
-        public string Description { get; set; }
-        public int Quantity { get; set; }
-        public decimal Price { get; set; }
-        public int ProductID { get; set; }
+        public List<Cart> Carts { get; set; }
+        public List<Product> Products { get; set; }
 
 
 

@@ -145,7 +145,11 @@
                 }
                 else
                 {
-                    <button class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></button>
+                    <form method="post" asp-action="SuccessfullyAddedToCart" asp-controller="Tech">
+                        <button class="product-cart-button" name="productID" value="@product.ProductID">
+                            <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </form>              
                 }
             </div>
         </div>

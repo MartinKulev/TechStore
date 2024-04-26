@@ -8,6 +8,7 @@ using TechStore.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace TechStore.Controllers
 {
@@ -28,6 +29,11 @@ namespace TechStore.Controllers
 
         public IActionResult Register()
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
             return View();
@@ -37,6 +43,12 @@ namespace TechStore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterModel model)
         {
+            List<int> productIDs = new List<int>();
+            if (TempData["Products"] != null)
+            {
+                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -56,10 +68,21 @@ namespace TechStore.Controllers
 
                 if (result.Succeeded)
                 {
+                    string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    foreach (int productID in productIDs)
+                    {
+                        techService.AddItemToCart(userId, productID);
+                    }
+                    TempData["Products"] = new List<int>();
+
                     await _userManager.AddToRoleAsync(user, "User");
                     await SendConfirmationEmail(model.Email, user);
 
-                    return RedirectToAction("Login");
+                    return RedirectToAction("VerificationLinkWasSentToYourEmail", "Tech");
+                }
+                else
+                {
+                    TempData["Products"] = productIDs;
                 }
 
                 foreach (var error in result.Errors)
@@ -67,7 +90,7 @@ namespace TechStore.Controllers
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-
+            
             return View(model);
         }
 
@@ -112,6 +135,12 @@ namespace TechStore.Controllers
 
         public IActionResult Login()
         {
+            List<int> productIDs = new List<int>();
+            if (TempData["Products"] != null)
+            {
+                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -122,6 +151,11 @@ namespace TechStore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model, string returnUrl = null)
         {
+            List<int> productIDs = new List<int>();
+            if (TempData["Products"] != null)
+            {
+                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -132,6 +166,13 @@ namespace TechStore.Controllers
 
                 if (result.Succeeded)
                 {
+                    string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    foreach (int productID in productIDs)
+                    {                        
+                        techService.AddItemToCart(userId, productID);
+                    }
+                    TempData["Products"] = new List<int>();
+
                     if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
@@ -143,10 +184,10 @@ namespace TechStore.Controllers
                 }
                 else
                 {
+                    TempData["Products"] = productIDs;
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 }
-            }
-
+            }            
             return View(model);
         }
 
