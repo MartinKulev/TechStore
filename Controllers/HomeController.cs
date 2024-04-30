@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using TechStore.Models;
-using TechStore.Models.ViewModels;
+using TechStore.Data.ViewModels;
 
 namespace TechStore.Controllers
 {

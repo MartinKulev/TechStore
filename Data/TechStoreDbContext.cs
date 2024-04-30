@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using TechStore.Models.Entities;
+using TechStore.Data.Entities;
 
 namespace TechStore.Data
 {

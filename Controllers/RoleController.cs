@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using TechStore.Models.Entities;
+using TechStore.Data.Entities;
 
 namespace TechStore.Controllers
 {

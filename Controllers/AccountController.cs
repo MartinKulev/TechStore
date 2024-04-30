@@ -1,7 +1,5 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using TechStore.Models.ViewModels;
-using TechStore.Models.Entities;
 using TechStore.Data;
 using Microsoft.AspNetCore.Identity;
 using TechStore.Services;
@@ -9,6 +7,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using TechStore.Data.Entities;
+using TechStore.Data.ViewModels;
 
 namespace TechStore.Controllers
 {
@@ -17,14 +17,19 @@ namespace TechStore.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ISenderEmail _emailSender;
-        private TechService techService;
+        private CartService cartService;
+        private CategoryService categoryService;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender, TechService techService)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender, 
+            CartService cartService,
+            CategoryService categoryService
+            )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
-            this.techService = techService;
+            this.cartService = cartService;
+            this.categoryService = categoryService;
         }
 
         public IActionResult Register()
@@ -34,7 +39,7 @@ namespace TechStore.Controllers
                 var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
                 TempData["Products"] = productIDs;
             }
-            List<Category> categories = techService.GetAllCategories();
+            List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
             return View();
         }
@@ -49,7 +54,7 @@ namespace TechStore.Controllers
                 productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
                 TempData["Products"] = productIDs;
             }
-            List<Category> categories = techService.GetAllCategories();
+            List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
             if (ModelState.IsValid)
@@ -71,7 +76,7 @@ namespace TechStore.Controllers
                     string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                     foreach (int productID in productIDs)
                     {
-                        techService.AddItemToCart(userId, productID);
+                        cartService.AddItemToCart(userId, productID);
                     }
                     TempData["Products"] = new List<int>();
 
@@ -141,7 +146,7 @@ namespace TechStore.Controllers
                 productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
                 TempData["Products"] = productIDs;
             }
-            List<Category> categories = techService.GetAllCategories();
+            List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
             return View();
@@ -156,7 +161,7 @@ namespace TechStore.Controllers
             {
                 productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
             }
-            List<Category> categories = techService.GetAllCategories();
+            List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
             if (ModelState.IsValid)
@@ -169,7 +174,7 @@ namespace TechStore.Controllers
                     string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                     foreach (int productID in productIDs)
                     {                        
-                        techService.AddItemToCart(userId, productID);
+                        cartService.AddItemToCart(userId, productID);
                     }
                     TempData["Products"] = new List<int>();
 

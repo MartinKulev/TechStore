@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using TechStore.Data;
-using TechStore.Models.Entities;
 using TechStore.Services;
+using TechStore.Data.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +17,7 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddDbContext<TechStoreDbContext>(options =>
-    options.UseMySQL("Server=mysql-210770ab-techstore.b.aivencloud.com;Database=techstore;Uid=avnadmin;Pwd=AVNS_ECNjUML_9rCSuGwr_PA;Port=15039"));
+    options.UseMySQL("Server=mysql-210770ab-techstore.b.aivencloud.com;Database=techstoreweb;Uid=avnadmin;Pwd=AVNS_ECNjUML_9rCSuGwr_PA;Port=15039"));
 
 // Setting up ASP.NET Core Identity
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -34,7 +34,14 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<TechService>();
+builder.Services.AddScoped<CartService>();
+builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<PaymentService>();
+builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<PromocodeService>();
+builder.Services.AddScoped<PromotionService>();
+builder.Services.AddScoped<ReviewService>();
+builder.Services.AddScoped<UserService>();
 builder.Services.AddTransient<ISenderEmail, EmailSender>();
 
 builder.Logging.AddDebug();

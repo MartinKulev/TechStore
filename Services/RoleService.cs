@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using TechStore.Models.Entities;
+using TechStore.Data.Entities;
 
 namespace TechStore.Services
 {
