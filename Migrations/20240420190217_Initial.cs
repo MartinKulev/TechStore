@@ -63,14 +63,11 @@ namespace TechStore.Migrations
                 name: "Cart",
                 columns: table => new
                 {
-                    CartID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    CartID = table.Column<string>(type: "varchar(255)", nullable: false),
+                    UserID = table.Column<string>(type: "longtext", nullable: false),
                     ProductID = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<string>(type: "longtext", nullable: false),
-                    ImageURL = table.Column<string>(type: "longtext", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    PaymentID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -93,37 +90,23 @@ namespace TechStore.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Order",
-                columns: table => new
-                {
-                    OrderID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    ProductID = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: false),
-                    CardNum = table.Column<int>(type: "int", nullable: false),
-                    OrderTime = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Order", x => x.OrderID);
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "Payment",
                 columns: table => new
                 {
-                    CardNum = table.Column<string>(type: "varchar(255)", nullable: false),
+                    PaymentID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    CardNum = table.Column<string>(type: "longtext", nullable: false),
                     Name = table.Column<string>(type: "longtext", nullable: false),
                     ExpiryDate = table.Column<string>(type: "longtext", nullable: false),
                     CvvNum = table.Column<int>(type: "int", nullable: false),
-                    Address = table.Column<string>(type: "longtext", nullable: false)
+                    Address = table.Column<string>(type: "longtext", nullable: false),
+                    UserID = table.Column<string>(type: "longtext", nullable: false),
+                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    OrderTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Payment", x => x.CardNum);
+                    table.PrimaryKey("PK_Payment", x => x.PaymentID);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -174,23 +157,6 @@ namespace TechStore.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Promotion", x => x.PromotionID);
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "TempOrder",
-                columns: table => new
-                {
-                    OrderID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    ProductID = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    UserID = table.Column<int>(type: "int", nullable: false),
-                    OrderTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TempOrder", x => x.OrderID);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -408,9 +374,6 @@ namespace TechStore.Migrations
                 name: "Category");
 
             migrationBuilder.DropTable(
-                name: "Order");
-
-            migrationBuilder.DropTable(
                 name: "Payment");
 
             migrationBuilder.DropTable(
@@ -421,9 +384,6 @@ namespace TechStore.Migrations
 
             migrationBuilder.DropTable(
                 name: "Review");
-
-            migrationBuilder.DropTable(
-                name: "TempOrder");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

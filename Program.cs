@@ -6,9 +6,18 @@ using TechStore.Models.Entities;
 using TechStore.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-//y
+
+// Configure session state
+builder.Services.AddSession(options =>
+{
+    // Set a short timeout for easy testing.
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 builder.Services.AddDbContext<TechStoreDbContext>(options =>
-    options.UseMySQL("Server=mysql-210770ab-techstore.b.aivencloud.com;Database=techstore;Uid=avnadmin;Pwd=AVNS_ECNjUML_9rCSuGwr_PA;Port=15039\""));
+    options.UseMySQL("Server=mysql-210770ab-techstore.b.aivencloud.com;Database=techstore;Uid=avnadmin;Pwd=AVNS_ECNjUML_9rCSuGwr_PA;Port=15039"));
 
 // Setting up ASP.NET Core Identity
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -32,6 +41,9 @@ builder.Logging.AddDebug();
 builder.Logging.AddConsole();
 
 var app = builder.Build();
+
+// Enable session state
+app.UseSession();
 
 // Initialize roles
 using (var scope = app.Services.CreateScope())

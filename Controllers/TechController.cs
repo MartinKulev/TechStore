@@ -20,8 +20,11 @@ namespace TechStore.Controllers
 
         public IActionResult Homepage()
         {
-            //techService.AddАrtificiallyCategories(); //This method exists for developing purposes only. Uncomment and run it once to add categories.
-            
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -41,9 +44,13 @@ namespace TechStore.Controllers
             return View(viewModel);
         }
 
-        [HttpPost]
         public IActionResult Category(string categoryName)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -59,28 +66,69 @@ namespace TechStore.Controllers
             return View(viewModel);
         }
 
-        public IActionResult ShoppingCart(string cartID)
+        public IActionResult ShoppingCart(int cartID)
         {
+            List<int> productIDs = new List<int>();
+            if (TempData["Products"] != null)
+            {
+                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            var cartItems = techService.GetCartItems(cartID);
-
-
-            var cartViewModels = cartItems.Select(item => new CartViewModel
+            List<Cart> carts = new List<Cart>();
+            List<Product> products = techService.GetAllProducts();
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (User.Identity.IsAuthenticated)
             {
-                ImageURL = item.ImageURL,
-                Description = item.Description,
-                Price = item.Price,
-                Quantity = item.Quantity
-            }).ToList();
+                carts = techService.GetAllCartProductsByUserID(userId);
+            }
+            else
+            {
+                foreach (int productID in productIDs)
+                {
+                    var existingCart = carts.FirstOrDefault(cart => cart.ProductID == productID);
+                    if (existingCart != null)
+                    {
+                        existingCart.Quantity ++;
+                    }
+                    else
+                    {
+                        Cart newCart = new Cart(userId, productID, 1);
+                        carts.Add(newCart);
+                    }
+                }
+            }
+            var viewModel = new CartViewModel
+            {
+                Carts = carts,
+                Products = products
+            };
 
-            return View(cartViewModels);
+            decimal totalPrice = 0;
+            foreach (var cart in carts)
+            {
+                foreach (var product in products)
+                {
+                    if (cart.ProductID == product.ProductID)
+                    {
+                        totalPrice += (product.Price * cart.Quantity);
+                    }
+                }
+            }
+            ViewBag.TotalPrice = totalPrice;
+            return View(viewModel);
         }
 
         [HttpPost]
         public IActionResult Product(int productID)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -102,12 +150,16 @@ namespace TechStore.Controllers
 
         public IActionResult AdministrationPanel()
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
             List<Promocode> promocodes = techService.GetAllPromocodes();
             List<ApplicationUser> users = techService.GetAllUsers();
-            //List<Category> categories = techService.GetAllCategories();
 
             var viewModel = new AdminPanelViewModel
             {
@@ -122,6 +174,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyCreatedPromocode(string promocodeName, decimal discount)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -133,6 +190,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyDeletedPromocode(string promocodeName)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -143,6 +205,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyDeletedUser(string userID)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -153,6 +220,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyAddedProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -161,42 +233,98 @@ namespace TechStore.Controllers
             return View();
         }
 
+
         public IActionResult Payment()
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
-
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("ShoppingCart");
+            }    
         }
 
         [HttpPost]
         public IActionResult SuccessfulPayment(string name, string cardNumber, string expiryDate, int cvvNum, string adress)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            Payment payment = new Payment(name, cardNumber, expiryDate, cvvNum, adress);
-            techService.AddPayment(payment);
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            List<Cart> carts = techService.GetAllCartProductsByUserID(userId);
+            TimeSpan eetOffset = TimeSpan.FromHours(3);
+            DateTime dateTimeNow = DateTime.UtcNow + eetOffset;
+            List<Product> products = techService.GetAllProducts();
+            decimal totalPrice = 0;
+            foreach (var cart in carts)
+            {
+                foreach (var product in products)
+                {
+                    if (cart.ProductID == product.ProductID)
+                    {
+                        totalPrice += (product.Price * cart.Quantity);
+                    }
+                }
+            }
+            Payment payment = new Payment(name, cardNumber, expiryDate, cvvNum, adress, userId, totalPrice, dateTimeNow);
+            int paymentID = techService.AddPayment(payment);
+            techService.UpdateCartsByUserID(userId, paymentID);
             return View();
         }
 
         public IActionResult Profile(int orderId)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             ApplicationUser user = techService.GetUserByID(userId);
+            List<Payment> payments = techService.GetAllPaymentsByUserID(userId);
             var viewModel = new ProfileViewModel
             {
-                User = user
+                User = user,
+                Payments = payments
             };
+            //var ordersFromDatabase = techService.GetOrders(orderId);// Retrieve orders from your database or another data source
+
+
+            //var OrderViewModel = ordersFromDatabase.Select(order => new OrderViewModel
+            //{
+            //    OrderID = order.OrderID,
+            //    TotalPrice = order.TotalPrice,
+            //    CardNum = order.CardNum,
+            //    OrderTime = order.OrderTime
+            //}).ToList();
 
             return View(viewModel);
         }
 
         public IActionResult SuccessfulRegister()
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -206,6 +334,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyDeletedProduct(int productID)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -216,6 +349,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyAddedPromotion(decimal newPrice, int productID)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -226,6 +364,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyAddedReview(int productId, int rate, string reviewText)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -239,6 +382,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyDeletedPromotion(int productId, int promotionID)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -249,6 +397,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyRevertedPromotion(int productId, int promotionID)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -259,6 +412,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyCreatedCategory(string categoryName)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -270,6 +428,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyDeletedCategory(string categoryName)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -280,6 +443,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyCreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -296,176 +464,14 @@ namespace TechStore.Controllers
             return View("SuccessfullyCreatedUser");
         }
 
-        public IActionResult Index()
-        {
-            List<Category> categories = techService.GetAllCategories();
-            ViewBag.ItemsList = categories;
-
-            var products = techService.GetAllProducts();
-
-            return View(products);
-        }
-
-        [HttpPost]
-        public IActionResult AddToCart(string userId, int productId, int quantity, decimal price, string description, string imageURL)
-        {
-            List<Category> categories = techService.GetAllCategories();
-            ViewBag.ItemsList = categories;
-
-            try
-            {
-
-                bool success = techService.AddProductToCart(userId, productId, quantity, price, description, imageURL);
-
-                if (success)
-                {
-
-                    return RedirectToAction("ShoppingCart", "Tech");
-                }
-                else
-                {
-
-                    ModelState.AddModelError("", "Failed to add the product to the cart.");
-                    return RedirectToAction("Mice", "Tech");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                ModelState.AddModelError("", $"An error occurred while adding the product to the cart: {ex.Message}");
-                return RedirectToAction("Laptops", "Tech");
-            }
-        }
-
-
-        [HttpPost]
-        public IActionResult ApplyPromoCode(string promoCode)
-        {
-            List<Category> categories = techService.GetAllCategories();
-            ViewBag.ItemsList = categories;
-
-           string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-
-            decimal totalPrice = techService.GetTotalCartPrice(userId);
-
-            ViewBag.TotalPrice = totalPrice;
-            var promo = techService.GetPromoCode(promoCode);
-            if (promo != null)
-            {
-                decimal discountAmount = totalPrice * (promo.Discount / 100);
-                decimal discountedPrice = totalPrice - discountAmount;
-
-
-                ViewBag.TotalPrice = discountedPrice;
-
-
-                ViewBag.DiscountMessage = $"Отстъпка: {promo.Discount}%";
-            }
-            else
-            {
-
-                ViewBag.TotalPrice = totalPrice;
-
-
-                ViewBag.DiscountMessage = "Грешен код";
-            }
-
-            return PartialView("DiscountMessagePartial");
-        }
-
-
-
-        [HttpPost]
-        public IActionResult AddToTempOrder()
-        {
-            List<Category> categories = techService.GetAllCategories();
-            ViewBag.ItemsList = categories;
-
-            if (!User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Login", "Account");
-            }
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-
-            var cartItems = techService.GetCartItems(userId);
-
-
-            foreach (var item in cartItems)
-            {
-                var tempOrder = new TempOrder
-                {
-                    ProductID = item.ProductID,
-                    Quantity = item.Quantity,
-                    UserID = userId,
-                    OrderTime = DateTime.Now
-                };
-
-                techService.AddToTempOrder(tempOrder);
-            }
-
-
-            return View("Payment");
-        }
-
-        [HttpPost]
-        public IActionResult ProcessPayment(string name, int cardNumber, string expiryDate, string cvvNum, string adress)
-        {
-            List<Category> categories = techService.GetAllCategories();
-            ViewBag.ItemsList = categories;
-
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-
-            var tempOrders = techService.GetTempOrders(userId);
-
-
-            foreach (var tempOrder in tempOrders)
-            {
-                var order = new TechStore.Models.Entities.Order
-                {
-                    ProductID = tempOrder.ProductID,
-                    Quantity = tempOrder.Quantity,
-                    UserID = userId,
-                    CardNum = cardNumber,
-                    OrderTime = tempOrder.OrderTime
-                };
-
-                techService.AddOrder(order);
-            }
-
-
-            techService.ClearTempOrders(userId);
-
-            techService.DeleteCartItems(userId);
-
-            return View("Profile");
-        }
-
-        private int GetUserID()
-        {
-            List<Category> categories = techService.GetAllCategories();
-            ViewBag.ItemsList = categories;
-
-            if (User.Identity.IsAuthenticated)
-            {
-                var userIdClaim = User.FindFirst("UserId");
-                if (userIdClaim != null)
-                {
-                    if (int.TryParse(userIdClaim.Value, out int userId))
-                    {
-                        return userId;
-                    }
-                }
-            }
-
-            return -1;
-        }
-
         [HttpPost]
         public IActionResult SuccessfullyEditedUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -477,6 +483,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyEditedPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -488,6 +499,11 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfullyEditedCategory(int categoryID, string newCategoryName)
         {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
@@ -497,25 +513,96 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public ActionResult Orders(int orderID)
+        public IActionResult SuccessfullyAddedToCart(int productID)
         {
+            List<int> productIDs = new List<int>();
+            if (TempData["Products"] != null)
+            {
+                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+            }
+            else
+            {
+                TempData["Products"] = productIDs;
+            }
             List<Category> categories = techService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            var orders = techService.GetOrders();
 
-
-            var orderViewModels = orders.Select(order => new OrderViewModel
+            if (User.Identity.IsAuthenticated)
             {
+                string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                techService.AddItemToCart(userId, productID);
+            }
+            else
+            {
+                productIDs.Add(productID);
+            }
+            TempData["Products"] = productIDs;
+            return View();
+        }
 
-                TotalPrice = order.TotalPrice,
-                CardNum = order.CardNum,
-                OrderTime = order.OrderTime
+        [HttpPost]
+        public IActionResult SuccessfullyRemovedProductFromCart(int productID)
+        {
+            List<int> productIDs = new List<int>();
+            if (TempData["Products"] != null)
+            {
+                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+            }
+            else
+            {
+                TempData["Products"] = productIDs;
+            }
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
 
-            }).ToList();
 
+            if (User.Identity.IsAuthenticated)
+            {
+                string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                techService.RemoveItemFromCart(userId, productID);
+            }
+            else
+            {
+                productIDs.Remove(productID);
+            }
+            TempData["Products"] = productIDs;
+            return View();
+        }
 
-            return View(orderViewModels);
+        public IActionResult Orders(int paymentID)
+        {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+            List<Cart> carts = techService.GetAllCartsByPaymentID(paymentID);
+            List<Product> products = techService.GetAllProducts();
+            Payment payment = techService.GetPaymentByID(paymentID);
+            var viewModel = new OrdersViewModel
+            {
+                Carts = carts,
+                Products = products,
+                Payment = payment
+            };
+            return View(viewModel);
+        }
+
+        public IActionResult VerificationLinkWasSentToYourEmail(int paymentID)
+        {
+            if (TempData["Products"] != null)
+            {
+                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                TempData["Products"] = productIDs;
+            }
+            List<Category> categories = techService.GetAllCategories();
+            ViewBag.ItemsList = categories;
+
+            return View();
         }
     }
 }

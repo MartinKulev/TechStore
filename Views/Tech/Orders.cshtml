@@ -1,4 +1,4 @@
-﻿<title>Orders</title>
+﻿﻿<title>ShoppingCart</title>
 <style>
     .flex-container {
         display: flex;
@@ -8,7 +8,7 @@
         overflow: auto;
     }
 
-    .order-box {
+    .product-box {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -21,78 +21,174 @@
         border-radius: 15px;
     }
 
-    .order-info {
+    .product-image {
+        max-width: 90%;
+        max-height: 90%;
+        margin: 20px;
+    }
+
+    .product-info {
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
         justify-content: space-around;
         height: 100%;
-        margin-right: 50px;
-        margin-left: 50px;
+        margin-right: 40px;
+        margin-left: 40px;
     }
 
-    .order-text {
+    .product-text {
         font-size: 20px;
         font-weight: bold;
     }
 
-    .order-price-container {
-        font-size: 20px;
-        font-weight: bold;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between
-    }
-
-    .order-price {
+    .product-price {
         font-size: 20px;
         color: red;
         font-weight: bold;
     }
 
-    .order-dateTime-container {
+    .product-quantity {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100%;
-        margin-left: 50px;
-        margin-right: 50px;
+        margin: 50px;
     }
 
-    .order-dateTime-label {
+    .product-quantity-label {
         font-size: 20px;
         font-weight: bold;
         margin-bottom: 10px;
     }
 
-    .order-dateTime {
+    .product-quantity-count {
+        font-size: 30px;
+    }
+
+    .product-remove-button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 90%;
+        padding: 20px;
+    }
+
+    .product-remove-button {
+        cursor: pointer;
+        border-radius: 15px;
+        background-color: red;
+        height: 70px;
+        width: 70px;
+    }
+
+    .product-remove-button-icon {
+        font-size: 250%;
+        color: white;
+    }
+
+    .final-price-container {
+        margin: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+    }
+
+    .final-price {
+        font-size: 50px;
+        color: red;
+        font-weight: bold;
+    }
+
+    .promocode-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .promocode-box {
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 20px;
+        border: 1px solid #999;
+        height: 50px;
+        width: 300px;
+    }
+
+    .promocode-apply-button {
+        display: flex;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        background-color: purple;
+        cursor: pointer;
+    }
+
+    .promocode-apply-button-text {
+        margin: 0 auto;
+        color: white;
+        font-weight: bold;
         font-size: 20px;
     }
 
-    .orders-title {
+    .checkout-button {
+        margin: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+        height: 100px;
+        background-color: purple;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    .checkout-cart-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+    }
+
+    .checkout-cart-icon {
+        font-size: 300%;
+        color: white;
+    }
+
+    .checkout-cart-text {
+        margin: 0 auto;
+        color: white;
         font-weight: bold;
-        font-size: 50px;
+        font-size: 200%;
     }
-
 </style>
-
-<section calss= "flex-container">
-    @foreach (var order in Model)
+<section class="flex-container">
+    @foreach (var cart in Model.Carts)
     {
-        <div class="order-box">
-            <div class="order-info">
-                <div class="order-text">Поръчка № @order.OrderID</div>
-                <div class="order-price-container">
-                    <div class="order-price">Платено: @order.TotalPrice лв</div>
-                    <div>Банкова карта: @order.CardNumber</div>
+        foreach (var product in Model.Products)
+        {
+            if (cart.ProductID == product.ProductID)
+            {
+                <div class="product-box">
+                    <img class="product-image" src="@product.ImageURL">
+                    <div class="product-info">
+                        <div class="product-text">@product.Description</div>
+                        <div class="product-price">Price: $@product.Price</div>
+                    </div>
+                    <div class="product-quantity">
+                        <div class="product-quantity-label">Quantity:</div>
+                        <div class="product-quantity-count">@cart.Quantity</div>
+                    </div>
                 </div>
-            </div>
-            <div class="order-dateTime-container">
-                <div class="order-dateTime-label">Дата на поръчванe:</div>
-                <div class="order-dateTime">@order.OrderTime.ToShortDateString()</div>
-                <div class="order-dateTime">@order.OrderTime.ToShortTimeString()</div>
-            </div>
-        </div>
+            }
+        }
     }
+    <div class="final-price-container">
+        <div class="final-price">Total: $@Model.Payment.TotalPrice</div>
+    </div>
 </section>

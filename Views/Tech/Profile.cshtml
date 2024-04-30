@@ -21,6 +21,17 @@
         border-radius: 15px;
     }
 
+    .order-button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 20px;
+        height: 200px;
+        min-height: 200px;
+        width: 100%;
+        border-radius: 15px;
+    }
+
     .order-info {
         display: flex;
         flex: 1 1 auto;
@@ -32,6 +43,9 @@
     }
 
     .order-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
         font-size: 20px;
         font-weight: bold;
     }
@@ -133,7 +147,7 @@
     .information-container {
         width: 100%;
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         justify-content: space-evenly;
     }
 
@@ -168,21 +182,6 @@
         width: 100px;
         color: white;
     }
-
-    .orders-button {
-        margin: 50px;
-        background-color: green;
-        border-radius: 5px;
-        height: 50px;
-        width: 200px;
-    }
-
-    .orders-button-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    
 </style>
 <section class="flex-container">
     <div class="profile-box">
@@ -206,17 +205,33 @@
                 <button type="submit" class="logout-button">Logout</button>
             </form>
         </div>
-        <div class="profile-information-container">            
+        <div class="profile-information-container">
             <div class="information-container">
                 <div class="information-sub-container"><div class="information-label">Email:</div><div class="information-text">@Model.User.Email</div></div>
                 <div class="information-sub-container"><div class="information-label">Phone Number:</div><div class="information-text">@Model.User.PhoneNumber</div></div>
             </div>
-        </div>     
+        </div>
     </div>
     @if (!User.IsInRole("Admin"))
     {
-        <form class="orders-button-container" asp-controller="Tech" asp-action="Orders" method="post">
-            <button type="submit" class="orders-button">Your orders</button>
-        </form>
-    }    
+        @foreach (var payments in Model.Payments)
+        {
+            <form class="order-box" asp-controller="Tech" asp-action="Orders" method="post">
+                <button class="order-button" name="paymentID" value="@payments.PaymentID">
+                    <div class="order-info">
+                        <div class="order-text">Order № @payments.PaymentID</div>
+                        <div class="order-price-container">
+                            <div class="order-price">Paid: $@payments.TotalPrice лв</div>
+                            <div>Bank card: @payments.CardNum</div>
+                        </div>
+                    </div>
+                    <div class="order-dateTime-container">
+                        <div class="order-dateTime-label">Date of order:</div>
+                        <div class="order-dateTime">@payments.OrderTime.ToShortDateString()</div>
+                        <div class="order-dateTime">@payments.OrderTime.ToShortTimeString()</div>
+                    </div>
+                </button>
+            </form>
+        }
+    }
 </section>

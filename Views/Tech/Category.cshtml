@@ -119,14 +119,8 @@
                     }
                     else
                     {
-                        <form method="post" asp-action="AddToCart" asp-controller="Tech">
-                            <input type="hidden" name="ID" value="2" />
-                            <input type="hidden" name="productID" value="@product.ProductID" />
-                            <input type="hidden" name="quantity" value="1" />
-                            <input type="hidden" name="price" value="@product.Price" />
-                            <input type="hidden" name="description" value="@product.Description" />
-                            <input type="hidden" name="imageURL" value="@product.ImageURL" />
-                            <button type="submit" class="product-cart-button">
+                        <form method="post" asp-action="SuccessfullyAddedToCart" asp-controller="Tech">
+                            <button class="product-cart-button" name="productID" value="@product.ProductID">
                                 <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
                             </button>
                         </form>
@@ -166,11 +160,15 @@
                                     <input name="promotionID" value="@promotion.PromotionID" hidden />
                                 }
                             }
-                        </form>
+                        </form> 
                     }
                     else
                     {
-                        <button class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></button>
+                        <form method="post" asp-action="SuccessfullyAddedToCart" asp-controller="Tech">
+                            <button class="product-cart-button" name="productID" value="@product.ProductID">
+                                <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </form>
                     }
                 </div>
             </div>

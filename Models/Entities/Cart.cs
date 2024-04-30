@@ -7,35 +7,26 @@ namespace TechStore.Models.Entities
     {
         public Cart() { }
 
-        public Cart(int productID, int quantity, string userID, string description, string imageURL, decimal price)
+        public Cart(string userID, int productID, int quantity)
         {
-            ProductID = productID;
-            Quantity = quantity;
             UserID = userID;
-            Description = description;
-            ImageURL = imageURL;
-            Price = price;
+            ProductID = productID;
+            Quantity = quantity;           
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CartID { get; set; }
+        public string CartID { get; set; }
+
+        [ForeignKey(nameof(ApplicationUser))]
+        public string UserID { get; set; }
 
         [ForeignKey(nameof(Product))]
         public int ProductID { get; set; }
 
         public int Quantity { get; set; }
 
-        [ForeignKey(nameof(ApplicationUser))]
-        public string UserID { get; set; }
-
-        [ForeignKey(nameof(Product))]
-        public string Description { get; set; }
-
-        [ForeignKey(nameof(Product))]
-        public string ImageURL { get; set; }
-
-        [ForeignKey(nameof(Product))]
-        public decimal Price { get; set; }
+        [ForeignKey(nameof(Payment))]
+        public int PaymentID { get; set; }
     }
 }

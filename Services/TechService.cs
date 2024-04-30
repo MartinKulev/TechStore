@@ -17,28 +17,6 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        public void AddАrtificiallyCategories()//this method exists for developing purposes only
-        {
-            Category category1 = new Category("Laptops");
-            Category category2 = new Category("Smartphones");
-            Category category3 = new Category("Tablets");
-            Category category4 = new Category("TVs");
-            Category category5 = new Category("Displays");
-            Category category6 = new Category("Keyboards");
-            Category category7 = new Category("Mice");
-            Category category8 = new Category("Headphones");
-            Category category9 = new Category("Speakers");
-            AddCategory(category1);
-            AddCategory(category2);
-            AddCategory(category3);
-            AddCategory(category4);
-            AddCategory(category5);
-            AddCategory(category6);
-            AddCategory(category7);
-            AddCategory(category8);
-            AddCategory(category9);
-        }
-
         public List<Category> GetAllCategories()
         {
             List<Category> categories = context.Category.ToList();
@@ -68,7 +46,7 @@ namespace TechStore.Services
             foreach (var product in products)
             {
                 context.Product.Remove(product);
-                if(product.IsInPromotion)
+                if (product.IsInPromotion)
                 {
                     Promotion promotion = context.Promotion.First(p => p.ProductID == product.ProductID);
                     context.Promotion.Remove(promotion);
@@ -87,26 +65,19 @@ namespace TechStore.Services
         {
             if (context.Product.Any(p => p.CategoryName == category))
             {
-                List<Product> products = context.Product.Where(p => p.CategoryName == category).ToList();
+                List<Product> products = context.Product.Where(p => p.CategoryName == category).OrderBy(p => p.Price).ToList();
                 return products;
             }
             else
             {
                 return new List<Product>();
             }
-
         }
 
         public Product GetProductByID(int productID)
         {
             Product product = context.Product.First(p => p.ProductID == productID);
             return product;
-        }
-
-        public Cart GetCartByID(int cartID)
-        {
-            Cart cart = context.Cart.First(c => c.CartID == cartID);
-            return cart;
         }
 
         public List<Product> GetAllDescriptions(int productId)
@@ -117,10 +88,14 @@ namespace TechStore.Services
                    .ToList();
         }
 
-        public void AddPayment(Payment payment)
+        public int AddPayment(Payment payment)
         {
             context.Payment.Add(payment);
             context.SaveChanges();
+
+            context.Entry(payment).Reload();
+            int generatedKey = payment.PaymentID;
+            return generatedKey;
         }
 
         public void CreatePromocode(Promocode promocode)
@@ -212,7 +187,7 @@ namespace TechStore.Services
 
         public List<Promotion> GetAllPromotions()
         {
-            List<Promotion> promotions = context.Promotion.ToList();
+            List<Promotion> promotions = context.Promotion.OrderBy(p => p.NewPrice).ToList();
             return promotions;
         }
 
@@ -245,178 +220,6 @@ namespace TechStore.Services
             return context.Product.ToList();
         }
 
-        public bool AddProductToCart(string userID, int productID, int quantity, decimal price, string description, string imageURL)
-        {
-            try
-            {
-                if (productID <= 0 || quantity <= 0)
-                {
-                    Console.WriteLine("Invalid input parameters for adding product to cart.");
-                    return false;
-                }
-
-                var existingCartItem = context.Cart
-                    .FirstOrDefault(c => c.UserID == userID && c.ProductID == productID);
-
-                if (existingCartItem != null)
-                {
-                    existingCartItem.Quantity += quantity;
-                    existingCartItem.Price += price;
-                }
-                else
-                {
-                    Cart newCartItem = new Cart
-                    {
-                        UserID = userID,
-                        ProductID = productID,
-                        Quantity = quantity,
-                        Price = price,
-                        Description = description,
-                        ImageURL = imageURL
-                    };
-                    context.Cart.Add(newCartItem);
-                }
-
-                context.SaveChanges();
-                return true;
-            }
-            catch (DbUpdateException ex)
-            {
-                Console.WriteLine($"Database error occurred while adding the product to the cart: {ex.Message}");
-                return false;
-            }
-
-            catch (Exception ex)
-            {
-
-                Console.WriteLine($"An error occurred while adding the product to the cart: {ex.Message}");
-                return false;
-            }
-        }
-
-        public Promocode GetPromoCode(string promoCode)
-        {
-            return context.Promocode.FirstOrDefault(p => p.PromocodeName == promoCode);
-        }
-
-        public decimal GetTotalCartPrice(string userId)
-        {
-            var cartItems = context.Cart
-                                  .Where(c => c.UserID == userId)
-                                  .ToList();
-
-
-            decimal totalPrice = 0;
-            foreach (var cartItem in cartItems)
-            {
-                var product = context.Product.FirstOrDefault(p => p.ProductID == cartItem.ProductID);
-                if (product != null)
-                {
-                    decimal itemPrice = product.Price * cartItem.Quantity;
-                    totalPrice += itemPrice;
-                }
-                else
-                {
-                    throw new InvalidOperationException($"Product with ID {cartItem.ProductID} not found.");
-                }
-            }
-
-            return totalPrice;
-        }
-
-
-
-        public List<CartViewModel> GetCartItems(string userId)
-        {
-            var cartItems = context.Cart.Where(c => c.UserID == userId).ToList();
-            var cartItemViewModels = new List<CartViewModel>();
-
-            foreach (var cartItem in cartItems)
-            {
-                var product = context.Product.FirstOrDefault(p => p.ProductID == cartItem.ProductID);
-                if (product != null)
-                {
-                    cartItemViewModels.Add(new CartViewModel
-                    {
-                        ProductID = product.ProductID,
-                        ImageURL = product.ImageURL,
-                        Description = product.Description,
-                        Price = product.Price,
-                        Quantity = cartItem.Quantity
-                    });
-                }
-            }
-
-            return cartItemViewModels;
-        }
-
-        public void AddToTempOrder(TempOrder tempOrder)
-        {
-
-            context.TempOrder.Add(tempOrder);
-            context.SaveChanges();
-        }
-
-        public List<TempOrder> GetTempOrders(string userId)
-        {
-
-            return context.TempOrder.Where(to => to.UserID == userId).ToList();
-        }
-
-        public void AddOrder(Order order)
-        {
-
-            context.Order.Add(order);
-            context.SaveChanges();
-        }
-
-        public void ClearTempOrders(string userId)
-        {
-
-            var tempOrders = context.TempOrder.Where(to => to.UserID == userId);
-            context.TempOrder.RemoveRange(tempOrders);
-            context.SaveChanges();
-        }
-
-        public void DeleteCartItems(string userId)
-        {
-            var cartItems = context.Cart.Where(c => c.UserID == userId);
-            context.Cart.RemoveRange(cartItems);
-            context.SaveChanges();
-        }
-
-        public List<OrderViewModel> GetOrders(string userId)
-        {
-            
-            var orders = context.Order
-                                .Where(o => o.UserID == userId)
-                                .ToList();
-
-            
-            var orderViewModels = new List<OrderViewModel>();
-
-           
-            foreach (var order in orders)
-            {
-                
-                var product = context.Product.FirstOrDefault(p => p.ProductID == order.ProductID);
-
-                
-                if (product != null)
-                {
-                    orderViewModels.Add(new OrderViewModel
-                    {
-                        OrderID = order.OrderID,
-                        TotalPrice = order.TotalPrice,
-                        CardNum = order.Quantity,
-                        OrderTime = order.OrderTime
-                    });
-                }
-            }
-
-            return orderViewModels;
-        }
-
         public void EditUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
         {
             ApplicationUser oldUser = GetUserByID(userID);
@@ -425,19 +228,19 @@ namespace TechStore.Services
                 oldUser.UserName = newUserName;
             }
             if (newFirstName != null)
-            { 
+            {
                 oldUser.FirstName = newFirstName;
             }
             if (newLastName != null)
             {
                 oldUser.LastName = newLastName;
             }
-            if (newEmail != null) 
-            { 
+            if (newEmail != null)
+            {
                 oldUser.Email = newEmail;
             }
             if (newPhoneNumber != null)
-            { 
+            {
                 oldUser.PhoneNumber = newPhoneNumber;
             }
 
@@ -485,9 +288,78 @@ namespace TechStore.Services
             return category;
         }
 
-        public List<Order> GetOrders()
+        public void AddItemToCart(string userID, int productID)
         {
-            return context.Order.ToList();
+            Cart cart = new Cart(userID, productID, 1);
+            if (context.Cart.Any(cart => cart.UserID == userID && cart.ProductID == productID && cart.PaymentID == 0))
+            {
+                Cart existingCart = GetCartByUserIDProductID(userID, productID);
+                existingCart.Quantity++;
+                context.Update(existingCart);
+                context.SaveChanges();
+            }
+            else
+            {
+                context.Add(cart);
+                context.SaveChanges();
+            }
+        }
+
+        public Cart GetCartByUserIDProductID(string userID, int productID)
+        {
+            Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID);
+            return cart;
+        }
+
+        public List<Cart> GetAllCartProductsByUserID(string userID)
+        {
+            List<Cart> carts = context.Cart.Where(p => p.UserID == userID && p.PaymentID == 0).ToList();
+            return carts;
+        }
+
+        public void UpdateCartsByUserID(string userID, int paymentID)
+        {
+            var cartsToUpdate = context.Cart.Where(p => p.UserID == userID && p.PaymentID == 0);
+            foreach (var cart in cartsToUpdate)
+            {
+                cart.PaymentID = paymentID;
+            }
+            context.SaveChanges();
+        }
+
+        public List<Payment> GetAllPaymentsByUserID(string usedID)
+        {
+            List<Payment> payments = context.Payment.Where(p => p.UserID == usedID).ToList();
+            return payments;
+        }
+
+        public void RemoveItemFromCart(string userID, int productID)
+        {
+            Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID && p.PaymentID == 0);
+
+            if (cart.Quantity > 1)
+            {
+                cart.Quantity--;
+                context.Update(cart);
+                context.SaveChanges();
+            }
+            else
+            {
+                context.Remove(cart);
+                context.SaveChanges();
+            }
+        }
+
+        public Payment GetPaymentByID(int paymentID)
+        {
+            Payment payment = context.Payment.First(p => p.PaymentID == paymentID);
+            return payment;
+        }
+
+        public List<Cart> GetAllCartsByPaymentID(int paymentID)
+        {
+            List<Cart> carts = context.Cart.Where(p => p.PaymentID == paymentID).ToList();
+            return carts;
         }
 
     }
@@ -495,5 +367,5 @@ namespace TechStore.Services
 
 
 
-    
+
 
