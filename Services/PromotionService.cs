@@ -14,7 +14,7 @@ namespace TechStore.Services
             this.productService = productService;
         }
 
-        public void AddPromotion(decimal newPrice, int productID)
+        public void CreatePromotion(decimal newPrice, int productID)
         {
             Product product = context.Product.First(p => p.ProductID == productID);
             product.IsInPromotion = true;

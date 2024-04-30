@@ -13,7 +13,7 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        public void AddReview(int productId, string userId, int rating, string comment)
+        public void CreateReview(int productId, string userId, int rating, string comment)
         {
             var review = new Review
             {
@@ -30,10 +30,8 @@ namespace TechStore.Services
 
         public List<Review> GetAllReviews(int productId)
         {
-            return context.Review
-                   .Where(r => r.ProductID == productId)
-                   .Include(r => r.User)
-                   .ToList();
+            List<Review> reviews = context.Review.Where(r => r.ProductID == productId).Include(r => r.User).ToList();
+            return reviews;
         }
 
 

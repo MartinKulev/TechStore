@@ -18,7 +18,7 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public void RemovePromocode(string promocodeName)
+        public void DeletePromocode(string promocodeName)
         {
             Promocode promocode = context.Promocode.First(p => p.PromocodeName == promocodeName);
             context.Promocode.Remove(promocode);

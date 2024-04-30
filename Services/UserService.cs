@@ -18,7 +18,7 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public void RemoveUser(string userId)
+        public void DeleteUser(string userId)
         {
             ApplicationUser user = context.User.First(p => p.Id == userId);
             context.User.Remove(user);

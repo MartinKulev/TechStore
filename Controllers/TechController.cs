@@ -74,7 +74,7 @@ namespace TechStore.Controllers
             List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            List<Product> products = productService.GetProductsByCategories(categoryName);
+            List<Product> products = productService.GetProductsByCategory(categoryName);
             List<Promotion> promotions = promotionService.GetAllPromotions();
 
             var viewModel = new HomepageViewModel
@@ -218,7 +218,7 @@ namespace TechStore.Controllers
             List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            promocodeService.RemovePromocode(promocodeName);
+            promocodeService.DeletePromocode(promocodeName);
             return View();
         }
 
@@ -233,7 +233,7 @@ namespace TechStore.Controllers
             List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            userService.RemoveUser(userID);
+            userService.DeleteUser(userID);
             return View();
         }
 
@@ -249,7 +249,7 @@ namespace TechStore.Controllers
             ViewBag.ItemsList = categories;
 
             Product product = new Product(imageURL, categoryName, description, brand, model, price);
-            productService.AddProduct(product);
+            productService.CreateProduct(product);
             return View();
         }
 
@@ -366,7 +366,7 @@ namespace TechStore.Controllers
             List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            promotionService.AddPromotion(newPrice, productID);
+            promotionService.CreatePromotion(newPrice, productID);
             return View();
         }
 
@@ -383,7 +383,7 @@ namespace TechStore.Controllers
 
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            reviewService.AddReview(productId, userId, rate, reviewText);
+            reviewService.CreateReview(productId, userId, rate, reviewText);
 
             return View("SuccessfullyAddedReview");
         }
@@ -430,7 +430,7 @@ namespace TechStore.Controllers
             ViewBag.ItemsList = categories;
 
             Category category = new Category(categoryName);
-            categoryService.AddCategory(category);
+            categoryService.CreateCategory(category);
             return View();
         }
 

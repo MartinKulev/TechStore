@@ -12,7 +12,7 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        public void AddProduct(Product product)
+        public void CreateProduct(Product product)
         {
             context.Product.Add(product);
             context.SaveChanges();
@@ -30,7 +30,7 @@ namespace TechStore.Services
             return context.Product.ToList();
         }
 
-        public List<Product> GetProductsByCategories(string category)//
+        public List<Product> GetProductsByCategory(string category)
         {
             if (context.Product.Any(p => p.CategoryName == category))
             {

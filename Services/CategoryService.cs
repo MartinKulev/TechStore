@@ -12,7 +12,7 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        public void AddCategory(Category category)
+        public void CreateCategory(Category category)
         {
             if (!context.Category.Contains(category))
             {
@@ -21,11 +21,11 @@ namespace TechStore.Services
             }
         }
 
-        public void DeleteCategory(string categoryName)//
+        public void DeleteCategory(string categoryName)
         {
             Category category = context.Category.First(p => p.CategoryName == categoryName);
             context.Category.Remove(category);
-            DeleteAllProductsFromACategory(categoryName);
+            DeleteAllProductsFromCategory(categoryName);
             context.SaveChanges();
         }
 
@@ -53,7 +53,7 @@ namespace TechStore.Services
             return category;
         }
 
-        public void DeleteAllProductsFromACategory(string categoryName)//
+        public void DeleteAllProductsFromCategory(string categoryName)
         {
             List<Product> products = context.Product.Where(p => p.CategoryName == categoryName).ToList();
             foreach (var product in products)
