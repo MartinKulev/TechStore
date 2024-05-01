@@ -68,16 +68,18 @@ namespace TechStore.Controllers
                     PhoneNumber = model.PhoneNumber,
                 };
 
-
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
-                    string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                    foreach (int productID in productIDs)
+                    if(!User.IsInRole("Admin"))
                     {
-                        cartService.AddItemToCart(userId, productID);
-                    }
+                        string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                        foreach (int productID in productIDs)
+                        {
+                            cartService.AddItemToCart(userId, productID);
+                        }
+                    }       
                     TempData["Products"] = new List<int>();
 
                     await _userManager.AddToRoleAsync(user, "User");
@@ -101,14 +103,11 @@ namespace TechStore.Controllers
 
         private async Task SendConfirmationEmail(string? email, ApplicationUser? user)
         {
-
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
-            //Build the Email Confirmation Link which must include the Callback URL
             var ConfirmationLink = Url.Action("ConfirmEmail", "Account",
             new { userId = user.Id, token = token }, protocol: HttpContext.Request.Scheme);
 
-            //Send the Confirmation Email to the User Email Id
             await _emailSender.SendEmailAsync(email, "Confirm Your Email", $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(ConfirmationLink)}'>clicking here</a>.", true);
         }
 
@@ -121,14 +120,12 @@ namespace TechStore.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            //Find the User By Id
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{userId}'.");
             }
 
-            //Call the ConfirmEmailAsync Method which will mark the Email as Confirmed
             var result = await _userManager.ConfirmEmailAsync(user, token);
             if (result.Succeeded)
             {
@@ -166,15 +163,17 @@ namespace TechStore.Controllers
 
             if (ModelState.IsValid)
             {
-                // Sign in the user with SignInManager
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: false, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {
-                    string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                    foreach (int productID in productIDs)
-                    {                        
-                        cartService.AddItemToCart(userId, productID);
+                    if (!User.IsInRole("Admin"))
+                    {
+                        string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                        foreach (int productID in productIDs)
+                        {
+                            cartService.AddItemToCart(userId, productID);
+                        }
                     }
                     TempData["Products"] = new List<int>();
 
@@ -200,7 +199,6 @@ namespace TechStore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
-            // Sign out the user
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }

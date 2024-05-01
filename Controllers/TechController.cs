@@ -13,7 +13,6 @@ namespace TechStore.Controllers
         private PaymentService paymentService;
         private ProductService productService;
         private PromocodeService promocodeService;
-        private PromotionService promotionService;
         private ReviewService reviewService;
         private UserService userService;
 
@@ -23,7 +22,6 @@ namespace TechStore.Controllers
             PaymentService paymentService, 
             ProductService productService,
             PromocodeService promocodeService,
-            PromotionService promotionService,
             ReviewService reviewService,
             UserService userService
             )
@@ -33,7 +31,6 @@ namespace TechStore.Controllers
             this.paymentService = paymentService;
             this.productService = productService;
             this.promocodeService = promocodeService;
-            this.promotionService = promotionService;
             this.reviewService = reviewService;
             this.userService = userService;
         }
@@ -48,20 +45,23 @@ namespace TechStore.Controllers
             List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            List<Promotion> promotions = promotionService.GetAllPromotions();
-            List<Product> products = new List<Product>();
-            foreach (var promotion in promotions)
-            {
-                Product product = productService.GetProductByID(promotion.ProductID);
-                products.Add(product);
-            }
+            List<Product> productsInPromotion = productService.GetAllProductsInPromotion();
+            return View(productsInPromotion);
 
-            var viewModel = new HomepageViewModel
-            {
-                Promotions = promotions,
-                Products = products
-            };
-            return View(viewModel);
+            //List<Promotion> promotions = promotionService.GetAllPromotions();
+            //List<Product> products = new List<Product>();
+            //foreach (var promotion in promotions)
+            //{
+            //    Product product = productService.GetProductByID(promotion.ProductID);
+            //    products.Add(product);
+            //}
+
+            //var viewModel = new HomepageViewModel
+            //{
+            //    Promotions = promotions,
+            //    Products = products
+            //};
+            //return View(viewModel);
         }
 
         public IActionResult Category(string categoryName)
@@ -75,15 +75,8 @@ namespace TechStore.Controllers
             ViewBag.ItemsList = categories;
 
             List<Product> products = productService.GetProductsByCategory(categoryName);
-            List<Promotion> promotions = promotionService.GetAllPromotions();
 
-            var viewModel = new HomepageViewModel
-            {
-                Promotions = promotions,
-                Products = products
-            };
-
-            return View(viewModel);
+            return View(products);
         }
 
         public IActionResult ShoppingCart(int cartID)
@@ -155,14 +148,12 @@ namespace TechStore.Controllers
             Product product = productService.GetProductByID(productID);
             List<Review> reviews = reviewService.GetAllReviews(productID);
             List<ApplicationUser> users = userService.GetAllUsers();
-            List<Promotion> promotions = promotionService.GetAllPromotions();
 
             var viewModel = new ProductViewModel
             {
                 Reviews = reviews,
                 Users = users,
                 Product = product,
-                Promotions = promotions
             };
 
             return View(viewModel);
@@ -366,7 +357,7 @@ namespace TechStore.Controllers
             List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            promotionService.CreatePromotion(newPrice, productID);
+            productService.AddProductToPromotion(newPrice, productID);
             return View();
         }
 
@@ -388,8 +379,23 @@ namespace TechStore.Controllers
             return View("SuccessfullyAddedReview");
         }
 
+        //[HttpPost]
+        //public IActionResult SuccessfullyDeletedPromotion(int productId, int promotionID)
+        //{
+        //    if (TempData["Products"] != null)
+        //    {
+        //        var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+        //        TempData["Products"] = productIDs;
+        //    }
+        //    List<Category> categories = categoryService.GetAllCategories();
+        //    ViewBag.ItemsList = categories;
+
+        //    promotionService.RemovePromotion(productId, promotionID);
+        //    return View();
+        //}
+
         [HttpPost]
-        public IActionResult SuccessfullyDeletedPromotion(int productId, int promotionID)
+        public IActionResult SuccessfullyRevertedPromotion(int productId)
         {
             if (TempData["Products"] != null)
             {
@@ -399,22 +405,7 @@ namespace TechStore.Controllers
             List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            promotionService.RemovePromotion(productId, promotionID);
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult SuccessfullyRevertedPromotion(int productId, int promotionID)
-        {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.ItemsList = categories;
-
-            promotionService.RevertPromotion(productId, promotionID);
+            productService.RevertPromotion(productId);
             return View();
         }
 

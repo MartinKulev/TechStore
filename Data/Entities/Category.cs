@@ -15,7 +15,7 @@ namespace TechStore.Data.Entities
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CategoryId { get; set; }
+        public int CategoryID { get; set; }
 
         public string CategoryName { get; set; }
     }

@@ -32,9 +32,6 @@ namespace TechStore.Data.Entities
         public string UserID { get; set; }
 
         public DateTime CreatedDate { get; set; }
-
-        // Navigation properties
-        public virtual Product Product { get; set; }
         public virtual ApplicationUser User { get; set; }
     }
 }

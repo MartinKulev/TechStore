@@ -27,8 +27,10 @@ namespace TechStore.Services
 
         public List<Product> GetAllProducts()
         {
-            return context.Product.ToList();
+            List<Product> products = context.Product.ToList();
+            return products;
         }
+
 
         public List<Product> GetProductsByCategory(string category)
         {
@@ -43,12 +45,34 @@ namespace TechStore.Services
             }
         }
 
+        public void AddProductToPromotion(decimal newPrice, int productID)
+        {
+            Product product = context.Product.First(p => p.ProductID == productID);
+            product.IsInPromotion = true;
+            product.NewPrice = newPrice;
+            context.Update(product);
+            context.SaveChanges();
+        }
+
+        public void RevertPromotion(int productID)
+        {
+            Product product = context.Product.First(p => p.ProductID == productID);
+            product.IsInPromotion = false;
+            product.NewPrice = 0;
+            context.Update(product);
+            context.SaveChanges();
+        }
+
+        public List<Product> GetAllProductsInPromotion()
+        {
+            List<Product> products = context.Product.Where(p => p.IsInPromotion).ToList();
+            return products;
+        }
+
         public Product GetProductByID(int productID)
         {
             Product product = context.Product.First(p => p.ProductID == productID);
             return product;
         }
-
-
     }
 }

@@ -49,7 +49,7 @@ namespace TechStore.Services
 
         public Promocode GetPromocodeByID(int promocodeID)
         {
-            Promocode promocode = context.Promocode.First(p => p.PromocodeId == promocodeID);
+            Promocode promocode = context.Promocode.First(p => p.PromocodeID == promocodeID);
             return promocode;
         }
     }

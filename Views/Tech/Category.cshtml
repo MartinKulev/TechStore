@@ -103,7 +103,7 @@
     }
 </style>
 <section class="grid-container">
-    @foreach (var product in Model.Products)
+    @foreach (var product in Model)
     {
         @if (!product.IsInPromotion)
         {
@@ -156,27 +156,15 @@
                 <div class="product-bottom">
                     <div class="product-price-container">
                         <s class="product-old-price">$@product.Price</s>
-                        @foreach (var promotion in Model.Promotions)
-                        {
-                            @if (promotion.ProductID == product.ProductID)
-                            {
-                                <div class="product-price">$@promotion.NewPrice</div>
-                            }
-                        }
+                        <div class="product-price">$@product.NewPrice</div>
                     </div>
                     @if (User.IsInRole("Admin"))
                     {
-                        <form method="post" class="product-top" asp-action="SuccessfullyDeletedPromotion" asp-controller="Tech">
+                        <form method="post" class="product-top" asp-action="SuccessfullyDeletedProduct" asp-controller="Tech">
                             <button class="product-bin-button" name="productID" value="@product.ProductID">
                                 <i class="product-bin-icon fa-solid fa-trash-can"></i>
                             </button>
-                            @foreach (var promotion in Model.Promotions)
-                            {
-                                @if (promotion.ProductID == product.ProductID)
-                                {
-                                    <input name="promotionID" value="@promotion.PromotionID" hidden />
-                                }
-                            }
+                            <input name="productID" value="@product.ProductID" hidden />
                         </form>
                     }
                     else

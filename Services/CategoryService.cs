@@ -49,7 +49,7 @@ namespace TechStore.Services
 
         public Category GetCategoryByID(int categoryID)
         {
-            Category category = context.Category.First(p => p.CategoryId == categoryID);
+            Category category = context.Category.First(p => p.CategoryID == categoryID);
             return category;
         }
 
@@ -59,11 +59,6 @@ namespace TechStore.Services
             foreach (var product in products)
             {
                 context.Product.Remove(product);
-                if (product.IsInPromotion)
-                {
-                    Promotion promotion = context.Promotion.First(p => p.ProductID == product.ProductID);
-                    context.Promotion.Remove(promotion);
-                }
             }
             context.SaveChanges();
         }

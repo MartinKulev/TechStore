@@ -12,7 +12,6 @@ namespace TechStore.Data
         public DbSet<Payment> Payment { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<Promocode> Promocode { get; set; }
-        public DbSet<Promotion> Promotion { get; set; }
         public DbSet<Review> Review { get; set; }
         public DbSet<ApplicationRole> Role { get; set; }
         public DbSet<ApplicationUser> User { get; set; }

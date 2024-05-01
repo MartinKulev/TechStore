@@ -35,6 +35,8 @@ namespace TechStore.Data.Entities
         public decimal Price { get; set; }
 
         public bool IsInPromotion { get; set; }
+
+        public decimal NewPrice { get; set; }
     }
 }
 

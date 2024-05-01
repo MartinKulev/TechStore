@@ -15,7 +15,7 @@ namespace TechStore.Data.Entities
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PromocodeId { get; set; }
+        public int PromocodeID { get; set; }
 
         public string PromocodeName { get; set; }
 

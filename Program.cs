@@ -39,7 +39,6 @@ builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<PaymentService>();
 builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<PromocodeService>();
-builder.Services.AddScoped<PromotionService>();
 builder.Services.AddScoped<ReviewService>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddTransient<ISenderEmail, EmailSender>();

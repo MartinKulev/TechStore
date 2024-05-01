@@ -23,9 +23,7 @@ namespace TechStore.Controllers
                 var roleExist = await _roleManager.RoleExistsAsync(roleNames[i]);
                 if (!roleExist)
                 {
-                    // Create the roles and seed them to the database
                     var roleResult = await _roleManager.CreateAsync(new ApplicationRole { Name = roleNames[i], Description = roleDescs[i] });
-                    // Check roleResult.Succeeded to handle creation result
                 }
             }
 

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechStore.Data;
 
@@ -10,9 +11,11 @@ using TechStore.Data;
 namespace TechStore.Migrations
 {
     [DbContext(typeof(TechStoreDbContext))]
-    partial class TechStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240501191518_ProductAndPromotionTo1Entity")]
+    partial class ProductAndPromotionTo1Entity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -249,7 +252,7 @@ namespace TechStore.Migrations
 
             modelBuilder.Entity("TechStore.Data.Entities.Category", b =>
                 {
-                    b.Property<int>("CategoryID")
+                    b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -257,7 +260,7 @@ namespace TechStore.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("CategoryID");
+                    b.HasKey("CategoryId");
 
                     b.ToTable("Category");
                 });
@@ -344,7 +347,7 @@ namespace TechStore.Migrations
 
             modelBuilder.Entity("TechStore.Data.Entities.Promocode", b =>
                 {
-                    b.Property<int>("PromocodeID")
+                    b.Property<int>("PromocodeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -355,7 +358,7 @@ namespace TechStore.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("PromocodeID");
+                    b.HasKey("PromocodeId");
 
                     b.ToTable("Promocode");
                 });
@@ -384,6 +387,8 @@ namespace TechStore.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.HasKey("ReviewID");
+
+                    b.HasIndex("ProductID");
 
                     b.HasIndex("UserID");
 
@@ -443,11 +448,19 @@ namespace TechStore.Migrations
 
             modelBuilder.Entity("TechStore.Data.Entities.Review", b =>
                 {
+                    b.HasOne("TechStore.Data.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("TechStore.Data.Entities.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Product");
 
                     b.Navigation("User");
                 });

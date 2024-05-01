@@ -316,14 +316,8 @@
                 <div class="product-price-container">
                     @if (Model.Product.IsInPromotion)
                     {
-                        @foreach (var promotion in Model.Promotions)
-                        {
-                            @if (promotion.ProductID == Model.Product.ProductID)
-                            {
-                                <s class="product-discounted-price">$@Model.Product.Price</s>
-                                <div class="product-price">Цена: $@promotion.NewPrice</div>
-                            }
-                        }
+                        <s class="product-discounted-price">$@Model.Product.Price</s>
+                        <div class="product-price">Price: $@Model.Product.NewPrice</div>
                     }
                     else
                     {
@@ -367,13 +361,6 @@
                 <form class="command-promotion-container" method="post" asp-action="SuccessfullyRevertedPromotion" asp-controller="Tech">
                     <button class="add-to-promotion-button">Revert</button>
                     <input hidden name="productID" value=@Model.Product.ProductID />
-                    @foreach (var promotion in Model.Promotions)
-                    {
-                        @if (promotion.ProductID == Model.Product.ProductID)
-                        {
-                            <input hidden name="promotionID" value=@promotion.PromotionID />
-                        }
-                    }
                 </form>
             }
         }
