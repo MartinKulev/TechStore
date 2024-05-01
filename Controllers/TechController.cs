@@ -579,7 +579,7 @@ namespace TechStore.Controllers
             return View();
         }
 
-        public IActionResult Orders(int paymentID)
+        public IActionResult Order(int paymentID)
         {
             if (TempData["Products"] != null)
             {
@@ -592,7 +592,7 @@ namespace TechStore.Controllers
             List<Cart> carts = cartService.GetAllCartsByPaymentID(paymentID);
             List<Product> products = productService.GetAllProducts();
             Payment payment = paymentService.GetPaymentByID(paymentID);
-            var viewModel = new OrdersViewModel
+            var viewModel = new OrderViewModel
             {
                 Carts = carts,
                 Products = products,

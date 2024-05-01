@@ -331,10 +331,12 @@
                     }
                     <form method="post" asp-action="SuccessfullyAddedToCart" asp-controller="Tech">
                         <button class="product-button" name="productID" value="@Model.Product.ProductID">
-                            <div class="product-cart-button"><i class="product-cart-icon fa-solid fa-cart-shopping"></i></div>
+                            <div class="product-cart-button">
+                                <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
+                            </div>
                             <div class="product-cart-text">Add to cart</div>
                         </button>
-                    </form>                    
+                    </form>
                 </div>
             </div>
         </section>
@@ -343,9 +345,13 @@
             @if (!Model.Product.IsInPromotion)
             {
 
-                <section class="command-promotion-title-container"><div class="command-promotion-title">Create a promotion:</div></section>
+                <section class="command-promotion-title-container">
+                    <div class="command-promotion-title">Create a promotion:</div>
+                </section>
                 <form class="command-promotion-container" method="post" asp-action="SuccessfullyAddedPromotion" asp-controller="Tech">
-                    <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">Discounted Price:</div></div>
+                    <div class="add-to-promotion-text-container">
+                        <div class="add-to-promotion-text">Discounted Price:</div>
+                    </div>
                     <input class="add-to-promotion-box" name="newPrice" required />
                     <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">$</div></div>
                     <button class="add-to-promotion-button">Create</button>
@@ -355,7 +361,9 @@
             }
             else
             {
-                <section class="command-promotion-title-container"><div class="command-promotion-title">Revert a promotion:</div></section>
+                <section class="command-promotion-title-container">
+                    <div class="command-promotion-title">Revert a promotion:</div>
+                </section>
                 <form class="command-promotion-container" method="post" asp-action="SuccessfullyRevertedPromotion" asp-controller="Tech">
                     <button class="add-to-promotion-button">Revert</button>
                     <input hidden name="productID" value=@Model.Product.ProductID />
@@ -373,9 +381,7 @@
         {
             <form class="add-review-container" method="post" asp-action="SuccessfullyAddedReview" asp-controller="Tech">
                 @Html.AntiForgeryToken()
-
                 <input type="hidden" name="productId" value="@Model.Product.ProductID" />
-
                 <div class="information-container">
                     <div class="profile-container">
                         <div class="profile-picture"></div>
@@ -385,7 +391,6 @@
                     </div>
                     <div class="rating-container">
                         <div class="rating">
-                            <!-- Dynamic stars for rating input -->
                             @for (int i = 5; i >= 1; i--)
                             {
                                 <input value="@i" name="rate" id="star_@i" type="radio">
@@ -395,13 +400,14 @@
                     </div>
                 </div>
                 <textarea class="review-input-box" placeholder="Write a review about the product..." name="reviewText" required></textarea>
-                <div class="post-review-button-container"><button class="post-review-button">Post</button></div>
+                <div class="post-review-button-container">
+                    <button class="post-review-button">Post</button>
+                </div>
             </form>
         }
-
-        <!-- Display reviews -->
-        <section class="reviews-title-container"><div class="reviews-title">Reviews:</div></section>
-
+        <section class="reviews-title-container">
+            <div class="reviews-title">Reviews:</div>
+        </section>
         @foreach (var review in Model.Reviews)
         {
             <section class="posted-reviews-container">
@@ -414,7 +420,6 @@
                     </div>
                     <div class="rating-container">
                         <div class="rating">
-                            <!-- Dynamic stars for individual review rating -->
                             @for (int i = 1; i <= 5; i++)
                             {
                                 <i class="fa @(review.Rating >= i ? "fa-solid fa-star star-color" : "fa-thin fa-star-o star-color")"></i>
@@ -425,23 +430,15 @@
                 <div class="review-output-box">@review.Comment</div>
             </section>
         }
-
-
-        @section scripts {
-            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-            <script src="https://kit.fontawesome.com/6ca2cc534d.js" crossorigin="anonymous"></script>
-            <script>
-                // jQuery script for handling star rating input
-                $(document).ready(function () {
-                    $('.rating input').click(function () {
-                        var ratingValue = $(this).val();
-                        // alert('Selected rating: ' + ratingValue);
-                        // You can customize this part to store the selected rating in a hidden input or perform other actions
-                    });
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://kit.fontawesome.com/6ca2cc534d.js" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                $('.rating input').click(function () {
+                    var ratingValue = $(this).val();
                 });
-            </script>
-        }
-        }
+            });
+        </script>
     </section>
 </body>
 </html>

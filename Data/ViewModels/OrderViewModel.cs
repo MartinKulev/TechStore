@@ -2,7 +2,7 @@
 
 namespace TechStore.Data.ViewModels
 {
-    public class OrdersViewModel
+    public class OrderViewModel
     {
         public List<Cart> Carts { get; set; }
         public List<Product> Products { get; set; }

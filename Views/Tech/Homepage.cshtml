@@ -114,31 +114,36 @@
         <div class="product-box">
             <form method="post" class="product-top" asp-action="Product" asp-controller="Tech">
                 <button class="product-button" name="productID" value="@product.ProductID">
-                    <div class="product-image-container"><img class="product-image" src=@product.ImageURL></div>
-                    <div class="product-text-container"><div class="product-text">@product.Description</div></div>
+                    <div class="product-image-container">
+                        <img class="product-image" src=@product.ImageURL>
+                    </div>
+                    <div class="product-text-container">
+                        <div class="product-text">@product.Description</div>
+                    </div>
                 </button>
             </form>
             <div class="product-bottom">
                 <div class="product-price-container">
                     <s class="product-old-price">$@product.Price</s>
-                    @foreach(var promotion in Model.Promotions)
+                    @foreach (var promotion in Model.Promotions)
                     {
-                        @if(promotion.ProductID == product.ProductID)
+                        @if (promotion.ProductID == product.ProductID)
                         {
                             <div class="product-price">$@promotion.NewPrice</div>
                         }
                     }
-                    
-                </div>               
+                </div>
                 @if (User.IsInRole("Admin"))
                 {
                     <form method="post" class="product-top" asp-action="SuccessfullyDeletedPromotion" asp-controller="Tech">
-                        <button class="product-bin-button" name="productID" value="@product.ProductID"><i class="product-bin-icon fa-solid fa-trash-can"></i></button>
+                        <button class="product-bin-button" name="productID" value="@product.ProductID">
+                            <i class="product-bin-icon fa-solid fa-trash-can"></i>
+                        </button>
                         @foreach (var promotion in Model.Promotions)
                         {
                             @if (promotion.ProductID == product.ProductID)
                             {
-                                <input name="promotionID" value="@promotion.PromotionID" hidden/>
+                                <input name="promotionID" value="@promotion.PromotionID" hidden />
                             }
                         }
                     </form>
@@ -148,8 +153,8 @@
                     <form method="post" asp-action="SuccessfullyAddedToCart" asp-controller="Tech">
                         <button class="product-cart-button" name="productID" value="@product.ProductID">
                             <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
-                            </button>
-                        </form>              
+                        </button>
+                    </form>
                 }
             </div>
         </div>

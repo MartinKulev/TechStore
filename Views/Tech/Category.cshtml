@@ -95,6 +95,12 @@
         font-size: 150%;
         color: white;
     }
+
+    .product-old-price {
+        font-size: 100%;
+        font-weight: bold;
+        color: black;
+    }
 </style>
 <section class="grid-container">
     @foreach (var product in Model.Products)
@@ -105,8 +111,12 @@
                 <form method="post" class="product-top" asp-action="Product" asp-controller="Tech">
                     <button class="product-button">
                         <input type="hidden" name="productID" value="@product.ProductID">
-                        <div class="product-image-container"><img class="product-image" src=@product.ImageURL></div>
-                        <div class="product-text-container"><div class="product-text">@product.Description</div></div>
+                        <div class="product-image-container">
+                            <img class="product-image" src=@product.ImageURL>
+                        </div>
+                        <div class="product-text-container">
+                            <div class="product-text">@product.Description</div>
+                        </div>
                     </button>
                 </form>
                 <div class="product-bottom">
@@ -114,7 +124,9 @@
                     @if (User.IsInRole("Admin"))
                     {
                         <form method="post" class="product-top" asp-action="SuccessfullyDeletedProduct" asp-controller="Tech">
-                            <button class="product-bin-button" name="productID" value="@product.ProductID"><i class="product-bin-icon fa-solid fa-trash-can"></i></button>
+                            <button class="product-bin-button" name="productID" value="@product.ProductID">
+                                <i class="product-bin-icon fa-solid fa-trash-can"></i>
+                            </button>
                         </form>
                     }
                     else
@@ -133,8 +145,12 @@
             <div class="product-box">
                 <form method="post" class="product-top" asp-action="Product" asp-controller="Tech">
                     <button class="product-button" name="productID" value="@product.ProductID">
-                        <div class="product-image-container"><img class="product-image" src=@product.ImageURL></div>
-                        <div class="product-text-container"><div class="product-text">@product.Description</div></div>
+                        <div class="product-image-container">
+                            <img class="product-image" src=@product.ImageURL>
+                        </div>
+                        <div class="product-text-container">
+                            <div class="product-text">@product.Description</div>
+                        </div>
                     </button>
                 </form>
                 <div class="product-bottom">
@@ -147,12 +163,13 @@
                                 <div class="product-price">$@promotion.NewPrice</div>
                             }
                         }
-
                     </div>
                     @if (User.IsInRole("Admin"))
                     {
                         <form method="post" class="product-top" asp-action="SuccessfullyDeletedPromotion" asp-controller="Tech">
-                            <button class="product-bin-button" name="productID" value="@product.ProductID"><i class="product-bin-icon fa-solid fa-trash-can"></i></button>
+                            <button class="product-bin-button" name="productID" value="@product.ProductID">
+                                <i class="product-bin-icon fa-solid fa-trash-can"></i>
+                            </button>
                             @foreach (var promotion in Model.Promotions)
                             {
                                 @if (promotion.ProductID == product.ProductID)
@@ -160,7 +177,7 @@
                                     <input name="promotionID" value="@promotion.PromotionID" hidden />
                                 }
                             }
-                        </form> 
+                        </form>
                     }
                     else
                     {
@@ -172,8 +189,6 @@
                     }
                 </div>
             </div>
-
         }
     }
-
 </section>

@@ -170,7 +170,7 @@
 <section class="flex-container">
     @foreach (var cart in Model.Carts)
     {
-        foreach(var product in Model.Products)
+        foreach (var product in Model.Products)
         {
             if (cart.ProductID == product.ProductID)
             {
@@ -197,12 +197,16 @@
         <div class="final-price">Total: $@ViewBag.TotalPrice</div>
         <div class="promocode-container">
             <input class="promocode-box" placeholder="Enter a promocode">
-            <div class="promocode-apply-button"><div class="promocode-apply-button-text">Apply</div></div>
+            <div class="promocode-apply-button">
+                <div class="promocode-apply-button-text">Apply</div>
+            </div>
         </div>
     </div>
     <form method="post" asp-action="Payment" asp-controller="Tech">
         <button class="checkout-button">
-            <div class="checkout-cart-button"><i class="checkout-cart-icon fa-solid fa-cart-shopping"></i></div>
+            <div class="checkout-cart-button">
+                <i class="checkout-cart-icon fa-solid fa-cart-shopping"></i>
+            </div>
             <div class="checkout-cart-text">To Checkout</div>
         </button>
     </form>

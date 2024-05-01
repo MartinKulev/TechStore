@@ -199,7 +199,9 @@
         </div>
         <div class="profilePicture-Username-Logout-container">
             <div class="profile-picture"></div>
-            <div class="user-name-container"><div>@Model.User.FirstName @Model.User.LastName</div></div>
+            <div class="user-name-container">
+                <div>@Model.User.FirstName @Model.User.LastName</div>
+            </div>
             <form class="logout-button-container" asp-controller="Account" asp-action="Logout" method="post">
                 @Html.AntiForgeryToken()
                 <button type="submit" class="logout-button">Logout</button>
@@ -207,8 +209,14 @@
         </div>
         <div class="profile-information-container">
             <div class="information-container">
-                <div class="information-sub-container"><div class="information-label">Email:</div><div class="information-text">@Model.User.Email</div></div>
-                <div class="information-sub-container"><div class="information-label">Phone Number:</div><div class="information-text">@Model.User.PhoneNumber</div></div>
+                <div class="information-sub-container">
+                    <div class="information-label">Email:</div>
+                    <div class="information-text">@Model.User.Email</div>
+                </div>
+                <div class="information-sub-container">
+                    <div class="information-label">Phone Number:</div>
+                    <div class="information-text">@Model.User.PhoneNumber</div>
+                </div>
             </div>
         </div>
     </div>
@@ -216,12 +224,12 @@
     {
         @foreach (var payments in Model.Payments)
         {
-            <form class="order-box" asp-controller="Tech" asp-action="Orders" method="post">
+            <form class="order-box" asp-controller="Tech" asp-action="Order" method="post">
                 <button class="order-button" name="paymentID" value="@payments.PaymentID">
                     <div class="order-info">
                         <div class="order-text">Order № @payments.PaymentID</div>
                         <div class="order-price-container">
-                            <div class="order-price">Paid: $@payments.TotalPrice лв</div>
+                            <div class="order-price">Paid: $@payments.TotalPrice</div>
                             <div>Bank card: @payments.CardNum</div>
                         </div>
                     </div>
