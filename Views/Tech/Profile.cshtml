@@ -224,8 +224,8 @@
     {
         @foreach (var payments in Model.Payments)
         {
-            <form class="order-box" asp-controller="Tech" asp-action="Order" method="post">
-                <button class="order-button" name="paymentID" value="@payments.PaymentID">
+            <form class="order-box" method="get" asp-controller="Tech" asp-action="Order" asp-route-paymentID="@payments.PaymentID">
+                <button class="order-button">
                     <div class="order-info">
                         <div class="order-text">Order № @payments.PaymentID</div>
                         <div class="order-price-container">

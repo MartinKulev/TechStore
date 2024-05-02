@@ -105,12 +105,9 @@
 <section class="grid-container">
     @foreach (var product in Model)
     {
-        @if (!product.IsInPromotion)
-        {
             <div class="product-box">
-                <form method="post" class="product-top" asp-action="Product" asp-controller="Tech">
+            <form method="get" class="product-top" asp-action="Product" asp-controller="Tech" asp-route-productID="@product.ProductID">
                     <button class="product-button">
-                        <input type="hidden" name="productID" value="@product.ProductID">
                         <div class="product-image-container">
                             <img class="product-image" src=@product.ImageURL>
                         </div>
@@ -120,51 +117,23 @@
                     </button>
                 </form>
                 <div class="product-bottom">
-                    <div class="product-price">$@product.Price</div>
-                    @if (User.IsInRole("Admin"))
+                    @if (product.IsInPromotion)
                     {
-                        <form method="post" class="product-top" asp-action="SuccessfullyDeletedProduct" asp-controller="Tech">
-                            <button class="product-bin-button" name="productID" value="@product.ProductID">
-                                <i class="product-bin-icon fa-solid fa-trash-can"></i>
-                            </button>
-                        </form>
-                    }
-                    else
-                    {
-                        <form method="post" asp-action="SuccessfullyAddedToCart" asp-controller="Tech">
-                            <button class="product-cart-button" name="productID" value="@product.ProductID">
-                                <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
-                            </button>
-                        </form>
-                    }
-                </div>
-            </div>
-        }
-        else
-        {
-            <div class="product-box">
-                <form method="post" class="product-top" asp-action="Product" asp-controller="Tech">
-                    <button class="product-button" name="productID" value="@product.ProductID">
-                        <div class="product-image-container">
-                            <img class="product-image" src=@product.ImageURL>
-                        </div>
-                        <div class="product-text-container">
-                            <div class="product-text">@product.Description</div>
-                        </div>
-                    </button>
-                </form>
-                <div class="product-bottom">
-                    <div class="product-price-container">
-                        <s class="product-old-price">$@product.Price</s>
+                        <div class="product-price-container">
+                            <s class="product-old-price">$@product.Price</s>
                         <div class="product-price">$@product.NewPrice</div>
-                    </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="product-price">$@product.Price</div>
+                    }                   
                     @if (User.IsInRole("Admin"))
                     {
                         <form method="post" class="product-top" asp-action="SuccessfullyDeletedProduct" asp-controller="Tech">
                             <button class="product-bin-button" name="productID" value="@product.ProductID">
                                 <i class="product-bin-icon fa-solid fa-trash-can"></i>
                             </button>
-                            <input name="productID" value="@product.ProductID" hidden />
                         </form>
                     }
                     else
@@ -177,6 +146,5 @@
                     }
                 </div>
             </div>
-        }
     }
 </section>

@@ -121,8 +121,7 @@
         <section class="container-buttons">
             @foreach (var category in ViewBag.ItemsList)
             {
-                <form method="post" asp-action="Category" asp-controller="Tech">
-                    <input type="hidden" name="categoryName" value="@category.CategoryName" />  
+                <form method="get" asp-action="Category" asp-route-categoryName="@category.CategoryName" asp-controller="Tech">
                     <button type="submit" class="option-button">@category.CategoryName<div class="border-bottom"></div></button>
                 </form>
             }

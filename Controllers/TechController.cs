@@ -64,6 +64,8 @@ namespace TechStore.Controllers
             //return View(viewModel);
         }
 
+
+        [HttpGet("Tech/Category/{categoryName}")]
         public IActionResult Category(string categoryName)
         {
             if (TempData["Products"] != null)
@@ -134,7 +136,7 @@ namespace TechStore.Controllers
             return View(viewModel);
         }
 
-        [HttpPost]
+        [HttpGet("Tech/Product/{productID}")]
         public IActionResult Product(int productID)
         {
             if (TempData["Products"] != null)
@@ -570,6 +572,7 @@ namespace TechStore.Controllers
             return View();
         }
 
+        [HttpGet("Tech/Order/{paymentID}")]
         public IActionResult Order(int paymentID)
         {
             if (TempData["Products"] != null)
