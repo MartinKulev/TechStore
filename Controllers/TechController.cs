@@ -10,7 +10,7 @@ namespace TechStore.Controllers
     {
         private CartService cartService;
         private CategoryService categoryService;
-        private PaymentService paymentService;
+        private OrderService orderService;
         private ProductService productService;
         private PromocodeService promocodeService;
         private ReviewService reviewService;
@@ -19,7 +19,7 @@ namespace TechStore.Controllers
         public TechController(
             CartService cartService, 
             CategoryService categoryService, 
-            PaymentService paymentService, 
+            OrderService orderService, 
             ProductService productService,
             PromocodeService promocodeService,
             ReviewService reviewService,
@@ -28,7 +28,7 @@ namespace TechStore.Controllers
         {
             this.cartService = cartService;
             this.categoryService = categoryService;
-            this.paymentService = paymentService;
+            this.orderService = orderService;
             this.productService = productService;
             this.promocodeService = promocodeService;
             this.reviewService = reviewService;
@@ -309,9 +309,9 @@ namespace TechStore.Controllers
                     }
                 }
             }
-            Payment payment = new Payment(name, cardNumber, expiryDate, cvvNum, adress, userId, totalPrice, dateTimeNow);
-            int paymentID = paymentService.AddPayment(payment);
-            cartService.UpdateCartsByUserID(userId, paymentID);
+            Order order = new Order(name, cardNumber, expiryDate, cvvNum, adress, userId, totalPrice, dateTimeNow);
+            int orderID = orderService.AddOrder(order);
+            cartService.UpdateCartsByUserID(userId, orderID);
             return View();
         }
 
@@ -327,11 +327,11 @@ namespace TechStore.Controllers
 
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             ApplicationUser user = userService.GetUserByID(userId);
-            List<Payment> payments = paymentService.GetAllPaymentsByUserID(userId);
+            List<Order> orders = orderService.GetAllOrdersByUserID(userId);
             var viewModel = new ProfileViewModel
             {
                 User = user,
-                Payments = payments
+                Orders = orders
             };
             return View(viewModel);
         }
@@ -588,8 +588,8 @@ namespace TechStore.Controllers
             return View();
         }
 
-        [HttpGet("Tech/Order/{paymentID}")]
-        public IActionResult Order(int paymentID)
+        [HttpGet("Tech/Order/{orderID}")]
+        public IActionResult Order(int orderID)
         {
             if (TempData["Products"] != null)
             {
@@ -599,19 +599,19 @@ namespace TechStore.Controllers
             List<Category> categories = categoryService.GetAllCategories();
             ViewBag.ItemsList = categories;
 
-            List<Cart> carts = cartService.GetAllCartsByPaymentID(paymentID);
+            List<Cart> carts = cartService.GetAllCartsByOrderID(orderID);
             List<Product> products = productService.GetAllProducts();
-            Payment payment = paymentService.GetPaymentByID(paymentID);
+            Order order = orderService.GetOrderByID(orderID);
             var viewModel = new OrderViewModel
             {
                 Carts = carts,
                 Products = products,
-                Payment = payment
+                Order = order
             };
             return View(viewModel);
         }
 
-        public IActionResult VerificationLinkWasSentToYourEmail(int paymentID)
+        public IActionResult VerificationLinkWasSentToYourEmail(int orderID)
         {
             if (TempData["Products"] != null)
             {

@@ -26,7 +26,7 @@ namespace TechStore.Data.Entities
 
         public int Quantity { get; set; }
 
-        [ForeignKey(nameof(Payment))]
-        public int PaymentID { get; set; }
+        [ForeignKey(nameof(Order))]
+        public int OrderID { get; set; }
     }
 }

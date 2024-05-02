@@ -6,6 +6,6 @@ namespace TechStore.Data.ViewModels
     {
         public ApplicationUser User { get; set; }
 
-        public List<Payment> Payments { get; set; }
+        public List<Order> Orders { get; set; }
     }
 }

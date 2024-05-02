@@ -1,4 +1,5 @@
-﻿using TechStore.Data;
+﻿using Mysqlx.Crud;
+using TechStore.Data;
 using TechStore.Data.Entities;
 
 namespace TechStore.Services
@@ -15,7 +16,7 @@ namespace TechStore.Services
         public void AddItemToCart(string userID, int productID)
         {
             Cart cart = new Cart(userID, productID, 1);
-            if (context.Cart.Any(cart => cart.UserID == userID && cart.ProductID == productID && cart.PaymentID == 0))
+            if (context.Cart.Any(cart => cart.UserID == userID && cart.ProductID == productID && cart.OrderID == 0))
             {
                 Cart existingCart = GetCartByUserIDProductID(userID, productID);
                 existingCart.Quantity++;
@@ -31,7 +32,7 @@ namespace TechStore.Services
 
         public void RemoveItemFromCart(string userID, int productID)
         {
-            Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID && p.PaymentID == 0);
+            Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID && p.OrderID == 0);
 
             if (cart.Quantity > 1)
             {
@@ -46,19 +47,19 @@ namespace TechStore.Services
             }
         }
 
-        public void UpdateCartsByUserID(string userID, int paymentID)
+        public void UpdateCartsByUserID(string userID, int orderID)
         {
-            var cartsToUpdate = context.Cart.Where(p => p.UserID == userID && p.PaymentID == 0);
+            var cartsToUpdate = context.Cart.Where(p => p.UserID == userID && p.OrderID == 0);
             foreach (var cart in cartsToUpdate)
             {
-                cart.PaymentID = paymentID;
+                cart.OrderID = orderID;
             }
             context.SaveChanges();
         }
 
-        public List<Cart> GetAllCartsByPaymentID(int paymentID)
+        public List<Cart> GetAllCartsByOrderID(int orderID)
         {
-            List<Cart> carts = context.Cart.Where(p => p.PaymentID == paymentID).ToList();
+            List<Cart> carts = context.Cart.Where(p => p.OrderID == orderID).ToList();
             return carts;
         }
 
@@ -70,7 +71,7 @@ namespace TechStore.Services
 
         public List<Cart> GetAllCartProductsByUserID(string userID)
         {
-            List<Cart> carts = context.Cart.Where(p => p.UserID == userID && p.PaymentID == 0).ToList();
+            List<Cart> carts = context.Cart.Where(p => p.UserID == userID && p.OrderID == 0).ToList();
             return carts;
         }        
     }

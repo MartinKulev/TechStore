@@ -4,11 +4,11 @@ using System.Threading.RateLimiting;
 
 namespace TechStore.Data.Entities
 {
-    public class Payment
+    public class Order
     {
-        public Payment() { }
+        public Order() { }
 
-        public Payment(string name, string cardNum, string expiryDate, int cvvNum, string address, string userID, decimal totalPrice, DateTime orderTime)
+        public Order(string name, string cardNum, string expiryDate, int cvvNum, string address, string userID, decimal totalPrice, DateTime orderTime)
         {
             Name = name;
             CardNum = cardNum;
@@ -22,7 +22,7 @@ namespace TechStore.Data.Entities
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PaymentID { get; set; }
+        public int OrderID { get; set; }
 
         public string CardNum { get; set; }
 

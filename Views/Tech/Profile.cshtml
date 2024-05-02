@@ -222,21 +222,21 @@
     </div>
     @if (!User.IsInRole("Admin"))
     {
-        @foreach (var payments in Model.Payments)
+        @foreach (var order in Model.Orders)
         {
-            <form class="order-box" method="get" asp-controller="Tech" asp-action="Order" asp-route-paymentID="@payments.PaymentID">
+            <form class="order-box" method="get" asp-controller="Tech" asp-action="Order" asp-route-orderID="@order.OrderID">
                 <button class="order-button">
                     <div class="order-info">
-                        <div class="order-text">Order № @payments.PaymentID</div>
+                        <div class="order-text">Order № @order.OrderID</div>
                         <div class="order-price-container">
-                            <div class="order-price">Paid: $@payments.TotalPrice</div>
-                            <div>Bank card: @payments.CardNum</div>
+                            <div class="order-price">Paid: $@order.TotalPrice</div>
+                            <div>Bank card: @order.CardNum</div>
                         </div>
                     </div>
                     <div class="order-dateTime-container">
                         <div class="order-dateTime-label">Date of order:</div>
-                        <div class="order-dateTime">@payments.OrderTime.ToShortDateString()</div>
-                        <div class="order-dateTime">@payments.OrderTime.ToShortTimeString()</div>
+                        <div class="order-dateTime">@order.OrderTime.ToShortDateString()</div>
+                        <div class="order-dateTime">@order.OrderTime.ToShortTimeString()</div>
                     </div>
                 </button>
             </form>
