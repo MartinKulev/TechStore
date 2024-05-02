@@ -43,7 +43,7 @@
     }
 
     .product-price {
-        font-size: 20px;
+        font-size: 150%;
         color: red;
         font-weight: bold;
     }
@@ -166,6 +166,17 @@
         font-weight: bold;
         font-size: 200%;
     }
+
+    .product-old-price {
+        font-size: 100%;
+        font-weight: bold;
+        color: black;
+    }
+
+    .product-price-container {
+        display: flex;
+        flex-direction: column;
+    }
 </style>
 <section class="flex-container">
     @foreach (var cart in Model.Carts)
@@ -178,7 +189,17 @@
                     <img class="product-image" src="@product.ImageURL">
                     <div class="product-info">
                         <div class="product-text">@product.Description</div>
-                        <div class="product-price">Price: $@product.Price</div>
+                        @if (product.IsInPromotion)
+                        {
+                            <div class="product-price-container">
+                                <s class="product-old-price">$@product.Price</s>
+                                <div class="product-price">$@product.NewPrice</div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="product-price">$@product.Price</div>
+                        }
                     </div>
                     <div class="product-quantity">
                         <div class="product-quantity-label">Quantity:</div>

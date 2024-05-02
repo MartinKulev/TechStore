@@ -128,7 +128,15 @@ namespace TechStore.Controllers
                 {
                     if (cart.ProductID == product.ProductID)
                     {
-                        totalPrice += (product.Price * cart.Quantity);
+                        if(product.IsInPromotion)
+                        {
+                            totalPrice += (product.NewPrice * cart.Quantity);
+                        }
+                        else
+                        {
+                            totalPrice += (product.Price * cart.Quantity);
+                        }
+                        
                     }
                 }
             }
@@ -289,7 +297,15 @@ namespace TechStore.Controllers
                 {
                     if (cart.ProductID == product.ProductID)
                     {
-                        totalPrice += (product.Price * cart.Quantity);
+                        if(product.IsInPromotion)
+                        {
+                            totalPrice += (product.NewPrice * cart.Quantity);
+                        }
+                        else
+                        {
+                            totalPrice += (product.Price * cart.Quantity);
+                        }
+                        
                     }
                 }
             }
