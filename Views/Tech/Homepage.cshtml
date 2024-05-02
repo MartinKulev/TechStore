@@ -112,7 +112,7 @@
     @foreach (var product in Model)
     {
         <div class="product-box">
-            <form method="post" class="product-top" asp-action="Product" asp-controller="Tech">
+            <form method="get" class="product-top" asp-action="Product" asp-controller="Tech" asp-route-productID="@product.ProductID">
                 <button class="product-button" name="productID" value="@product.ProductID">
                     <div class="product-image-container">
                         <img class="product-image" src=@product.ImageURL>

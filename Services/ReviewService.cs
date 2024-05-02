@@ -28,9 +28,9 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public List<Review> GetAllReviews(int productId)
+        public List<Review> GetAllReviewsByProductID(int productId)
         {
-            List<Review> reviews = context.Review.Where(r => r.ProductID == productId).Include(r => r.User).ToList();
+            List<Review> reviews = context.Review.Where(p => p.ProductID == productId).Include(p => p.User).ToList();
             return reviews;
         }
 

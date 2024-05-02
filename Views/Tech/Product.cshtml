@@ -336,9 +336,18 @@
         </section>
         @if (User.IsInRole("Admin"))
         {
-            @if (!Model.Product.IsInPromotion)
+            @if (Model.Product.IsInPromotion)
             {
-
+                <section class="command-promotion-title-container">
+                    <div class="command-promotion-title">Revert a promotion:</div>
+                </section>
+                <form class="command-promotion-container" method="post" asp-action="SuccessfullyRevertedPromotion" asp-controller="Tech">
+                    <button class="add-to-promotion-button">Revert</button>
+                    <input hidden name="productID" value=@Model.Product.ProductID />
+                </form>
+            }
+            else
+            {
                 <section class="command-promotion-title-container">
                     <div class="command-promotion-title">Create a promotion:</div>
                 </section>
@@ -349,17 +358,6 @@
                     <input class="add-to-promotion-box" name="newPrice" required />
                     <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">$</div></div>
                     <button class="add-to-promotion-button">Create</button>
-                    <input hidden name="productID" value=@Model.Product.ProductID />
-                </form>
-
-            }
-            else
-            {
-                <section class="command-promotion-title-container">
-                    <div class="command-promotion-title">Revert a promotion:</div>
-                </section>
-                <form class="command-promotion-container" method="post" asp-action="SuccessfullyRevertedPromotion" asp-controller="Tech">
-                    <button class="add-to-promotion-button">Revert</button>
                     <input hidden name="productID" value=@Model.Product.ProductID />
                 </form>
             }
@@ -380,13 +378,13 @@
                         <div class="rating">
                             @for (int i = 5; i >= 1; i--)
                             {
-                                <input value="@i" name="rate" id="star_@i" type="radio">
+                                <input value="@i" name="rating" id="star_@i" type="radio">
                                 <label title="@i" for="star_@i"></label>
                             }
                         </div>
                     </div>
                 </div>
-                <textarea class="review-input-box" placeholder="Write a review about the product..." name="reviewText" required></textarea>
+                <textarea class="review-input-box" placeholder="Write a review about the product..." name="comment" required></textarea>
                 <div class="post-review-button-container">
                     <button class="post-review-button">Post</button>
                 </div>
