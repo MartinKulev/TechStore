@@ -40,7 +40,7 @@ namespace TechStore.Controllers
                 TempData["Products"] = productIDs;
             }
             List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.ItemsList = categories;
+            ViewBag.CategoryList = categories;
             return View();
         }
 
@@ -55,7 +55,7 @@ namespace TechStore.Controllers
                 TempData["Products"] = productIDs;
             }
             List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.ItemsList = categories;
+            ViewBag.CategoryList = categories;
 
             if (ModelState.IsValid)
             {
@@ -144,7 +144,7 @@ namespace TechStore.Controllers
                 TempData["Products"] = productIDs;
             }
             List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.ItemsList = categories;
+            ViewBag.CategoryList = categories;
 
             return View();
         }
@@ -159,7 +159,7 @@ namespace TechStore.Controllers
                 productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
             }
             List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.ItemsList = categories;
+            ViewBag.CategoryList = categories;
 
             if (ModelState.IsValid)
             {

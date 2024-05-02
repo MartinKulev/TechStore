@@ -34,15 +34,8 @@ namespace TechStore.Services
 
         public List<Product> GetProductsByCategory(string category)
         {
-            if (context.Product.Any(p => p.CategoryName == category))
-            {
-                List<Product> products = context.Product.Where(p => p.CategoryName == category).OrderBy(p => p.Price).ToList();
-                return products;
-            }
-            else
-            {
-                return new List<Product>();
-            }
+            List<Product> products = context.Product.Where(p => p.CategoryName == category).OrderBy(p => p.Price).ToList();
+            return products;
         }
 
         public void AddProductToPromotion(decimal newPrice, int productID)
@@ -73,6 +66,13 @@ namespace TechStore.Services
         {
             Product product = context.Product.First(p => p.ProductID == productID);
             return product;
+        }
+
+        public List<Product> GetAllProductsInCart(List<Cart> carts)
+        {
+            List<int> productIDs = carts.Select(cart => cart.ProductID).ToList();
+            List<Product> products = context.Product.Where(p => productIDs.Contains(p.ProductID)).ToList();
+            return products;
         }
     }
 }

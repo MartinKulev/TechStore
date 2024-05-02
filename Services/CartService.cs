@@ -1,6 +1,9 @@
-﻿using Mysqlx.Crud;
+﻿using Microsoft.AspNetCore.Cors.Infrastructure;
+using Mysqlx.Crud;
+using System.Security.Claims;
 using TechStore.Data;
 using TechStore.Data.Entities;
+using TechStore.Data.ViewModels;
 
 namespace TechStore.Services
 {
@@ -73,6 +76,43 @@ namespace TechStore.Services
         {
             List<Cart> carts = context.Cart.Where(p => p.UserID == userID && p.OrderID == 0).ToList();
             return carts;
-        }        
+        }
+
+        public List<Cart> GetAllCartProductsByTempData(List<int> productIDs, string userId)
+        {
+            List<Cart> carts = new List<Cart>();
+            foreach (int productID in productIDs)
+            {
+                var existingCart = carts.FirstOrDefault(cart => cart.ProductID == productID);
+                if (existingCart != null)
+                {
+                    existingCart.Quantity++;
+                }
+                else
+                {
+                    Cart newCart = new Cart(userId, productID, 1);
+                    carts.Add(newCart);
+                }
+            }
+            return carts;
+        }
+
+        public decimal CalculateCartTotalPrice(List<Cart> carts, List<Product> products)
+        {
+            decimal totalPrice = 0;
+            foreach (var cart in carts)
+            {
+                Product product = products.First(p => p.ProductID == cart.ProductID);
+                if (product.IsInPromotion)
+                {
+                    totalPrice += (product.NewPrice * cart.Quantity);
+                }
+                else
+                {
+                    totalPrice += (product.Price * cart.Quantity);
+                }
+            }
+            return totalPrice;
+        }
     }
 }

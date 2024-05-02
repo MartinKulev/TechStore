@@ -119,7 +119,7 @@
     <div class="purple-bar">
         <a class="mainHeader-Button" asp-action="Homepage" asp-controller="Tech">TechStore</a>
         <section class="container-buttons">
-            @foreach (var category in ViewBag.ItemsList)
+            @foreach (var category in ViewBag.CategoryList)
             {
                 <form method="get" asp-action="Category" asp-route-categoryName="@category.CategoryName" asp-controller="Tech">
                     <button type="submit" class="option-button">@category.CategoryName<div class="border-bottom"></div></button>
