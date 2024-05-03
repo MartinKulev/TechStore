@@ -323,7 +323,7 @@
                     {
                         <div class="product-price">Price: $@Model.Product.Price</div>
                     }
-                    <form method="post" asp-action="SuccessfullyAddedToCart" asp-controller="Tech">
+                    <form method="post" asp-action="ProductAddedToCart" asp-controller="Cart">
                         <button class="product-button" name="productID" value="@Model.Product.ProductID">
                             <div class="product-cart-button">
                                 <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
@@ -341,7 +341,7 @@
                 <section class="command-promotion-title-container">
                     <div class="command-promotion-title">Revert a promotion:</div>
                 </section>
-                <form class="command-promotion-container" method="post" asp-action="SuccessfullyRevertedPromotion" asp-controller="Tech">
+                <form class="command-promotion-container" method="post" asp-action="RevertedPromotion" asp-controller="Product">
                     <button class="add-to-promotion-button">Revert</button>
                     <input hidden name="productID" value=@Model.Product.ProductID />
                 </form>
@@ -351,7 +351,7 @@
                 <section class="command-promotion-title-container">
                     <div class="command-promotion-title">Create a promotion:</div>
                 </section>
-                <form class="command-promotion-container" method="post" asp-action="SuccessfullyAddedPromotion" asp-controller="Tech">
+                <form class="command-promotion-container" method="post" asp-action="CreatedPromotion" asp-controller="Product">
                     <div class="add-to-promotion-text-container">
                         <div class="add-to-promotion-text">Discounted Price:</div>
                     </div>
@@ -364,9 +364,9 @@
         }
         @if (User.Identity.IsAuthenticated)
         {
-            <form class="add-review-container" method="post" asp-action="SuccessfullyAddedReview" asp-controller="Tech">
+            <form class="add-review-container" method="post" asp-action="CreatedReview" asp-controller="Review">
                 @Html.AntiForgeryToken()
-                <input type="hidden" name="productId" value="@Model.Product.ProductID" />
+                <input name="productID" value="@Model.Product.ProductID" hidden/>
                 <div class="information-container">
                     <div class="profile-container">
                         <div class="profile-picture"></div>

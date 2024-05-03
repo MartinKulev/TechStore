@@ -62,8 +62,5 @@ namespace TechStore.Services
             }
             context.SaveChanges();
         }
-
-
-
     }
 }

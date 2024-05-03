@@ -16,12 +16,12 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        public void AddItemToCart(string userID, int productID)
+        public void AddProductToCart(string userID, int productID)
         {
             Cart cart = new Cart(userID, productID, 1);
             if (context.Cart.Any(cart => cart.UserID == userID && cart.ProductID == productID && cart.OrderID == 0))
             {
-                Cart existingCart = GetCartByUserIDProductID(userID, productID);
+                Cart existingCart = GetCartItemByUserIDProductID(userID, productID);
                 existingCart.Quantity++;
                 context.Update(existingCart);
                 context.SaveChanges();
@@ -33,7 +33,7 @@ namespace TechStore.Services
             }
         }
 
-        public void RemoveItemFromCart(string userID, int productID)
+        public void RemoveProductFromCart(string userID, int productID)
         {
             Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID && p.OrderID == 0);
 
@@ -50,7 +50,7 @@ namespace TechStore.Services
             }
         }
 
-        public void UpdateCartsByUserID(string userID, int orderID)
+        public void UpdateCartItemsByUserID(string userID, int orderID)
         {
             var cartsToUpdate = context.Cart.Where(p => p.UserID == userID && p.OrderID == 0);
             foreach (var cart in cartsToUpdate)
@@ -60,25 +60,25 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public List<Cart> GetAllCartsByOrderID(int orderID)
+        public List<Cart> GetAllCartItemsByOrderID(int orderID)
         {
             List<Cart> carts = context.Cart.Where(p => p.OrderID == orderID).ToList();
             return carts;
         }
 
-        public Cart GetCartByUserIDProductID(string userID, int productID)
+        public Cart GetCartItemByUserIDProductID(string userID, int productID)
         {
             Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID);
             return cart;
         }
 
-        public List<Cart> GetAllCartProductsByUserID(string userID)
+        public List<Cart> GetAllCartItemsByUserID(string userID)
         {
             List<Cart> carts = context.Cart.Where(p => p.UserID == userID && p.OrderID == 0).ToList();
             return carts;
         }
 
-        public List<Cart> GetAllCartProductsByTempData(List<int> productIDs, string userId)
+        public List<Cart> GetAllCartItemsByTempData(List<int> productIDs, string userId)
         {
             List<Cart> carts = new List<Cart>();
             foreach (int productID in productIDs)

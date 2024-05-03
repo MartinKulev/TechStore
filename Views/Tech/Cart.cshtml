@@ -1,4 +1,4 @@
-﻿﻿<title>ShoppingCart</title>
+﻿﻿<title>Cart</title>
 <style>
     .flex-container {
         display: flex;
@@ -205,7 +205,7 @@
                         <div class="product-quantity-label">Quantity:</div>
                         <div class="product-quantity-count">@cart.Quantity</div>
                     </div>
-                    <form class="product-remove-button-container" method="post" asp-action="SuccessfullyRemovedProductFromCart" asp-controller="Tech">
+                    <form class="product-remove-button-container" method="post" asp-action="ProductRemovedFromCart" asp-controller="Cart">
                         <button class="product-remove-button" name="productID" value="@product.ProductID">
                             <i class="product-remove-button-icon fa-solid fa-trash-can"></i>
                         </button>

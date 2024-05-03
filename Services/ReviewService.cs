@@ -33,7 +33,5 @@ namespace TechStore.Services
             List<Review> reviews = context.Review.Where(p => p.ProductID == productId).Include(p => p.User).ToList();
             return reviews;
         }
-
-
     }
 }

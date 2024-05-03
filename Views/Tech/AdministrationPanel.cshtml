@@ -411,7 +411,7 @@
         <section class="product-box-container">
             <div class="product-box">
                 <div class="product-title">Create product:</div>
-                <form method="post" class="product-information" asp-controller="Tech" asp-action="SuccessfullyAddedProduct">
+                <form method="post" class="product-information" asp-controller="Product" asp-action="CreatedProduct">
                     <div class="product-image-container">
                         @* <div class="upload-image-button" action="/action_page.php">
                         <input type="file" id="myFile" name="imageURL" onchange="displayImage(this)" required>
@@ -459,7 +459,7 @@
                 <div class="create-entity-title-container">
                     <div class="create-entity-title">Create user:</div>
                 </div>
-                <form class="create-entity-form" method="post" asp-action="SuccessfullyCreatedUser" asp-controller="Tech">
+                <form class="create-entity-form" method="post" asp-action="CreatedUser" asp-controller="User">
                     <div class="info-container">
                         <div class="info-subContainer">
                             <div class="info-text-container">
@@ -503,7 +503,7 @@
                         @foreach (var user in Model.Users)
                         {
                         <tr>
-                            <form method="post" asp-action="SuccessfullyEditedUser" asp-controller="Tech">
+                            <form method="post" asp-action="EditedUser" asp-controller="User">
                             <td>@user.Id</td>
                             <td>
                                 <button type="button" class="entity-button">
@@ -553,7 +553,7 @@
                             <input hidden name="userID" value="@user.Id" />
                             </form>
                             <td class="remove-button-container">
-                                <form class="remove-button-form" method="post" asp-action="SuccessfullyDeletedUser" asp-controller="Tech">
+                                <form class="remove-button-form" method="post" asp-action="DeletedUser" asp-controller="User">
                                     <button class="remove-button" name="userID" value="@user.Id">
                                         <i class="remove-icon fa-solid fa-trash-can"></i>
                                     </button>
@@ -570,7 +570,7 @@
                 <div class="create-entity-title-container">
                     <div class="create-entity-title">Create promocode:</div>
                 </div>
-                <form class="create-entity-form" method="post" asp-action="SuccessfullyCreatedPromocode" asp-controller="Tech">
+                <form class="create-entity-form" method="post" asp-action="CreatedPromocode" asp-controller="Promocode">
                     <div class="info-container">
                         <div class="info-subContainer">
                             <div class="info-text-container">
@@ -599,7 +599,7 @@
                             @foreach (var promocode in Model.Promocodes)
                             {
                             <tr>
-                                <form method="post" asp-action="SuccessfullyEditedPromocode" asp-controller="Tech">
+                                <form method="post" asp-action="EditedPromocode" asp-controller="Promocode">
                                 <td>
                                     <button type="button" class="entity-button">
                                         <p class="entity-label">@promocode.PromocodeName</p>
@@ -620,7 +620,7 @@
                                 <input hidden name="promocodeID" value="@promocode.PromocodeID" />
                                 </form>
                                 <td class="remove-button-container">
-                                    <form class="remove-button-form" method="post" asp-action="SuccessfullyDeletedPromocode" asp-controller="Tech">
+                                    <form class="remove-button-form" method="post" asp-action="DeletedPromocode" asp-controller="Promocode">
                                         <button class="remove-button" name="promocodeName" value="@promocode.PromocodeName">
                                             <i class="remove-icon fa-solid fa-trash-can"></i>
                                         </button>
@@ -635,7 +635,7 @@
                 <div class="create-entity-title-container">
                     <div class="create-entity-title">Create category:</div>
                 </div>
-                <form class="create-entity-form" method="post" asp-action="SuccessfullyCreatedCategory" asp-controller="Tech">
+                <form class="create-entity-form" method="post" asp-action="CreatedCategory" asp-controller="Category">
                     <div class="category-info-container">
                         <div class="info-subContainer">
                             <div class="info-text-container">
@@ -653,7 +653,7 @@
                             @foreach (var category in Model.Categories)
                             {
                             <tr>
-                                <form method="post" asp-action="SuccessfullyEditedCategory" asp-controller="Tech">
+                                <form method="post" asp-action="EditedCategory" asp-controller="Category">
                                 <td>
                                     <button type="button" class="entity-button">
                                         <p class="entity-label">@category.CategoryName</p>
@@ -668,7 +668,7 @@
                                 <input hidden name="categoryID" value="@category.CategoryID" />
                                 </form>
                                 <td class="remove-button-container">
-                                    <form class="remove-button-form" method="post" asp-action="SuccessfullyDeletedCategory" asp-controller="Tech">
+                                    <form class="remove-button-form" method="post" asp-action="DeletedCategory" asp-controller="Category">
                                         <button class="remove-button" name="categoryName" value="@category.CategoryName">
                                             <i class="remove-icon fa-solid fa-trash-can"></i>
                                         </button>

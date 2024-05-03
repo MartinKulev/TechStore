@@ -12,7 +12,7 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        public int AddOrder(Order order)//
+        public int CreateOrder(Order order)
         {
             context.Order.Add(order);
             context.SaveChanges();
@@ -33,6 +33,5 @@ namespace TechStore.Services
             Order order = context.Order.First(p => p.OrderID == orderID);
             return order;
         }
-
     }
 }

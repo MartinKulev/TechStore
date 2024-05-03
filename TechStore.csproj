@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2">
@@ -18,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

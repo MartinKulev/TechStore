@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using TechStore.Data.Entities;
 using TechStore.Data.ViewModels;
+using static System.Collections.Specialized.BitVector32;
 
 namespace TechStore.Controllers
 {
@@ -20,10 +21,8 @@ namespace TechStore.Controllers
         private CartService cartService;
         private CategoryService categoryService;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender, 
-            CartService cartService,
-            CategoryService categoryService
-            )
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender,
+            CartService cartService, CategoryService categoryService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -72,20 +71,21 @@ namespace TechStore.Controllers
 
                 if (result.Succeeded)
                 {
-                    if(!User.IsInRole("Admin"))
+                    if (!User.IsInRole("Admin"))
                     {
                         string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                         foreach (int productID in productIDs)
                         {
-                            cartService.AddItemToCart(userId, productID);
+                            cartService.AddProductToCart(userId, productID);
                         }
-                    }       
+                    }
                     TempData["Products"] = new List<int>();
 
                     await _userManager.AddToRoleAsync(user, "User");
                     await SendConfirmationEmail(model.Email, user);
 
-                    return RedirectToAction("VerificationLinkWasSentToYourEmail", "Tech");
+                    TempData["Message"] = "A verification link was sent to your email!";
+                    return RedirectToAction("Login", "Account");
                 }
                 else
                 {
@@ -97,7 +97,6 @@ namespace TechStore.Controllers
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-            
             return View(model);
         }
 
@@ -132,7 +131,7 @@ namespace TechStore.Controllers
                 return RedirectToAction("Login");
             }
 
-            return RedirectToAction("Profile", "Tech");
+            return RedirectToAction("Account", "Login");
         }
 
         public IActionResult Login()
@@ -172,7 +171,7 @@ namespace TechStore.Controllers
                         string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                         foreach (int productID in productIDs)
                         {
-                            cartService.AddItemToCart(userId, productID);
+                            cartService.AddProductToCart(userId, productID);
                         }
                     }
                     TempData["Products"] = new List<int>();
@@ -183,7 +182,8 @@ namespace TechStore.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Profile", "Tech");                       
+                        TempData["Message"] = "Welcome back!";
+                        return RedirectToAction("Profile", "Tech");
                     }
                 }
                 else
@@ -191,7 +191,7 @@ namespace TechStore.Controllers
                     TempData["Products"] = productIDs;
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 }
-            }            
+            }
             return View(model);
         }
 

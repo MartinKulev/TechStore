@@ -129,7 +129,7 @@
                 </div>
                 @if (User.IsInRole("Admin"))
                 {
-                    <form method="post" class="product-top" asp-action="SuccessfullyDeletedProduct" asp-controller="Tech">
+                    <form method="post" class="product-top" asp-action="DeletedProduct" asp-controller="Product">
                         <button class="product-bin-button" name="productID" value="@product.ProductID">
                             <i class="product-bin-icon fa-solid fa-trash-can"></i>
                         </button>
@@ -138,7 +138,7 @@
                 }
                 else
                 {
-                    <form method="post" asp-action="SuccessfullyAddedToCart" asp-controller="Tech">
+                    <form method="post" asp-action="ProductAddedToCart" asp-controller="Cart">
                         <button class="product-cart-button" name="productID" value="@product.ProductID">
                             <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
                         </button>

@@ -18,7 +18,7 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public void RemoveProduct(int productID)
+        public void DeleteProduct(int productID)
         {
             Product product = context.Product.First(p => p.ProductID == productID);
             context.Product.Remove(product);
@@ -31,14 +31,13 @@ namespace TechStore.Services
             return products;
         }
 
-
         public List<Product> GetProductsByCategory(string category)
         {
             List<Product> products = context.Product.Where(p => p.CategoryName == category).OrderBy(p => p.Price).ToList();
             return products;
         }
 
-        public void AddProductToPromotion(decimal newPrice, int productID)
+        public void CreatePromotion(decimal newPrice, int productID)
         {
             Product product = context.Product.First(p => p.ProductID == productID);
             product.IsInPromotion = true;
