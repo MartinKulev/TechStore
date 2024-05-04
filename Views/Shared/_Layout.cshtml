@@ -5,27 +5,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
-        /* button {
-                                    border: 0;
-                                    padding: 0;
-                                } */
-
         button, input[type="button"], input[type="submit"] {
-            /* Resetting padding and margin */
             padding: 0;
             margin: 0;
-            /* Resetting border */
             border: none;
-            /* Resetting background and color */
             background-color: transparent;
             color: inherit;
-            /* Resetting cursor */
             cursor: pointer;
-            /* Resetting outline */
             outline: none;
-            /* Resetting text decoration */
             text-decoration: none;
-            /* Resetting font */
             font: inherit;
         }
 
@@ -43,13 +31,13 @@
             height: 100vh;
             font-family: 'Arial', sans-serif;
             overflow: hidden;
+            background-color: #f2f2f7;
         }
 
-        .purple-bar {
-            background-color: purple;
-            width: 100%;
+        .nav-bar {
+            background: linear-gradient(to right,#ff1d25 5%,#a0328c 35%,#7040a4 45%,#4359c7 55%,#0082e6 70%);
             height: 70px;
-            color: white;
+            color: #ffffff;
             display: flex;
             justify-content: flex-start;
         }
@@ -60,12 +48,12 @@
             justify-content: center;
             font-size: 40px;
             padding: 10px;
-            color: white;
+            color: #ffffff;
             text-decoration: none;
         }
 
             .mainHeader-Button:hover {
-                color: gray;
+                color: #808080;
             }
 
         .container-buttons {
@@ -81,14 +69,14 @@
             justify-content: center;
             border-left: 1px solid black;
             font-size: 20px;
-            color: white;
+            color: #ffffff;
             width: 150px;
             text-decoration: none;
             height: 100%;
         }
 
         .border-bottom {
-            background-color: white;
+            background-color: #ffffff;
             height: 2px;
             width: 0%;
             transition: width 1s;
@@ -106,7 +94,7 @@
             border-left: 1px solid black;
             padding: 10px;
             font-size: 25px;
-            color: white;
+            color: #ffffff;
             width: 75px;
         }
 
@@ -115,13 +103,13 @@
             }
 
         .text-bubble {
-            background-color: white;
-            border: 2px solid green;
+            background-color: #ffffff;
+            border: 2px solid #0082e6;
             border-radius: 10px;
             width: 300px;
             height: 50px;
             padding: 20px;
-            position: absolute;
+            position: fixed;
             top: 80px;
             right: 20px;
             display: flex;
@@ -130,6 +118,7 @@
             text-align: center;
             font-weight: bold;
             transition: opacity 0.5s ease;
+            z-index: 100;
         }
     </style>
     <script>
@@ -146,7 +135,7 @@
     {
         <section class="text-bubble">@TempData["Message"]</section>
     }   
-    <div class="purple-bar">
+    <div class="nav-bar">
         <a class="mainHeader-Button" asp-action="Homepage" asp-controller="Tech">TechStore</a>
         <section class="container-buttons">
             @foreach (var category in ViewBag.CategoryList)

@@ -16,7 +16,7 @@
         height: 200px;
         min-height: 200px;
         width: 80%;
-        background-color: #fff;
+        background-color: #ffffff;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
         border-radius: 15px;
     }
@@ -60,7 +60,7 @@
 
     .order-price {
         font-size: 20px;
-        color: red;
+        color: #ef2809;
         font-weight: bold;
     }
 
@@ -97,7 +97,7 @@
         height: 400px;
         min-height: 400px;
         width: 80%;
-        background-color: #fff;
+        background-color: #ffffff;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
         border-radius: 15px;
         margin-bottom: 200px;
@@ -123,15 +123,18 @@
     .profilePicture-Username-Logout-container {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         position: absolute;
+        top: 0;
+        bottom: 0;
     }
 
     .profile-picture {
         width: 200px;
         height: 200px;
         border-radius: 200px;
-        border: 1px solid #999;
-        background-color: black;
+        border: 1px solid #999999;
+        background-color: #000000;
         margin-top: 20px;
         margin-left: 20px;
     }
@@ -176,11 +179,11 @@
     }
 
     .logout-button {
-        background-color: purple;
+        background-color: #0082e6;
         border-radius: 5px;
         height: 30px;
         width: 100px;
-        color: white;
+        color: #ffffff;
     }
 </style>
 <section class="flex-container">
@@ -197,7 +200,7 @@
                 }
             </div>
         </div>
-        <div class="profilePicture-Username-Logout-container">
+        <aside class="profilePicture-Username-Logout-container">
             <div class="profile-picture"></div>
             <div class="user-name-container">
                 <div>@Model.User.FirstName @Model.User.LastName</div>
@@ -206,7 +209,8 @@
                 @Html.AntiForgeryToken()
                 <button type="submit" class="logout-button">Logout</button>
             </form>
-        </div>
+        </aside>
+        
         <div class="profile-information-container">
             <div class="information-container">
                 <div class="information-sub-container">
