@@ -101,6 +101,16 @@
         font-weight: bold;
         color: #000000;
     }
+
+    @@media (max-device-width: 767px) {
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            overflow: auto;
+        }
+    }
 </style>
 <section class="grid-container">
     @foreach (var product in Model)
