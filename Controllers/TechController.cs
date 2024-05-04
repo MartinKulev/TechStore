@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System.Security.Claims;
 using TechStore.Data.Entities;
 using TechStore.Data.ViewModels;
@@ -36,16 +37,9 @@ namespace TechStore.Controllers
         }
 
 
+
         public IActionResult Homepage()
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             List<Product> productsInPromotion = productService.GetAllProductsInPromotion();
             return View(productsInPromotion);
         }
@@ -54,14 +48,6 @@ namespace TechStore.Controllers
         [HttpGet("Tech/Category/{categoryName}")]
         public IActionResult Category(string categoryName)
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             List<Product> productsByCategory = productService.GetProductsByCategory(categoryName);
             return View(productsByCategory);
         }
@@ -70,14 +56,6 @@ namespace TechStore.Controllers
         [HttpGet("Tech/Product/{productID}")]
         public IActionResult Product(int productID)
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             Product productByID = productService.GetProductByID(productID);
             List<Review> reviewsByProductID = reviewService.GetAllReviewsByProductID(productID);
             var viewModel = new ProductViewModel(reviewsByProductID, productByID);
@@ -93,8 +71,6 @@ namespace TechStore.Controllers
                 productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
                 TempData["Products"] = productIDs;
             }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
 
             List<Cart> cartItems = new List<Cart>();
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -115,14 +91,6 @@ namespace TechStore.Controllers
 
         public IActionResult Profile()
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             ApplicationUser userByID = userService.GetUserByID(userId);
             List<Order> ordersByUserID = orderService.GetAllOrdersByUserID(userId);
@@ -133,13 +101,7 @@ namespace TechStore.Controllers
 
         public IActionResult AdministrationPanel()
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
             List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
 
             List<Promocode> promocodes = promocodeService.GetAllPromocodes();
             List<ApplicationUser> users = userService.GetAllUsers();
@@ -150,14 +112,6 @@ namespace TechStore.Controllers
 
         public IActionResult Payment()
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             if (User.Identity.IsAuthenticated)
             {
                 return View();
@@ -173,14 +127,6 @@ namespace TechStore.Controllers
         [HttpGet("Tech/Order/{orderID}")]
         public IActionResult Order(int orderID)
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             List<Cart> cartItems = cartService.GetAllCartItemsByOrderID(orderID);
             List<Product> products = productService.GetAllProducts();
             Order orderByID = orderService.GetOrderByID(orderID);

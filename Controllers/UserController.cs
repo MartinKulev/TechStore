@@ -6,12 +6,10 @@ namespace TechStore.Controllers
 {
     public class UserController : Controller
     {
-        private CategoryService categoryService;
         private UserService userService;
 
-        public UserController(CategoryService categoryService, UserService userService)
+        public UserController(UserService userService)
         {
-            this.categoryService = categoryService;
             this.userService = userService;
         }
 
@@ -19,14 +17,6 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult CreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             var user = new ApplicationUser
             {
                 FirstName = firstName,
@@ -46,14 +36,6 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult DeletedUser(string userID)
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             userService.DeleteUser(userID);
             TempData["Message"] = "Successfully edited a user!";
             return RedirectToAction("AdministrationPanel", "Tech");
@@ -63,14 +45,6 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult EditedUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             userService.EditUser(userID, newUserName, newFirstName, newLastName, newEmail, newPhoneNumber);
             TempData["Message"] = "Successfully edited a user!";
             return RedirectToAction("AdministrationPanel", "Tech");

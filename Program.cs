@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using TechStore.Data;
 using TechStore.Services;
 using TechStore.Data.Entities;
+using TechStore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +34,10 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add(typeof(TechFilter));
+});
 builder.Services.AddScoped<CartService>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<OrderService>();

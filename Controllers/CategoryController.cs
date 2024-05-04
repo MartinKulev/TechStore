@@ -17,14 +17,6 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult CreatedCategory(string categoryName)
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             Category category = new Category(categoryName);
             categoryService.CreateCategory(category);
             TempData["Message"] = "Successfully created a category!";
@@ -35,14 +27,6 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult DeletedCategory(string categoryName)
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             categoryService.DeleteCategory(categoryName);
             TempData["Message"] = "Successfully deleted a category!";
             return RedirectToAction("AdministrationPanel", "Tech");
@@ -52,14 +36,6 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult EditedCategory(int categoryID, string newCategoryName)
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             categoryService.EditCategory(categoryID, newCategoryName);
             TempData["Message"] = "Successfully edited a category!";
             return RedirectToAction("AdministrationPanel", "Tech");

@@ -19,7 +19,6 @@ namespace TechStore.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ISenderEmail _emailSender;
         private CartService cartService;
-        private CategoryService categoryService;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender,
             CartService cartService, CategoryService categoryService)
@@ -28,18 +27,10 @@ namespace TechStore.Controllers
             _signInManager = signInManager;
             _emailSender = emailSender;
             this.cartService = cartService;
-            this.categoryService = categoryService;
         }
 
         public IActionResult Register()
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
             return View();
         }
 
@@ -53,8 +44,6 @@ namespace TechStore.Controllers
                 productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
                 TempData["Products"] = productIDs;
             }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
 
             if (ModelState.IsValid)
             {
@@ -136,15 +125,6 @@ namespace TechStore.Controllers
 
         public IActionResult Login()
         {
-            List<int> productIDs = new List<int>();
-            if (TempData["Products"] != null)
-            {
-                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             return View();
         }
 
@@ -157,8 +137,6 @@ namespace TechStore.Controllers
             {
                 productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
             }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
 
             if (ModelState.IsValid)
             {

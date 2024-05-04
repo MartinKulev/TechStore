@@ -3,6 +3,50 @@
   "WorkspaceRootPath": "C:\\Users\\Martin\\Desktop\\TechStore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\promocodecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\promocodecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\filters\\techfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:filters\\techfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -43,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\tech\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:views\\tech\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -73,14 +113,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -122,35 +154,7 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Martin\\AppData\\Local\\SourceServer\\6dc26b8ef1ebd82e673ac82f35d25ab494d0b7af846e09be77d3431449387123\\Services\\ProductService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\techcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\promocodecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\promocodecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Martin\\AppData\\Local\\SourceServer\\d3de18e4ed25ccbb34ccbd06ac16c537112db3eb2694a61615c39cc38ca733c6\\Controllers\\TechController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52C3CCB9-8A13-4BE4-BD38-535EC18F3044}|TechStore.csproj|c:\\users\\martin\\desktop\\techstore\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -333,7 +337,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -341,427 +345,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdministrationPanel.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\AdministrationPanel.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml",
-              "RelativeToolTip": "Views\\Tech\\AdministrationPanel.cshtml",
-              "ViewState": "AQIAAD4BAAAAAAAAAAAAABMAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-19T09:50:13.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Category.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Category.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Category.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Category.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Category.cshtml",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAEUAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-18T08:34:26.069Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Order.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Order.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Order.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Order.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Order.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAFUAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T11:52:42.998Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Homepage.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Homepage.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Homepage.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Homepage.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Homepage.cshtml",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAAADUAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-18T08:35:09.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Payment.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Payment.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Payment.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Payment.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Payment.cshtml",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAHIAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T12:57:25.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHAAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-19T13:55:02.161Z",
+              "Title": "TechFilter.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Filters\\TechFilter.cs",
+              "RelativeDocumentMoniker": "Filters\\TechFilter.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Filters\\TechFilter.cs",
+              "RelativeToolTip": "Filters\\TechFilter.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T16:23:27.936Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "Views\\Account\\Register.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-19T14:03:04.594Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Profile.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Profile.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Profile.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Profile.cshtml",
-              "ViewState": "AQIAAKgAAAAAAAAAAAAAAA4AAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-20T11:53:01.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Product.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Product.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Product.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Product.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Product.cshtml",
-              "ViewState": "AQIAABoBAAAAAAAAAAAAAC4AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-18T08:18:11.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAAAGoAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-19T14:03:16.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAvwE0AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T06:41:38.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Cart.cshtml",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Cart.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tech\\Cart.cshtml",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Cart.cshtml",
-              "RelativeToolTip": "Views\\Tech\\Cart.cshtml",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAAAK4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-19T13:57:19.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "bootstrap-grid.css.map",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
-              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
-              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAADv6AEA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-04T13:38:22.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "bootstrap-grid.rtl.css.map",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
-              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
-              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAn6QEA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-04T13:38:26.864Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "bootstrap-reboot.css.map",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
-              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
-              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAD8iAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-04T13:38:27.915Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "bootstrap-reboot.rtl.css.map",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
-              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
-              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAJiQAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-04T13:38:28.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "bootstrap-utilities.css.map",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
-              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
-              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAADmzwEA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-04T13:38:30.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "bootstrap-utilities.css",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-              "ViewState": "AQIAAKgFAAAAAAAAAAAgwLoFAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-04T13:38:29.483Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CartController.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\CartController.cs",
-              "RelativeToolTip": "Controllers\\CartController.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAawDcAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T14:28:30.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA1wAYAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T13:59:25.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CartService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\CartService.cs",
-              "RelativeDocumentMoniker": "Services\\CartService.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\CartService.cs",
-              "RelativeToolTip": "Services\\CartService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T11:32:16.569Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\CategoryService.cs",
-              "RelativeDocumentMoniker": "Services\\CategoryService.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\CategoryService.cs",
-              "RelativeToolTip": "Services\\CategoryService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T10:59:31.267Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\OrderService.cs",
-              "RelativeDocumentMoniker": "Services\\OrderService.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\OrderService.cs",
-              "RelativeToolTip": "Services\\OrderService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T11:12:15.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\EmailService.cs",
-              "RelativeDocumentMoniker": "Services\\EmailService.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\EmailService.cs",
-              "RelativeToolTip": "Services\\EmailService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T11:10:29.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\ProductService.cs",
-              "RelativeToolTip": "Services\\ProductService.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAD4vyAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T11:06:18.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "PromocodeService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\PromocodeService.cs",
-              "RelativeDocumentMoniker": "Services\\PromocodeService.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\PromocodeService.cs",
-              "RelativeToolTip": "Services\\PromocodeService.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAwwBMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T11:16:38.775Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ReviewService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\ReviewService.cs",
-              "RelativeDocumentMoniker": "Services\\ReviewService.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\ReviewService.cs",
-              "RelativeToolTip": "Services\\ReviewService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T11:29:20.59Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "RoleService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\RoleService.cs",
-              "RelativeDocumentMoniker": "Services\\RoleService.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\RoleService.cs",
-              "RelativeToolTip": "Services\\RoleService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T11:00:11.047Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\UserService.cs",
-              "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAIwA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T11:21:57.002Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\AppData\\Local\\SourceServer\\6dc26b8ef1ebd82e673ac82f35d25ab494d0b7af846e09be77d3431449387123\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\SourceServer\\6dc26b8ef1ebd82e673ac82f35d25ab494d0b7af846e09be77d3431449387123\\Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\Martin\\AppData\\Local\\SourceServer\\6dc26b8ef1ebd82e673ac82f35d25ab494d0b7af846e09be77d3431449387123\\Services\\ProductService.cs",
-              "RelativeToolTip": "..\\..\\AppData\\Local\\SourceServer\\6dc26b8ef1ebd82e673ac82f35d25ab494d0b7af846e09be77d3431449387123\\Services\\ProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T15:22:10.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Controllers\\ProductController.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAuwEAAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T14:02:17.537Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
               "Title": "TechController.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\TechController.cs",
               "RelativeDocumentMoniker": "Controllers\\TechController.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\TechController.cs",
               "RelativeToolTip": "Controllers\\TechController.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAuwGoAAABBAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAADwv4AAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-18T08:13:52.606Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 3,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T13:52:50.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T13:59:25.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "RoleController.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\RoleController.cs",
               "RelativeDocumentMoniker": "Controllers\\RoleController.cs",
@@ -774,46 +410,414 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 6,
               "Title": "ReviewController.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\ReviewController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReviewController.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\ReviewController.cs",
               "RelativeToolTip": "Controllers\\ReviewController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAIBJwBQAAAAqAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T14:38:32.591Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 5,
               "Title": "PromocodeController.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\PromocodeController.cs",
               "RelativeDocumentMoniker": "Controllers\\PromocodeController.cs",
               "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\PromocodeController.cs",
               "RelativeToolTip": "Controllers\\PromocodeController.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAwwDYAAAAsAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T13:47:18.531Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Controllers\\CategoryController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAwwDQAAAArAAAA",
+              "DocumentIndex": 4,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T13:52:50.215Z",
+              "WhenOpened": "2024-05-03T14:02:17.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\CartController.cs",
+              "RelativeToolTip": "Controllers\\CartController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T14:28:30.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T06:41:38.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAAACUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T11:51:57.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Payment.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Payment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Payment.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Payment.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Payment.cshtml",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAAAGsAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-20T12:57:25.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAGoAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-19T14:03:16.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Product.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Product.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Product.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Product.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Product.cshtml",
+              "ViewState": "AQIAABoBAAAAAAAAAAAAAC4AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-18T08:18:11.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Profile.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Profile.cshtml",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAAAA4AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-20T11:53:01.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-19T14:03:04.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHAAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-19T13:55:02.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Homepage.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Homepage.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Homepage.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Homepage.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Homepage.cshtml",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAADUAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-18T08:35:09.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Order.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Order.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Order.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Order.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Order.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAFUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-20T11:52:42.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Category.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Category.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Category.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Category.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Category.cshtml",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEUAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-18T08:34:26.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AdministrationPanel.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\AdministrationPanel.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\AdministrationPanel.cshtml",
+              "RelativeToolTip": "Views\\Tech\\AdministrationPanel.cshtml",
+              "ViewState": "AQIAAD4BAAAAAAAAAAAAABMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T09:50:13.728Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Cart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Cart.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tech\\Cart.cshtml",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Tech\\Cart.cshtml",
+              "RelativeToolTip": "Views\\Tech\\Cart.cshtml",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAAAK4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-19T13:57:19.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "bootstrap-grid.css.map",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAADv6AEA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-04T13:38:22.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "bootstrap-grid.rtl.css.map",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAn6QEA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-04T13:38:26.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "bootstrap-reboot.css.map",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAD8iAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-04T13:38:27.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "bootstrap-reboot.rtl.css.map",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAJiQAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-04T13:38:28.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "bootstrap-utilities.css.map",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAADmzwEA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-04T13:38:30.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "bootstrap-utilities.css",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+              "ViewState": "AQIAAKgFAAAAAAAAAAAgwLoFAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-04T13:38:29.483Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\CartService.cs",
+              "RelativeDocumentMoniker": "Services\\CartService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\CartService.cs",
+              "RelativeToolTip": "Services\\CartService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T11:32:16.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\CategoryService.cs",
+              "RelativeToolTip": "Services\\CategoryService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T10:59:31.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\OrderService.cs",
+              "RelativeToolTip": "Services\\OrderService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T11:12:15.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\EmailService.cs",
+              "RelativeToolTip": "Services\\EmailService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T11:10:29.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\ProductService.cs",
+              "RelativeToolTip": "Services\\ProductService.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAD4vyAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T11:06:18.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "PromocodeService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\PromocodeService.cs",
+              "RelativeDocumentMoniker": "Services\\PromocodeService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\PromocodeService.cs",
+              "RelativeToolTip": "Services\\PromocodeService.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAwwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T11:16:38.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\ReviewService.cs",
+              "RelativeDocumentMoniker": "Services\\ReviewService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\ReviewService.cs",
+              "RelativeToolTip": "Services\\ReviewService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T11:29:20.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "RoleService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\RoleService.cs",
+              "RelativeDocumentMoniker": "Services\\RoleService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\RoleService.cs",
+              "RelativeToolTip": "Services\\RoleService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T11:00:11.047Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 36,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAIwA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-30T11:21:57.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\AppData\\Local\\SourceServer\\6dc26b8ef1ebd82e673ac82f35d25ab494d0b7af846e09be77d3431449387123\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\SourceServer\\6dc26b8ef1ebd82e673ac82f35d25ab494d0b7af846e09be77d3431449387123\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Martin\\AppData\\Local\\SourceServer\\6dc26b8ef1ebd82e673ac82f35d25ab494d0b7af846e09be77d3431449387123\\Services\\ProductService.cs",
+              "RelativeToolTip": "..\\..\\AppData\\Local\\SourceServer\\6dc26b8ef1ebd82e673ac82f35d25ab494d0b7af846e09be77d3431449387123\\Services\\ProductService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T15:22:10.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
               "Title": "TechController.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\AppData\\Local\\SourceServer\\d3de18e4ed25ccbb34ccbd06ac16c537112db3eb2694a61615c39cc38ca733c6\\Controllers\\TechController.cs",
               "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\SourceServer\\d3de18e4ed25ccbb34ccbd06ac16c537112db3eb2694a61615c39cc38ca733c6\\Controllers\\TechController.cs",
@@ -821,25 +825,11 @@
               "RelativeToolTip": "..\\..\\AppData\\Local\\SourceServer\\d3de18e4ed25ccbb34ccbd06ac16c537112db3eb2694a61615c39cc38ca733c6\\Controllers\\TechController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T15:22:23.575Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T15:22:23.575Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Martin\\Desktop\\TechStore\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAIBZwFMAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T11:51:57.645Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
@@ -847,12 +837,11 @@
               "RelativeToolTip": "Views\\_ViewStart.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-30T10:51:46.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-30T10:51:46.933Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "Promocode.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Promocode.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Promocode.cs",
@@ -860,12 +849,11 @@
               "RelativeToolTip": "Data\\Entities\\Promocode.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-19T20:11:27.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-19T20:11:27.005Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\ApplicationUser.cs",
@@ -873,12 +861,11 @@
               "RelativeToolTip": "Data\\Entities\\ApplicationUser.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T06:37:58.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T06:37:58.463Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "Review.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Review.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Review.cs",
@@ -886,12 +873,11 @@
               "RelativeToolTip": "Data\\Entities\\Review.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwBsAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T19:45:10.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-30T19:45:10.771Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "ProfileViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\ViewModels\\ProfileViewModel.cs",
               "RelativeDocumentMoniker": "Data\\ViewModels\\ProfileViewModel.cs",
@@ -899,12 +885,11 @@
               "RelativeToolTip": "Data\\ViewModels\\ProfileViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T08:38:52.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-18T08:38:52.284Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\ViewModels\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Data\\ViewModels\\ErrorViewModel.cs",
@@ -912,12 +897,11 @@
               "RelativeToolTip": "Data\\ViewModels\\ErrorViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T08:38:47.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-18T08:38:47.6Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "CartViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\ViewModels\\CartViewModel.cs",
               "RelativeDocumentMoniker": "Data\\ViewModels\\CartViewModel.cs",
@@ -925,12 +909,11 @@
               "RelativeToolTip": "Data\\ViewModels\\CartViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T16:33:03.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T16:33:03.892Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Product.cs",
@@ -938,12 +921,11 @@
               "RelativeToolTip": "Data\\Entities\\Product.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAIwCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T16:25:26.915Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T16:25:26.915Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "ProductViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\ViewModels\\ProductViewModel.cs",
               "RelativeDocumentMoniker": "Data\\ViewModels\\ProductViewModel.cs",
@@ -951,12 +933,11 @@
               "RelativeToolTip": "Data\\ViewModels\\ProductViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T08:38:49.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-18T08:38:49.759Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "AdminPanelViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\ViewModels\\AdminPanelViewModel.cs",
               "RelativeDocumentMoniker": "Data\\ViewModels\\AdminPanelViewModel.cs",
@@ -964,12 +945,11 @@
               "RelativeToolTip": "Data\\ViewModels\\AdminPanelViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T19:27:37.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-01T19:27:37.911Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "Cart.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Cart.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Cart.cs",
@@ -977,12 +957,11 @@
               "RelativeToolTip": "Data\\Entities\\Cart.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T16:24:47.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T16:24:47.434Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\ViewModels\\LoginModel.cs",
               "RelativeDocumentMoniker": "Data\\ViewModels\\LoginModel.cs",
@@ -990,12 +969,11 @@
               "RelativeToolTip": "Data\\ViewModels\\LoginModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T08:38:49.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-18T08:38:49.107Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Category.cs",
@@ -1003,12 +981,11 @@
               "RelativeToolTip": "Data\\Entities\\Category.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-19T20:13:50.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-19T20:13:50.754Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "OrderViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\ViewModels\\OrderViewModel.cs",
               "RelativeDocumentMoniker": "Data\\ViewModels\\OrderViewModel.cs",
@@ -1016,12 +993,11 @@
               "RelativeToolTip": "Data\\ViewModels\\OrderViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T18:43:55.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-01T18:43:55.956Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "RegisterModel.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\ViewModels\\RegisterModel.cs",
               "RelativeDocumentMoniker": "Data\\ViewModels\\RegisterModel.cs",
@@ -1029,12 +1005,11 @@
               "RelativeToolTip": "Data\\ViewModels\\RegisterModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T08:38:58.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-18T08:38:58.259Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "20240420190217_Initial.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Migrations\\20240420190217_Initial.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240420190217_Initial.cs",
@@ -1042,12 +1017,11 @@
               "RelativeToolTip": "Data\\Migrations\\20240420190217_Initial.cs",
               "ViewState": "AQIAAGcBAAAAAAAAAAAAwHgBAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T14:11:48.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T14:11:48.3Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "20240420190217_Initial.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Migrations\\20240420190217_Initial.Designer.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240420190217_Initial.Designer.cs",
@@ -1055,12 +1029,11 @@
               "RelativeToolTip": "Data\\Migrations\\20240420190217_Initial.Designer.cs",
               "ViewState": "AQIAAB0BAAAAAAAAAAAAwDABAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T14:11:53.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T14:11:53.783Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "20240501191518_ProductAndPromotionTo1Entity.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Migrations\\20240501191518_ProductAndPromotionTo1Entity.Designer.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240501191518_ProductAndPromotionTo1Entity.Designer.cs",
@@ -1068,12 +1041,11 @@
               "RelativeToolTip": "Data\\Migrations\\20240501191518_ProductAndPromotionTo1Entity.Designer.cs",
               "ViewState": "AQIAAB0BAAAAAAAAAAAAwDABAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T14:11:57.955Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T14:11:57.955Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "20240501195657_Second.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Migrations\\20240501195657_Second.Designer.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240501195657_Second.Designer.cs",
@@ -1081,12 +1053,11 @@
               "RelativeToolTip": "Data\\Migrations\\20240501195657_Second.Designer.cs",
               "ViewState": "AQIAAB0BAAAAAAAAAAAAwDABAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T14:12:01.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T14:12:01.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "20240502140727_PaymentToOrder.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Migrations\\20240502140727_PaymentToOrder.Designer.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240502140727_PaymentToOrder.Designer.cs",
@@ -1094,12 +1065,11 @@
               "RelativeToolTip": "Data\\Migrations\\20240502140727_PaymentToOrder.Designer.cs",
               "ViewState": "AQIAAB8BAAAAAAAAAAAAwDABAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T14:12:04.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T14:12:04.444Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "TechStoreDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Migrations\\TechStoreDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\TechStoreDbContextModelSnapshot.cs",
@@ -1107,12 +1077,11 @@
               "RelativeToolTip": "Data\\Migrations\\TechStoreDbContextModelSnapshot.cs",
               "ViewState": "AQIAACEBAAAAAAAAAIBpwEIBAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T14:12:06.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T14:12:06.903Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 85,
               "Title": "20240502140727_PaymentToOrder.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Migrations\\20240502140727_PaymentToOrder.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240502140727_PaymentToOrder.cs",
@@ -1120,12 +1089,11 @@
               "RelativeToolTip": "Data\\Migrations\\20240502140727_PaymentToOrder.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T14:07:27.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T14:07:27.609Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "additional-methods.js",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
               "RelativeDocumentMoniker": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
@@ -1133,12 +1101,11 @@
               "RelativeToolTip": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
               "ViewState": "AQIAACIAAAAAAAAAAAAcwCoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-05-02T14:06:56.682Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T14:06:56.682Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "TechStoreDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\TechStoreDbContext.cs",
               "RelativeDocumentMoniker": "Data\\TechStoreDbContext.cs",
@@ -1146,12 +1113,11 @@
               "RelativeToolTip": "Data\\TechStoreDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T14:33:18.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T14:33:18.429Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 62,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\Order.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\Order.cs",
@@ -1159,12 +1125,11 @@
               "RelativeToolTip": "Data\\Entities\\Order.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAgwBoAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T06:37:59.855Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T06:37:59.855Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 63,
               "Title": "bootstrap.bundle.js",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
               "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
@@ -1172,12 +1137,11 @@
               "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
               "ViewState": "AQIAALQNAAAAAAAAAAAQwMMNAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-05-02T13:36:39.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T13:36:39.034Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 64,
               "Title": "ApplicationRole.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Entities\\ApplicationRole.cs",
               "RelativeDocumentMoniker": "Data\\Entities\\ApplicationRole.cs",
@@ -1185,12 +1149,11 @@
               "RelativeToolTip": "Data\\Entities\\ApplicationRole.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T06:37:57.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T06:37:57.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 84,
               "Title": "20240501195657_Second.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Migrations\\20240501195657_Second.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240501195657_Second.cs",
@@ -1198,12 +1161,11 @@
               "RelativeToolTip": "Data\\Migrations\\20240501195657_Second.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T19:56:57.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-01T19:56:57.74Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 83,
               "Title": "20240501191518_ProductAndPromotionTo1Entity.cs",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Data\\Migrations\\20240501191518_ProductAndPromotionTo1Entity.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240501191518_ProductAndPromotionTo1Entity.cs",
@@ -1211,12 +1173,11 @@
               "RelativeToolTip": "Data\\Migrations\\20240501191518_ProductAndPromotionTo1Entity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T19:15:19.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-01T19:15:19.069Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 65,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -1224,12 +1185,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-30T19:25:40.149Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-30T19:25:40.149Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 66,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
@@ -1237,12 +1197,11 @@
               "RelativeToolTip": "Views\\_ViewImports.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-30T10:51:45.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-30T10:51:45.721Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 72,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Models\\Entities\\Order.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Models\\Entities\\Order.cs",
@@ -1253,7 +1212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 71,
               "Title": "Headphones.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Headphones.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Headphones.cshtml",
@@ -1264,7 +1223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 70,
               "Title": "DiscountMessagePartial.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Shared\\DiscountMessagePartial.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Shared\\DiscountMessagePartial.cshtml",
@@ -1275,7 +1234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 69,
               "Title": "TempOrder.cs",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Models\\Entities\\TempOrder.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Models\\Entities\\TempOrder.cs",
@@ -1286,7 +1245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 73,
               "Title": "Test.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Test.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Test.cshtml",
@@ -1297,7 +1256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 74,
               "Title": "Tablets.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Tablets.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Tablets.cshtml",
@@ -1308,7 +1267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 75,
               "Title": "TVs.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\TVs.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\TVs.cshtml",
@@ -1319,7 +1278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 76,
               "Title": "Speakers.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Speakers.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Speakers.cshtml",
@@ -1330,7 +1289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 77,
               "Title": "Smartphones.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Smartphones.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Smartphones.cshtml",
@@ -1341,7 +1300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 78,
               "Title": "Monitors.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Monitors.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Monitors.cshtml",
@@ -1352,7 +1311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 79,
               "Title": "Mice.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Mice.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Mice.cshtml",
@@ -1363,7 +1322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 80,
               "Title": "Laptops.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Laptops.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Laptops.cshtml",
@@ -1374,7 +1333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 81,
               "Title": "Keyboards.cshtml",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Keyboards.cshtml",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Views\\Tech\\Keyboards.cshtml",
@@ -1385,7 +1344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 67,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\Martin\\Desktop\\TechStore\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
@@ -1393,12 +1352,11 @@
               "RelativeToolTip": "Views\\Shared\\Error.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-19T14:03:18.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-19T14:03:18.367Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 68,
               "Title": "Microsoft.PackageDependencyResolution.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.200\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
@@ -1409,7 +1367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 82,
               "Title": "20240320144543_Initial.cs",
               "DocumentMoniker": "C:\\Users\\Stefan Stanchev\\Desktop\\1\\TechStore\\Migrations\\20240320144543_Initial.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Stefan Stanchev\\Desktop\\1\\TechStore\\Migrations\\20240320144543_Initial.cs",

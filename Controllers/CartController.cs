@@ -7,14 +7,12 @@ namespace TechStore.Controllers
 {
     public class CartController : Controller
     {
-        private CategoryService categoryService;
         private CartService cartService;
         private OrderService orderService;
         private ProductService productService;
 
-        public CartController(CategoryService categoryService, CartService cartService, OrderService orderService, ProductService productService)
+        public CartController(CartService cartService, OrderService orderService, ProductService productService)
         {
-            this.categoryService = categoryService;
             this.cartService = cartService;        
             this.orderService = orderService;
             this.productService = productService;
@@ -33,9 +31,6 @@ namespace TechStore.Controllers
             {
                 TempData["Products"] = productIDs;
             }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
 
             if (User.Identity.IsAuthenticated)
             {
@@ -64,9 +59,6 @@ namespace TechStore.Controllers
             {
                 TempData["Products"] = productIDs;
             }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
 
             if (User.Identity.IsAuthenticated)
             {
@@ -86,14 +78,6 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulPayment(string name, string cardNumber, string expiryDate, int cvvNum, string adress)
         {
-            if (TempData["Products"] != null)
-            {
-                var productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-            List<Category> categories = categoryService.GetAllCategories();
-            ViewBag.CategoryList = categories;
-
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             List<Cart> cartItems = cartService.GetAllCartItemsByUserID(userId);
             DateTime dateTimeNow = DateTime.UtcNow + TimeSpan.FromHours(3);
