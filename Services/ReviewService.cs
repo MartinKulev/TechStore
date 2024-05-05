@@ -15,15 +15,7 @@ namespace TechStore.Services
 
         public void CreateReview(int productId, string userId, int rating, string comment)
         {
-            var review = new Review
-            {
-                ProductID = productId,
-                UserID = userId,
-                Rating = rating,
-                Comment = comment,
-                CreatedDate = DateTime.Now
-            };
-
+            Review review = new Review(productId, userId, rating, comment);
             context.Review.Add(review);
             context.SaveChanges();
         }

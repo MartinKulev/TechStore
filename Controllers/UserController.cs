@@ -17,17 +17,7 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult CreatedUser(string firstName, string lastName, string email, string phoneNumber, string password, string confirmPassword)
         {
-            var user = new ApplicationUser
-            {
-                FirstName = firstName,
-                LastName = lastName,
-                UserName = email,
-                Email = email,
-                PhoneNumber = phoneNumber,
-                EmailConfirmed = true
-            };
-
-            userService.CreateUser(user);
+            userService.CreateUser(firstName, lastName, email, phoneNumber, password);
             TempData["Message"] = "Successfully created a user!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }

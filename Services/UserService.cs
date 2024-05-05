@@ -1,4 +1,5 @@
-﻿using TechStore.Data;
+﻿using Microsoft.AspNetCore.Identity;
+using TechStore.Data;
 using TechStore.Data.Entities;
 
 namespace TechStore.Services
@@ -6,16 +7,30 @@ namespace TechStore.Services
     public class UserService
     {
         private TechStoreDbContext context;
+        private UserManager<ApplicationUser> userManager;
 
-        public UserService(TechStoreDbContext context)
+        public UserService(TechStoreDbContext context, UserManager<ApplicationUser> userManager)
         {
             this.context = context;
+            this.userManager = userManager;
         }
 
-        public void CreateUser(ApplicationUser user)
+        public void CreateUser(string firstName, string lastName, string email, string phoneNumber, string password)
         {
-            context.User.Add(user);
+            var user = new ApplicationUser
+            {
+                UserName = email,
+                FirstName = firstName,
+                LastName = lastName,
+                Email = email,
+                PhoneNumber = phoneNumber,
+                EmailConfirmed = true
+            };
+            context.Users.Add(user);
             context.SaveChanges();
+
+            //await userManager.CreateAsync(user, password);
+            //await userManager.AddToRoleAsync(user, "User");
         }
 
         public void DeleteUser(string userId)

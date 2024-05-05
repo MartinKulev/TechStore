@@ -120,8 +120,8 @@
         }
     }   
 </style>
-<h1 class="order-heading">Order: @Model.Order.OrderID</h1>
 <section class="flex-container">
+    <h1 class="order-heading">Order: @Model.Order.OrderID</h1>
     @foreach (var cart in Model.Carts)
     {
         foreach (var product in Model.Products)

@@ -12,8 +12,9 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        public void CreatePromocode(Promocode promocode)
+        public void CreatePromocode(string promocodeName, decimal discount)
         {
+            Promocode promocode = new Promocode(promocodeName, discount);
             context.Promocode.Add(promocode);
             context.SaveChanges();
         }

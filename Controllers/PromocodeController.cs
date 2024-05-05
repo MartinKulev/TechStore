@@ -17,8 +17,7 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult CreatedPromocode(string promocodeName, decimal discount)
         {
-            Promocode promocode = new Promocode(promocodeName, discount);
-            promocodeService.CreatePromocode(promocode);
+            promocodeService.CreatePromocode(promocodeName, discount);
             TempData["Message"] = "Successfully created a promocode!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }

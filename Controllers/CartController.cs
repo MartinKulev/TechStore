@@ -63,22 +63,5 @@ namespace TechStore.Controllers
             TempData["Message"] = "Product removed from cart.";
             return RedirectToAction("Cart", "Tech");
         }
-
-
-        [HttpPost]
-        public IActionResult SuccessfulPayment(string name, string cardNumber, string expiryDate, int cvvNum, string adress)
-        {
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            List<Cart> cartItems = cartService.GetAllCartItemsByUserID(userId);
-            DateTime dateTimeNow = DateTime.UtcNow + TimeSpan.FromHours(3);
-            List<Product> productsInCart = productService.GetAllProductsInCart(cartItems);
-            decimal totalPrice = cartService.CalculateCartTotalPrice(cartItems, productsInCart);
-
-            Order order = new Order(name, cardNumber, expiryDate, cvvNum, adress, userId, totalPrice, dateTimeNow);
-            string orderID = orderService.CreateOrder(order);
-            cartService.UpdateCartItemsByUserID(userId, orderID);
-            TempData["Message"] = "The payment was successful!";
-            return RedirectToAction("Profile", "Tech");
-        }
     }
 }

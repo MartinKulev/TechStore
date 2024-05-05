@@ -17,8 +17,7 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult CreatedCategory(string categoryName)
         {
-            Category category = new Category(categoryName);
-            categoryService.CreateCategory(category);
+            categoryService.CreateCategory(categoryName);
             TempData["Message"] = "Successfully created a category!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }

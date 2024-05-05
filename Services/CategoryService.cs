@@ -12,13 +12,11 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        public void CreateCategory(Category category)
+        public void CreateCategory(string categoryName)
         {
-            if (!context.Category.Contains(category))
-            {
-                context.Category.Add(category);
-                context.SaveChanges();
-            }
+            Category category = new Category(categoryName);
+            context.Category.Add(category);
+            context.SaveChanges();
         }
 
         public void DeleteCategory(string categoryName)

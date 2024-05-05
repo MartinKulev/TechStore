@@ -8,25 +8,26 @@ namespace TechStore.Data.Entities
     {
         public Review() { }
 
-        public Review(int rating, string comment, int productID, string userID, DateTime createdDate)
-        {
-            Rating = rating;
-            Comment = comment;
+        public Review(int productID, string userID, int rating, string comment)
+        {     
             ProductID = productID;
             UserID = userID;
-            CreatedDate = createdDate;
+            Rating = rating;
+            Comment = comment;
+            CreatedDate = DateTime.Now;
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ReviewID { get; set; }
 
+        [ForeignKey(nameof(Product))]
+        public int ProductID { get; set; }
+
         public int Rating { get; set; }
 
         public string Comment { get; set; }
 
-        [ForeignKey(nameof(Product))]
-        public int ProductID { get; set; }
 
         [ForeignKey(nameof(ApplicationUser))]
         public string UserID { get; set; }
