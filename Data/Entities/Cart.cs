@@ -13,6 +13,8 @@ namespace TechStore.Data.Entities
             ProductID = productID;
             Quantity = quantity;
             OrderID = string.Empty;
+            IsOrdered = false;
+
         }
 
         [Key]
@@ -29,5 +31,7 @@ namespace TechStore.Data.Entities
 
         [ForeignKey(nameof(Order))]
         public string OrderID { get; set; }
+
+        public bool IsOrdered { get; set; }
     }
 }

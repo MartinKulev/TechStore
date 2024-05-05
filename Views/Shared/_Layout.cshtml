@@ -167,7 +167,11 @@
             else
             {
                 <a class="icon-button" asp-action="Cart" asp-controller="Tech">
-                    <i class="fa-solid fa-cart-shopping"></i><span class="cart-items-count">@ViewBag.CartItemsCount</span>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    @if (@ViewBag.CartItemsCount != 0)
+                    {
+                        <span class="cart-items-count">@ViewBag.CartItemsCount</span>
+                    }
                 </a>
                 @if (User.Identity.IsAuthenticated)
                 {

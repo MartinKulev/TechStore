@@ -1,6 +1,5 @@
 ﻿using TechStore.Data;
 using TechStore.Data.Entities;
-using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 namespace TechStore.Services
 {
@@ -25,7 +24,7 @@ namespace TechStore.Services
             Product product = context.Product.First(p => p.ProductID == productID);
             product.isDisabled = true;//Note: Product is never truly deleted. It's only disabled, so it still shown in past orders Orders
             context.Product.Update(product);
-            var cartsToRemove = context.Cart.Where(p => p.ProductID == product.ProductID && p.OrderID == string.Empty).ToList();
+            var cartsToRemove = context.Cart.Where(p => p.ProductID == product.ProductID && !p.IsOrdered).ToList();
             context.Cart.RemoveRange(cartsToRemove);
             context.SaveChanges();
         }
@@ -82,7 +81,7 @@ namespace TechStore.Services
 
         public List<Product> GetAllProductsInPromotion()
         {
-            List<Product> products = context.Product.Where(p => p.IsInPromotion &&  !p.isDisabled).ToList();
+            List<Product> products = context.Product.Where(p => p.IsInPromotion && !p.isDisabled).ToList();
             return products;
         }
     }
