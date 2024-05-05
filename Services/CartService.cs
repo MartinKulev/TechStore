@@ -19,7 +19,7 @@ namespace TechStore.Services
         public void AddProductToCart(string userID, int productID)
         {
             Cart cart = new Cart(userID, productID, 1);
-            if (context.Cart.Any(cart => cart.UserID == userID && cart.ProductID == productID && cart.OrderID == 0))
+            if (context.Cart.Any(cart => cart.UserID == userID && cart.ProductID == productID && cart.OrderID == string.Empty))
             {
                 Cart existingCart = GetCartItemByUserIDProductID(userID, productID);
                 existingCart.Quantity++;
@@ -35,7 +35,7 @@ namespace TechStore.Services
 
         public void RemoveProductFromCart(string userID, int productID)
         {
-            Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID && p.OrderID == 0);
+            Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID && p.OrderID == string.Empty);
 
             if (cart.Quantity > 1)
             {
@@ -50,9 +50,9 @@ namespace TechStore.Services
             }
         }
 
-        public void UpdateCartItemsByUserID(string userID, int orderID)
+        public void UpdateCartItemsByUserID(string userID, string orderID)
         {
-            var cartsToUpdate = context.Cart.Where(p => p.UserID == userID && p.OrderID == 0);
+            var cartsToUpdate = context.Cart.Where(p => p.UserID == userID && p.OrderID == string.Empty);
             foreach (var cart in cartsToUpdate)
             {
                 cart.OrderID = orderID;
@@ -60,7 +60,7 @@ namespace TechStore.Services
             context.SaveChanges();
         }
 
-        public List<Cart> GetAllCartItemsByOrderID(int orderID)
+        public List<Cart> GetAllCartItemsByOrderID(string orderID)
         {
             List<Cart> carts = context.Cart.Where(p => p.OrderID == orderID).ToList();
             return carts;
@@ -74,7 +74,7 @@ namespace TechStore.Services
 
         public List<Cart> GetAllCartItemsByUserID(string userID)
         {
-            List<Cart> carts = context.Cart.Where(p => p.UserID == userID && p.OrderID == 0).ToList();
+            List<Cart> carts = context.Cart.Where(p => p.UserID == userID && p.OrderID == string.Empty).ToList();
             return carts;
         }
 
@@ -99,7 +99,7 @@ namespace TechStore.Services
 
         public int GetCartItemsCountByUserID(string userID)
         {
-            int cartItemsCount = context.Cart.Where(p => p.UserID == userID && p.OrderID == 0).Sum(p => p.Quantity);
+            int cartItemsCount = context.Cart.Where(p => p.UserID == userID && p.OrderID == string.Empty).Sum(p => p.Quantity);
             return cartItemsCount;
         }
 

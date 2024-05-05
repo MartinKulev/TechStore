@@ -231,7 +231,7 @@
             <form class="order-box" method="get" asp-controller="Tech" asp-action="Order" asp-route-orderID="@order.OrderID">
                 <button class="order-button">
                     <div class="order-info">
-                        <div class="order-text">Order № @order.OrderID</div>
+                        <div class="order-text">Order: @order.OrderID</div>
                         <div class="order-price-container">
                             <div class="order-price">Paid: $@order.TotalPrice</div>
                             <div>Bank card: @order.CardNum</div>

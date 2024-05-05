@@ -12,6 +12,7 @@ namespace TechStore.Data.Entities
             UserID = userID;
             ProductID = productID;
             Quantity = quantity;
+            OrderID = string.Empty;
         }
 
         [Key]
@@ -27,6 +28,6 @@ namespace TechStore.Data.Entities
         public int Quantity { get; set; }
 
         [ForeignKey(nameof(Order))]
-        public int OrderID { get; set; }
+        public string OrderID { get; set; }
     }
 }

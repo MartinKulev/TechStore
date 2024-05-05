@@ -65,13 +65,6 @@ namespace TechStore.Controllers
 
         public IActionResult Cart(int cartID)
         {
-            List<int> productIDs = new List<int>();
-            if (TempData["Products"] != null)
-            {
-                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-
             List<Cart> cartItems = new List<Cart>();
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (User.Identity.IsAuthenticated)
@@ -80,6 +73,11 @@ namespace TechStore.Controllers
             }
             else
             {
+                List<int> productIDs = new List<int>();
+                if (TempData["Products"] != null)
+                {
+                    productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                }
                 cartItems = cartService.GetAllCartItemsByTempData(productIDs, userId);
             }
             List<Product> productsInCart = productService.GetAllProductsInCart(cartItems);           
@@ -102,7 +100,6 @@ namespace TechStore.Controllers
         public IActionResult AdministrationPanel()
         {
             List<Category> categories = categoryService.GetAllCategories();
-
             List<Promocode> promocodes = promocodeService.GetAllPromocodes();
             List<ApplicationUser> users = userService.GetAllUsers();
             var viewModel = new AdminPanelViewModel(promocodes, users, categories);
@@ -125,7 +122,7 @@ namespace TechStore.Controllers
 
 
         [HttpGet("Tech/Order/{orderID}")]
-        public IActionResult Order(int orderID)
+        public IActionResult Order(string orderID)
         {
             List<Cart> cartItems = cartService.GetAllCartItemsByOrderID(orderID);
             List<Product> products = productService.GetAllProducts();

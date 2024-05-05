@@ -10,6 +10,7 @@ namespace TechStore.Data.Entities
 
         public Order(string name, string cardNum, string expiryDate, int cvvNum, string address, string userID, decimal totalPrice, DateTime orderTime)
         {
+            OrderID = Guid.NewGuid().ToString();
             Name = name;
             CardNum = cardNum;
             ExpiryDate = expiryDate;
@@ -21,8 +22,7 @@ namespace TechStore.Data.Entities
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int OrderID { get; set; }
+        public string OrderID { get; set; }
 
         public string CardNum { get; set; }
 

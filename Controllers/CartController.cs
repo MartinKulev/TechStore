@@ -22,16 +22,6 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult ProductAddedToCart(int productID)
         {
-            List<int> productIDs = new List<int>();
-            if (TempData["Products"] != null)
-            {
-                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-            }
-            else
-            {
-                TempData["Products"] = productIDs;
-            }
-
             if (User.Identity.IsAuthenticated)
             {
                 string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -39,9 +29,14 @@ namespace TechStore.Controllers
             }
             else
             {
+                List<int> productIDs = new List<int>();
+                if (TempData["Products"] != null)
+                {
+                    productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                }
                 productIDs.Add(productID);
+                TempData["Products"] = productIDs;
             }
-            TempData["Products"] = productIDs;
             TempData["Message"] = "Product added to cart.";
             return RedirectToAction("Cart", "Tech");
         }
@@ -50,16 +45,6 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult ProductRemovedFromCart(int productID)
         {
-            List<int> productIDs = new List<int>();
-            if (TempData["Products"] != null)
-            {
-                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-            }
-            else
-            {
-                TempData["Products"] = productIDs;
-            }
-
             if (User.Identity.IsAuthenticated)
             {
                 string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -67,9 +52,14 @@ namespace TechStore.Controllers
             }
             else
             {
+                List<int> productIDs = new List<int>();
+                if (TempData["Products"] != null)
+                {
+                    productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
+                }
                 productIDs.Remove(productID);
+                TempData["Products"] = productIDs;
             }
-            TempData["Products"] = productIDs;
             TempData["Message"] = "Product removed from cart.";
             return RedirectToAction("Cart", "Tech");
         }
@@ -85,7 +75,7 @@ namespace TechStore.Controllers
             decimal totalPrice = cartService.CalculateCartTotalPrice(cartItems, productsInCart);
 
             Order order = new Order(name, cardNumber, expiryDate, cvvNum, adress, userId, totalPrice, dateTimeNow);
-            int orderID = orderService.CreateOrder(order);
+            string orderID = orderService.CreateOrder(order);
             cartService.UpdateCartItemsByUserID(userId, orderID);
             TempData["Message"] = "The payment was successful!";
             return RedirectToAction("Profile", "Tech");

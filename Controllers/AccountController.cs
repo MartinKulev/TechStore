@@ -38,13 +38,6 @@ namespace TechStore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterModel model)
         {
-            List<int> productIDs = new List<int>();
-            if (TempData["Products"] != null)
-            {
-                productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
-                TempData["Products"] = productIDs;
-            }
-
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser
@@ -60,25 +53,11 @@ namespace TechStore.Controllers
 
                 if (result.Succeeded)
                 {
-                    if (!User.IsInRole("Admin"))
-                    {
-                        string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                        foreach (int productID in productIDs)
-                        {
-                            cartService.AddProductToCart(userId, productID);
-                        }
-                    }
-                    TempData["Products"] = new List<int>();
-
                     await _userManager.AddToRoleAsync(user, "User");
                     await SendConfirmationEmail(model.Email, user);
 
                     TempData["Message"] = "A verification link was sent to your email!";
                     return RedirectToAction("Login", "Account");
-                }
-                else
-                {
-                    TempData["Products"] = productIDs;
                 }
 
                 foreach (var error in result.Errors)

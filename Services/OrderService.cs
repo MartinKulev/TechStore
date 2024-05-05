@@ -12,13 +12,13 @@ namespace TechStore.Services
             this.context = context;
         }
 
-        public int CreateOrder(Order order)
+        public string CreateOrder(Order order)
         {
             context.Order.Add(order);
             context.SaveChanges();
 
             context.Entry(order).Reload();
-            int generatedKey = order.OrderID;
+            string generatedKey = order.OrderID.ToString();
             return generatedKey;
         }
 
@@ -28,7 +28,7 @@ namespace TechStore.Services
             return orders;
         }
 
-        public Order GetOrderByID(int orderID)
+        public Order GetOrderByID(string orderID)
         {
             Order order = context.Order.First(p => p.OrderID == orderID);
             return order;

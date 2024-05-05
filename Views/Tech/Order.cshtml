@@ -1,5 +1,12 @@
 ﻿﻿<title>Order</title>
 <style>
+    .order-heading {
+        text-align: center;
+        font-weight: bold;
+        font-size: 50px;
+        margin: 50px;
+    }
+    
     .flex-container {
         display: flex;
         flex-direction: column;
@@ -44,7 +51,7 @@
 
     .product-price {
         font-size: 150%;
-        color: ef2809;
+        color: #ef2809;
         font-weight: bold;
     }
 
@@ -113,6 +120,7 @@
         }
     }   
 </style>
+<h1 class="order-heading">Order: @Model.Order.OrderID</h1>
 <section class="flex-container">
     @foreach (var cart in Model.Carts)
     {
