@@ -8,6 +8,13 @@
         overflow: auto;
     }
 
+    .order-heading {
+        text-align: center;
+        font-weight: bold;
+        font-size: 50px;
+        margin: 50px;
+    }
+
     .order-box {
         display: flex;
         flex-direction: row;
@@ -226,6 +233,7 @@
     </div>
     @if (!User.IsInRole("Admin"))
     {
+        <h1 class="orders-title">Past orders:</h1>
         @foreach (var order in Model.Orders)
         {
             <form class="order-box" method="get" asp-controller="Tech" asp-action="Order" asp-route-orderID="@order.OrderID">

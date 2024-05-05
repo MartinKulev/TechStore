@@ -125,7 +125,7 @@ namespace TechStore.Controllers
         public IActionResult Order(string orderID)
         {
             List<Cart> cartItems = cartService.GetAllCartItemsByOrderID(orderID);
-            List<Product> products = productService.GetAllProducts();
+            List<Product> products = productService.GetAllProductsInOrder(cartItems);
             Order orderByID = orderService.GetOrderByID(orderID);
             var viewModel = new OrderViewModel(cartItems, products, orderByID);
             return View(viewModel);

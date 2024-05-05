@@ -15,6 +15,7 @@ namespace TechStore.Data.Entities
             Brand = brand;
             Model = model;
             Price = price;
+            isDisabled = false;
         }
 
         [Key]
@@ -38,6 +39,7 @@ namespace TechStore.Data.Entities
 
         public decimal NewPrice { get; set; }
 
+        public bool isDisabled { get; set; }
     }
 }
 

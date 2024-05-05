@@ -10,12 +10,14 @@ namespace TechStore.Filters
     {
         private CategoryService categoryService;
         private CartService cartService;
+        private ProductService productService;
         private IHttpContextAccessor httpContextAccessor;
 
-        public TechFilter(CategoryService categoryService, CartService cartService, IHttpContextAccessor httpContextAccessor)
+        public TechFilter(CategoryService categoryService, CartService cartService, ProductService productService, IHttpContextAccessor httpContextAccessor)
         {
             this.categoryService = categoryService;
             this.cartService = cartService;
+            this.productService = productService;
             this.httpContextAccessor = httpContextAccessor;
         }
 
@@ -28,6 +30,7 @@ namespace TechStore.Filters
                 if (controller.TempData["Products"] != null)
                 {
                     var productIDs = (controller.TempData["Products"] as IEnumerable<int>).ToList();
+                    productIDs = productService.GetAllEnabledProductsIDs(productIDs);
                     controller.TempData["Products"] = productIDs;
                     controller.ViewBag.CartItemsCount = productIDs.Count;
 

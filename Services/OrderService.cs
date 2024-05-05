@@ -34,7 +34,7 @@ namespace TechStore.Services
 
         public List<Order> GetAllOrdersByUserID(string usedID)
         {
-            List<Order> orders = context.Order.Where(p => p.UserID == usedID).ToList();
+            List<Order> orders = context.Order.Where(p => p.UserID == usedID).OrderByDescending(p => p.OrderTime).ToList();
             return orders;
         }
 

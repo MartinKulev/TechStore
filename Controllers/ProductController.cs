@@ -17,8 +17,7 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult CreatedProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
         {
-            Product product = new Product(imageURL, categoryName, description, brand, model, price);
-            productService.CreateProduct(product);
+            productService.CreateProduct(imageURL, categoryName, description, brand, model, price);
             TempData["Message"] = "Successfully added a product!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }
