@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Security.Claims;
 using TechStore.Data.Entities;
 using TechStore.Services;
 
@@ -8,23 +9,33 @@ namespace TechStore.Filters
     public class TechFilter : IResultFilter
     {
         private CategoryService categoryService;
+        private CartService cartService;
+        private IHttpContextAccessor httpContextAccessor;
 
-        public TechFilter(CategoryService categoryService)
+        public TechFilter(CategoryService categoryService, CartService cartService, IHttpContextAccessor httpContextAccessor)
         {
             this.categoryService = categoryService;
+            this.cartService = cartService;
+            this.httpContextAccessor = httpContextAccessor;
         }
 
         public void OnResultExecuting(ResultExecutingContext context)
         {
             var controller = context.Controller as Controller;
+            var httpContext = httpContextAccessor.HttpContext;
             if (controller != null)
             {
-                var tempData = controller.TempData;
-
-                if (tempData["Products"] != null)
+                if (controller.TempData["Products"] != null)
                 {
-                    var productIDs = (tempData["Products"] as IEnumerable<int>).ToList();
-                    tempData["Products"] = productIDs;
+                    var productIDs = (controller.TempData["Products"] as IEnumerable<int>).ToList();
+                    controller.TempData["Products"] = productIDs;
+                    controller.ViewBag.CartItemsCount = productIDs.Count;
+
+                }
+                if(httpContext.User.Identity.IsAuthenticated)
+                {
+                    string userId = httpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    controller.ViewBag.CartItemsCount = cartService.GetCartItemsCountByUserID(userId);
                 }
 
                 List<Category> categories = categoryService.GetAllCategories();
@@ -34,7 +45,7 @@ namespace TechStore.Filters
 
         public void OnResultExecuted(ResultExecutedContext context)
         {
-            
+
         }
     }
 }

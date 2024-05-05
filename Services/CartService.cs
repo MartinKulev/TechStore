@@ -97,6 +97,12 @@ namespace TechStore.Services
             return carts;
         }
 
+        public int GetCartItemsCountByUserID(string userID)
+        {
+            int cartItemsCount = context.Cart.Where(p => p.UserID == userID && p.OrderID == 0).Sum(p => p.Quantity);
+            return cartItemsCount;
+        }
+
         public decimal CalculateCartTotalPrice(List<Cart> carts, List<Product> products)
         {
             decimal totalPrice = 0;

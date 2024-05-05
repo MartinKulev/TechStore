@@ -120,6 +120,21 @@
             transition: opacity 0.5s ease;
             z-index: 100;
         }
+
+        .cart-items-count {
+            border-radius: 50%;
+            font-size: 18px;
+            background-color: #ff0000;
+            color: #ffffff;
+            margin-left: -10px;
+            margin-bottom: 20px;
+            height: 25px;
+            width: 25px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -131,10 +146,10 @@
     </script>
 </head>
 <body>
-    @if(TempData["Message"] != null)
+    @if (TempData["Message"] != null)
     {
         <section class="text-bubble">@TempData["Message"]</section>
-    }   
+    }
     <div class="nav-bar">
         <a class="mainHeader-Button" asp-action="Homepage" asp-controller="Tech">TechStore</a>
         <section class="container-buttons">
@@ -151,7 +166,9 @@
             }
             else
             {
-                <a class="icon-button" asp-action="Cart" asp-controller="Tech"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="icon-button" asp-action="Cart" asp-controller="Tech">
+                    <i class="fa-solid fa-cart-shopping"></i><span class="cart-items-count">@ViewBag.CartItemsCount</span>
+                </a>
                 @if (User.Identity.IsAuthenticated)
                 {
                     <a class="icon-button" asp-action="Profile" asp-controller="Tech"><i class="fa-solid fa-user"></i></a>
