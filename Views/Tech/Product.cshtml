@@ -86,12 +86,32 @@
             cursor: pointer;
         }
 
+        .product-delete-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 500px;
+            height: 100px;
+            background: linear-gradient(to right,#cf3f50,#fe2d34);
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
         .product-cart-button {
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 15px;
-            background: linear-gradient(left,#4a60c1 10%,#3985e0);
+            height: 100px;
+            width: 100px;
+        }
+
+        .product-bin-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            background: linear-gradient(to right,#cf3f50,#fe2d34);
             height: 100px;
             width: 100px;
         }
@@ -356,14 +376,28 @@
                     {
                         <div class="product-price">Price: $@Model.Product.Price</div>
                     }
-                    <form method="post" asp-action="ProductAddedToCart" asp-controller="Cart">
-                        <button class="product-button" name="productID" value="@Model.Product.ProductID">
-                            <div class="product-cart-button">
-                                <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
-                            </div>
-                            <div class="product-cart-text">Add to cart</div>
-                        </button>
-                    </form>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <form method="post" asp-action="DeletedProduct" asp-controller="Product">
+                            <button class="product-delete-button" name="productID" value="@Model.Product.ProductID">
+                                <div class="product-bin-button">
+                                    <i class="product-cart-icon fa-solid fa-trash-can"></i>
+                                </div>
+                                <div class="product-cart-text">Delete Product</div>
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" asp-action="ProductAddedToCart" asp-controller="Cart">
+                            <button class="product-button" name="productID" value="@Model.Product.ProductID">
+                                <div class="product-cart-button">
+                                    <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div class="product-cart-text">Add to cart</div>
+                            </button>
+                        </form>
+                    }
                 </div>
             </div>
         </section>
