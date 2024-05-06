@@ -1,7 +1,8 @@
 ﻿@model LoginModel
-<title>Login</title>
+<!DOCTYPE html>
 <html>
 <head>
+    <title>TechStore</title>
     <style>
         .validation-summary-errors {
             color: #ff0000;
@@ -10,8 +11,7 @@
             margin-bottom: 20px;
         }
 
-        .container {
-            height: 100%;
+        .main-container {
             display: flex;
             justify-content: center;
         }
@@ -42,7 +42,6 @@
         .input-box {
             height: 30px;
             width: 250px;
-            border: 1px solid #999999;
             border-radius: 5px;
         }
 
@@ -101,7 +100,7 @@
 <body>
     @if (TempData["You need to log in to continue!"] != null)
     {
-        <section class="text-bubble-red">@TempData["You need to log in to continue!"]</section>
+        <div class="text-bubble-red">@TempData["You need to log in to continue!"]</div>
     }
     @using (Html.BeginForm())
     {
@@ -109,24 +108,24 @@
 
         @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
 
-        <section class="container">
+        <main class="main-container">
             <section class="sub-container">
                 <div class="info-container">
-                    <div class="info-text-container">@Html.LabelFor(m => m.Email, "Email:")</div>
+                    <p class="info-text-container">@Html.LabelFor(m => m.Email, "Email:")</p>
                     @Html.TextBoxFor(m => m.Email, new { @class = "input-box", name = "email" })
                 </div>
                 <div class="info-container">
-                    <div class="info-text-container">@Html.LabelFor(m => m.Password, "Password:")</div>
+                    <p class="info-text-container">@Html.LabelFor(m => m.Password, "Password:")</p>
                     @Html.PasswordFor(m => m.Password, new { @class = "input-box", name = "password" })
                 </div>
-                <div class="errors-container">@Html.ValidationMessageFor(m => m.Email)</div>
-                <div class="errors-container">@Html.ValidationMessageFor(m => m.Password)</div>
+                <p class="errors-container">@Html.ValidationMessageFor(m => m.Email)</p>
+                <p class="errors-container">@Html.ValidationMessageFor(m => m.Password)</p>
                 <div class="login-button-container">
                     <button type="submit" value="Login" class="login-button"><div>Login</div></button>
                 </div>
-                <a asp-action="Register" asp-controller="Account"><div class="register-hyperlink">No account? Register.</div></a>              
+                <a asp-action="Register" asp-controller="Account" class="register-hyperlink">No account? Register.</a>              
             </section>
-        </section>
+        </main>
     }
 </body>
 </html>

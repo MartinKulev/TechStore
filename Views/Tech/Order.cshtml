@@ -1,112 +1,29 @@
-﻿﻿<title>Order</title>
-<style> 
-    .flex-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 1 1 auto;
-        overflow: auto;
-    }
+<!DOCTYPE html>
+ï»¿
+<html>
+<head>
+    <title>TechStore</title>
+    <style>
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .order-heading {
-        text-align: center;
-        font-weight: bold;
-        font-size: 50px;
-        margin: 50px;
-    }
+        .order-heading {
+            text-align: center;
+            font-weight: bold;
+            font-size: 50px;
+            margin-bottom: 100px;
+        }
 
-    .product-box {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 20px;
-        height: 200px;
-        min-height: 200px;
-        width: 80%;
-        background-color: #ffffff;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
-        border-radius: 15px;
-    }
-
-    .product-image {
-        max-width: 90%;
-        max-height: 90%;
-        margin: 20px;
-    }
-
-    .product-info {
-        display: flex;
-        flex: 1 1 auto;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 100%;
-        margin-right: 40px;
-        margin-left: 40px;
-    }
-
-    .product-text {
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .product-price {
-        font-size: 150%;
-        color: #ef2809;
-        font-weight: bold;
-    }
-
-    .product-quantity {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        margin: 50px;
-    }
-
-    .product-quantity-label {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .product-quantity-count {
-        font-size: 30px;
-    }
-
-    .final-price-container {
-        margin: 100px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 80%;
-    }
-
-    .final-price {
-        font-size: 50px;
-        color: #ef2809;
-        font-weight: bold;
-    }
-
-    .product-old-price {
-        font-size: 100%;
-        font-weight: bold;
-        color: #000000;
-    }
-
-    .product-price-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    @@media (max-device-width: 767px) {
         .product-box {
             display: flex;
             flex-direction: row;
             align-items: center;
             margin: 20px;
-            height: 300px;
-            min-height: 300px;
+            height: 200px;
+            min-height: 200px;
             width: 80%;
             background-color: #ffffff;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
@@ -114,45 +31,135 @@
         }
 
         .product-image {
-            max-width: 60%;
-            max-height: 60%;
+            max-width: 90%;
+            max-height: 90%;
             margin: 20px;
         }
-    }   
-</style>
-<section class="flex-container">
-    <h1 class="order-heading">Order: @Model.Order.OrderID</h1>
-    @foreach (var cart in Model.Carts)
-    {
-        foreach (var product in Model.Products)
-        {
-            if (cart.ProductID == product.ProductID)
-            {
-                <div class="product-box">
-                    <img class="product-image" src="@product.ImageURL">
-                    <div class="product-info">
-                        <div class="product-text">@product.Description</div>
-                        @if (product.IsInPromotion)
-                        {
-                            <div class="product-price-container">
-                                <s class="product-old-price">$@product.Price</s>
-                                <div class="product-price">$@product.NewPrice</div>
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="product-price">$@product.Price</div>
-                        }
-                    </div>
-                    <div class="product-quantity">
-                        <div class="product-quantity-label">Quantity:</div>
-                        <div class="product-quantity-count">@cart.Quantity</div>
-                    </div>
-                </div>
+
+        .product-info {
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+
+        .product-text {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 150%;
+            color: #ef2809;
+            font-weight: bold;
+        }
+
+        .product-quantity {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 50px;
+        }
+
+        .product-quantity-label {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-quantity-count {
+            font-size: 30px;
+        }
+
+        .final-price-container {
+            margin: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .final-price {
+            font-size: 50px;
+            color: #ef2809;
+            font-weight: bold;
+        }
+
+        .product-old-price {
+            text-decoration: line-through;
+            font-size: 100%;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .product-price-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @@media (max-device-width: 767px) {
+            .product-box {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 20px;
+                height: 300px;
+                min-height: 300px;
+                width: 80%;
+                background-color: #ffffff;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+                border-radius: 15px;
+            }
+
+            .product-image {
+                max-width: 60%;
+                max-height: 60%;
+                margin: 20px;
             }
         }
-    }
-    <div class="final-price-container">
-        <div class="final-price">Total: $@Model.Order.TotalPrice</div>
-    </div>
-</section>
+    </style>
+</head>
+<body>
+    <main class="main-container">
+        <h1 class="order-heading">Order: @Model.Order.OrderID</h1>
+        @foreach (var cart in Model.Carts)
+        {
+            foreach (var product in Model.Products)
+            {
+                if (cart.ProductID == product.ProductID)
+                {
+                    <section class="product-box">
+                        <img class="product-image" src="@product.ImageURL">
+                        <div class="product-info">
+                            <article class="product-text">@product.Description</article>
+                            @if (product.IsInPromotion)
+                            {
+                                <div class="product-price-container">
+                                    <p class="product-old-price">$@product.Price</p>
+                                    <p class="product-price">$@product.NewPrice</p>
+                                </div>
+                            }
+                            else
+                            {
+                                <p class="product-price">$@product.Price</p>
+                            }
+                        </div>
+                        <div class="product-quantity">
+                            <p class="product-quantity-label">Quantity:</p>
+                            <p class="product-quantity-count">@cart.Quantity</p>
+                        </div>
+                    </section>
+                }
+            }
+        }
+        <div class="final-price-container">
+            <p class="final-price">Total: $@Model.Order.TotalPrice</p>
+        </div>
+    </main>
+</body>
+</html>

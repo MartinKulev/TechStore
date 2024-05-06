@@ -30,10 +30,13 @@ namespace TechStore.Filters
                 if (controller.TempData["Products"] != null)
                 {
                     var productIDs = (controller.TempData["Products"] as IEnumerable<int>).ToList();
-                    productIDs = productService.GetAllEnabledProductsIDs(productIDs);
+                    productIDs = productService.RemoveDisabledProductsIDs(productIDs);
                     controller.TempData["Products"] = productIDs;
                     controller.ViewBag.CartItemsCount = productIDs.Count;
-
+                }
+                else
+                {
+                    controller.ViewBag.CartItemsCount = 0;
                 }
                 if(httpContext.User.Identity.IsAuthenticated)
                 {

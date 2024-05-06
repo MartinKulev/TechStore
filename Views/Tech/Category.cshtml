@@ -1,128 +1,132 @@
-﻿<title>Category</title>
-<style>
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        overflow: auto;
-    }
-
-    .product-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 10px;
-        margin: 10px;
-        height: 400px;
-        background-color: #ffffff;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
-        border-radius: 15px;
-    }
-
-    .product-top {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        height: 85%;
-    }
-
-    .product-button {
-        height: 100%
-    }
-
-    .product-image-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 60%;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .product-image {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    .product-text-container {
-        height: 40%;
-        margin-top: 5px;
-    }
-
-    .product-text {
-        text-align: left;
-        color: #000000;
-        font-weight: bold;
-    }
-
-    .product-bottom {
-        height: 15%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .product-price {
-        font-size: 150%;
-        font-weight: bold;
-        color: #ef2809;
-    }
-
-    .product-cart-button {
-        cursor: pointer;
-        border-radius: 15px;
-        background: linear-gradient(to right,#4a60c1 10%,#3985e0);
-        height: 50px;
-        width: 50px;
-    }
-
-    .product-cart-icon {
-        font-size: 150%;
-        color: #ffffff;
-    }
-
-    .product-bin-button {
-        cursor: pointer;
-        border-radius: 15px;
-        background: linear-gradient(to right,#cf3f50,#fe2d34);
-        height: 50px;
-        width: 50px;
-    }
-
-    .product-bin-icon {
-        font-size: 150%;
-        color: #ffffff;
-    }
-
-    .product-old-price {
-        font-size: 100%;
-        font-weight: bold;
-        color: #000000;
-    }
-
-    @@media (max-device-width: 767px) {
-        .grid-container {
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>TechStore</title>
+    <style>
+        .main-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             grid-column-gap: 0px;
             grid-row-gap: 0px;
-            overflow: auto;
         }
-    }
-</style>
-<section class="grid-container">
-    @foreach (var product in Model)
-    {
-            <div class="product-box">
-            <form method="get" class="product-top" asp-action="Product" asp-controller="Tech" asp-route-productID="@product.ProductID">
+
+        .product-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 10px;
+            margin: 10px;
+            height: 400px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+            border-radius: 15px;
+        }
+
+        .product-top {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            height: 85%;
+        }
+
+        .product-button {
+            height: 100%
+        }
+
+        .product-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60%;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .product-description-container {
+            height: 40%;
+            margin-top: 5px;
+        }
+
+        .product-description {
+            text-align: left;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .product-bottom {
+            height: 15%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 150%;
+            font-weight: bold;
+            color: #ef2809;
+        }
+
+        .product-cart-button {
+            cursor: pointer;
+            border-radius: 15px;
+            background: linear-gradient(to right,#4a60c1 10%,#3985e0);
+            height: 50px;
+            width: 50px;
+        }
+
+        .product-cart-icon {
+            font-size: 150%;
+            color: #ffffff;
+        }
+
+        .product-bin-button {
+            cursor: pointer;
+            border-radius: 15px;
+            background: linear-gradient(to right,#cf3f50,#fe2d34);
+            height: 50px;
+            width: 50px;
+        }
+
+        .product-bin-icon {
+            font-size: 150%;
+            color: #ffffff;
+        }
+
+        .product-old-price {
+            text-decoration: line-through;
+            font-size: 100%;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        @@media (max-device-width: 767px) {
+            .main-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-column-gap: 0px;
+                grid-row-gap: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="main-container">
+        @foreach (var product in Model)
+        {
+            <section class="product-box">
+                <form method="get" class="product-top" asp-action="Product" asp-controller="Tech" asp-route-productID="@product.ProductID">
                     <button class="product-button">
                         <div class="product-image-container">
                             <img class="product-image" src=@product.ImageURL>
                         </div>
-                        <div class="product-text-container">
-                            <div class="product-text">@product.Description</div>
+                        <div class="product-description-container">
+                            <article class="product-description">@product.Description</article>
                         </div>
                     </button>
                 </form>
@@ -130,14 +134,14 @@
                     @if (product.IsInPromotion)
                     {
                         <div class="product-price-container">
-                            <s class="product-old-price">$@product.Price</s>
-                        <div class="product-price">$@product.NewPrice</div>
+                            <p class="product-old-price">$@product.Price</p>
+                            <p class="product-price">$@product.NewPrice</p>
                         </div>
                     }
                     else
                     {
-                        <div class="product-price">$@product.Price</div>
-                    }                   
+                        <p class="product-price">$@product.Price</p>
+                    }
                     @if (User.IsInRole("Admin"))
                     {
                         <form method="post" class="product-top" asp-action="DeletedProduct" asp-controller="Product">
@@ -155,6 +159,8 @@
                         </form>
                     }
                 </div>
-            </div>
-    }
-</section>
+            </section>
+        }
+    </main>
+</body>
+</html>

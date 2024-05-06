@@ -19,6 +19,7 @@ builder.Services.AddSession(options =>
 
 builder.Services.AddDbContext<TechStoreDbContext>(options =>
     options.UseMySQL("Server=mysql-210770ab-techstore.b.aivencloud.com;Database=techstoreweb;Uid=avnadmin;Pwd=AVNS_ECNjUML_9rCSuGwr_PA;Port=15039"));
+//The connection string is exposed for testing purposes
 
 // Setting up ASP.NET Core Identity
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)

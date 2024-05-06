@@ -1,14 +1,13 @@
 ﻿<!DOCTYPE html>
-<title>AdministrationPanel</title>
 <html>
 <head>
+    <title>AdministrationPanel</title>
     <style>
-        .flex-container {
+        .main-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             flex: 1 1 auto;
-            overflow: auto;
             padding: 0 200px;
         }
 
@@ -28,7 +27,7 @@
             border-radius: 15px;
         }
 
-        .product-title {
+        .product-heading {
             font-size: 50px;
             color: #000000;
             font-weight: bold;
@@ -52,7 +51,7 @@
             align-items: center;
         }
 
-        .product-image-Subcontainer {
+        .product-image-sub-container {
             font-size: 200%;
             margin-bottom: 20px;
             margin-top: 20px;
@@ -61,11 +60,11 @@
             justify-content: space-between;
         }
 
-        .product-image-text {
+        .product-image-label {
             font-weight: bold;
         }
 
-        .product-image-box {
+        .product-image-input-box {
             font-size: 50%;
             background-color: #ffffff;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
@@ -100,7 +99,7 @@
             max-height: 80%;
         }
 
-        .product-info {
+        .product-text-data {
             padding: 20px;
             width: 50%;
             background-color: #eff9fe;
@@ -119,7 +118,7 @@
             margin-bottom: 20px;
         }
 
-        .description-text-container {
+        .description-label {
             font-size: 30px;
             font-weight: bold;
             display: flex;
@@ -133,7 +132,7 @@
             box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
         }
 
-        .brandModelPrice-container {
+        .brand-mode-price-container {
             margin-bottom: 20px;
             margin-top: 20px;
             display: flex;
@@ -141,12 +140,12 @@
             justify-content: space-between;
         }
 
-        .brandModelPrice-text {
+        .brand-mode-price-label {
             font-size: 30px;
             font-weight: bold;
         }
 
-        .brandModelPrice-box {
+        .brand-model-price-input-box {
             font-size: 20px;
             height: 30px;
             background-color: #ffffff;
@@ -199,12 +198,12 @@
             width: 40%;
         }
 
-        .create-entity-title-container {
+        .entity-heading-container {
             display: flex;
             justify-content: center;
         }
 
-        .create-entity-title {
+        .entity-heading {
             font-size: 30px;
             color: #000000;
             font-weight: bold;
@@ -277,13 +276,13 @@
             color: #ffffff;
         }
 
-        .create-button-container {
+        .create-entity-button-container {
             margin: 20px;
             display: flex;
             justify-content: center;
         }
 
-        .info-container {
+        .entity-info-container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -292,7 +291,7 @@
             margin-bottom: 10px;
         }
 
-        .info-subContainer {
+        .entity-info-sub-container {
             display: flex;
             width: 100%;
             display: flex;
@@ -300,7 +299,7 @@
             flex-direction: column;
         }
 
-        .info-text-container {
+        .info-label {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -342,7 +341,7 @@
             font-size: 18px;
         }
 
-        .entity-label {
+        .entity-data {
             font-size: 18px;
         }
 
@@ -395,7 +394,7 @@
             entityButtons.forEach(function (button) {
                 button.addEventListener("click", function () {
                     var textBox = this.querySelector(".entity-text-box");
-                    var entityLabel = this.querySelector(".entity-label");
+                    var entityLabel = this.querySelector(".entity-data");
 
                     entityLabel.style.display = "none";
                     textBox.style.display = "inline-block";
@@ -406,10 +405,10 @@
     </script>
 </head>
 <body>
-    <section class="flex-container">
+    <main class="main-container">
         <section class="product-box-container">
             <div class="product-box">
-                <div class="product-title">Create product:</div>
+                <h2 class="product-heading">Create product:</h2>
                 <form method="post" class="product-information" asp-controller="Product" asp-action="CreatedProduct">
                     <div class="product-image-container">
                         @* <div class="upload-image-button" action="/action_page.php">
@@ -417,12 +416,12 @@
                         </div>
                         <div id="imageContainer">
                         </div> *@
-                        <div class="product-image-Subcontainer">
-                            <div class="product-image-text">Photo:</div>
-                            <input class="product-image-box" name="imageURL" required></input>
+                        <div class="product-image-sub-container">
+                            <label class="product-image-label">Photo:</label>
+                            <input class="product-image-input-box" name="imageURL" required></input>
                         </div>
                     </div>
-                    <div class="product-info">
+                    <div class="product-text-data">
                         <select class="select-category" name="categoryName" onchange="javascript:changemm(document.search.topmenu,document.search.f5,document.search.f6,'2','1','Избери',27)" required>
                             <option selected="" value="">Choose category</option>
                             @foreach (var category in Model.Categories)
@@ -430,23 +429,23 @@
                                 <option value="@category.CategoryName">@category.CategoryName</option>
                             }
                         </select>
-                        <div class="description-text-container">Description:</div>
+                        <label class="description-label">Description:</label>
                         <textarea class="description-box" name="description" required maxlength="200"></textarea>
-                        <div class="brandModelPrice-container">
-                            <div class="brandModelPrice-text">Brand:</div>
-                            <input class="brandModelPrice-box" name="brand" maxlength="28" required></input>
+                        <div class="brand-mode-price-container">
+                            <label class="brand-mode-price-label">Brand:</label>
+                            <input class="brand-model-price-input-box" name="brand" maxlength="28" required></input>
                         </div>
-                        <div class="brandModelPrice-container">
-                            <div class="brandModelPrice-text">Model:</div>
-                            <input class="brandModelPrice-box" name="model" maxlength="28" required></input>
+                        <div class="brand-mode-price-container">
+                            <label class="brand-mode-price-label">Model:</label>
+                            <input class="brand-model-price-input-box" name="model" maxlength="28" required></input>
                         </div>
-                        <div class="brandModelPrice-container">
-                            <div class="brandModelPrice-text">Price:</div>
-                            <input class="brandModelPrice-box" name="price" maxlength="28" type="number" step=".01" required></input>
+                        <div class="brand-mode-price-container">
+                            <label class="brand-mode-price-label">Price:</label>
+                            <input class="brand-model-price-input-box" name="price" maxlength="28" type="number" step=".01" required></input>
                         </div>
                         <div class="create-product-button-container">
                             <button class="create-product-button" type="submit">
-                                <div class="create-product-button-text">Create Product</div>
+                                <p class="create-product-button-text">Create Product</p>
                             </button>
                         </div>
                     </div>
@@ -455,39 +454,51 @@
         </section>
         <section class="user-container">
             <section class="user-entity">
-                <div class="create-entity-title-container">
-                    <div class="create-entity-title">Manage users:</div>
+                <div class="entity-heading-container">
+                    <h2 class="entity-heading">Manage users:</h2>
                 </div>
                 <form class="create-entity-form" method="post" asp-action="CreatedUser" asp-controller="User">
-                    <div class="info-container">
-                        <div class="info-subContainer">
-                            <div class="info-text-container">
-                                <div>First name: </div>
-                            </div>
+                    <div class="entity-info-container">
+                        <div class="entity-info-sub-container">
+                            <label class="info-label">
+                                <p>First name:</p>
+                            </label>
                             <input class="input-box" name="firstName" />
                         </div>
-                        <div class="info-subContainer">
-                            <div class="info-text-container">
-                                <div>Last name: </div>
-                            </div>
+                        <div class="entity-info-sub-container">
+                            <label class="info-label">
+                                <p>Last name:</p>
+                            </label>
                             <input class="input-box" name="lastName" />
                         </div>
-                        <div class="info-subContainer">
-                            <div class="info-text-container"><div>Email: </div></div><input class="input-box" name="email" />
+                        <div class="entity-info-sub-container">
+                            <label class="info-label">
+                                <p>Email:</p>
+                            </label>
+                            <input class="input-box" name="email" />
                         </div>
-                        <div class="info-subContainer">
-                            <div class="info-text-container"><div>Phone number: </div></div><input class="input-box" name="phoneNumber" />
+                        <div class="entity-info-sub-container">
+                            <label class="info-label">
+                                <p>Phone number:</p>
+                            </label>
+                            <input class="input-box" name="phoneNumber" />
                         </div>
-                        <div class="info-subContainer">
-                            <div class="info-text-container"><div>Pasword: </div></div><input class="input-box" name="password" />
+                        <div class="entity-info-sub-container">
+                            <label class="info-label">
+                                <p>Pasword:</p>
+                            </label>
+                            <input class="input-box" name="password" />
                         </div>
-                        <div class="info-subContainer">
-                            <div class="info-text-container"><div>Confirm Password: </div></div><input class="input-box" name="confirmPassword" />
+                        <div class="entity-info-sub-container">
+                            <label class="info-label">
+                                <p>Confirm Password:</p>
+                            </label>
+                            <input class="input-box" name="confirmPassword" />
                         </div>
                     </div>
                     <div>
-                        <div class="create-button-container">
-                            <button class="create-entity-button"><div>Create</div></button>
+                        <div class="create-entity-button-container">
+                            <button class="create-entity-button">Create</button>
                         </div>
                     </div>
                 </form>
@@ -506,41 +517,31 @@
                             <td>@user.Id</td>
                             <td>
                                 <button type="button" class="entity-button">
-                                    <p class="entity-label">
-                                                @user.UserName
-                                    </p>
+                                    <p class="entity-data">@user.UserName</p>
                                     <input class="entity-text-box" type="text" name="newUserName" style="display: none;" />
                                 </button>
                             </td>
                             <td>
                                 <button type="button" class="entity-button">
-                                    <p class="entity-label">
-                                                @user.FirstName
-                                    </p>
+                                    <p class="entity-data">@user.FirstName</p>
                                     <input class="entity-text-box" type="text" name="newFirstName" style="display: none;" />
                                 </button>
                             </td>
                             <td>
                                 <button type="button" class="entity-button">
-                                    <p class="entity-label">
-                                                @user.LastName
-                                    </p>
+                                    <p class="entity-data">@user.LastName</p>
                                     <input class="entity-text-box" type="text" name="newLastName" style="display: none;" />
                                 </button>
                             </td>
                             <td>
                                 <button type="button" class="entity-button">
-                                    <p class="entity-label">
-                                                @user.Email
-                                    </p>
+                                    <p class="entity-data">@user.Email</p>
                                     <input class="entity-text-box" type="text" name="newEmail" style="display: none;" />
                                 </button>
                             </td>
                             <td>
                                 <button type="button" class="entity-button">
-                                    <p class="entity-label">
-                                                @user.PhoneNumber
-                                    </p>
+                                    <p class="entity-data">@user.PhoneNumber</p>
                                     <input class="entity-text-box" type="text" name="newPhoneNumber" style="display: none;" />
                                 </button>
                             </td>
@@ -566,28 +567,26 @@
         </section>
         <section class="entity-container">
             <section class="entity">
-                <div class="create-entity-title-container">
-                    <div class="create-entity-title">Manage promocodes:</div>
+                <div class="entity-heading-container">
+                    <h2 class="entity-heading">Manage promocodes:</h2>
                 </div>
                 <form class="create-entity-form" method="post" asp-action="CreatedPromocode" asp-controller="Promocode">
-                    <div class="info-container">
-                        <div class="info-subContainer">
-                            <div class="info-text-container">
-                                <div>Promocode: </div>
-                            </div>
+                    <div class="entity-info-container">
+                        <div class="entity-info-sub-container">
+                            <label class="info-label">
+                                <p>Promocode:</p>
+                            </label>
                             <input class="input-box" name="promocodeName" />
                         </div>
-                        <div class="info-subContainer">
-                            <div class="info-text-container">
-                                <div>Promocode discount: </div>
-                            </div>
+                        <div class="entity-info-sub-container">
+                            <label class="info-label">
+                                <p>Promocode discount:</p>
+                            </label>
                             <input class="mini-input-box" name="discount" />
                         </div>
                     </div>
-                    <div class="create-button-container">
-                        <button class="create-entity-button">
-                            <div>Create</div>
-                        </button>
+                    <div class="create-entity-button-container">
+                        <button class="create-entity-button">Create</button>
                     </div>
                 </form>
                 <table class="entity-table">
@@ -601,13 +600,13 @@
                                 <form method="post" asp-action="EditedPromocode" asp-controller="Promocode">
                                 <td>
                                     <button type="button" class="entity-button">
-                                        <p class="entity-label">@promocode.PromocodeName</p>
+                                        <p class="entity-data">@promocode.PromocodeName</p>
                                         <input class="entity-text-box" type="text" name="newPromocodeName" style="display: none;" />
                                     </button>
                                 </td>
                                 <td>
                                     <button type="button" class="entity-button">
-                                        <p class="entity-label">@promocode.Discount %</p>
+                                        <p class="entity-data">@promocode.Discount %</p>
                                         <input class="entity-text-box" type="text" name="newPromocodeDiscount" style="display: none;" />
                                     </button>
                                 </td>
@@ -631,19 +630,21 @@
                 </table>
             </section>
             <section class="entity">
-                <div class="create-entity-title-container">
-                    <div class="create-entity-title">Manage categories:</div>
+                <div class="entity-heading-container">
+                    <h2 class="entity-heading">Manage categories:</h2>
                 </div>
                 <form class="create-entity-form" method="post" asp-action="CreatedCategory" asp-controller="Category">
                     <div class="category-info-container">
-                        <div class="info-subContainer">
-                            <div class="info-text-container">
-                                <div>Category name: </div>
-                            </div>
+                        <div class="entity-info-sub-container">
+                            <label class="info-label">
+                                <p>Category name: </p>
+                            </label>
                             <input class="input-box" name="categoryName" />
                         </div>
                     </div>
-                    <div class="create-button-container"><button class="create-entity-button"><div>Create</div></button></div>
+                    <div class="create-entity-button-container">
+                        <button class="create-entity-button">Create</button>
+                    </div>
                 </form>
                 <table class="entity-table">
                     <tbody>
@@ -655,7 +656,7 @@
                                 <form method="post" asp-action="EditedCategory" asp-controller="Category">
                                 <td>
                                     <button type="button" class="entity-button">
-                                        <p class="entity-label">@category.CategoryName</p>
+                                        <p class="entity-data">@category.CategoryName</p>
                                         <input class="entity-text-box" type="text" name="newCategoryName" style="display: none;" />
                                     </button>
                                 </td>
@@ -679,5 +680,6 @@
                 </table>
             </section>
         </section>
+    </main>
 </body>
 </html>

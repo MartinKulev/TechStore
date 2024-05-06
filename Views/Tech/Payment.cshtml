@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
-<title>Payment</title>
 <html>
 <head>
+    <title>TechStore</title>
     <style>
         .payment-box {
             display: flex;
@@ -19,7 +19,7 @@
             height: 100%;
         }
 
-        .payment-title-container {
+        .payment-heading-container {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -27,7 +27,7 @@
             width: 100%;
         }
 
-        .payment-title {
+        .payment-heading {
             color: #009900;
             font-weight: bold;
             font-size: 50px;
@@ -85,13 +85,10 @@
             font-size: 20px;
         }
 
-        .information-text {
+        .information-label {
             font-weight: bold;
             font-size: 30px;
             margin-right: 10px;
-        }
-
-        .pay-button-container {
         }
 
         .pay-button {
@@ -107,39 +104,40 @@
             font-weight: bold;
             font-size: 40px;
         }
-
     </style>
 </head>
 <body>
-    <form method="post" class="payment-box" asp-action="SuccessfulPayment" asp-controller="Order">
-        <div class="payment-title-container">
-            <div class="payment-title">Payment</div>
-        </div>
-        <div class="information-container">
-            <div class="information-box">
-                <div class="information-text">Name:</div>
-                <input class="name-input-box" name="name" required>
+    <main>
+        <form method="post" class="payment-box" asp-action="SuccessfulPayment" asp-controller="Order">
+            <div class="payment-heading-container">
+                <h1 class="payment-heading">Payment</h1>
             </div>
-            <div class="information-box">
-                <div class="information-text">Card Number:</div>
-                <input class="card-input-box" placeholder="XXXX-XXXX-XXXX-XXXX" name="cardNumber" minlength="19" maxlength="19" required>
+            <div class="information-container">
+                <div class="information-box">
+                    <label class="information-label">Name:</label>
+                    <input class="name-input-box" name="name" required>
+                </div>
+                <div class="information-box">
+                    <label class="information-label">Card Number:</label>
+                    <input class="card-input-box" placeholder="XXXX-XXXX-XXXX-XXXX" name="cardNumber" minlength="19" maxlength="19" required>
+                </div>
+                <div class="information-box">
+                    <label class="information-label">Expiry Date:</label>
+                    <input class="expiryDate-input-box" placeholder="MM/YY" name="expiryDate" minlength="5" maxlength="5" required>
+                    <label class="information-label">CVV:</label>
+                    <input class="CVV-input-box" placeholder="XXX" name="cvvNum" minlength="3" maxlength="3" required>
+                </div>
+                <div class="information-box">
+                    <label class="information-label">Adress:</label>
+                    <input class="adress-input-box" name="adress" required>
+                </div>
             </div>
-            <div class="information-box">
-                <div class="information-text">Expiry Date:</div>
-                <input class="expiryDate-input-box" placeholder="MM/YY" name="expiryDate" minlength="5" maxlength="5" required>
-                <div class="information-text">CVV:</div>
-                <input class="CVV-input-box" placeholder="XXX" name="cvvNum" minlength="3" maxlength="3" required>
+            <div>
+                <button class="pay-button">
+                    <p class="pay-button-text">Pay</p>
+                </button>
             </div>
-            <div class="information-box">
-                <div class="information-text">Adress:</div>
-                <input class="adress-input-box" name="adress" required>
-            </div>
-        </div>
-        <div class="pay-buttton-container">
-            <button class="pay-button">
-                <div class="pay-button-text">Pay</div>
-            </button>
-        </div>
-    </form>
+        </form>
+    </main>
 </body>
 </html>

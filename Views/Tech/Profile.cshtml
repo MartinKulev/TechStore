@@ -1,257 +1,257 @@
-﻿<title>Profile</title>
-<style>
-    .flex-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 1 1 auto;
-        overflow: auto;
-    }
-
-    .order-heading {
-        text-align: center;
-        font-weight: bold;
-        font-size: 50px;
-        margin: 50px;
-    }
-
-    .order-box {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 20px;
-        height: 200px;
-        min-height: 200px;
-        width: 80%;
-        background-color: #ffffff;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
-        border-radius: 15px;
-    }
-
-    .order-button {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 20px;
-        height: 200px;
-        min-height: 200px;
-        width: 100%;
-        border-radius: 15px;
-    }
-
-    .order-info {
-        display: flex;
-        flex: 1 1 auto;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 100%;
-        margin-right: 50px;
-        margin-left: 50px;
-    }
-
-    .order-text {
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .order-price-container {
-        font-size: 20px;
-        font-weight: bold;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between
-    }
-
-    .order-price {
-        font-size: 20px;
-        color: #ef2809;
-        font-weight: bold;
-    }
-
-    .order-dateTime-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-    .order-dateTime-label {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .order-dateTime {
-        font-size: 20px;
-    }
-
-    .orders-title {
-        font-weight: bold;
-        font-size: 50px;
-    }
-
-    .profile-box {
-        display: flex;
-        flex-direction: column;
-        margin: 20px;
-        padding: 10px;
-        height: 400px;
-        min-height: 400px;
-        width: 80%;
-        background-color: #ffffff;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
-        border-radius: 15px;
-        margin-bottom: 200px;
-        position: relative;
-    }
-
-    .profile-information-container {
-        display: flex;
-        flex-direction: row;
-        height: 100%;
-    }
-
-    .profile-title-container {
-        display: flex;
-        justify-content: center;
-        margin: 20px;
-    }
-
-    .profile-title {
-        font-size: 40px;
-    }
-
-    .profilePicture-Username-Logout-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-    }
-
-    .profile-picture {
-        width: 200px;
-        height: 200px;
-        border-radius: 200px;
-        border: 1px solid #999999;
-        background-color: #000000;
-        margin-top: 20px;
-        margin-left: 20px;
-    }
-
-    .user-name-container {
-        margin-top: 20px;
-        margin-left: 20px;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-    }
-
-    .information-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
-
-    .information-sub-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .information-label {
-        font-size: 20px;
-        font-weight: bold;
-        margin-right: 10px;
-    }
-
-    .information-text {
-        font-size: 20px;
-    }
-
-    .logout-button-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-left: 20px;
-        margin-top: 20px;
-    }
-
-    .logout-button {
-        background-color: #0082e6;
-        border-radius: 5px;
-        height: 30px;
-        width: 100px;
-        color: #ffffff;
-    }
-</style>
-<section class="flex-container">
-    <div class="profile-box">
-        <div class="profile-title-container">
-            <div class="profile-title">
-                @if (User.IsInRole("Admin"))
-                {
-                    <p>Welcome, Admin!</p>
-                }
-                else
-                {
-                    <p>Welcome, Regular User!</p>
-                }
-            </div>
-        </div>
-        <aside class="profilePicture-Username-Logout-container">
-            <div class="profile-picture"></div>
-            <div class="user-name-container">
-                <div>@Model.User.FirstName @Model.User.LastName</div>
-            </div>
-            <form class="logout-button-container" asp-controller="Account" asp-action="Logout" method="post">
-                @Html.AntiForgeryToken()
-                <button type="submit" class="logout-button">Logout</button>
-            </form>
-        </aside>
-        
-        <div class="profile-information-container">
-            <div class="information-container">
-                <div class="information-sub-container">
-                    <div class="information-label">Email:</div>
-                    <div class="information-text">@Model.User.Email</div>
-                </div>
-                <div class="information-sub-container">
-                    <div class="information-label">Phone Number:</div>
-                    <div class="information-text">@Model.User.PhoneNumber</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @if (!User.IsInRole("Admin"))
-    {
-        <h1 class="orders-title">Past orders:</h1>
-        @foreach (var order in Model.Orders)
-        {
-            <form class="order-box" method="get" asp-controller="Tech" asp-action="Order" asp-route-orderID="@order.OrderID">
-                <button class="order-button">
-                    <div class="order-info">
-                        <div class="order-text">Order: @order.OrderID</div>
-                        <div class="order-price-container">
-                            <div class="order-price">Paid: $@order.TotalPrice</div>
-                            <div>Bank card: @order.CardNum</div>
-                        </div>
-                    </div>
-                    <div class="order-dateTime-container">
-                        <div class="order-dateTime-label">Date of order:</div>
-                        <div class="order-dateTime">@order.OrderTime.ToShortDateString()</div>
-                        <div class="order-dateTime">@order.OrderTime.ToShortTimeString()</div>
-                    </div>
-                </button>
-            </form>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>TechStore</title>
+    <style>
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1 1 auto;
         }
-    }
-</section>
+
+        .orders-heading {
+            text-align: center;
+            font-weight: bold;
+            font-size: 50px;
+            margin-bottm: 20px;
+        }
+
+        .order-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 20px;
+            height: 200px;
+            min-height: 200px;
+            width: 80%;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+            border-radius: 15px;
+        }
+
+        .order-button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 20px;
+            height: 200px;
+            min-height: 200px;
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .order-info {
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+
+        .order-id {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .order-price-container {
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between
+        }
+
+        .order-price {
+            font-size: 20px;
+            color: #ef2809;
+            font-weight: bold;
+        }
+
+        .order-DateTime-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .order-DateTime-label {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .order-DateTime {
+            font-size: 20px;
+        }
+
+        .profile-box {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            padding: 10px;
+            height: 400px;
+            min-height: 400px;
+            width: 80%;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+            border-radius: 15px;
+            margin-bottom: 200px;
+            position: relative;
+        }
+
+        .profile-information-container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+
+        .profile-heading-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .profile-heading {
+            font-size: 40px;
+        }
+
+        .profilePicture-Username-Logout-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+
+        .profile-picture {
+            width: 200px;
+            height: 200px;
+            border-radius: 200px;
+            border: 1px solid #999999;
+            background-color: #000000;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .username-container {
+            margin-top: 20px;
+            margin-left: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+        }
+
+        .information-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .information-sub-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .information-label {
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .information-data {
+            font-size: 20px;
+        }
+
+        .logout-button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .logout-button {
+            background-color: #0082e6;
+            border-radius: 5px;
+            height: 30px;
+            width: 100px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-container">
+        <section class="profile-box">
+            <div class="profile-heading-container">
+                <h2 class="profile-heading">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <p>Welcome, Admin!</p>
+                    }
+                    else
+                    {
+                        <p>Welcome, User!</p>
+                    }
+                </h2>
+            </div>
+            <aside class="profilePicture-Username-Logout-container">
+                <img class="profile-picture"></img>
+                <div class="username-container">
+                    <div>@Model.User.FirstName @Model.User.LastName</div>
+                </div>
+                <form class="logout-button-container" asp-controller="Account" asp-action="Logout" method="post">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
+            </aside>
+            <div class="profile-information-container">
+                <div class="information-container">
+                    <div class="information-sub-container">
+                        <label class="information-label">Email:</label>
+                        <p class="information-data">@Model.User.Email</p>
+                    </div>
+                    <div class="information-sub-container">
+                        <label class="information-label">Phone Number:</label>
+                        <p class="information-data">@Model.User.PhoneNumber</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @if (!User.IsInRole("Admin"))
+        {
+            <h1 class="orders-heading">Past orders:</h1>
+            @foreach (var order in Model.Orders)
+            {
+                <form class="order-box" method="get" asp-controller="Tech" asp-action="Order" asp-route-orderID="@order.OrderID">
+                    <button class="order-button">
+                        <div class="order-info">
+                            <p class="order-id">Order: @order.OrderID</p>
+                            <div class="order-price-container">
+                                <p class="order-price">Paid: $@order.TotalPrice</p>
+                                <p>Bank card: @order.CardNum</p>
+                            </div>
+                        </div>
+                        <div class="order-DateTime-container">
+                            <label class="order-DateTime-label">Date of order:</label>
+                            <p class="order-DateTime">@order.OrderTime.ToShortDateString()</p>
+                            <p class="order-DateTime">@order.OrderTime.ToShortTimeString()</p>
+                        </div>
+                    </button>
+                </form>
+            }
+        }
+    </main>
+</body>
+</html>

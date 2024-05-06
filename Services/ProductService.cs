@@ -41,10 +41,22 @@ namespace TechStore.Services
             return product;
         }
 
-        public List<int> GetAllEnabledProductsIDs(List<int> productIDs)
+        public List<int> RemoveDisabledProductsIDs(List<int> productIDs)
         {
-            List<int> enabledProductIDs = context.Product.Where(p => productIDs.Contains(p.ProductID) && !p.isDisabled).Select(p => p.ProductID).ToList();
-            return enabledProductIDs;
+            List<int> productIDsToRemove = new List<int>();
+            foreach (int productID in productIDs)
+            {
+                bool isDisabled = context.Product.Any(p => p.ProductID == productID && p.isDisabled);
+                if (isDisabled)
+                {
+                    productIDsToRemove.Add(productID);
+                }
+            }
+            foreach (int productIDToRemove in productIDsToRemove)
+            {
+                productIDs.Remove(productIDToRemove);
+            }
+            return productIDs;
         }
 
         public List<Product> GetAllProductsInCart(List<Cart> carts)

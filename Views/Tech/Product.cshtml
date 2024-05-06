@@ -1,13 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <title>@Model.Product.Description</title>
     <style>
-        .flex-container {
+        .main-container {
             display: flex;
             flex-direction: column;
-            align-content: center;
-            flex: 1 1 auto;
-            overflow: auto;
         }
 
         .product-box {
@@ -48,17 +46,17 @@
             justify-content: space-between;
         }
 
-        .product-text-container {
+        .product-data-container {
             font-weight: bold;
             font-size: 200%;
             margin-bottom: 100px;
         }
 
-            .product-text-container div {
+            .product-data-container div {
                 margin-bottom: 30px;
             }
 
-        .product-text-info {
+        .product-text-data {
             font-weight: normal;
         }
 
@@ -155,14 +153,14 @@
             background-color: #000000;
         }
 
-        .user-name-container {
+        .username-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             margin: 20px;
         }
 
-        .user-name {
+        .username {
             align-items: center;
             justify-content: center;
             font-weight: bold;
@@ -235,14 +233,16 @@
             color: #ffffff;
         }
 
-        .reviews-title {
+        .reviews-heading {
             font-weight: bold;
             font-size: 50px;
         }
 
-        .reviews-title-container {
+        .reviews-heading-container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
 
         .posted-reviews-container {
@@ -274,25 +274,22 @@
             margin-bottom: 30px;
         }
 
-        .add-to-promotion-text-container {
-            margin-right: 10px;
+        .dicounted-price-label-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .add-to-promotion-text {
-        }
-
-        .add-to-promotion-box {
+        .create-promotion-input-box {
             height: 30px;
             width: 60px;
             border: 1px solid #999999;
             font-size: 15px;
             border-radius: 5px;
+            margin-right: 10px;
         }
 
-        .add-to-promotion-button {
+        .create-promotion-button {
             background-color: #0082e6;
             border-radius: 5px;
             height: 30px;
@@ -300,17 +297,18 @@
             color: #ffffff;
         }
 
-        .command-promotion-title {
+        .command-promotion-heading {
             font-weight: bold;
             font-size: 50px;
         }
 
-        .command-promotion-title-container {
+        .command-promotion-heading-container {
             display: flex;
             justify-content: center;
         }
 
-        .product-discounted-price {
+        .product-old-price {
+            text-decoration: line-through;
             font-size: 40px;
             font-weight: bold;
         }
@@ -349,31 +347,51 @@
                 border-radius: 15px;
                 cursor: pointer;
             }
+
+            .product-delete-button {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 350px;
+                height: 100px;
+                background: linear-gradient(to right,#cf3f50,#fe2d34);
+                border-radius: 15px;
+                cursor: pointer;
+            }
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://kit.fontawesome.com/6ca2cc534d.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.rating input').click(function () {
+                var ratingValue = $(this).val();
+            });
+        });
+    </script>
 </head>
 <body>
-    <section class="flex-container">
+    <main class="main-container">
         <section class="product-box">
             <div class="product-image-container">
                 <img class="product-image" src="@Model.Product.ImageURL">
             </div>
             <div class="product-info">
-                <div class="product-text-container">
+                <div class="product-data-container">
                     <div>@Model.Product.Description</div>
-                    <div>• Brand: <span class="product-text-info">@Model.Product.Brand</span></div>
-                    <div>• Model: <span class="product-text-info">@Model.Product.Model</span></div>
-                    <div>• Category: <span class="product-text-info">@Model.Product.CategoryName</span></div>
+                    <div>• Brand: <span class="product-text-data">@Model.Product.Brand</span></div>
+                    <div>• Model: <span class="product-text-data">@Model.Product.Model</span></div>
+                    <div>• Category: <span class="product-text-data">@Model.Product.CategoryName</span></div>
                 </div>
                 <div class="product-price-container">
                     @if (Model.Product.IsInPromotion)
                     {
-                        <s class="product-discounted-price">$@Model.Product.Price</s>
-                        <div class="product-price">Price: $@Model.Product.NewPrice</div>
+                        <p class="product-old-price">$@Model.Product.Price</p>
+                        <p class="product-price">Price: $@Model.Product.NewPrice</p>
                     }
                     else
                     {
-                        <div class="product-price">Price: $@Model.Product.Price</div>
+                        <p class="product-price">Price: $@Model.Product.Price</p>
                     }
                     @if (User.IsInRole("Admin"))
                     {
@@ -382,7 +400,7 @@
                                 <div class="product-bin-button">
                                     <i class="product-cart-icon fa-solid fa-trash-can"></i>
                                 </div>
-                                <div class="product-cart-text">Delete Product</div>
+                                <p class="product-cart-text">Delete Product</p>
                             </button>
                         </form>
                     }
@@ -393,7 +411,7 @@
                                 <div class="product-cart-button">
                                     <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
                                 </div>
-                                <div class="product-cart-text">Add to cart</div>
+                                <p class="product-cart-text">Add to cart</p>
                             </button>
                         </form>
                     }
@@ -404,26 +422,25 @@
         {
             @if (Model.Product.IsInPromotion)
             {
-                <section class="command-promotion-title-container">
-                    <div class="command-promotion-title">Revert a promotion:</div>
-                </section>
+                <div class="command-promotion-heading-container">
+                    <h2 class="command-promotion-heading">Revert a promotion:</h2>
+                </div>
                 <form class="command-promotion-container" method="post" asp-action="RevertedPromotion" asp-controller="Product">
-                    <button class="add-to-promotion-button">Revert</button>
+                    <button class="create-promotion-button">Revert</button>
                     <input hidden name="productID" value=@Model.Product.ProductID />
                 </form>
             }
             else
             {
-                <section class="command-promotion-title-container">
-                    <div class="command-promotion-title">Create a promotion:</div>
-                </section>
+                <div class="command-promotion-heading-container">
+                    <h2 class="command-promotion-heading">Create a promotion:</h2>
+                </div>
                 <form class="command-promotion-container" method="post" asp-action="CreatedPromotion" asp-controller="Product">
-                    <div class="add-to-promotion-text-container">
-                        <div class="add-to-promotion-text">Discounted Price:</div>
+                    <div class="dicounted-price-label-container">
+                        <label>Discounted Price:  $</label>
                     </div>
-                    <input class="add-to-promotion-box" name="newPrice" required />
-                    <div class="add-to-promotion-text-container"><div class="add-to-promotion-text">$</div></div>
-                    <button class="add-to-promotion-button">Create</button>
+                    <input class="create-promotion-input-box" name="newPrice" required />
+                    <button class="create-promotion-button">Create</button>
                     <input hidden name="productID" value=@Model.Product.ProductID />
                 </form>
             }
@@ -432,12 +449,12 @@
         {
             <form class="add-review-container" method="post" asp-action="CreatedReview" asp-controller="Review">
                 @Html.AntiForgeryToken()
-                <input name="productID" value="@Model.Product.ProductID" hidden/>
+                <input name="productID" value="@Model.Product.ProductID" hidden />
                 <div class="information-container">
                     <div class="profile-container">
-                        <div class="profile-picture"></div>
-                        <div class="user-name-container">
-                            <div class="user-name">@User.Identity.Name</div>
+                        <img class="profile-picture"></img>
+                        <div class="username-container">
+                            <p class="username">@User.Identity.Name</p>
                         </div>
                     </div>
                     <div class="rating-container">
@@ -456,17 +473,21 @@
                 </div>
             </form>
         }
-        <section class="reviews-title-container">
-            <div class="reviews-title">Reviews:</div>
+        <section class="reviews-heading-container">
+            <div class="reviews-heading">Reviews(@Model.Reviews.Count):</div>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <p>(You need to log in to write a review)</p>
+            }
         </section>
         @foreach (var review in Model.Reviews)
         {
             <section class="posted-reviews-container">
                 <div class="information-container">
                     <div class="profile-container">
-                        <div class="profile-picture"></div>
-                        <div class="user-name-container">
-                            <div class="user-name">@review.User.FirstName @review.User.LastName</div>
+                        <img class="profile-picture"></img>
+                        <div class="username-container">
+                            <p class="username">@review.User.FirstName @review.User.LastName</p>
                         </div>
                     </div>
                     <div class="rating-container">
@@ -478,18 +499,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="review-output-box">@review.Comment</div>
+                <article class="review-output-box">@review.Comment</article>
             </section>
         }
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="https://kit.fontawesome.com/6ca2cc534d.js" crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function () {
-                $('.rating input').click(function () {
-                    var ratingValue = $(this).val();
-                });
-            });
-        </script>
-    </section>
+    </main>
 </body>
 </html>

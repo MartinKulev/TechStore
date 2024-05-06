@@ -6,10 +6,12 @@ namespace TechStore.Services
     public class CategoryService
     {
         private TechStoreDbContext context;
+        private ProductService productService;
 
-        public CategoryService(TechStoreDbContext context)
+        public CategoryService(TechStoreDbContext context, ProductService productService)
         {
             this.context = context;
+            this.productService = productService;
         }
 
         public void CreateCategory(string categoryName)
@@ -23,8 +25,12 @@ namespace TechStore.Services
         {
             Category category = context.Category.First(p => p.CategoryName == categoryName);
             context.Category.Remove(category);
-            DeleteAllProductsFromCategory(categoryName);
             context.SaveChanges();
+            List<int> products = context.Product.Where(p => p.CategoryName == categoryName).Select(p => p.ProductID).ToList();
+            foreach (var product in products)
+            {
+                productService.DeleteProduct(product);
+            }
         }
 
         public void EditCategory(int categoryID, string newCategoryName)
@@ -49,16 +55,6 @@ namespace TechStore.Services
         {
             Category category = context.Category.First(p => p.CategoryID == categoryID);
             return category;
-        }
-
-        public void DeleteAllProductsFromCategory(string categoryName)
-        {
-            List<Product> products = context.Product.Where(p => p.CategoryName == categoryName).ToList();
-            foreach (var product in products)
-            {
-                context.Product.Remove(product);
-            }
-            context.SaveChanges();
         }
     }
 }

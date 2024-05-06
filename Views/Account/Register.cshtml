@@ -1,7 +1,8 @@
 ﻿@model RegisterModel
-<title>Register</title>
+<!DOCTYPE html>
 <html>
 <head>
+    <title>TechStore</title>
     <style>
         .validation-summary-errors {
             color: #ff0000;
@@ -10,8 +11,7 @@
             margin-bottom: 20px;
         }
 
-        .container {
-            height: 100%;
+        .main-container {
             display: flex;
             justify-content: center;
         }
@@ -79,46 +79,44 @@
 
         @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
 
-        <section class="container">
+        <main class="main-container">
             <section class="sub-container">
                 <div class="info-container">
-                    <div class="info-text-container">@Html.LabelFor(m => m.FirstName, "First Name:")</div>
+                    <p class="info-text-container">@Html.LabelFor(m => m.FirstName, "First Name:")</p>
                     @Html.TextBoxFor(m => m.FirstName, new { @class = "input-box", name = "firstName" })
                 </div>
                 <div class="info-container">
-                    <div class="info-text-container">@Html.LabelFor(m => m.LastName, "Last Name:")</div>
+                    <p class="info-text-container">@Html.LabelFor(m => m.LastName, "Last Name:")</p>
                     @Html.TextBoxFor(m => m.LastName, new { @class = "input-box", name = "lastName" })
                 </div>
                 <div class="info-container">
-                    <div class="info-text-container">@Html.LabelFor(m => m.Email, "Email:")</div>
+                    <p class="info-text-container">@Html.LabelFor(m => m.Email, "Email:")</p>
                     @Html.TextBoxFor(m => m.Email, new { @class = "input-box", name = "email" })
                 </div>
                 <div class="info-container">
-                    <div class="info-text-container">@Html.LabelFor(m => m.PhoneNumber, "Phone Number:")</div>
+                    <p class="info-text-container">@Html.LabelFor(m => m.PhoneNumber, "Phone Number:")</p>
                     @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "input-box", name = "phoneNumber" })
-
                 </div>
                 <div class="info-container">
-                    <div class="info-text-container">@Html.LabelFor(m => m.Password, "Password:")</div>
+                    <p class="info-text-container">@Html.LabelFor(m => m.Password, "Password:")</p>
                     @Html.PasswordFor(m => m.Password, new { @class = "input-box", name = "password" })
-
                 </div>
                 <div class="info-container">
-                    <div class="info-text-container">@Html.LabelFor(m => m.ConfirmPassword, "Confirm Password:")</div>
+                    <p class="info-text-container">@Html.LabelFor(m => m.ConfirmPassword, "Confirm Password:")</p>
                     @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "input-box", name = "confirmPassword" })
                 </div>
-                <div class="errors-container">@Html.ValidationMessageFor(m => m.FirstName)</div>
-                <div class="errors-container">@Html.ValidationMessageFor(m => m.LastName)</div>
-                <div class="errors-container">@Html.ValidationMessageFor(m => m.Email)</div>
-                <div class="errors-container">@Html.ValidationMessageFor(m => m.PhoneNumber)</div>
-                <div class="errors-container">@Html.ValidationMessageFor(m => m.Password)</div>
-                <div class="errors-container">@Html.ValidationMessageFor(m => m.ConfirmPassword)</div>
+                <p class="errors-container">@Html.ValidationMessageFor(m => m.FirstName)</p>
+                <p class="errors-container">@Html.ValidationMessageFor(m => m.LastName)</p>
+                <p class="errors-container">@Html.ValidationMessageFor(m => m.Email)</p>
+                <p class="errors-container">@Html.ValidationMessageFor(m => m.PhoneNumber)</p>
+                <p class="errors-container">@Html.ValidationMessageFor(m => m.Password)</p>
+                <p class="errors-container">@Html.ValidationMessageFor(m => m.ConfirmPassword)</p>
                 <div class="register-button-container">
-                    <button type="submit" value="Register" class="register-button"><div>Register</div></button>
+                    <button type="submit" value="Register" class="register-button">Register</button>
                 </div>
-                <a asp-action="Login" asp-controller="Account"><div class="login-hyperlink">Already have an account? Login.</div></a>
+                <a asp-action="Login" asp-controller="Account" class="login-hyperlink">Already have an account? Login.</a>
             </section>
-        </section>
+        </main>
     }
 </body>
 </html>
