@@ -6,7 +6,7 @@ namespace TechStore.Services.Interfaces
     {
         void CreateUser(string firstName, string lastName, string email, string phoneNumber, string password);
 
-        void DeleteUser(string userId);
+        void DeleteUser(string userID);
 
         void EditUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber);
 

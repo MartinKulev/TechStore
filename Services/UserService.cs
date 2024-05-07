@@ -1,19 +1,20 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using TechStore.Data;
 using TechStore.Data.Entities;
+using TechStore.Repositories.Interfaces;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
     public class UserService : IUserService
     {
-        private TechStoreDbContext context;
         private UserManager<ApplicationUser> userManager;
+        private IUserRepository userRepository;
 
-        public UserService(TechStoreDbContext context, UserManager<ApplicationUser> userManager)
+        public UserService(UserManager<ApplicationUser> userManager, IUserRepository userRepository)
         {
-            this.context = context;
             this.userManager = userManager;
+            this.userRepository = userRepository;
         }
 
         public void CreateUser(string firstName, string lastName, string email, string phoneNumber, string password)
@@ -27,57 +28,53 @@ namespace TechStore.Services
                 PhoneNumber = phoneNumber,
                 EmailConfirmed = true
             };
-            context.Users.Add(user);
-            context.SaveChanges();
+            userRepository.CreateUser(user);
 
             //await userManager.CreateAsync(user, password);
             //await userManager.AddToRoleAsync(user, "User");
         }
 
-        public void DeleteUser(string userId)
+        public void DeleteUser(string userID)
         {
-            ApplicationUser user = context.User.First(p => p.Id == userId);
-            context.User.Remove(user);
-            context.SaveChanges();
+            ApplicationUser user = userRepository.GetUserByID(userID);
+            userRepository.DeleteUser(user);
         }
 
         public void EditUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
         {
-            ApplicationUser oldUser = GetUserByID(userID);
+            ApplicationUser user = userRepository.GetUserByID(userID);
             if (newUserName != null)
             {
-                oldUser.UserName = newUserName;
+                user.UserName = newUserName;
             }
             if (newFirstName != null)
             {
-                oldUser.FirstName = newFirstName;
+                user.FirstName = newFirstName;
             }
             if (newLastName != null)
             {
-                oldUser.LastName = newLastName;
+                user.LastName = newLastName;
             }
             if (newEmail != null)
             {
-                oldUser.Email = newEmail;
+                user.Email = newEmail;
             }
             if (newPhoneNumber != null)
             {
-                oldUser.PhoneNumber = newPhoneNumber;
+                user.PhoneNumber = newPhoneNumber;
             }
-
-            context.Update(oldUser);
-            context.SaveChanges();
+            userRepository.UpdateUser(user);
         }
 
         public List<ApplicationUser> GetAllUsers()
         {
-            List<ApplicationUser> users = context.User.ToList();
+            List<ApplicationUser> users = userRepository.GetAllUsers();
             return users;
         }
 
-        public ApplicationUser GetUserByID(string id)
+        public ApplicationUser GetUserByID(string userID)
         {
-            ApplicationUser user = context.User.First(p => p.Id == id);
+            ApplicationUser user = userRepository.GetUserByID(userID);
             return user;
         }
     }

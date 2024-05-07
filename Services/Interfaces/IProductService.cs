@@ -8,7 +8,9 @@ namespace TechStore.Services.Interfaces
 
         void DeleteProduct(int productID);
 
-        List<Product> GetProductsByCategory(string category);
+        void DeleteAllProductsByCategoryName(string categoryName);
+
+        List<Product> GetProductsByCategoryName(string categoryName);
 
         Product GetProductByID(int productID);
 

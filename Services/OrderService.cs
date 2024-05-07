@@ -1,47 +1,43 @@
-﻿using TechStore.Data;
-using TechStore.Data.Entities;
+﻿using TechStore.Data.Entities;
+using TechStore.Repositories.Interfaces;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
     public class OrderService : IOrderService
     {
-        private TechStoreDbContext context;
         private ICartService cartService;
         private IProductService productService;
+        private IOrderRepository orderRepository;
 
-        public OrderService(TechStoreDbContext context, ICartService cartService, IProductService productService)
+        public OrderService(ICartService cartService, IProductService productService, IOrderRepository orderRepository)
         {
-            this.context = context;
             this.cartService = cartService;
             this.productService = productService;
+            this.orderRepository = orderRepository;
         }
 
-        public void CreateOrder(string userId, string name, string cardNumber, string expiryDate, int cvvNum, string adress)
+        public void CreateOrder(string userID, string name, string cardNumber, string expiryDate, int cvvNum, string adress)
         {
-            List<Cart> cartItems = cartService.GetAllCartItemsByUserID(userId);
+            List<Cart> cartItems = cartService.GetAllCartItemsByUserID(userID);
             DateTime dateTimeNow = DateTime.UtcNow + TimeSpan.FromHours(3);
             List<Product> productsInCart = productService.GetAllProductsInCart(cartItems);
             decimal totalPrice = cartService.CalculateCartTotalPrice(cartItems, productsInCart);
 
-            Order order = new Order(name, cardNumber, expiryDate, cvvNum, adress, userId, totalPrice, dateTimeNow);
-            context.Order.Add(order);
-            context.SaveChanges();
-
-            context.Entry(order).Reload();
-            string orderID = order.OrderID.ToString();
-            cartService.UpdateCartItemsByUserID(userId, orderID);
+            Order order = new Order(name, cardNumber, expiryDate, cvvNum, adress, userID, totalPrice, dateTimeNow);
+            string orderID = orderRepository.CreateOrder(order);
+            cartService.UpdateCartItemsByUserID(userID, orderID);
         }
 
         public List<Order> GetAllOrdersByUserID(string usedID)
         {
-            List<Order> orders = context.Order.Where(p => p.UserID == usedID).OrderByDescending(p => p.OrderTime).ToList();
+            List<Order> orders = orderRepository.GetAllOrdersByUserID(usedID);
             return orders;
         }
 
         public Order GetOrderByID(string orderID)
         {
-            Order order = context.Order.First(p => p.OrderID == orderID);
+            Order order = orderRepository.GetOrderByID(orderID);
             return order;
         }
     }

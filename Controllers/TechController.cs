@@ -46,7 +46,7 @@ namespace TechStore.Controllers
         [HttpGet("Tech/Category/{categoryName}")]
         public IActionResult Category(string categoryName)
         {
-            List<Product> productsByCategory = productService.GetProductsByCategory(categoryName);
+            List<Product> productsByCategory = productService.GetProductsByCategoryName(categoryName);
             return View(productsByCategory);
         }
 
@@ -64,10 +64,10 @@ namespace TechStore.Controllers
         public IActionResult Cart(int cartID)
         {
             List<Cart> cartItems = new List<Cart>();
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (User.Identity.IsAuthenticated)
             {
-                cartItems = cartService.GetAllCartItemsByUserID(userId);
+                cartItems = cartService.GetAllCartItemsByUserID(userID);
             }
             else
             {
@@ -76,7 +76,7 @@ namespace TechStore.Controllers
                 {
                     productIDs = (TempData["Products"] as IEnumerable<int>).ToList<int>();
                 }
-                cartItems = cartService.GetAllCartItemsByTempData(productIDs, userId);
+                cartItems = cartService.GetAllCartItemsByTempData(productIDs, userID);
             }
             List<Product> productsInCart = productService.GetAllProductsInCart(cartItems);           
             ViewBag.TotalPrice = cartService.CalculateCartTotalPrice(cartItems, productsInCart);
@@ -87,9 +87,9 @@ namespace TechStore.Controllers
 
         public IActionResult Profile()
         {
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ApplicationUser userByID = userService.GetUserByID(userId);
-            List<Order> ordersByUserID = orderService.GetAllOrdersByUserID(userId);
+            string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ApplicationUser userByID = userService.GetUserByID(userID);
+            List<Order> ordersByUserID = orderService.GetAllOrdersByUserID(userID);
             var viewModel = new ProfileViewModel(userByID, ordersByUserID);
             return View(viewModel);
         }

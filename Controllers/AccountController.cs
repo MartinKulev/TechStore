@@ -69,24 +69,24 @@ namespace TechStore.Controllers
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
             var ConfirmationLink = Url.Action("ConfirmEmail", "Account",
-            new { userId = user.Id, token = token }, protocol: HttpContext.Request.Scheme);
+            new { userID = user.Id, token = token }, protocol: HttpContext.Request.Scheme);
 
             await _emailSender.SendEmailAsync(email, "Confirm Your Email", $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(ConfirmationLink)}'>clicking here</a>.", true);
         }
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        public async Task<IActionResult> ConfirmEmail(string userID, string token)
         {
-            if (userId == null || token == null)
+            if (userID == null || token == null)
             {
                 return RedirectToAction("Index", "Home");
             }
 
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByIdAsync(userID);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{userId}'.");
+                return NotFound($"Unable to load user with ID '{userID}'.");
             }
 
             var result = await _userManager.ConfirmEmailAsync(user, token);
@@ -121,10 +121,10 @@ namespace TechStore.Controllers
                 {
                     if (!User.IsInRole("Admin"))
                     {
-                        string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                        string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
                         foreach (int productID in productIDs)
                         {
-                            cartService.AddProductToCart(userId, productID);
+                            cartService.AddProductToCart(userID, productID);
                         }
                     }
                     TempData["Products"] = new List<int>();

@@ -1,81 +1,61 @@
-﻿using TechStore.Data;
-using TechStore.Data.Entities;
+﻿using TechStore.Data.Entities;
+using TechStore.Repositories.Interfaces;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
     public class CartService : ICartService
     {
-        private TechStoreDbContext context;
+        private ICartRepository cartRepository;
 
-        public CartService(TechStoreDbContext context)
+        public CartService(ICartRepository cartRepository)
         {
-            this.context = context;
+            this.cartRepository = cartRepository;
         }
 
         public void AddProductToCart(string userID, int productID)
         {
             Cart cart = new Cart(userID, productID, 1);
-            if (context.Cart.Any(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered))
+            bool doesCartExists = cartRepository.DoesCartExists(userID, productID);
+            if (doesCartExists)
             {
-                Cart existingCart = GetCartItemByUserIDProductID(userID, productID);
+                Cart existingCart = cartRepository.GetCartItemByUserIDProductID(userID, productID);
                 existingCart.Quantity++;
-                context.Update(existingCart);
-                context.SaveChanges();
+                cartRepository.UpdateCart(existingCart);
             }
             else
             {
-                context.Add(cart);
-                context.SaveChanges();
+                cartRepository.CreateCart(cart);
             }
         }
 
         public void RemoveProductFromCart(string userID, int productID)
         {
-            Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered);
+            Cart cart = cartRepository.GetCartItemByUserIDProductID(userID, productID);
             if (cart.Quantity > 1)
             {
                 cart.Quantity--;
-                context.Update(cart);
-                context.SaveChanges();
+                cartRepository.UpdateCart(cart);
             }
             else
             {
-                context.Remove(cart);
-                context.SaveChanges();
+                cartRepository.DeleteCart(cart);
             }
-        }
-
-        public void UpdateCartItemsByUserID(string userID, string orderID)
-        {
-            var cartsToUpdate = context.Cart.Where(p => p.UserID == userID && !p.IsOrdered);
-            foreach (var cart in cartsToUpdate)
-            {
-                cart.OrderID = orderID;
-                cart.IsOrdered = true;
-            }
-            context.SaveChanges();
         }
 
         public List<Cart> GetAllCartItemsByOrderID(string orderID)
         {
-            List<Cart> carts = context.Cart.Where(p => p.OrderID == orderID).ToList();
+            List<Cart> carts = cartRepository.GetAllCartItemsByOrderID(orderID);
             return carts;
-        }
-
-        public Cart GetCartItemByUserIDProductID(string userID, int productID)
-        {
-            Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID);
-            return cart;
         }
 
         public List<Cart> GetAllCartItemsByUserID(string userID)
         {
-            List<Cart> carts = context.Cart.Where(p => p.UserID == userID && !p.IsOrdered).ToList();
+            List<Cart> carts = cartRepository.GetAllCartItemsByUserID(userID);
             return carts;
         }
 
-        public List<Cart> GetAllCartItemsByTempData(List<int> productIDs, string userId)
+        public List<Cart> GetAllCartItemsByTempData(List<int> productIDs, string userID)
         {
             List<Cart> carts = new List<Cart>();
             foreach (int productID in productIDs)
@@ -87,7 +67,7 @@ namespace TechStore.Services
                 }
                 else
                 {
-                    Cart newCart = new Cart(userId, productID, 1);
+                    Cart newCart = new Cart(userID, productID, 1);
                     carts.Add(newCart);
                 }
             }
@@ -96,7 +76,7 @@ namespace TechStore.Services
 
         public int GetCartItemsCountByUserID(string userID)
         {
-            int cartItemsCount = context.Cart.Where(p => p.UserID == userID && !p.IsOrdered).Sum(p => p.Quantity);
+            int cartItemsCount = cartRepository.GetCartItemsCountByUserID(userID);
             return cartItemsCount;
         }
 
@@ -116,6 +96,24 @@ namespace TechStore.Services
                 }
             }
             return totalPrice;
+        }
+
+        public void DeleteCartsWithDeletedProduct(int productID)
+        {
+            List<Cart> carts = cartRepository.GetAllCartsByProductID(productID);
+            cartRepository.DeleteMultipleCarts(carts);
+        }
+
+        public void UpdateCartItemsByUserID(string userID, string orderID)
+        {
+            List<Cart> carts = cartRepository.GetAllCartItemsByUserID(userID);
+            foreach (var cart in carts)
+            {
+                cart.OrderID = orderID;
+                cart.IsOrdered = true;
+            }
+
+            cartRepository.UpdateMultipleCarts(carts);
         }
     }
 }

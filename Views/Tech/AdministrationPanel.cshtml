@@ -619,7 +619,7 @@
                                 </form>
                                 <td class="remove-button-container">
                                     <form class="remove-button-form" method="post" asp-action="DeletedPromocode" asp-controller="Promocode">
-                                        <button class="remove-button" name="promocodeName" value="@promocode.PromocodeName">
+                                        <button class="remove-button" name="promocodeID" value="@promocode.PromocodeID">
                                             <i class="remove-icon fa-solid fa-trash-can"></i>
                                         </button>
                                     </form>
@@ -665,7 +665,7 @@
                                         <i class="edit-icon fa-solid fa-pen-to-square"></i>
                                     </button>
                                 </td>
-                                <input hidden name="categoryID" value="@category.CategoryID" />
+                                <input hidden name="categoryName" value="@category.CategoryName" />
                                 </form>
                                 <td class="remove-button-container">
                                     <form class="remove-button-form" method="post" asp-action="DeletedCategory" asp-controller="Category">

@@ -23,8 +23,8 @@ namespace TechStore.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                cartService.AddProductToCart(userId, productID);
+                string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                cartService.AddProductToCart(userID, productID);
             }
             else
             {
@@ -46,8 +46,8 @@ namespace TechStore.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                cartService.RemoveProductFromCart(userId, productID);
+                string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                cartService.RemoveProductFromCart(userID, productID);
             }
             else
             {

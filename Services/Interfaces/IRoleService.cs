@@ -1,5 +1,4 @@
-﻿
-namespace TechStore.Services.Interfaces
+﻿namespace TechStore.Services.Interfaces
 {
     public interface IRoleService
     {

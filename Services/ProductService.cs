@@ -1,44 +1,53 @@
-﻿using TechStore.Data;
-using TechStore.Data.Entities;
+﻿using TechStore.Data.Entities;
+using TechStore.Repositories.Interfaces;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
-    public class ProductService :IProductService
+    public class ProductService : IProductService
     {
-        private TechStoreDbContext context;
+        private ICartService cartService;
+        private IProductRepository productRepository;
 
-        public ProductService(TechStoreDbContext context)
+        public ProductService(ICartService cartService, IProductRepository productRepository)
         {
-            this.context = context;
+            this.cartService = cartService;
+            this.productRepository = productRepository;
         }
 
         public void CreateProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
         {
             Product product = new Product(imageURL, categoryName, description, brand, model, price);
-            context.Product.Add(product);
-            context.SaveChanges();
+            productRepository.CreateProduct(product);
         }
 
         public void DeleteProduct(int productID)
         {
-            Product product = context.Product.First(p => p.ProductID == productID);
+            Product product = productRepository.GetProductByID(productID);
             product.isDisabled = true;//Note: Product is never truly deleted. It's only disabled, so it still shown in past orders Orders
-            context.Product.Update(product);
-            var cartsToRemove = context.Cart.Where(p => p.ProductID == product.ProductID && !p.IsOrdered).ToList();
-            context.Cart.RemoveRange(cartsToRemove);
-            context.SaveChanges();
+            productRepository.UpdateProduct(product);
+            cartService.DeleteCartsWithDeletedProduct(productID);        
         }
 
-        public List<Product> GetProductsByCategory(string category)
+        public void DeleteAllProductsByCategoryName(string categoryName)
         {
-            List<Product> products = context.Product.Where(p => p.CategoryName == category && !p.isDisabled).OrderBy(p => p.Price).ToList();
+            List<Product> products = productRepository.GetProductsByCategoryName(categoryName);
+            foreach (Product product in products)
+            {
+                product.isDisabled = true;
+                productRepository.UpdateProduct(product);
+            }
+        }
+
+        public List<Product> GetProductsByCategoryName(string categoryName)
+        {
+            List<Product> products = productRepository.GetProductsByCategoryName(categoryName);
             return products;
         }
         
         public Product GetProductByID(int productID)
         {
-            Product product = context.Product.First(p => p.ProductID == productID);
+            Product product = productRepository.GetProductByID(productID);
             return product;
         }
 
@@ -47,7 +56,7 @@ namespace TechStore.Services
             List<int> productIDsToRemove = new List<int>();
             foreach (int productID in productIDs)
             {
-                bool isDisabled = context.Product.Any(p => p.ProductID == productID && p.isDisabled);
+                bool isDisabled = productRepository.IsProductDisabled(productID);
                 if (isDisabled)
                 {
                     productIDsToRemove.Add(productID);
@@ -63,38 +72,36 @@ namespace TechStore.Services
         public List<Product> GetAllProductsInCart(List<Cart> carts)
         {
             List<int> productIDs = carts.Select(cart => cart.ProductID).ToList();
-            List<Product> products = context.Product.Where(p => productIDs.Contains(p.ProductID) && !p.isDisabled).ToList();
+            List<Product> products = productRepository.GetMultipleEnabledProductsByProductIDs(productIDs);
             return products;
         }
 
         public List<Product> GetAllProductsInOrder(List<Cart> carts)
         {
             List<int> productIDs = carts.Select(cart => cart.ProductID).ToList();
-            List<Product> products = context.Product.Where(p => productIDs.Contains(p.ProductID)).ToList();
+            List<Product> products = productRepository.GetMultipleProductsByProductIDs(productIDs);
             return products;
         }
 
         public void CreatePromotion(decimal newPrice, int productID)
         {
-            Product product = context.Product.First(p => p.ProductID == productID);
+            Product product = productRepository.GetProductByID(productID);
             product.IsInPromotion = true;
             product.NewPrice = newPrice;
-            context.Update(product);
-            context.SaveChanges();
+            productRepository.UpdateProduct(product);
         }
 
         public void RevertPromotion(int productID)
         {
-            Product product = context.Product.First(p => p.ProductID == productID);
+            Product product = productRepository.GetProductByID(productID);
             product.IsInPromotion = false;
             product.NewPrice = 0;
-            context.Update(product);
-            context.SaveChanges();
+            productRepository.UpdateProduct(product);
         }
 
         public List<Product> GetAllProductsInPromotion()
         {
-            List<Product> products = context.Product.Where(p => p.IsInPromotion && !p.isDisabled).ToList();
+            List<Product> products = productRepository.GetAllProductsInPromotion();
             return products;
         }
     }

@@ -1,35 +1,33 @@
-﻿using TechStore.Data;
-using TechStore.Data.Entities;
+﻿using TechStore.Data.Entities;
+using TechStore.Repositories.Interfaces;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
     public class PromocodeService : IPromocodeService
     {
-        private TechStoreDbContext context;
+        private IPromocodeRepository promocodeRepository;
 
-        public PromocodeService(TechStoreDbContext context)
+        public PromocodeService(IPromocodeRepository promocodeRepository)
         {
-            this.context = context;
+            this.promocodeRepository = promocodeRepository;
         }
 
         public void CreatePromocode(string promocodeName, decimal discount)
         {
             Promocode promocode = new Promocode(promocodeName, discount);
-            context.Promocode.Add(promocode);
-            context.SaveChanges();
+            promocodeRepository.CreatePromocode(promocode);
         }
 
-        public void DeletePromocode(string promocodeName)
+        public void DeletePromocode(int promocodeID)
         {
-            Promocode promocode = context.Promocode.First(p => p.PromocodeName == promocodeName);
-            context.Promocode.Remove(promocode);
-            context.SaveChanges();
+            Promocode promocode = promocodeRepository.GetPromocodeByID(promocodeID);
+            promocodeRepository.DeletePromocode(promocode);
         }
 
         public void EditPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount)
         {
-            Promocode promocode = GetPromocodeByID(promocodeID);
+            Promocode promocode = promocodeRepository.GetPromocodeByID(promocodeID);
             if (newPromocodeName != null)
             {
                 promocode.PromocodeName = newPromocodeName;
@@ -38,20 +36,12 @@ namespace TechStore.Services
             {
                 promocode.Discount = newPromocodeDiscount;
             }
-
-            context.Update(promocode);
-            context.SaveChanges();
+            promocodeRepository.UpdatePromocode(promocode);
         }
 
         public List<Promocode> GetAllPromocodes()
         {
-            List<Promocode> promocodes = context.Promocode.ToList();
-            return promocodes;
-        }
-
-        public Promocode GetPromocodeByID(int promocodeID)
-        {
-            Promocode promocode = context.Promocode.First(p => p.PromocodeID == promocodeID);
+            List<Promocode> promocode = promocodeRepository.GetAllPromocodes();
             return promocode;
         }
     }

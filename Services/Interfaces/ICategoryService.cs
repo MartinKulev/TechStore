@@ -8,10 +8,8 @@ namespace TechStore.Services.Interfaces
 
         void DeleteCategory(string categoryName);
 
-        void EditCategory(int categoryID, string newCategoryName);
+        void EditCategory(string categoryName, string newCategoryName);
 
         List<Category> GetAllCategories();
-
-        Category GetCategoryByID(int categoryID);
     }
 }

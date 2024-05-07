@@ -12,14 +12,14 @@ namespace TechStore.Services.Interfaces
 
         List<Cart> GetAllCartItemsByOrderID(string orderID);
 
-        Cart GetCartItemByUserIDProductID(string userID, int productID);
-
         List<Cart> GetAllCartItemsByUserID(string userID);
 
-        List<Cart> GetAllCartItemsByTempData(List<int> productIDs, string userId);
+        List<Cart> GetAllCartItemsByTempData(List<int> productIDs, string userID);
 
         int GetCartItemsCountByUserID(string userID);
 
         decimal CalculateCartTotalPrice(List<Cart> carts, List<Product> products);
+
+        void DeleteCartsWithDeletedProduct(int productID);
     }
 }

@@ -1,61 +1,47 @@
-﻿using TechStore.Data;
-using TechStore.Data.Entities;
+﻿using TechStore.Data.Entities;
+using TechStore.Repositories.Interfaces;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
     public class CategoryService : ICategoryService
     {
-        private TechStoreDbContext context;
         private IProductService productService;
+        private ICategoryRepository categoryRepository;
 
-        public CategoryService(TechStoreDbContext context, IProductService productService)
+        public CategoryService(IProductService productService, ICategoryRepository categoryRepository)
         {
-            this.context = context;
             this.productService = productService;
+            this.categoryRepository = categoryRepository;
         }
 
         public void CreateCategory(string categoryName)
         {
             Category category = new Category(categoryName);
-            context.Category.Add(category);
-            context.SaveChanges();
+            categoryRepository.CreateCategory(category);
         }
 
         public void DeleteCategory(string categoryName)
         {
-            Category category = context.Category.First(p => p.CategoryName == categoryName);
-            context.Category.Remove(category);
-            context.SaveChanges();
-            List<int> products = context.Product.Where(p => p.CategoryName == categoryName).Select(p => p.ProductID).ToList();
-            foreach (var product in products)
-            {
-                productService.DeleteProduct(product);
-            }
+            Category category = categoryRepository.GetCategoryByCategoryName(categoryName);
+            categoryRepository.DeleteCategory(category);
+            productService.DeleteAllProductsByCategoryName(categoryName);
         }
 
-        public void EditCategory(int categoryID, string newCategoryName)
+        public void EditCategory(string categoryName, string newCategoryName)
         {
-            Category category = GetCategoryByID(categoryID);
             if (newCategoryName != null)
             {
+                Category category = categoryRepository.GetCategoryByCategoryName(categoryName);
                 category.CategoryName = newCategoryName;
+                categoryRepository.UpdateCategory(category);
             }
-
-            context.Update(category);
-            context.SaveChanges();
         }
 
         public List<Category> GetAllCategories()
         {
-            List<Category> categories = context.Category.ToList();
+            List<Category> categories = categoryRepository.GetAllCategories();
             return categories;
-        }
-
-        public Category GetCategoryByID(int categoryID)
-        {
-            Category category = context.Category.First(p => p.CategoryID == categoryID);
-            return category;
         }
     }
 }

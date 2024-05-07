@@ -5,6 +5,8 @@ using TechStore.Services;
 using TechStore.Data.Entities;
 using TechStore.Filters;
 using TechStore.Services.Interfaces;
+using TechStore.Repositories;
+using TechStore.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +42,14 @@ builder.Services.AddControllersWithViews(options =>
 {
     options.Filters.Add(typeof(TechFilter));
 });
+builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IPromocodeRepository, PromocodeRepository>();
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IOrderService, OrderService>();

@@ -6,12 +6,10 @@ namespace TechStore.Services.Interfaces
     {
         void CreatePromocode(string promocodeName, decimal discount);
 
-        void DeletePromocode(string promocodeName);
+        void DeletePromocode(int promocodeID);
 
         void EditPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount);
 
         List<Promocode> GetAllPromocodes();
-
-        Promocode GetPromocodeByID(int promocodeID);
     }
 }

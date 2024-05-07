@@ -32,9 +32,9 @@ namespace TechStore.Controllers
 
 
         [HttpPost]
-        public IActionResult EditedCategory(int categoryID, string newCategoryName)
+        public IActionResult EditedCategory(string categoryName, string newCategoryName)
         {
-            categoryService.EditCategory(categoryID, newCategoryName);
+            categoryService.EditCategory(categoryName, newCategoryName);
             TempData["Message"] = "Successfully edited a category!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }

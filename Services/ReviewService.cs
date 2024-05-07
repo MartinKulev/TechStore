@@ -1,29 +1,27 @@
-﻿using Microsoft.EntityFrameworkCore;
-using TechStore.Data;
-using TechStore.Data.Entities;
+﻿using TechStore.Data.Entities;
+using TechStore.Repositories.Interfaces;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
     public class ReviewService : IReviewService
     {
-        private TechStoreDbContext context;
+        private IReviewRepository reviewRepository;
 
-        public ReviewService(TechStoreDbContext context)
+        public ReviewService(IReviewRepository reviewRepository)
         {
-            this.context = context;
+            this.reviewRepository = reviewRepository;
         }
 
-        public void CreateReview(int productId, string userId, int rating, string comment)
+        public void CreateReview(int productID, string userID, int rating, string comment)
         {
-            Review review = new Review(productId, userId, rating, comment);
-            context.Review.Add(review);
-            context.SaveChanges();
+            Review review = new Review(productID, userID, rating, comment);
+            reviewRepository.CreateReview(review);
         }
 
-        public List<Review> GetAllReviewsByProductID(int productId)
+        public List<Review> GetAllReviewsByProductID(int productID)
         {
-            List<Review> reviews = context.Review.Where(p => p.ProductID == productId).Include(p => p.User).ToList();
+            List<Review> reviews = reviewRepository.GetAllReviewsByProductID(productID);
             return reviews;
         }
     }

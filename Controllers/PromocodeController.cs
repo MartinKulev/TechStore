@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TechStore.Services;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
@@ -24,9 +23,9 @@ namespace TechStore.Controllers
 
 
         [HttpPost]
-        public IActionResult DeletedPromocode(string promocodeName)
+        public IActionResult DeletedPromocode(int promocodeID)
         {
-            promocodeService.DeletePromocode(promocodeName);
+            promocodeService.DeletePromocode(promocodeID);
             TempData["Message"] = "Successfully deleted a promocode!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }

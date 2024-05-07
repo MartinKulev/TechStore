@@ -40,8 +40,8 @@ namespace TechStore.Filters
                 }
                 if(httpContext.User.Identity.IsAuthenticated)
                 {
-                    string userId = httpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-                    controller.ViewBag.CartItemsCount = cartService.GetCartItemsCountByUserID(userId);
+                    string userID = httpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    controller.ViewBag.CartItemsCount = cartService.GetCartItemsCountByUserID(userID);
                 }
 
                 List<Category> categories = categoryService.GetAllCategories();
