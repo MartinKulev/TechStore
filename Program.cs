@@ -1,10 +1,10 @@
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using TechStore.Data;
 using TechStore.Services;
 using TechStore.Data.Entities;
 using TechStore.Filters;
+using TechStore.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,8 +18,9 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddDbContext<TechStoreDbContext>(options =>
-    options.UseMySQL("Server=mysql-210770ab-techstore.b.aivencloud.com;Database=techstoreweb;Uid=avnadmin;Pwd=AVNS_ECNjUML_9rCSuGwr_PA;Port=15039"));
-//The connection string is exposed for testing purposes
+    options.UseMySQL("Server=mysql-210770ab-techstore.b.aivencloud.com;Database=techstoreweb;Uid=avnadmin;Pwd=AVNS_ECNjUML_9rCSuGwr_PA;Port=15039"));//The connection string is exposed for testing purposes
+//options.UseMySQL("Server=localhost;Database=techstore;Uid=root;Pwd=Martin1234;Port=3306")); //localhost database connection string
+
 
 // Setting up ASP.NET Core Identity
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -39,14 +40,14 @@ builder.Services.AddControllersWithViews(options =>
 {
     options.Filters.Add(typeof(TechFilter));
 });
-builder.Services.AddScoped<CartService>();
-builder.Services.AddScoped<CategoryService>();
-builder.Services.AddScoped<OrderService>();
-builder.Services.AddScoped<ProductService>();
-builder.Services.AddScoped<PromocodeService>();
-builder.Services.AddScoped<ReviewService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddTransient<ISenderEmail, EmailSender>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IPromocodeService, PromocodeService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 builder.Logging.AddDebug();
 builder.Logging.AddConsole();
@@ -62,7 +63,8 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     try
     {
-        await RoleService.CreateRoles(services);
+        var roleService = new RoleService();
+        await roleService.CreateRoles(services);
     }
     catch (Exception ex)
     {

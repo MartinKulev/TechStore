@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using TechStore.Data;
 using TechStore.Data.Entities;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private TechStoreDbContext context;
         private UserManager<ApplicationUser> userManager;

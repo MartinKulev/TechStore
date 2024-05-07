@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TechStore.Data.Entities;
-using TechStore.Services;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
 {
     public class CategoryController : Controller
     {
-        private CategoryService categoryService;
+        private ICategoryService categoryService;
 
-        public CategoryController(CategoryService categoryService)
+        public CategoryController(ICategoryService categoryService)
         {
             this.categoryService = categoryService;
         }

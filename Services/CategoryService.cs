@@ -1,14 +1,15 @@
 ﻿using TechStore.Data;
 using TechStore.Data.Entities;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
-    public class CategoryService
+    public class CategoryService : ICategoryService
     {
         private TechStoreDbContext context;
-        private ProductService productService;
+        private IProductService productService;
 
-        public CategoryService(TechStoreDbContext context, ProductService productService)
+        public CategoryService(TechStoreDbContext context, IProductService productService)
         {
             this.context = context;
             this.productService = productService;

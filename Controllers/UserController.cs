@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TechStore.Data.Entities;
-using TechStore.Services;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
 {
     public class UserController : Controller
     {
-        private UserService userService;
+        private IUserService userService;
 
-        public UserController(UserService userService)
+        public UserController(IUserService userService)
         {
             this.userService = userService;
         }

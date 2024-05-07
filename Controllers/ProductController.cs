@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TechStore.Data.Entities;
-using TechStore.Services;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
 {
     public class ProductController : Controller
     {
-        private ProductService productService;
+        private IProductService productService;
 
-        public ProductController(ProductService productService)
+        public ProductController(IProductService productService)
         {
             this.productService = productService;
         }

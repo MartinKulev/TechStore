@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TechStore.Data;
 using TechStore.Data.Entities;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
-    public class ReviewService
+    public class ReviewService : IReviewService
     {
         private TechStoreDbContext context;
 

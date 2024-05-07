@@ -1,16 +1,15 @@
-﻿using Microsoft.AspNetCore.Cors.Infrastructure;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using TechStore.Data.Entities;
 using TechStore.Services;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
 {
     public class OrderController : Controller
     {
-        private OrderService orderService;
+        private IOrderService orderService;
 
-        public OrderController(OrderService orderService)
+        public OrderController(IOrderService orderService)
         {
             this.orderService = orderService;
         }

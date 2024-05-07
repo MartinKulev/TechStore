@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using TechStore.Data.Entities;
-using TechStore.Services;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
 {
     public class ReviewController : Controller
     {
-        private ReviewService reviewService;
+        private IReviewService reviewService;
 
-        public ReviewController(ReviewService reviewService)
+        public ReviewController(IReviewService reviewService)
         {
             this.reviewService = reviewService;
         }

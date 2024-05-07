@@ -1,13 +1,10 @@
-﻿using Microsoft.AspNetCore.Cors.Infrastructure;
-using Mysqlx.Crud;
-using System.Security.Claims;
-using TechStore.Data;
+﻿using TechStore.Data;
 using TechStore.Data.Entities;
-using TechStore.Data.ViewModels;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
-    public class CartService
+    public class CartService : ICartService
     {
         private TechStoreDbContext context;
 

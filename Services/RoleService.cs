@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using TechStore.Data.Entities;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
-    public class RoleService
+    public class RoleService : IRoleService
     {
-        public static async Task CreateRoles(IServiceProvider serviceProvider)
+        public async Task CreateRoles(IServiceProvider serviceProvider)
         {
             var _roleManager = serviceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
 

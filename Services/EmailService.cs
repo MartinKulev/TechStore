@@ -1,17 +1,13 @@
 ﻿using System.Net.Mail;
 using System.Net;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
-    public interface ISenderEmail
-    {
-        Task SendEmailAsync(string ToEmail, string Subject, string Body, bool IsBodyHtml = false);
-    }
-
-    public class EmailSender : ISenderEmail
+    public class EmailService : IEmailService
     {
         private readonly IConfiguration _configuration;
-        public EmailSender(IConfiguration configuration)
+        public EmailService(IConfiguration configuration)
         {
             _configuration = configuration;
         }

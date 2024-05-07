@@ -2,18 +2,18 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Security.Claims;
 using TechStore.Data.Entities;
-using TechStore.Services;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Filters
 {
     public class TechFilter : IResultFilter
     {
-        private CategoryService categoryService;
-        private CartService cartService;
-        private ProductService productService;
+        private ICategoryService categoryService;
+        private ICartService cartService;
+        private IProductService productService;
         private IHttpContextAccessor httpContextAccessor;
 
-        public TechFilter(CategoryService categoryService, CartService cartService, ProductService productService, IHttpContextAccessor httpContextAccessor)
+        public TechFilter(ICategoryService categoryService, ICartService cartService, IProductService productService, IHttpContextAccessor httpContextAccessor)
         {
             this.categoryService = categoryService;
             this.cartService = cartService;

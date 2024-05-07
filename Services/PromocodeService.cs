@@ -1,9 +1,10 @@
 ﻿using TechStore.Data;
 using TechStore.Data.Entities;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
-    public class PromocodeService
+    public class PromocodeService : IPromocodeService
     {
         private TechStoreDbContext context;
 

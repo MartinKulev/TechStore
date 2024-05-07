@@ -1,15 +1,16 @@
 ﻿using TechStore.Data;
 using TechStore.Data.Entities;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
 {
-    public class OrderService
+    public class OrderService : IOrderService
     {
         private TechStoreDbContext context;
-        private CartService cartService;
-        private ProductService productService;
+        private ICartService cartService;
+        private IProductService productService;
 
-        public OrderService(TechStoreDbContext context, CartService cartService, ProductService productService)
+        public OrderService(TechStoreDbContext context, ICartService cartService, IProductService productService)
         {
             this.context = context;
             this.cartService = cartService;

@@ -1,17 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using TechStore.Data.Entities;
-using TechStore.Services;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
 {
     public class CartController : Controller
     {
-        private CartService cartService;
-        private OrderService orderService;
-        private ProductService productService;
+        private ICartService cartService;
+        private IOrderService orderService;
+        private IProductService productService;
 
-        public CartController(CartService cartService, OrderService orderService, ProductService productService)
+        public CartController(ICartService cartService, IOrderService orderService, IProductService productService)
         {
             this.cartService = cartService;        
             this.orderService = orderService;

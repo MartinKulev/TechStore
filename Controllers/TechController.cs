@@ -1,30 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 using System.Security.Claims;
 using TechStore.Data.Entities;
 using TechStore.Data.ViewModels;
-using TechStore.Services;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
 {
     public class TechController : Controller
     {
-        private CartService cartService;
-        private CategoryService categoryService;
-        private OrderService orderService;
-        private ProductService productService;
-        private PromocodeService promocodeService;
-        private ReviewService reviewService;
-        private UserService userService;
+        private ICartService cartService;
+        private ICategoryService categoryService;
+        private IOrderService orderService;
+        private IProductService productService;
+        private IPromocodeService promocodeService;
+        private IReviewService reviewService;
+        private IUserService userService;
 
         public TechController(
-            CartService cartService,
-            CategoryService categoryService,
-            OrderService orderService,
-            ProductService productService,
-            PromocodeService promocodeService,
-            ReviewService reviewService,
-            UserService userService
+            ICartService cartService,
+            ICategoryService categoryService,
+            IOrderService orderService,
+            IProductService productService,
+            IPromocodeService promocodeService,
+            IReviewService reviewService,
+            IUserService userService
             )
         {
             this.cartService = cartService;
@@ -35,7 +34,6 @@ namespace TechStore.Controllers
             this.reviewService = reviewService;
             this.userService = userService;
         }
-
 
 
         public IActionResult Homepage()

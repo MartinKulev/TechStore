@@ -1,15 +1,11 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using TechStore.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using TechStore.Services;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using TechStore.Data.Entities;
 using TechStore.Data.ViewModels;
-using static System.Collections.Specialized.BitVector32;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
 {
@@ -17,11 +13,11 @@ namespace TechStore.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly ISenderEmail _emailSender;
-        private CartService cartService;
+        private readonly IEmailService _emailSender;
+        private ICartService cartService;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISenderEmail emailSender,
-            CartService cartService, CategoryService categoryService)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailService emailSender,
+            ICartService cartService)
         {
             _userManager = userManager;
             _signInManager = signInManager;

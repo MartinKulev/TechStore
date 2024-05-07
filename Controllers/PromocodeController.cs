@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TechStore.Data.Entities;
 using TechStore.Services;
+using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
 {
     public class PromocodeController : Controller
     {
-        private PromocodeService promocodeService;
+        private IPromocodeService promocodeService;
 
-        public PromocodeController(PromocodeService promocodeService)
+        public PromocodeController(IPromocodeService promocodeService)
         {
             this.promocodeService = promocodeService;
         }
