@@ -11,5 +11,7 @@ namespace TechStore.Services.Interfaces
         void EditPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount);
 
         List<Promocode> GetAllPromocodes();
+
+        public Promocode ApplyPromocode(string promocodeName);
     }
 }

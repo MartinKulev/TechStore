@@ -9,71 +9,71 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TechStore
 build_property.RootNamespace = TechStore
-build_property.ProjectDir = C:\Users\Martin\Desktop\New folder (3)\TechStore\
+build_property.ProjectDir = C:\Users\Martin\Desktop\TechStore\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Martin\Desktop\New folder (3)\TechStore
+build_property.MSBuildProjectDirectory = C:\Users\Martin\Desktop\TechStore
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Account/Login.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Account/Register.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Shared/Error.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Tech/AdministrationPanel.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/AdministrationPanel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxBZG1pbmlzdHJhdGlvblBhbmVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Tech/Cart.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Tech/Category.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/Category.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Tech/Homepage.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/Homepage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxIb21lcGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Tech/Order.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/Order.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Tech/Payment.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Tech/Product.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/Product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Tech/Profile.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Tech/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/_ViewImports.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/_ViewStart.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Martin/Desktop/New folder (3)/TechStore/Views/Shared/_Layout.cshtml]
+[C:/Users/Martin/Desktop/TechStore/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5wa57qfvse

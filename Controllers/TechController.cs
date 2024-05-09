@@ -60,8 +60,8 @@ namespace TechStore.Controllers
             return View(viewModel);
         }
 
-
-        public IActionResult Cart(int cartID)
+        [HttpGet("Tech/Cart/{discount?}")]
+        public IActionResult Cart(decimal discount)
         {
             List<Cart> cartItems = new List<Cart>();
             string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -78,8 +78,18 @@ namespace TechStore.Controllers
                 }
                 cartItems = cartService.GetAllCartItemsByTempData(productIDs, userID);
             }
-            List<Product> productsInCart = productService.GetAllProductsInCart(cartItems);           
+            List<Product> productsInCart = productService.GetAllProductsInCart(cartItems);
             ViewBag.TotalPrice = cartService.CalculateCartTotalPrice(cartItems, productsInCart);
+            if (TempData["PromocodeMessage"] != null)
+            {
+                if ((string)TempData["PromocodeMessage"] != "Promocode does not exist!")
+                {
+                    ViewBag.OldTotalPrice = ViewBag.TotalPrice;
+                    ViewBag.TotalPrice = Math.Round(ViewBag.OldTotalPrice - (discount / 100 * ViewBag.OldTotalPrice), 2);
+                    //TempData["TotalPrice"] = (decimal)ViewBag.TotalPrice;
+                }
+            }
+
             var viewModel = new CartViewModel(cartItems, productsInCart);
             return View(viewModel);
         }
@@ -104,11 +114,12 @@ namespace TechStore.Controllers
             return View(viewModel);
         }
 
-
         public IActionResult Payment()
         {
             if (User.Identity.IsAuthenticated)
             {
+                //decimal totalPrice = (decimal)TempData["TotalPrice"];
+                //TempData["TotalPrice"] = totalPrice;
                 return View();
             }
             else

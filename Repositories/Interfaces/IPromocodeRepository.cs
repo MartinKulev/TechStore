@@ -10,6 +10,8 @@ namespace TechStore.Repositories.Interfaces
 
         Promocode GetPromocodeByID(int promocodeID);
 
+        Promocode GetPromocodeByPromocodeName(string promocodeName);
+
         void UpdatePromocode(Promocode promocode);
 
         void DeletePromocode(Promocode promocode);

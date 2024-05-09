@@ -29,6 +29,13 @@ namespace TechStore.Repositories
             Promocode promocode = context.Promocode.First(p => p.PromocodeID == promocodeID);
             return promocode;
         }
+
+        public Promocode GetPromocodeByPromocodeName(string promocodeName)
+        {
+            Promocode promocode = context.Promocode.FirstOrDefault(p => p.PromocodeName == promocodeName);
+            return promocode;
+        }
+
         public void UpdatePromocode(Promocode promocode)
         {
             context.Update(promocode);

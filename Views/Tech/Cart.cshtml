@@ -90,7 +90,7 @@
             color: #ffffff;
         }
 
-        .final-price-container {
+        .complete-cart-container {
             margin: 100px;
             display: flex;
             flex-direction: row;
@@ -105,6 +105,11 @@
         }
 
         .promocode-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .promocode-apply-container {
             display: flex;
             flex-direction: row;
         }
@@ -132,6 +137,18 @@
             color: #ffffff;
             font-weight: bold;
             font-size: 20px;
+        }
+
+        .promocode-text-container {
+            margin-top: 10px;
+        }
+
+        .promocode-red-text {
+            color: #ff0000;
+        }
+
+        .promocode-green-text {
+            color: #009900;
         }
 
         .checkout-button {
@@ -177,6 +194,16 @@
         .product-price-container {
             display: flex;
             flex-direction: column;
+        }
+
+        .final-price-container {
+        }
+
+        .final-old-price {
+            text-decoration: line-through;
+            font-size: 30px;
+            font-weight: bold;
+            color: #000000;
         }
 
         @@media (max-device-width: 767px) {
@@ -238,22 +265,66 @@
                 }
             }
         }
-        <section class="final-price-container">
-            <p class="final-price">Total: $@ViewBag.TotalPrice</p>
-            <div class="promocode-container">
-                <input class="promocode-input-box" placeholder="Enter a promocode">
-                <div class="promocode-apply-button">
-                    <p class="promocode-apply-button-text">Apply</p>
-                </div>
+        <section class="complete-cart-container">
+            <div>
+                @if (TempData["PromocodeMessage"] != null)
+                {
+                    @if ((string)TempData["PromocodeMessage"] == "Promocode does not exist!")
+                    {
+                        <p class="final-price">Total: $@ViewBag.TotalPrice</p>
+                    }
+                    else
+                    {
+                        <p class="final-old-price">$@ViewBag.OldTotalPrice</p>
+                        <p class="final-price">Total: $@ViewBag.TotalPrice</p>
+                    }
+                }
+                else
+                {
+                    <p class="final-price">Total: $@ViewBag.TotalPrice</p>
+                }
             </div>
-        </section>
-        <form method="post" asp-action="Payment" asp-controller="Tech">
-            <button class="checkout-button">
-                <div class="checkout-cart-button">
-                    <i class="checkout-cart-icon fa-solid fa-cart-shopping"></i>
+            <form class="promocode-container" method="post" asp-action="AppliedPromocode" asp-controller="Promocode">
+                <div class="promocode-apply-container">
+                    <input class="promocode-input-box" name="promocodeName" placeholder="Enter a promocode" required>
+                    <button class="promocode-apply-button">
+                        <p class="promocode-apply-button-text">Apply</p>
+                    </button>
                 </div>
-                <p class="checkout-cart-text">To Checkout</p>
-            </button>
+                <div class="promocode-text-container">
+                    @if (TempData["PromocodeMessage"] != null)
+                    {
+                        @if ((string)TempData["PromocodeMessage"] == "Promocode does not exist!")
+                        {
+                            <p class="promocode-red-text">@TempData["PromocodeMessage"]</p>
+                        }
+                        else
+                        {
+                            <p class="promocode-green-text">@TempData["PromocodeMessage"]</p>
+                        }
+                    }
+                </div>
+            </form>
+        </section>
+        <form method="post" asp-action="Payment" asp-controller="Tech">           
+            @if(ViewBag.TotalPrice == 0)
+            {
+                <div class="checkout-button">
+                    <div class="checkout-cart-button">
+                        <i class="checkout-cart-icon fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <p class="checkout-cart-text">To Checkout</p>
+                </div>
+            }
+            else
+            {
+                <button class="checkout-button">
+                    <div class="checkout-cart-button">
+                        <i class="checkout-cart-icon fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <p class="checkout-cart-text">To Checkout</p>
+                </button>
+            }
         </form>
     </main>
 </body>

@@ -44,5 +44,11 @@ namespace TechStore.Services
             List<Promocode> promocode = promocodeRepository.GetAllPromocodes();
             return promocode;
         }
+
+        public Promocode ApplyPromocode(string promocodeName)
+        {
+            Promocode promocode = promocodeRepository.GetPromocodeByPromocodeName(promocodeName);
+            return promocode;
+        }
     }
 }

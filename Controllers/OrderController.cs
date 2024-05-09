@@ -16,6 +16,7 @@ namespace TechStore.Controllers
         [HttpPost]
         public IActionResult SuccessfulPayment(string name, string cardNumber, string expiryDate, int cvvNum, string adress)
         {
+            //decimal totalPrice = (decimal)TempData["TotalPrice"];
             string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
             orderService.CreateOrder(userID, name, cardNumber, expiryDate, cvvNum, adress);
             TempData["Message"] = "The payment was successful!";
