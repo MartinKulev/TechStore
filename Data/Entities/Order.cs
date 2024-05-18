@@ -7,9 +7,8 @@ namespace TechStore.Data.Entities
     {
         public Order() { }
 
-        public Order(string name, string cardNum, string expiryDate, int cvvNum, string address, string userID, decimal totalPrice, DateTime orderTime)
+        public Order(string name, string cardNum, string expiryDate, int cvvNum, string address, string userID, decimal totalPrice, decimal oldTotalPrice)
         {
-            OrderID = Guid.NewGuid().ToString();
             Name = name;
             CardNum = cardNum;
             ExpiryDate = expiryDate;
@@ -17,10 +16,12 @@ namespace TechStore.Data.Entities
             Address = address;
             UserID = userID;
             TotalPrice = totalPrice;
-            OrderTime = orderTime;
+            OldTotalPrice = oldTotalPrice;
+            OrderTime = DateTime.UtcNow + TimeSpan.FromHours(3);
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string OrderID { get; set; }
 
         public string CardNum { get; set; }
@@ -37,6 +38,8 @@ namespace TechStore.Data.Entities
         public string UserID { get; set; }
 
         public decimal TotalPrice { get; set; }
+
+        public decimal OldTotalPrice { get; set; }
 
         public DateTime OrderTime { get; set; }
     }

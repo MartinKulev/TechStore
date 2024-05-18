@@ -19,6 +19,7 @@ namespace TechStore.Services.Interfaces
         int GetCartItemsCountByUserID(string userID);
 
         decimal CalculateCartTotalPrice(List<Cart> carts, List<Product> products);
+        decimal ApplyPromocodeToTotalPrice(decimal totalPrice, decimal discount);
 
         void DeleteCartsWithDeletedProduct(int productID);
     }

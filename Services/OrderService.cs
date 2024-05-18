@@ -17,14 +17,13 @@ namespace TechStore.Services
             this.orderRepository = orderRepository;
         }
 
-        public void CreateOrder(string userID, string name, string cardNumber, string expiryDate, int cvvNum, string adress)
+        public void CreateOrder(string userID, string name, string cardNumber, string expiryDate, int cvvNum, string adress, decimal totalPrice, decimal oldTotalPrice)
         {
             List<Cart> cartItems = cartService.GetAllCartItemsByUserID(userID);
             DateTime dateTimeNow = DateTime.UtcNow + TimeSpan.FromHours(3);
             List<Product> productsInCart = productService.GetAllProductsInCart(cartItems);
-            decimal totalPrice = cartService.CalculateCartTotalPrice(cartItems, productsInCart);
 
-            Order order = new Order(name, cardNumber, expiryDate, cvvNum, adress, userID, totalPrice, dateTimeNow);
+            Order order = new Order(name, cardNumber, expiryDate, cvvNum, adress, userID, totalPrice, oldTotalPrice);
             string orderID = orderRepository.CreateOrder(order);
             cartService.UpdateCartItemsByUserID(userID, orderID);
         }

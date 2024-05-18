@@ -44,17 +44,17 @@ namespace TechStore.Controllers
         public IActionResult AppliedPromocode(string promocodeName)
         {
             Promocode promocode = promocodeService.ApplyPromocode(promocodeName);
-            decimal discount = 0;
             if (promocode == null)
             {
                 TempData["PromocodeMessage"] = $"Promocode does not exist!";
+                TempData["PromocodeDiscount"] = "0";
             }
             else
             {
-                discount = promocode.Discount;
                 TempData["PromocodeMessage"] = $"{promocode.Discount}% discount with promocode {promocode.PromocodeName}";
+                TempData["PromocodeDiscount"] = promocode.Discount.ToString();
             }
-            return RedirectToAction("Cart", "Tech", new { discount = discount });
+            return RedirectToAction("Cart", "Tech");
         }
     }
 }

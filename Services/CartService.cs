@@ -98,6 +98,12 @@ namespace TechStore.Services
             return totalPrice;
         }
 
+        public decimal ApplyPromocodeToTotalPrice(decimal totalPrice, decimal discount)
+        {
+            totalPrice -= Math.Round(totalPrice * (discount / 100), 2);
+            return totalPrice;
+        }
+
         public void DeleteCartsWithDeletedProduct(int productID)
         {
             List<Cart> carts = cartRepository.GetAllCartsByProductID(productID);

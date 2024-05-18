@@ -204,6 +204,8 @@
             font-size: 30px;
             font-weight: bold;
             color: #000000;
+            display: flex;
+            justify-content: flex-end;
         }
 
         @@media (max-device-width: 767px) {
@@ -271,17 +273,17 @@
                 {
                     @if ((string)TempData["PromocodeMessage"] == "Promocode does not exist!")
                     {
-                        <p class="final-price">Total: $@ViewBag.TotalPrice</p>
+                        <p class="final-price">Total: $@TempData.Peek("TotalPrice")</p>
                     }
                     else
                     {
-                        <p class="final-old-price">$@ViewBag.OldTotalPrice</p>
-                        <p class="final-price">Total: $@ViewBag.TotalPrice</p>
+                        <p class="final-old-price">$@TempData.Peek("OldTotalPrice")</p>
+                        <p class="final-price">Total: $@TempData.Peek("TotalPrice")</p>
                     }
                 }
                 else
                 {
-                    <p class="final-price">Total: $@ViewBag.TotalPrice</p>
+                    <p class="final-price">Total: $@TempData.Peek("TotalPrice")</p>
                 }
             </div>
             <form class="promocode-container" method="post" asp-action="AppliedPromocode" asp-controller="Promocode">
@@ -307,7 +309,7 @@
             </form>
         </section>
         <form method="post" asp-action="Payment" asp-controller="Tech">           
-            @if(ViewBag.TotalPrice == 0)
+            @if (Convert.ToDecimal(TempData["TotalPrice"]) == 0)
             {
                 <div class="checkout-button">
                     <div class="checkout-cart-button">
@@ -324,6 +326,10 @@
                     </div>
                     <p class="checkout-cart-text">To Checkout</p>
                 </button>
+            }
+            @{
+                decimal totalPrice = Convert.ToDecimal(TempData["TotalPrice"]);
+                TempData["TotalPrice"] = totalPrice.ToString();
             }
         </form>
     </main>

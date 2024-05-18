@@ -60,8 +60,7 @@ namespace TechStore.Controllers
             return View(viewModel);
         }
 
-        [HttpGet("Tech/Cart/{discount?}")]
-        public IActionResult Cart(decimal discount)
+        public IActionResult Cart()
         {
             List<Cart> cartItems = new List<Cart>();
             string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -79,15 +78,18 @@ namespace TechStore.Controllers
                 cartItems = cartService.GetAllCartItemsByTempData(productIDs, userID);
             }
             List<Product> productsInCart = productService.GetAllProductsInCart(cartItems);
-            ViewBag.TotalPrice = cartService.CalculateCartTotalPrice(cartItems, productsInCart);
-            if (TempData["PromocodeMessage"] != null)
+
+            if (TempData["PromocodeDiscount"] != null)
             {
-                if ((string)TempData["PromocodeMessage"] != "Promocode does not exist!")
-                {
-                    ViewBag.OldTotalPrice = ViewBag.TotalPrice;
-                    ViewBag.TotalPrice = Math.Round(ViewBag.OldTotalPrice - (discount / 100 * ViewBag.OldTotalPrice), 2);
-                    //TempData["TotalPrice"] = (decimal)ViewBag.TotalPrice;
-                }
+                decimal discount = Convert.ToDecimal(TempData["PromocodeDiscount"]);
+                decimal totalPrice = cartService.CalculateCartTotalPrice(cartItems, productsInCart);
+                TempData["OldTotalPrice"] = totalPrice.ToString();
+                TempData["TotalPrice"] = cartService.ApplyPromocodeToTotalPrice(totalPrice, discount).ToString();
+            }
+            else
+            {
+                TempData["TotalPrice"] = cartService.CalculateCartTotalPrice(cartItems, productsInCart);
+                TempData["OldTotalPrice"] = "0";
             }
 
             var viewModel = new CartViewModel(cartItems, productsInCart);
@@ -118,8 +120,6 @@ namespace TechStore.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                //decimal totalPrice = (decimal)TempData["TotalPrice"];
-                //TempData["TotalPrice"] = totalPrice;
                 return View();
             }
             else
