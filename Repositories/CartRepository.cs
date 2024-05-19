@@ -1,4 +1,5 @@
-﻿using TechStore.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using TechStore.Data;
 using TechStore.Data.Entities;
 using TechStore.Repositories.Interfaces;
 
@@ -13,70 +14,64 @@ namespace TechStore.Repositories
             this.context = context;
         }
 
-        public void CreateCart(Cart cart)
+        public async Task CreateCartAsync(Cart cart)
         {
-            context.Add(cart);
-            context.SaveChanges();
-        }
-        public Cart GetCartItemByUserIDProductID(string userID, int productID)
-        {
-            Cart cart = context.Cart.First(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered);
-            return cart;
+            await context.AddAsync(cart);
+            await context.SaveChangesAsync();
         }
 
-
-        public List<Cart> GetAllCartItemsByOrderID(string orderID)
+        public async Task<Cart> GetCartItemByUserIDProductIDAsync(string userID, int productID)
         {
-            List<Cart> carts = context.Cart.Where(p => p.OrderID == orderID).ToList();
-            return carts;
+            return await context.Cart.FirstAsync(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered);                
         }
 
-        public List<Cart> GetAllCartItemsByUserID(string userID)
+        public async Task<List<Cart>> GetAllCartItemsByOrderIDAsync(string orderID)
         {
-            List<Cart> carts = context.Cart.Where(p => p.UserID == userID && !p.IsOrdered).ToList();
-            return carts;
+            return await context.Cart.Where(p => p.OrderID == orderID).ToListAsync();
         }
 
-        public List<Cart> GetAllCartsByProductID(int productID)
+        public async Task<List<Cart>> GetAllCartItemsByUserIDAsync(string userID)
         {
-            List<Cart> carts = context.Cart.Where(p => p.ProductID == productID && !p.IsOrdered).ToList();
-            return carts;
+            return await context.Cart.Where(p => p.UserID == userID && !p.IsOrdered).ToListAsync();
         }
 
-        public int GetCartItemsCountByUserID(string userID)
+        public async Task<List<Cart>> GetAllCartsByProductIDAsync(int productID)
         {
-            int cartItemsCount = context.Cart.Where(p => p.UserID == userID && !p.IsOrdered).Sum(p => p.Quantity);
-            return cartItemsCount;
+            return await context.Cart.Where(p => p.ProductID == productID && !p.IsOrdered).ToListAsync();
         }
 
-        public bool DoesCartExists(string userID, int productID)
+        public async Task<int> GetCartItemsCountByUserIDAsync(string userID)
         {
-            bool doesCartExists = context.Cart.Any(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered);
-            return doesCartExists;
+            return await context.Cart.Where(p => p.UserID == userID && !p.IsOrdered).SumAsync(p => p.Quantity);
         }
 
-        public void UpdateCart(Cart cart)
+        public async Task<bool> DoesCartExistsAsync(string userID, int productID)
+        {
+            return await context.Cart.AnyAsync(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered);
+        }
+
+        public async Task UpdateCartAsync(Cart cart)
         {
             context.Update(cart);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public void UpdateMultipleCarts(List<Cart> carts)
+        public async Task UpdateMultipleCartsAsync(List<Cart> carts)
         {
             context.UpdateRange(carts);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public void DeleteCart(Cart cart)
+        public async Task DeleteCartAsync(Cart cart)
         {
             context.Remove(cart);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public void DeleteMultipleCarts(List<Cart> carts)
+        public async Task DeleteMultipleCartsAsync(List<Cart> carts)
         {
             context.RemoveRange(carts);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }

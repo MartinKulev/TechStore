@@ -1,4 +1,5 @@
-﻿using TechStore.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using TechStore.Data;
 using TechStore.Data.Entities;
 using TechStore.Repositories.Interfaces;
 
@@ -13,25 +14,22 @@ namespace TechStore.Repositories
             this.context = context;
         }
 
-        public string CreateOrder(Order order)
+        public async Task<string> CreateOrderAsync(Order order)
         {
-            context.Add(order);
-            context.SaveChanges();
-            context.Entry(order).Reload();
-            string orderID = order.OrderID;
-            return orderID;
+            await context.AddAsync(order);
+            await context.SaveChangesAsync();
+            await context.Entry(order).ReloadAsync();
+            return order.OrderID;
         }
 
-        public List<Order> GetAllOrdersByUserID(string usedID)
+        public async Task<List<Order>> GetAllOrdersByUserIDAsync(string userID)
         {
-            List<Order> orders = context.Order.Where(p => p.UserID == usedID).OrderByDescending(p => p.OrderTime).ToList();
-            return orders;
+            return await context.Order.Where(p => p.UserID == userID).OrderByDescending(p => p.OrderTime).ToListAsync();
         }
 
-        public Order GetOrderByID(string orderID)
+        public async Task<Order> GetOrderByIDAsync(string orderID)
         {
-            Order order = context.Order.First(p => p.OrderID == orderID);
-            return order;
+            return await context.Order.FirstAsync(p => p.OrderID == orderID);
         }
     }
 }

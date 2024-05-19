@@ -19,12 +19,12 @@ namespace TechStore.Controllers
 
 
         [HttpPost]
-        public IActionResult ProductAddedToCart(int productID)
+        public async Task<IActionResult> ProductAddedToCart(int productID)
         {
             if (User.Identity.IsAuthenticated)
             {
                 string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                cartService.AddProductToCart(userID, productID);
+                await cartService.AddProductToCartAsync(userID, productID);
             }
             else
             {
@@ -42,12 +42,12 @@ namespace TechStore.Controllers
 
 
         [HttpPost]
-        public IActionResult ProductRemovedFromCart(int productID)
+        public async Task<IActionResult> ProductRemovedFromCart(int productID)
         {
             if (User.Identity.IsAuthenticated)
             {
                 string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                cartService.RemoveProductFromCart(userID, productID);
+                await cartService.RemoveProductFromCartAsync(userID, productID);
             }
             else
             {

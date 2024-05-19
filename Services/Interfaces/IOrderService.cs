@@ -4,10 +4,10 @@ namespace TechStore.Services.Interfaces
 {
     public interface IOrderService
     {
-        void CreateOrder(string userID, string name, string cardNumber, string expiryDate, int cvvNum, string adress, decimal totalPrice, decimal oldTotalPrice);
+        Task CreateOrderAsync(string userID, string name, string cardNumber, string expiryDate, int cvvNum, string adress, decimal totalPrice, decimal oldTotalPrice);
 
-        List<Order> GetAllOrdersByUserID(string usedID);
+        Task<List<Order>> GetAllOrdersByUserIDAsync(string usedID);
 
-        Order GetOrderByID(string orderID);
+        Task<Order> GetOrderByIDAsync(string orderID);
     }
 }

@@ -4,14 +4,14 @@ namespace TechStore.Repositories.Interfaces
 {
     public interface ICategoryRepository
     {
-        void CreateCategory(Category category);
+        Task CreateCategoryAsync(Category category);
 
-        List<Category> GetAllCategories();
+        Task<List<Category>> GetAllCategoriesAsync();
 
-        Category GetCategoryByCategoryName(string categoryName);
+        Task<Category> GetCategoryByCategoryNameAsync(string categoryName);
 
-        void UpdateCategory(Category category);
+        Task UpdateCategoryAsync(Category category);
 
-        void DeleteCategory(Category category);
+        Task DeleteCategoryAsync(Category category);
     }
 }

@@ -15,10 +15,10 @@ namespace TechStore.Controllers
 
 
         [HttpPost]
-        public IActionResult CreatedReview(int productID, int rating, string comment)
+        public async Task<IActionResult> CreatedReview(int productID, int rating, string comment)
         {
             var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            reviewService.CreateReview(productID, userID, rating, comment);
+            await reviewService.CreateReviewAsync(productID, userID, rating, comment);
             TempData["Message"] = "Successfully posted a review!";
             return RedirectToAction("Product", "Tech", new { productId = productID });
         }

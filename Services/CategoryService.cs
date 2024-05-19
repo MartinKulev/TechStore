@@ -15,33 +15,32 @@ namespace TechStore.Services
             this.categoryRepository = categoryRepository;
         }
 
-        public void CreateCategory(string categoryName)
+        public async Task CreateCategoryAsync(string categoryName)
         {
             Category category = new Category(categoryName);
-            categoryRepository.CreateCategory(category);
+            await categoryRepository.CreateCategoryAsync(category);
         }
 
-        public void DeleteCategory(string categoryName)
+        public async Task DeleteCategoryAsync(string categoryName)
         {
-            Category category = categoryRepository.GetCategoryByCategoryName(categoryName);
-            categoryRepository.DeleteCategory(category);
-            productService.DeleteAllProductsByCategoryName(categoryName);
+            Category category = await categoryRepository.GetCategoryByCategoryNameAsync(categoryName);
+            await categoryRepository.DeleteCategoryAsync(category);
+            await productService.DeleteAllProductsByCategoryNameAsync(categoryName);
         }
 
-        public void EditCategory(string categoryName, string newCategoryName)
+        public async Task EditCategoryAsync(string categoryName, string newCategoryName)
         {
             if (newCategoryName != null)
             {
-                Category category = categoryRepository.GetCategoryByCategoryName(categoryName);
+                Category category = await categoryRepository.GetCategoryByCategoryNameAsync(categoryName);
                 category.CategoryName = newCategoryName;
-                categoryRepository.UpdateCategory(category);
+                await categoryRepository.UpdateCategoryAsync(category);
             }
         }
 
-        public List<Category> GetAllCategories()
+        public async Task<List<Category>> GetAllCategoriesAsync()
         {
-            List<Category> categories = categoryRepository.GetAllCategories();
-            return categories;
+            return await categoryRepository.GetAllCategoriesAsync();
         }
     }
 }

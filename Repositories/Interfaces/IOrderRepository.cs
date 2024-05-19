@@ -4,10 +4,10 @@ namespace TechStore.Repositories.Interfaces
 {
     public interface IOrderRepository
     {
-        string CreateOrder(Order order);
+        Task<string> CreateOrderAsync(Order order);
 
-        List<Order> GetAllOrdersByUserID(string usedID);
+        Task<List<Order>> GetAllOrdersByUserIDAsync(string usedID);
 
-        Order GetOrderByID(string orderID);
+        Task<Order> GetOrderByIDAsync(string orderID);
     }
 }

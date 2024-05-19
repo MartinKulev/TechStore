@@ -4,14 +4,14 @@ namespace TechStore.Services.Interfaces
 {
     public interface IPromocodeService
     {
-        void CreatePromocode(string promocodeName, decimal discount);
+        Task CreatePromocodeAsync(string promocodeName, decimal discount);
 
-        void DeletePromocode(int promocodeID);
+        Task DeletePromocodeAsync(int promocodeID);
 
-        void EditPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount);
+        Task EditPromocodeAsync(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount);
 
-        List<Promocode> GetAllPromocodes();
+        Task<List<Promocode>> GetAllPromocodesAsync();
 
-        public Promocode ApplyPromocode(string promocodeName);
+        Task<Promocode> ApplyPromocodeAsync(string promocodeName);
     }
 }

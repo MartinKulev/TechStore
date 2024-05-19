@@ -1,4 +1,5 @@
-﻿using TechStore.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using TechStore.Data;
 using TechStore.Data.Entities;
 using TechStore.Repositories.Interfaces;
 
@@ -12,40 +13,38 @@ namespace TechStore.Repositories
         {
             this.context = context;
         }
-        public void CreatePromocode(Promocode promocode)
+
+        public async Task CreatePromocodeAsync(Promocode promocode)
         {
-            context.Promocode.Add(promocode);
-            context.SaveChanges();
+            await context.Promocode.AddAsync(promocode);
+            await context.SaveChangesAsync();
         }
 
-        public List<Promocode> GetAllPromocodes()
+        public async Task<List<Promocode>> GetAllPromocodesAsync()
         {
-            List<Promocode> promocodes = context.Promocode.ToList();
-            return promocodes;
+            return await context.Promocode.ToListAsync();
         }
 
-        public Promocode GetPromocodeByID(int promocodeID)
+        public async Task<Promocode> GetPromocodeByIDAsync(int promocodeID)
         {
-            Promocode promocode = context.Promocode.First(p => p.PromocodeID == promocodeID);
-            return promocode;
+            return await context.Promocode.FirstAsync(p => p.PromocodeID == promocodeID);
         }
 
-        public Promocode GetPromocodeByPromocodeName(string promocodeName)
+        public async Task<Promocode> GetPromocodeByPromocodeNameAsync(string promocodeName)
         {
-            Promocode promocode = context.Promocode.FirstOrDefault(p => p.PromocodeName == promocodeName);
-            return promocode;
+            return await context.Promocode.FirstOrDefaultAsync(p => p.PromocodeName == promocodeName);
         }
 
-        public void UpdatePromocode(Promocode promocode)
+        public async Task UpdatePromocodeAsync(Promocode promocode)
         {
             context.Update(promocode);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public void DeletePromocode(Promocode promocode)
+        public async Task DeletePromocodeAsync(Promocode promocode)
         {
             context.Remove(promocode);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }

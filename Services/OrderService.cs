@@ -17,27 +17,25 @@ namespace TechStore.Services
             this.orderRepository = orderRepository;
         }
 
-        public void CreateOrder(string userID, string name, string cardNumber, string expiryDate, int cvvNum, string adress, decimal totalPrice, decimal oldTotalPrice)
+        public async Task CreateOrderAsync(string userID, string name, string cardNumber, string expiryDate, int cvvNum, string address, decimal totalPrice, decimal oldTotalPrice)
         {
-            List<Cart> cartItems = cartService.GetAllCartItemsByUserID(userID);
+            List<Cart> cartItems = await cartService.GetAllCartItemsByUserIDAsync(userID);
             DateTime dateTimeNow = DateTime.UtcNow + TimeSpan.FromHours(3);
-            List<Product> productsInCart = productService.GetAllProductsInCart(cartItems);
+            List<Product> productsInCart = await productService.GetAllProductsInCartAsync(cartItems);
 
-            Order order = new Order(name, cardNumber, expiryDate, cvvNum, adress, userID, totalPrice, oldTotalPrice);
-            string orderID = orderRepository.CreateOrder(order);
-            cartService.UpdateCartItemsByUserID(userID, orderID);
+            Order order = new Order(name, cardNumber, expiryDate, cvvNum, address, userID, totalPrice, oldTotalPrice);
+            string orderID = await orderRepository.CreateOrderAsync(order);
+            await cartService.UpdateCartItemsByUserIDAsync(userID, orderID);
         }
 
-        public List<Order> GetAllOrdersByUserID(string usedID)
+        public async Task<List<Order>> GetAllOrdersByUserIDAsync(string userID)
         {
-            List<Order> orders = orderRepository.GetAllOrdersByUserID(usedID);
-            return orders;
+            return await orderRepository.GetAllOrdersByUserIDAsync(userID);
         }
 
-        public Order GetOrderByID(string orderID)
+        public async Task<Order> GetOrderByIDAsync(string orderID)
         {
-            Order order = orderRepository.GetOrderByID(orderID);
-            return order;
+            return await orderRepository.GetOrderByIDAsync(orderID);
         }
     }
 }

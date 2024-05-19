@@ -14,36 +14,36 @@ namespace TechStore.Controllers
 
 
         [HttpPost]
-        public IActionResult CreatedProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
+        public async Task<IActionResult> CreatedProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
         {
-            productService.CreateProduct(imageURL, categoryName, description, brand, model, price);
+            await productService.CreateProductAsync(imageURL, categoryName, description, brand, model, price);
             TempData["Message"] = "Successfully added a product!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }
 
 
         [HttpPost]
-        public IActionResult DeletedProduct(int productID)
+        public async Task<IActionResult> DeletedProduct(int productID)
         {
-            productService.DeleteProduct(productID);
+            await productService.DeleteProductAsync(productID);
             TempData["Message"] = "Successfully deleted a product!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }
 
 
         [HttpPost]
-        public IActionResult CreatedPromotion(decimal newPrice, int productID)
+        public async Task<IActionResult> CreatedPromotion(decimal newPrice, int productID)
         {
-            productService.CreatePromotion(newPrice, productID);
+            await productService.CreatePromotionAsync(newPrice, productID);
             TempData["Message"] = "Successfully added a promotion!";
             return RedirectToAction("Product", "Tech", new { productID = productID });
         }
 
 
         [HttpPost]
-        public IActionResult RevertedPromotion(int productID)
+        public async Task<IActionResult> RevertedPromotion(int productID)
         {
-            productService.RevertPromotion(productID);
+            await productService.RevertPromotionAsync(productID);
             TempData["Message"] = "Successfully reverted a promotion!";
             return RedirectToAction("Product", "Tech", new { productID = productID });
         }

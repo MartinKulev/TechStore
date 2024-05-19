@@ -13,16 +13,15 @@ namespace TechStore.Services
             this.reviewRepository = reviewRepository;
         }
 
-        public void CreateReview(int productID, string userID, int rating, string comment)
+        public async Task CreateReviewAsync(int productID, string userID, int rating, string comment)
         {
             Review review = new Review(productID, userID, rating, comment);
-            reviewRepository.CreateReview(review);
+            await reviewRepository.CreateReviewAsync(review);
         }
 
-        public List<Review> GetAllReviewsByProductID(int productID)
+        public async Task<List<Review>> GetAllReviewsByProductIDAsync(int productID)
         {
-            List<Review> reviews = reviewRepository.GetAllReviewsByProductID(productID);
-            return reviews;
+            return await reviewRepository.GetAllReviewsByProductIDAsync(productID);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using TechStore.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using TechStore.Data;
 using TechStore.Data.Entities;
 using TechStore.Repositories.Interfaces;
 
@@ -13,52 +14,46 @@ namespace TechStore.Repositories
             this.context = context;
         }
 
-        public void CreateProduct(Product product)
+        public async Task CreateProductAsync(Product product)
         {
-            context.Add(product);
-            context.SaveChanges();
+            await context.AddAsync(product);
+            await context.SaveChangesAsync();
         }
 
-        public void UpdateProduct(Product product)
+        public async Task UpdateProductAsync(Product product)
         {
             context.Update(product);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public List<Product> GetProductsByCategoryName(string category)
+        public async Task<List<Product>> GetProductsByCategoryNameAsync(string category)
         {
-            List<Product> products = context.Product.Where(p => p.CategoryName == category && !p.isDisabled).OrderBy(p => p.Price).ToList();
-            return products;
+            return await context.Product.Where(p => p.CategoryName == category && !p.isDisabled).OrderBy(p => p.Price).ToListAsync();
         }
 
-        public Product GetProductByID(int productID)
+        public async Task<Product> GetProductByIDAsync(int productID)
         {
-            Product product = context.Product.First(p => p.ProductID == productID);
-            return product;
+            return await context.Product.FirstAsync(p => p.ProductID == productID);
         }
 
-        public bool IsProductDisabled(int productID)
+        public async Task<bool> IsProductDisabledAsync(int productID)
         {
-            bool isDisabled = context.Product.Any(p => p.ProductID == productID && p.isDisabled);
-            return isDisabled;
+            return await context.Product.AnyAsync(p => p.ProductID == productID && p.isDisabled);
         }
 
-        public List<Product> GetMultipleEnabledProductsByProductIDs(List<int> productIDs)
+        public async Task<List<Product>> GetMultipleEnabledProductsByProductIDsAsync(List<int> productIDs)
         {
-            List<Product> products = context.Product.Where(p => productIDs.Contains(p.ProductID) && !p.isDisabled).ToList();
-            return products;
+            return await context.Product.Where(p => productIDs.Contains(p.ProductID) && !p.isDisabled).ToListAsync();
         }
 
-        public List<Product> GetMultipleProductsByProductIDs(List<int> productIDs)
+        public async Task<List<Product>> GetMultipleProductsByProductIDsAsync(List<int> productIDs)
         {
-            List<Product> products = context.Product.Where(p => productIDs.Contains(p.ProductID)).ToList();
-            return products;
+            return await context.Product.Where(p => productIDs.Contains(p.ProductID)).ToListAsync();
         }
 
-        public List<Product> GetAllProductsInPromotion()
+        public async Task<List<Product>> GetAllProductsInPromotionAsync()
         {
-            List<Product> products = context.Product.Where(p => p.IsInPromotion && !p.isDisabled).ToList();
-            return products;
+            return await context.Product.Where(p => p.IsInPromotion && !p.isDisabled).ToListAsync();
         }
     }
 }

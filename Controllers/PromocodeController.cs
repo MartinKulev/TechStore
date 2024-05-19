@@ -15,35 +15,35 @@ namespace TechStore.Controllers
 
 
         [HttpPost]
-        public IActionResult CreatedPromocode(string promocodeName, decimal discount)
+        public async Task<IActionResult> CreatedPromocode(string promocodeName, decimal discount)
         {
-            promocodeService.CreatePromocode(promocodeName, discount);
+            await promocodeService.CreatePromocodeAsync(promocodeName, discount);
             TempData["Message"] = "Successfully created a promocode!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }
 
 
         [HttpPost]
-        public IActionResult DeletedPromocode(int promocodeID)
+        public async Task<IActionResult> DeletedPromocode(int promocodeID)
         {
-            promocodeService.DeletePromocode(promocodeID);
+            await promocodeService.DeletePromocodeAsync(promocodeID);
             TempData["Message"] = "Successfully deleted a promocode!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }
 
 
         [HttpPost]
-        public IActionResult EditedPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount)
+        public async Task<IActionResult> EditedPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount)
         {
-            promocodeService.EditPromocode(promocodeID, newPromocodeName, newPromocodeDiscount);
+            await promocodeService.EditPromocodeAsync(promocodeID, newPromocodeName, newPromocodeDiscount);
             TempData["Message"] = "Successfully edited a promocode!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }
 
         [HttpPost]
-        public IActionResult AppliedPromocode(string promocodeName)
+        public async Task<IActionResult> AppliedPromocode(string promocodeName)
         {
-            Promocode promocode = promocodeService.ApplyPromocode(promocodeName);
+            Promocode promocode = await promocodeService.ApplyPromocodeAsync(promocodeName);
             if (promocode == null)
             {
                 TempData["PromocodeMessage"] = $"Promocode does not exist!";

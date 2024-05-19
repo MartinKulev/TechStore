@@ -14,16 +14,15 @@ namespace TechStore.Repositories
             this.context = context;
         }
 
-        public void CreateReview(Review review)
+        public async Task CreateReviewAsync(Review review)
         {
-            context.Add(review);
-            context.SaveChanges();
+            await context.AddAsync(review);
+            await context.SaveChangesAsync();
         }
 
-        public List<Review> GetAllReviewsByProductID(int productID)
+        public async Task<List<Review>> GetAllReviewsByProductIDAsync(int productID)
         {
-            List<Review> reviews = context.Review.Where(p => p.ProductID == productID).Include(p => p.User).ToList();
-            return reviews;
+            return await context.Review.Where(r => r.ProductID == productID).Include(r => r.User).ToListAsync();
         }
     }
 }

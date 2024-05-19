@@ -14,12 +14,12 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult SuccessfulPayment(string name, string cardNumber, string expiryDate, int cvvNum, string adress)
+        public async Task<IActionResult> SuccessfulPayment(string name, string cardNumber, string expiryDate, int cvvNum, string adress)
         {
             decimal totalPrice = Convert.ToDecimal(TempData["TotalPrice"]);
             decimal oldTotalPrice = Convert.ToDecimal(TempData["OldTotalPrice"]);
             string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            orderService.CreateOrder(userID, name, cardNumber, expiryDate, cvvNum, adress, totalPrice, oldTotalPrice);
+            await orderService.CreateOrderAsync(userID, name, cardNumber, expiryDate, cvvNum, adress, totalPrice, oldTotalPrice);
             TempData["Message"] = "The payment was successful!";
             return RedirectToAction("Profile", "Tech");
         }

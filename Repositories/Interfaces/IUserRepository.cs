@@ -4,14 +4,14 @@ namespace TechStore.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-        void CreateUser(ApplicationUser user);
+        Task CreateUserAsync(ApplicationUser user);
 
-        List<ApplicationUser> GetAllUsers();
+        Task<List<ApplicationUser>> GetAllUsersAsync();
 
-        ApplicationUser GetUserByID(string userID);
+        Task<ApplicationUser> GetUserByIDAsync(string userID);
 
-        void UpdateUser(ApplicationUser user);
+        Task UpdateUserAsync(ApplicationUser user);
 
-        void DeleteUser(ApplicationUser user);
+        Task DeleteUserAsync(ApplicationUser user);
     }
 }

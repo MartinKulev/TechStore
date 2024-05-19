@@ -13,46 +13,44 @@ namespace TechStore.Services
             this.cartRepository = cartRepository;
         }
 
-        public void AddProductToCart(string userID, int productID)
+        public async Task AddProductToCartAsync(string userID, int productID)
         {
             Cart cart = new Cart(userID, productID, 1);
-            bool doesCartExists = cartRepository.DoesCartExists(userID, productID);
+            bool doesCartExists = await cartRepository.DoesCartExistsAsync(userID, productID);
             if (doesCartExists)
             {
-                Cart existingCart = cartRepository.GetCartItemByUserIDProductID(userID, productID);
+                Cart existingCart = await cartRepository.GetCartItemByUserIDProductIDAsync(userID, productID);
                 existingCart.Quantity++;
-                cartRepository.UpdateCart(existingCart);
+                await cartRepository.UpdateCartAsync(existingCart);
             }
             else
             {
-                cartRepository.CreateCart(cart);
+                await cartRepository.CreateCartAsync(cart);
             }
         }
 
-        public void RemoveProductFromCart(string userID, int productID)
+        public async Task RemoveProductFromCartAsync(string userID, int productID)
         {
-            Cart cart = cartRepository.GetCartItemByUserIDProductID(userID, productID);
+            Cart cart = await cartRepository.GetCartItemByUserIDProductIDAsync(userID, productID);
             if (cart.Quantity > 1)
             {
                 cart.Quantity--;
-                cartRepository.UpdateCart(cart);
+                await cartRepository.UpdateCartAsync(cart);
             }
             else
             {
-                cartRepository.DeleteCart(cart);
+                await cartRepository.DeleteCartAsync(cart);
             }
         }
 
-        public List<Cart> GetAllCartItemsByOrderID(string orderID)
+        public async Task<List<Cart>> GetAllCartItemsByOrderIDAsync(string orderID)
         {
-            List<Cart> carts = cartRepository.GetAllCartItemsByOrderID(orderID);
-            return carts;
+            return await cartRepository.GetAllCartItemsByOrderIDAsync(orderID);
         }
 
-        public List<Cart> GetAllCartItemsByUserID(string userID)
+        public async Task<List<Cart>> GetAllCartItemsByUserIDAsync(string userID)
         {
-            List<Cart> carts = cartRepository.GetAllCartItemsByUserID(userID);
-            return carts;
+            return await cartRepository.GetAllCartItemsByUserIDAsync(userID);
         }
 
         public List<Cart> GetAllCartItemsByTempData(List<int> productIDs, string userID)
@@ -74,10 +72,9 @@ namespace TechStore.Services
             return carts;
         }
 
-        public int GetCartItemsCountByUserID(string userID)
+        public async Task<int> GetCartItemsCountByUserIDAsync(string userID)
         {
-            int cartItemsCount = cartRepository.GetCartItemsCountByUserID(userID);
-            return cartItemsCount;
+            return await cartRepository.GetCartItemsCountByUserIDAsync(userID);
         }
 
         public decimal CalculateCartTotalPrice(List<Cart> carts, List<Product> products)
@@ -104,22 +101,22 @@ namespace TechStore.Services
             return totalPrice;
         }
 
-        public void DeleteCartsWithDeletedProduct(int productID)
+        public async Task DeleteCartsWithDeletedProductAsync(int productID)
         {
-            List<Cart> carts = cartRepository.GetAllCartsByProductID(productID);
-            cartRepository.DeleteMultipleCarts(carts);
+            List<Cart> carts = await cartRepository.GetAllCartsByProductIDAsync(productID);
+            await cartRepository.DeleteMultipleCartsAsync(carts);
         }
 
-        public void UpdateCartItemsByUserID(string userID, string orderID)
+        public async Task UpdateCartItemsByUserIDAsync(string userID, string orderID)
         {
-            List<Cart> carts = cartRepository.GetAllCartItemsByUserID(userID);
+            List<Cart> carts = await cartRepository.GetAllCartItemsByUserIDAsync(userID);
             foreach (var cart in carts)
             {
                 cart.OrderID = orderID;
                 cart.IsOrdered = true;
             }
 
-            cartRepository.UpdateMultipleCarts(carts);
+            await cartRepository.UpdateMultipleCartsAsync(carts);
         }
     }
 }

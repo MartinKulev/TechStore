@@ -15,48 +15,52 @@ namespace TechStore.Services
             this.productRepository = productRepository;
         }
 
-        public void CreateProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price)
+        public ProductService(IProductRepository productRepository, ICartService cartService)
+        {
+            this.productRepository = productRepository;
+            this.cartService = cartService;
+        }
+
+        public async Task CreateProductAsync(string imageURL, string categoryName, string description, string brand, string model, decimal price)
         {
             Product product = new Product(imageURL, categoryName, description, brand, model, price);
-            productRepository.CreateProduct(product);
+            await productRepository.CreateProductAsync(product);
         }
 
-        public void DeleteProduct(int productID)
+        public async Task DeleteProductAsync(int productID)
         {
-            Product product = productRepository.GetProductByID(productID);
-            product.isDisabled = true;//Note: Product is never truly deleted. It's only disabled, so it still shown in past orders Orders
-            productRepository.UpdateProduct(product);
-            cartService.DeleteCartsWithDeletedProduct(productID);        
+            Product product = await productRepository.GetProductByIDAsync(productID);
+            product.isDisabled = true;
+            await productRepository.UpdateProductAsync(product);
+            await cartService.DeleteCartsWithDeletedProductAsync(productID);
         }
 
-        public void DeleteAllProductsByCategoryName(string categoryName)
+        public async Task DeleteAllProductsByCategoryNameAsync(string categoryName)
         {
-            List<Product> products = productRepository.GetProductsByCategoryName(categoryName);
+            List<Product> products = await productRepository.GetProductsByCategoryNameAsync(categoryName);
             foreach (Product product in products)
             {
                 product.isDisabled = true;
-                productRepository.UpdateProduct(product);
+                await productRepository.UpdateProductAsync(product);
             }
         }
 
-        public List<Product> GetProductsByCategoryName(string categoryName)
+        public async Task<List<Product>> GetProductsByCategoryNameAsync(string categoryName)
         {
-            List<Product> products = productRepository.GetProductsByCategoryName(categoryName);
-            return products;
-        }
-        
-        public Product GetProductByID(int productID)
-        {
-            Product product = productRepository.GetProductByID(productID);
-            return product;
+            return await productRepository.GetProductsByCategoryNameAsync(categoryName);
         }
 
-        public List<int> RemoveDisabledProductsIDs(List<int> productIDs)
+        public async Task<Product> GetProductByIDAsync(int productID)
+        {
+            return await productRepository.GetProductByIDAsync(productID);
+        }
+
+        public async Task<List<int>> RemoveDisabledProductsIDsAsync(List<int> productIDs)
         {
             List<int> productIDsToRemove = new List<int>();
             foreach (int productID in productIDs)
             {
-                bool isDisabled = productRepository.IsProductDisabled(productID);
+                bool isDisabled = await productRepository.IsProductDisabledAsync(productID);
                 if (isDisabled)
                 {
                     productIDsToRemove.Add(productID);
@@ -69,40 +73,37 @@ namespace TechStore.Services
             return productIDs;
         }
 
-        public List<Product> GetAllProductsInCart(List<Cart> carts)
+        public async Task<List<Product>> GetAllProductsInCartAsync(List<Cart> carts)
         {
             List<int> productIDs = carts.Select(cart => cart.ProductID).ToList();
-            List<Product> products = productRepository.GetMultipleEnabledProductsByProductIDs(productIDs);
-            return products;
+            return await productRepository.GetMultipleEnabledProductsByProductIDsAsync(productIDs);
         }
 
-        public List<Product> GetAllProductsInOrder(List<Cart> carts)
+        public async Task<List<Product>> GetAllProductsInOrderAsync(List<Cart> carts)
         {
             List<int> productIDs = carts.Select(cart => cart.ProductID).ToList();
-            List<Product> products = productRepository.GetMultipleProductsByProductIDs(productIDs);
-            return products;
+            return await productRepository.GetMultipleProductsByProductIDsAsync(productIDs);
         }
 
-        public void CreatePromotion(decimal newPrice, int productID)
+        public async Task CreatePromotionAsync(decimal newPrice, int productID)
         {
-            Product product = productRepository.GetProductByID(productID);
+            Product product = await productRepository.GetProductByIDAsync(productID);
             product.IsInPromotion = true;
             product.NewPrice = newPrice;
-            productRepository.UpdateProduct(product);
+            await productRepository.UpdateProductAsync(product);
         }
 
-        public void RevertPromotion(int productID)
+        public async Task RevertPromotionAsync(int productID)
         {
-            Product product = productRepository.GetProductByID(productID);
+            Product product = await productRepository.GetProductByIDAsync(productID);
             product.IsInPromotion = false;
             product.NewPrice = 0;
-            productRepository.UpdateProduct(product);
+            await productRepository.UpdateProductAsync(product);
         }
 
-        public List<Product> GetAllProductsInPromotion()
+        public async Task<List<Product>> GetAllProductsInPromotionAsync()
         {
-            List<Product> products = productRepository.GetAllProductsInPromotion();
-            return products;
+            return await productRepository.GetAllProductsInPromotionAsync();
         }
     }
 }

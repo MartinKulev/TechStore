@@ -13,21 +13,21 @@ namespace TechStore.Services
             this.promocodeRepository = promocodeRepository;
         }
 
-        public void CreatePromocode(string promocodeName, decimal discount)
+        public async Task CreatePromocodeAsync(string promocodeName, decimal discount)
         {
             Promocode promocode = new Promocode(promocodeName, discount);
-            promocodeRepository.CreatePromocode(promocode);
+            await promocodeRepository.CreatePromocodeAsync(promocode);
         }
 
-        public void DeletePromocode(int promocodeID)
+        public async Task DeletePromocodeAsync(int promocodeID)
         {
-            Promocode promocode = promocodeRepository.GetPromocodeByID(promocodeID);
-            promocodeRepository.DeletePromocode(promocode);
+            Promocode promocode = await promocodeRepository.GetPromocodeByIDAsync(promocodeID);
+            await promocodeRepository.DeletePromocodeAsync(promocode);
         }
 
-        public void EditPromocode(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount)
+        public async Task EditPromocodeAsync(int promocodeID, string newPromocodeName, decimal newPromocodeDiscount)
         {
-            Promocode promocode = promocodeRepository.GetPromocodeByID(promocodeID);
+            Promocode promocode = await promocodeRepository.GetPromocodeByIDAsync(promocodeID);
             if (newPromocodeName != null)
             {
                 promocode.PromocodeName = newPromocodeName;
@@ -36,19 +36,17 @@ namespace TechStore.Services
             {
                 promocode.Discount = newPromocodeDiscount;
             }
-            promocodeRepository.UpdatePromocode(promocode);
+            await promocodeRepository.UpdatePromocodeAsync(promocode);
         }
 
-        public List<Promocode> GetAllPromocodes()
+        public async Task<List<Promocode>> GetAllPromocodesAsync()
         {
-            List<Promocode> promocode = promocodeRepository.GetAllPromocodes();
-            return promocode;
+            return await promocodeRepository.GetAllPromocodesAsync();
         }
 
-        public Promocode ApplyPromocode(string promocodeName)
+        public async Task<Promocode> ApplyPromocodeAsync(string promocodeName)
         {
-            Promocode promocode = promocodeRepository.GetPromocodeByPromocodeName(promocodeName);
-            return promocode;
+            return await promocodeRepository.GetPromocodeByPromocodeNameAsync(promocodeName);
         }
     }
 }

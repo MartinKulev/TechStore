@@ -4,23 +4,24 @@ namespace TechStore.Services.Interfaces
 {
     public interface ICartService
     {
-        void AddProductToCart(string userID, int productID);
+        Task AddProductToCartAsync(string userID, int productID);
 
-        void RemoveProductFromCart(string userID, int productID);
+        Task RemoveProductFromCartAsync(string userID, int productID);
 
-        void UpdateCartItemsByUserID(string userID, string orderID);
+        Task UpdateCartItemsByUserIDAsync(string userID, string orderID);
 
-        List<Cart> GetAllCartItemsByOrderID(string orderID);
+        Task<List<Cart>> GetAllCartItemsByOrderIDAsync(string orderID);
 
-        List<Cart> GetAllCartItemsByUserID(string userID);
+        Task<List<Cart>> GetAllCartItemsByUserIDAsync(string userID);
 
         List<Cart> GetAllCartItemsByTempData(List<int> productIDs, string userID);
 
-        int GetCartItemsCountByUserID(string userID);
+        Task<int> GetCartItemsCountByUserIDAsync(string userID);
 
         decimal CalculateCartTotalPrice(List<Cart> carts, List<Product> products);
+
         decimal ApplyPromocodeToTotalPrice(decimal totalPrice, decimal discount);
 
-        void DeleteCartsWithDeletedProduct(int productID);
+        Task DeleteCartsWithDeletedProductAsync(int productID);
     }
 }

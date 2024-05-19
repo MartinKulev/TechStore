@@ -124,7 +124,7 @@ namespace TechStore.Controllers
                         string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
                         foreach (int productID in productIDs)
                         {
-                            cartService.AddProductToCart(userID, productID);
+                            await cartService.AddProductToCartAsync(userID, productID);
                         }
                     }
                     TempData["Products"] = new List<int>();

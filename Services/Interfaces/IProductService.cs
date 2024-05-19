@@ -4,26 +4,26 @@ namespace TechStore.Services.Interfaces
 {
     public interface IProductService
     {
-        void CreateProduct(string imageURL, string categoryName, string description, string brand, string model, decimal price);
+        Task CreateProductAsync(string imageURL, string categoryName, string description, string brand, string model, decimal price);
 
-        void DeleteProduct(int productID);
+        Task DeleteProductAsync(int productID);
 
-        void DeleteAllProductsByCategoryName(string categoryName);
+        Task DeleteAllProductsByCategoryNameAsync(string categoryName);
 
-        List<Product> GetProductsByCategoryName(string categoryName);
+        Task<List<Product>> GetProductsByCategoryNameAsync(string categoryName);
 
-        Product GetProductByID(int productID);
+        Task<Product> GetProductByIDAsync(int productID);
 
-        List<int> RemoveDisabledProductsIDs(List<int> productIDs);
+        Task<List<int>> RemoveDisabledProductsIDsAsync(List<int> productIDs);
 
-        List<Product> GetAllProductsInCart(List<Cart> carts);
+        Task<List<Product>> GetAllProductsInCartAsync(List<Cart> carts);
 
-        List<Product> GetAllProductsInOrder(List<Cart> carts);
+        Task<List<Product>> GetAllProductsInOrderAsync(List<Cart> carts);
 
-        void CreatePromotion(decimal newPrice, int productID);
+        Task CreatePromotionAsync(decimal newPrice, int productID);
 
-        void RevertPromotion(int productID);
+        Task RevertPromotionAsync(int productID);
 
-        List<Product> GetAllProductsInPromotion();
+        Task<List<Product>> GetAllProductsInPromotionAsync();
     }
 }

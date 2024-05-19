@@ -4,14 +4,14 @@ namespace TechStore.Services.Interfaces
 {
     public interface IUserService
     {
-        void CreateUser(string firstName, string lastName, string email, string phoneNumber, string password);
+        Task CreateUserAsync(string firstName, string lastName, string email, string phoneNumber, string password);
 
-        void DeleteUser(string userID);
+        Task DeleteUserAsync(string userID);
 
-        void EditUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber);
+        Task EditUserAsync(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber);
 
-        List<ApplicationUser> GetAllUsers();
+        Task<List<ApplicationUser>> GetAllUsersAsync();
 
-        ApplicationUser GetUserByID(string id);
+        Task<ApplicationUser> GetUserByIDAsync(string id);
     }
 }

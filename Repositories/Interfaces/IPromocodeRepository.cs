@@ -4,16 +4,16 @@ namespace TechStore.Repositories.Interfaces
 {
     public interface IPromocodeRepository
     {
-        void CreatePromocode(Promocode promocode);
+        Task CreatePromocodeAsync(Promocode promocode);
 
-        List<Promocode> GetAllPromocodes();
+        Task<List<Promocode>> GetAllPromocodesAsync();
 
-        Promocode GetPromocodeByID(int promocodeID);
+        Task<Promocode> GetPromocodeByIDAsync(int promocodeID);
 
-        Promocode GetPromocodeByPromocodeName(string promocodeName);
+        Task<Promocode> GetPromocodeByPromocodeNameAsync(string promocodeName);
 
-        void UpdatePromocode(Promocode promocode);
+        Task UpdatePromocodeAsync(Promocode promocode);
 
-        void DeletePromocode(Promocode promocode);
+        Task DeletePromocodeAsync(Promocode promocode);
     }
 }

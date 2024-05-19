@@ -1,4 +1,5 @@
-﻿using TechStore.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using TechStore.Data;
 using TechStore.Data.Entities;
 using TechStore.Repositories.Interfaces;
 
@@ -13,33 +14,32 @@ namespace TechStore.Repositories
             this.context = context;
         }
 
-        public void CreateUser(ApplicationUser user)
+        public async Task CreateUserAsync(ApplicationUser user)
         {
-            context.Add(user);
-            context.SaveChanges();
-        }
-        public List<ApplicationUser> GetAllUsers()
-        {
-            List<ApplicationUser> users = context.User.ToList();
-            return users;
+            await context.AddAsync(user);
+            await context.SaveChangesAsync();
         }
 
-        public ApplicationUser GetUserByID(string userID)
+        public async Task<List<ApplicationUser>> GetAllUsersAsync()
         {
-            ApplicationUser user = context.User.First(p => p.Id == userID);
-            return user;
+            return await context.User.ToListAsync();
         }
 
-        public void UpdateUser(ApplicationUser user)
+        public async Task<ApplicationUser> GetUserByIDAsync(string userID)
+        {
+            return await context.User.FirstAsync(p => p.Id == userID);
+        }
+
+        public async Task UpdateUserAsync(ApplicationUser user)
         {
             context.Update(user);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public void DeleteUser(ApplicationUser user)
+        public async Task DeleteUserAsync(ApplicationUser user)
         {
             context.Remove(user);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }

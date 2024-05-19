@@ -4,12 +4,12 @@ namespace TechStore.Services.Interfaces
 {
     public interface ICategoryService
     {
-        void CreateCategory(string categoryName);
+        Task CreateCategoryAsync(string categoryName);
 
-        void DeleteCategory(string categoryName);
+        Task DeleteCategoryAsync(string categoryName);
 
-        void EditCategory(string categoryName, string newCategoryName);
+        Task EditCategoryAsync(string categoryName, string newCategoryName);
 
-        List<Category> GetAllCategories();
+        Task<List<Category>> GetAllCategoriesAsync();
     }
 }

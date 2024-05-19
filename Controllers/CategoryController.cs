@@ -14,27 +14,27 @@ namespace TechStore.Controllers
 
 
         [HttpPost]
-        public IActionResult CreatedCategory(string categoryName)
+        public async Task<IActionResult> CreatedCategory(string categoryName)
         {
-            categoryService.CreateCategory(categoryName);
+            await categoryService.CreateCategoryAsync(categoryName);
             TempData["Message"] = "Successfully created a category!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }
 
 
         [HttpPost]
-        public IActionResult DeletedCategory(string categoryName)
+        public async Task<IActionResult> DeletedCategory(string categoryName)
         {
-            categoryService.DeleteCategory(categoryName);
+            await categoryService.DeleteCategoryAsync(categoryName);
             TempData["Message"] = "Successfully deleted a category!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }
 
 
         [HttpPost]
-        public IActionResult EditedCategory(string categoryName, string newCategoryName)
+        public async Task<IActionResult> EditedCategory(string categoryName, string newCategoryName)
         {
-            categoryService.EditCategory(categoryName, newCategoryName);
+            await categoryService.EditCategoryAsync(categoryName, newCategoryName);
             TempData["Message"] = "Successfully edited a category!";
             return RedirectToAction("AdministrationPanel", "Tech");
         }

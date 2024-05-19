@@ -17,7 +17,7 @@ namespace TechStore.Services
             this.userRepository = userRepository;
         }
 
-        public void CreateUser(string firstName, string lastName, string email, string phoneNumber, string password)
+        public async Task CreateUserAsync(string firstName, string lastName, string email, string phoneNumber, string password)
         {
             var user = new ApplicationUser
             {
@@ -28,21 +28,21 @@ namespace TechStore.Services
                 PhoneNumber = phoneNumber,
                 EmailConfirmed = true
             };
-            userRepository.CreateUser(user);
+            await userRepository.CreateUserAsync(user);
 
             //await userManager.CreateAsync(user, password);
             //await userManager.AddToRoleAsync(user, "User");
         }
 
-        public void DeleteUser(string userID)
+        public async Task DeleteUserAsync(string userID)
         {
-            ApplicationUser user = userRepository.GetUserByID(userID);
-            userRepository.DeleteUser(user);
+            ApplicationUser user = await userRepository.GetUserByIDAsync(userID);
+            await userRepository.DeleteUserAsync(user);
         }
 
-        public void EditUser(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
+        public async Task EditUserAsync(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
         {
-            ApplicationUser user = userRepository.GetUserByID(userID);
+            ApplicationUser user = await userRepository.GetUserByIDAsync(userID);
             if (newUserName != null)
             {
                 user.UserName = newUserName;
@@ -63,19 +63,17 @@ namespace TechStore.Services
             {
                 user.PhoneNumber = newPhoneNumber;
             }
-            userRepository.UpdateUser(user);
+            await userRepository.UpdateUserAsync(user);
         }
 
-        public List<ApplicationUser> GetAllUsers()
+        public async Task<List<ApplicationUser>> GetAllUsersAsync()
         {
-            List<ApplicationUser> users = userRepository.GetAllUsers();
-            return users;
+            return await userRepository.GetAllUsersAsync();
         }
 
-        public ApplicationUser GetUserByID(string userID)
+        public async Task<ApplicationUser> GetUserByIDAsync(string userID)
         {
-            ApplicationUser user = userRepository.GetUserByID(userID);
-            return user;
+            return await userRepository.GetUserByIDAsync(userID);
         }
     }
 }

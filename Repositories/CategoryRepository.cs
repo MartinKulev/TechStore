@@ -1,44 +1,44 @@
-﻿using TechStore.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using TechStore.Data;
 using TechStore.Data.Entities;
 
-namespace TechStore.Repositories.Interfaces;
-
-public class CategoryRepository : ICategoryRepository
+namespace TechStore.Repositories.Interfaces
 {
-    private TechStoreDbContext context;
-
-    public CategoryRepository(TechStoreDbContext context)
+    public class CategoryRepository : ICategoryRepository
     {
-        this.context = context;
-    }
+        private TechStoreDbContext context;
 
-    public void CreateCategory(Category category)
-    {
-        context.Add(category);
-        context.SaveChanges();
-    }
+        public CategoryRepository(TechStoreDbContext context)
+        {
+            this.context = context;
+        }
 
-    public List<Category> GetAllCategories()
-    {
-        List<Category> categories = context.Category.ToList();
-        return categories;
-    }
+        public async Task CreateCategoryAsync(Category category)
+        {
+            await context.AddAsync(category);
+            await context.SaveChangesAsync();
+        }
 
-    public Category GetCategoryByCategoryName(string categoryName)
-    {
-        Category category = context.Category.First(p => p.CategoryName == categoryName);
-        return category;
-    }
+        public async Task<List<Category>> GetAllCategoriesAsync()
+        {
+            return await context.Category.ToListAsync();
+        }
 
-    public void UpdateCategory(Category category)
-    {
-        context.Update(category);
-        context.SaveChanges();
-    }
+        public async Task<Category> GetCategoryByCategoryNameAsync(string categoryName)
+        {
+            return await context.Category.FirstAsync(p => p.CategoryName == categoryName);
+        }
 
-    public void DeleteCategory(Category category)
-    {
-        context.Remove(category);
-        context.SaveChanges();
+        public async Task UpdateCategoryAsync(Category category)
+        {
+            context.Update(category);
+            await context.SaveChangesAsync();
+        }
+
+        public async Task DeleteCategoryAsync(Category category)
+        {
+            context.Remove(category);
+            await context.SaveChangesAsync();
+        }
     }
 }

@@ -36,37 +36,37 @@ namespace TechStore.Controllers
         }
 
 
-        public IActionResult Homepage()
+        public async Task<IActionResult> Homepage()
         {
-            List<Product> productsInPromotion = productService.GetAllProductsInPromotion();
+            List<Product> productsInPromotion = await productService.GetAllProductsInPromotionAsync();
             return View(productsInPromotion);
         }
 
 
         [HttpGet("Tech/Category/{categoryName}")]
-        public IActionResult Category(string categoryName)
+        public async Task<IActionResult> Category(string categoryName)
         {
-            List<Product> productsByCategory = productService.GetProductsByCategoryName(categoryName);
+            List<Product> productsByCategory = await productService.GetProductsByCategoryNameAsync(categoryName);
             return View(productsByCategory);
         }
 
 
         [HttpGet("Tech/Product/{productID}")]
-        public IActionResult Product(int productID)
+        public async Task<IActionResult> Product(int productID)
         {
-            Product productByID = productService.GetProductByID(productID);
-            List<Review> reviewsByProductID = reviewService.GetAllReviewsByProductID(productID);
+            Product productByID = await productService.GetProductByIDAsync(productID);
+            List<Review> reviewsByProductID = await reviewService.GetAllReviewsByProductIDAsync(productID);
             var viewModel = new ProductViewModel(reviewsByProductID, productByID);
             return View(viewModel);
         }
 
-        public IActionResult Cart()
+        public async Task<IActionResult> Cart()
         {
             List<Cart> cartItems = new List<Cart>();
             string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (User.Identity.IsAuthenticated)
             {
-                cartItems = cartService.GetAllCartItemsByUserID(userID);
+                cartItems = await cartService.GetAllCartItemsByUserIDAsync(userID);
             }
             else
             {
@@ -77,7 +77,7 @@ namespace TechStore.Controllers
                 }
                 cartItems = cartService.GetAllCartItemsByTempData(productIDs, userID);
             }
-            List<Product> productsInCart = productService.GetAllProductsInCart(cartItems);
+            List<Product> productsInCart = await productService.GetAllProductsInCartAsync(cartItems);
 
             if (TempData["PromocodeDiscount"] != null)
             {
@@ -97,26 +97,26 @@ namespace TechStore.Controllers
         }
 
 
-        public IActionResult Profile()
+        public async Task<IActionResult> Profile()
         {
             string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ApplicationUser userByID = userService.GetUserByID(userID);
-            List<Order> ordersByUserID = orderService.GetAllOrdersByUserID(userID);
+            ApplicationUser userByID = await userService.GetUserByIDAsync(userID);
+            List<Order> ordersByUserID = await orderService.GetAllOrdersByUserIDAsync(userID);
             var viewModel = new ProfileViewModel(userByID, ordersByUserID);
             return View(viewModel);
         }
 
 
-        public IActionResult AdministrationPanel()
+        public async Task<IActionResult> AdministrationPanel()
         {
-            List<Category> categories = categoryService.GetAllCategories();
-            List<Promocode> promocodes = promocodeService.GetAllPromocodes();
-            List<ApplicationUser> users = userService.GetAllUsers();
+            List<Category> categories = await categoryService.GetAllCategoriesAsync();
+            List<Promocode> promocodes = await promocodeService.GetAllPromocodesAsync();
+            List<ApplicationUser> users = await userService.GetAllUsersAsync();
             var viewModel = new AdminPanelViewModel(promocodes, users, categories);
             return View(viewModel);
         }
 
-        public IActionResult Payment()
+        public async Task<IActionResult> Payment()
         {
             if (User.Identity.IsAuthenticated)
             {
@@ -131,11 +131,11 @@ namespace TechStore.Controllers
 
 
         [HttpGet("Tech/Order/{orderID}")]
-        public IActionResult Order(string orderID)
+        public async Task<IActionResult> Order(string orderID)
         {
-            List<Cart> cartItems = cartService.GetAllCartItemsByOrderID(orderID);
-            List<Product> products = productService.GetAllProductsInOrder(cartItems);
-            Order orderByID = orderService.GetOrderByID(orderID);
+            List<Cart> cartItems = await cartService.GetAllCartItemsByOrderIDAsync(orderID);
+            List<Product> products = await productService.GetAllProductsInOrderAsync(cartItems);
+            Order orderByID = await orderService.GetOrderByIDAsync(orderID);
             var viewModel = new OrderViewModel(cartItems, products, orderByID);
             return View(viewModel);
         }

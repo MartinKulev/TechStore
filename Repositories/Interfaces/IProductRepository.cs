@@ -4,20 +4,20 @@ namespace TechStore.Repositories.Interfaces
 {
     public interface IProductRepository
     {
-        public void CreateProduct(Product product);
+        Task CreateProductAsync(Product product);
 
-        public List<Product> GetProductsByCategoryName(string category);
+        Task<List<Product>> GetProductsByCategoryNameAsync(string category);
 
-        public Product GetProductByID(int productID);
+        Task<Product> GetProductByIDAsync(int productID);
 
-        public bool IsProductDisabled(int productID);
+        Task<bool> IsProductDisabledAsync(int productID);
 
-        public List<Product> GetMultipleEnabledProductsByProductIDs(List<int> productIDs);
+        Task<List<Product>> GetMultipleEnabledProductsByProductIDsAsync(List<int> productIDs);
 
-        public List<Product> GetMultipleProductsByProductIDs(List<int> productIDs);
+        Task<List<Product>> GetMultipleProductsByProductIDsAsync(List<int> productIDs);
 
-        public List<Product> GetAllProductsInPromotion();
+        Task<List<Product>> GetAllProductsInPromotionAsync();
 
-        public void UpdateProduct(Product product);
+        Task UpdateProductAsync(Product product);
     }
 }

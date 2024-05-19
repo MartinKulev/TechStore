@@ -4,8 +4,8 @@ namespace TechStore.Repositories.Interfaces
 {
     public interface IReviewRepository
     {
-        void CreateReview(Review review);
+        Task CreateReviewAsync(Review review);
 
-        List<Review> GetAllReviewsByProductID(int productID);
+        Task<List<Review>> GetAllReviewsByProductIDAsync(int productID);
     }
 }
