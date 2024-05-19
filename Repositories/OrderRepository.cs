@@ -24,12 +24,12 @@ namespace TechStore.Repositories
 
         public async Task<List<Order>> GetAllOrdersByUserIDAsync(string userID)
         {
-            return await context.Order.Where(p => p.UserID == userID).OrderByDescending(p => p.OrderTime).ToListAsync();
+            return await context.Orders.Where(p => p.UserID == userID).OrderByDescending(p => p.OrderTime).ToListAsync();
         }
 
         public async Task<Order> GetOrderByIDAsync(string orderID)
         {
-            return await context.Order.FirstAsync(p => p.OrderID == orderID);
+            return await context.Orders.FirstAsync(p => p.OrderID == orderID);
         }
     }
 }

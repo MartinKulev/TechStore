@@ -22,32 +22,32 @@ namespace TechStore.Repositories
 
         public async Task<Cart> GetCartItemByUserIDProductIDAsync(string userID, int productID)
         {
-            return await context.Cart.FirstAsync(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered);                
+            return await context.Carts.FirstAsync(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered);                
         }
 
         public async Task<List<Cart>> GetAllCartItemsByOrderIDAsync(string orderID)
         {
-            return await context.Cart.Where(p => p.OrderID == orderID).ToListAsync();
+            return await context.Carts.Where(p => p.OrderID == orderID).ToListAsync();
         }
 
         public async Task<List<Cart>> GetAllCartItemsByUserIDAsync(string userID)
         {
-            return await context.Cart.Where(p => p.UserID == userID && !p.IsOrdered).ToListAsync();
+            return await context.Carts.Where(p => p.UserID == userID && !p.IsOrdered).ToListAsync();
         }
 
         public async Task<List<Cart>> GetAllCartsByProductIDAsync(int productID)
         {
-            return await context.Cart.Where(p => p.ProductID == productID && !p.IsOrdered).ToListAsync();
+            return await context.Carts.Where(p => p.ProductID == productID && !p.IsOrdered).ToListAsync();
         }
 
         public async Task<int> GetCartItemsCountByUserIDAsync(string userID)
         {
-            return await context.Cart.Where(p => p.UserID == userID && !p.IsOrdered).SumAsync(p => p.Quantity);
+            return await context.Carts.Where(p => p.UserID == userID && !p.IsOrdered).SumAsync(p => p.Quantity);
         }
 
         public async Task<bool> DoesCartExistsAsync(string userID, int productID)
         {
-            return await context.Cart.AnyAsync(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered);
+            return await context.Carts.AnyAsync(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered);
         }
 
         public async Task UpdateCartAsync(Cart cart)

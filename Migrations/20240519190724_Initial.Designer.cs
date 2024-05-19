@@ -11,8 +11,8 @@ using TechStore.Data;
 namespace TechStore.Migrations
 {
     [DbContext(typeof(TechStoreDbContext))]
-    [Migration("20240519104744_IsDisabledUppercase")]
-    partial class IsDisabledUppercase
+    [Migration("20240519190724_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -251,7 +251,7 @@ namespace TechStore.Migrations
 
                     b.HasKey("CartID");
 
-                    b.ToTable("Cart");
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("TechStore.Data.Entities.Category", b =>
@@ -266,7 +266,7 @@ namespace TechStore.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Category");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("TechStore.Data.Entities.Order", b =>
@@ -309,7 +309,7 @@ namespace TechStore.Migrations
 
                     b.HasKey("OrderID");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("TechStore.Data.Entities.Product", b =>
@@ -352,7 +352,7 @@ namespace TechStore.Migrations
 
                     b.HasKey("ProductID");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("TechStore.Data.Entities.Promocode", b =>
@@ -370,7 +370,7 @@ namespace TechStore.Migrations
 
                     b.HasKey("PromocodeID");
 
-                    b.ToTable("Promocode");
+                    b.ToTable("Promocodes");
                 });
 
             modelBuilder.Entity("TechStore.Data.Entities.Review", b =>
@@ -400,7 +400,7 @@ namespace TechStore.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Review");
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -22,7 +22,7 @@ namespace TechStore.Repositories
 
         public async Task<List<Review>> GetAllReviewsByProductIDAsync(int productID)
         {
-            return await context.Review.Where(r => r.ProductID == productID).Include(r => r.User).ToListAsync();
+            return await context.Reviews.Where(r => r.ProductID == productID).Include(r => r.User).ToListAsync();
         }
     }
 }

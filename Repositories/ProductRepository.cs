@@ -28,32 +28,32 @@ namespace TechStore.Repositories
 
         public async Task<List<Product>> GetProductsByCategoryNameAsync(string category)
         {
-            return await context.Product.Where(p => p.CategoryName == category && !p.IsDisabled).OrderBy(p => p.Price).ToListAsync();
+            return await context.Products.Where(p => p.CategoryName == category && !p.IsDisabled).OrderBy(p => p.Price).ToListAsync();
         }
 
         public async Task<Product> GetProductByIDAsync(int productID)
         {
-            return await context.Product.FirstAsync(p => p.ProductID == productID);
+            return await context.Products.FirstAsync(p => p.ProductID == productID);
         }
 
         public async Task<bool> IsProductDisabledAsync(int productID)
         {
-            return await context.Product.AnyAsync(p => p.ProductID == productID && p.IsDisabled);
+            return await context.Products.AnyAsync(p => p.ProductID == productID && p.IsDisabled);
         }
 
         public async Task<List<Product>> GetMultipleEnabledProductsByProductIDsAsync(List<int> productIDs)
         {
-            return await context.Product.Where(p => productIDs.Contains(p.ProductID) && !p.IsDisabled).ToListAsync();
+            return await context.Products.Where(p => productIDs.Contains(p.ProductID) && !p.IsDisabled).ToListAsync();
         }
 
         public async Task<List<Product>> GetMultipleProductsByProductIDsAsync(List<int> productIDs)
         {
-            return await context.Product.Where(p => productIDs.Contains(p.ProductID)).ToListAsync();
+            return await context.Products.Where(p => productIDs.Contains(p.ProductID)).ToListAsync();
         }
 
         public async Task<List<Product>> GetAllProductsInPromotionAsync()
         {
-            return await context.Product.Where(p => p.IsInPromotion && !p.IsDisabled).ToListAsync();
+            return await context.Products.Where(p => p.IsInPromotion && !p.IsDisabled).ToListAsync();
         }
     }
 }

@@ -22,12 +22,12 @@ namespace TechStore.Repositories
 
         public async Task<List<ApplicationUser>> GetAllUsersAsync()
         {
-            return await context.User.ToListAsync();
+            return await context.Users.ToListAsync();
         }
 
         public async Task<ApplicationUser> GetUserByIDAsync(string userID)
         {
-            return await context.User.FirstAsync(p => p.Id == userID);
+            return await context.Users.FirstAsync(p => p.Id == userID);
         }
 
         public async Task UpdateUserAsync(ApplicationUser user)

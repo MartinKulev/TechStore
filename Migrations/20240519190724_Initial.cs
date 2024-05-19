@@ -7,7 +7,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace TechStore.Migrations
 {
     /// <inheritdoc />
-    public partial class IsDisabledUppercase : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -60,7 +60,7 @@ namespace TechStore.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Cart",
+                name: "Carts",
                 columns: table => new
                 {
                     CartID = table.Column<string>(type: "varchar(255)", nullable: false),
@@ -72,12 +72,12 @@ namespace TechStore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cart", x => x.CartID);
+                    table.PrimaryKey("PK_Carts", x => x.CartID);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Category",
+                name: "Categories",
                 columns: table => new
                 {
                     CategoryID = table.Column<int>(type: "int", nullable: false)
@@ -86,12 +86,12 @@ namespace TechStore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Category", x => x.CategoryID);
+                    table.PrimaryKey("PK_Categories", x => x.CategoryID);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Order",
+                name: "Orders",
                 columns: table => new
                 {
                     OrderID = table.Column<string>(type: "varchar(255)", nullable: false),
@@ -107,12 +107,12 @@ namespace TechStore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Order", x => x.OrderID);
+                    table.PrimaryKey("PK_Orders", x => x.OrderID);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Product",
+                name: "Products",
                 columns: table => new
                 {
                     ProductID = table.Column<int>(type: "int", nullable: false)
@@ -129,12 +129,12 @@ namespace TechStore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Product", x => x.ProductID);
+                    table.PrimaryKey("PK_Products", x => x.ProductID);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Promocode",
+                name: "Promocodes",
                 columns: table => new
                 {
                     PromocodeID = table.Column<int>(type: "int", nullable: false)
@@ -144,7 +144,7 @@ namespace TechStore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Promocode", x => x.PromocodeID);
+                    table.PrimaryKey("PK_Promocodes", x => x.PromocodeID);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -260,7 +260,7 @@ namespace TechStore.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Review",
+                name: "Reviews",
                 columns: table => new
                 {
                     ReviewID = table.Column<int>(type: "int", nullable: false)
@@ -273,9 +273,9 @@ namespace TechStore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Review", x => x.ReviewID);
+                    table.PrimaryKey("PK_Reviews", x => x.ReviewID);
                     table.ForeignKey(
-                        name: "FK_Review_AspNetUsers_UserID",
+                        name: "FK_Reviews_AspNetUsers_UserID",
                         column: x => x.UserID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -321,8 +321,8 @@ namespace TechStore.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Review_UserID",
-                table: "Review",
+                name: "IX_Reviews_UserID",
+                table: "Reviews",
                 column: "UserID");
         }
 
@@ -345,22 +345,22 @@ namespace TechStore.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Cart");
+                name: "Carts");
 
             migrationBuilder.DropTable(
-                name: "Category");
+                name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "Order");
+                name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Product");
+                name: "Products");
 
             migrationBuilder.DropTable(
-                name: "Promocode");
+                name: "Promocodes");
 
             migrationBuilder.DropTable(
-                name: "Review");
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

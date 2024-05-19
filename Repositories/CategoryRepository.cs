@@ -21,12 +21,12 @@ namespace TechStore.Repositories.Interfaces
 
         public async Task<List<Category>> GetAllCategoriesAsync()
         {
-            return await context.Category.ToListAsync();
+            return await context.Categories.ToListAsync();
         }
 
         public async Task<Category> GetCategoryByCategoryNameAsync(string categoryName)
         {
-            return await context.Category.FirstAsync(p => p.CategoryName == categoryName);
+            return await context.Categories.FirstAsync(p => p.CategoryName == categoryName);
         }
 
         public async Task UpdateCategoryAsync(Category category)

@@ -16,23 +16,23 @@ namespace TechStore.Repositories
 
         public async Task CreatePromocodeAsync(Promocode promocode)
         {
-            await context.Promocode.AddAsync(promocode);
+            await context.Promocodes.AddAsync(promocode);
             await context.SaveChangesAsync();
         }
 
         public async Task<List<Promocode>> GetAllPromocodesAsync()
         {
-            return await context.Promocode.ToListAsync();
+            return await context.Promocodes.ToListAsync();
         }
 
         public async Task<Promocode> GetPromocodeByIDAsync(int promocodeID)
         {
-            return await context.Promocode.FirstAsync(p => p.PromocodeID == promocodeID);
+            return await context.Promocodes.FirstAsync(p => p.PromocodeID == promocodeID);
         }
 
         public async Task<Promocode> GetPromocodeByPromocodeNameAsync(string promocodeName)
         {
-            return await context.Promocode.FirstOrDefaultAsync(p => p.PromocodeName == promocodeName);
+            return await context.Promocodes.FirstOrDefaultAsync(p => p.PromocodeName == promocodeName);
         }
 
         public async Task UpdatePromocodeAsync(Promocode promocode)

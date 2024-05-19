@@ -5,9 +5,10 @@
     <style>
         .main-container {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(var(--boxes), 1fr);
             grid-column-gap: 0px;
             grid-row-gap: 0px;
+            grid-template-rows: auto auto 1fr 1fr 1fr auto auto;
         }
 
         .product-box {
@@ -56,6 +57,7 @@
             text-align: left;
             color: #000000;
             font-weight: bold;
+            overflow-wrap: anywhere;
         }
 
         .product-bottom {
@@ -105,14 +107,68 @@
             color: #000000;
         }
 
-        @@media (max-device-width: 767px) {
-            .main-container {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-column-gap: 0px;
-                grid-row-gap: 0px;
-                grid-template-rows: auto auto 1fr 1fr 1fr auto auto;
+        @@media (max-width: 5000px) {
+            :root {
+                --boxes: 13;
             }
+        }
+
+        @@media (max-width: 4600px) {
+            :root {
+                --boxes: 12;
+            }
+        }
+
+        @@media (max-width: 4200px) {
+            :root {
+                --boxes: 11;
+            }
+        }
+
+        @@media (max-width: 3800px) {
+            :root {
+                --boxes: 10;
+            }
+        }
+
+        @@media (max-width: 3400px) {
+            :root {
+                --boxes: 9;
+            }
+        }
+
+        @@media (max-width: 3000px) {
+            :root {
+                --boxes: 8;
+            }
+        }
+
+        @@media (max-width: 2600px) {
+            :root {
+                --boxes: 7;
+            }
+        }
+
+        @@media (max-width: 2200px) {
+            :root {
+                --boxes: 6;
+            }
+        }
+
+        @@media (max-width: 1800px) {
+            :root {
+                --boxes: 5;
+            }
+        }
+
+        @@media (max-width: 1400px) {
+            :root {
+                --boxes: 4;
+            }
+        }
+
+        @@media (max-width: 1000px) {
+            :root {--boxes: 3;}
         }
     </style>
 </head>
