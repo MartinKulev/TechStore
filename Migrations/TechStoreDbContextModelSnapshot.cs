@@ -269,6 +269,7 @@ namespace TechStore.Migrations
             modelBuilder.Entity("TechStore.Data.Entities.Order", b =>
                 {
                     b.Property<string>("OrderID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("Address")
@@ -330,6 +331,9 @@ namespace TechStore.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<bool>("IsDisabled")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<bool>("IsInPromotion")
                         .HasColumnType("tinyint(1)");
 
@@ -342,9 +346,6 @@ namespace TechStore.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<bool>("isDisabled")
-                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("ProductID");
 

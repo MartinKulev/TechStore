@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using MySql.EntityFrameworkCore.Metadata;
 
 #nullable disable
@@ -6,7 +7,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace TechStore.Migrations
 {
     /// <inheritdoc />
-    public partial class PlsWork : Migration
+    public partial class IsDisabledUppercase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -101,6 +102,7 @@ namespace TechStore.Migrations
                     Address = table.Column<string>(type: "longtext", nullable: false),
                     UserID = table.Column<string>(type: "longtext", nullable: false),
                     TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    OldTotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     OrderTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
@@ -123,7 +125,7 @@ namespace TechStore.Migrations
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     IsInPromotion = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     NewPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    isDisabled = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    IsDisabled = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {

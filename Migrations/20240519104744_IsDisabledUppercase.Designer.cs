@@ -11,8 +11,8 @@ using TechStore.Data;
 namespace TechStore.Migrations
 {
     [DbContext(typeof(TechStoreDbContext))]
-    [Migration("20240507090229_PlsWork")]
-    partial class PlsWork
+    [Migration("20240519104744_IsDisabledUppercase")]
+    partial class IsDisabledUppercase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -272,6 +272,7 @@ namespace TechStore.Migrations
             modelBuilder.Entity("TechStore.Data.Entities.Order", b =>
                 {
                     b.Property<string>("OrderID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("Address")
@@ -292,6 +293,9 @@ namespace TechStore.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<decimal>("OldTotalPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("OrderTime")
                         .HasColumnType("datetime(6)");
@@ -330,6 +334,9 @@ namespace TechStore.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<bool>("IsDisabled")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<bool>("IsInPromotion")
                         .HasColumnType("tinyint(1)");
 
@@ -342,9 +349,6 @@ namespace TechStore.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<bool>("isDisabled")
-                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("ProductID");
 

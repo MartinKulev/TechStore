@@ -30,7 +30,7 @@ namespace TechStore.Services
         public async Task DeleteProductAsync(int productID)
         {
             Product product = await productRepository.GetProductByIDAsync(productID);
-            product.isDisabled = true;
+            product.IsDisabled = true;
             await productRepository.UpdateProductAsync(product);
             await cartService.DeleteCartsWithDeletedProductAsync(productID);
         }
@@ -40,7 +40,7 @@ namespace TechStore.Services
             List<Product> products = await productRepository.GetProductsByCategoryNameAsync(categoryName);
             foreach (Product product in products)
             {
-                product.isDisabled = true;
+                product.IsDisabled = true;
                 await productRepository.UpdateProductAsync(product);
             }
         }

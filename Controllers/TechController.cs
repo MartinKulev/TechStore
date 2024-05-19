@@ -23,8 +23,7 @@ namespace TechStore.Controllers
             IProductService productService,
             IPromocodeService promocodeService,
             IReviewService reviewService,
-            IUserService userService
-            )
+            IUserService userService)
         {
             this.cartService = cartService;
             this.categoryService = categoryService;
