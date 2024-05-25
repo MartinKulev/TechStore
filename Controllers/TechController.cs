@@ -78,7 +78,7 @@ namespace TechStore.Controllers
             }
             List<Product> productsInCart = await productService.GetAllProductsInCartAsync(cartItems);
 
-            if (TempData["PromocodeDiscount"] != null)
+            if (TempData["PromocodeDiscount"] != null && TempData["PromocodeDiscount"].ToString() != "0")
             {
                 decimal discount = Convert.ToDecimal(TempData["PromocodeDiscount"]);
                 decimal totalPrice = cartService.CalculateCartTotalPrice(cartItems, productsInCart);
@@ -108,11 +108,18 @@ namespace TechStore.Controllers
 
         public async Task<IActionResult> AdministrationPanel()
         {
-            List<Category> categories = await categoryService.GetAllCategoriesAsync();
-            List<Promocode> promocodes = await promocodeService.GetAllPromocodesAsync();
-            List<ApplicationUser> users = await userService.GetAllUsersAsync();
-            var viewModel = new AdminPanelViewModel(promocodes, users, categories);
-            return View(viewModel);
+            if (User.IsInRole("Admin"))
+            {
+                List<Category> categories = await categoryService.GetAllCategoriesAsync();
+                List<Promocode> promocodes = await promocodeService.GetAllPromocodesAsync();
+                List<ApplicationUser> users = await userService.GetAllUsersAsync();
+                var viewModel = new AdminPanelViewModel(promocodes, users, categories);
+                return View(viewModel);
+            }
+            else
+            {
+                return RedirectToAction("Homepage", "Tech");
+            }
         }
 
         public async Task<IActionResult> Payment()
