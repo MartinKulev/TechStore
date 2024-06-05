@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model ProfileViewModel
+<!DOCTYPE html>
 <html>
 <head>
     <title>TechStore</title>
@@ -205,7 +206,7 @@
             <aside class="profilePicture-Username-Logout-container">
                 <img class="profile-picture"></img>
                 <div class="username-container">
-                    <div>@Model.User.FirstName @Model.User.LastName</div>
+                    <div>@Model.ProfileDisplayModel.User.FirstName @Model.ProfileDisplayModel.User.LastName</div>
                 </div>
                 <form class="logout-button-container" asp-controller="Account" asp-action="Logout" method="post">
                     @Html.AntiForgeryToken()
@@ -216,11 +217,11 @@
                 <div class="information-container">
                     <div class="information-sub-container">
                         <label class="information-label">Email:</label>
-                        <p class="information-data">@Model.User.Email</p>
+                        <p class="information-data">@Model.ProfileDisplayModel.User.Email</p>
                     </div>
                     <div class="information-sub-container">
                         <label class="information-label">Phone Number:</label>
-                        <p class="information-data">@Model.User.PhoneNumber</p>
+                        <p class="information-data">@Model.ProfileDisplayModel.User.PhoneNumber</p>
                     </div>
                 </div>
             </div>
@@ -228,7 +229,7 @@
         @if (!User.IsInRole("Admin"))
         {
             <h1 class="orders-heading">Past orders:</h1>
-            @foreach (var order in Model.Orders)
+            @foreach (var order in Model.ProfileDisplayModel.Orders)
             {
                 <form class="order-box" method="get" asp-controller="Tech" asp-action="Order" asp-route-orderID="@order.OrderID">
                     <button class="order-button">

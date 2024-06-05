@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using TechStore.Data.ViewModels;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
@@ -14,14 +15,23 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SuccessfulPayment(string name, string cardNumber, string expiryDate, int cvvNum, string adress)
+        public async Task<IActionResult> SuccessfulPayment(PaymentViewModel viewModel)
         {
-            decimal totalPrice = Convert.ToDecimal(TempData["TotalPrice"]);
-            decimal oldTotalPrice = Convert.ToDecimal(TempData["OldTotalPrice"]);
-            string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            await orderService.CreateOrderAsync(userID, name, cardNumber, expiryDate, cvvNum, adress, totalPrice, oldTotalPrice);
-            TempData["Message"] = "The payment was successful!";
-            return RedirectToAction("Profile", "Tech");
+            if (ModelState.IsValid)
+            {
+                decimal totalPrice = Convert.ToDecimal(TempData["TotalPrice"]);
+                decimal oldTotalPrice = Convert.ToDecimal(TempData["OldTotalPrice"]);
+                string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                await orderService.CreateOrderAsync(userID, viewModel.PaymentInputModel.Name, viewModel.PaymentInputModel.CardNum, viewModel.PaymentInputModel.ExpiryDate,
+                    viewModel.PaymentInputModel.CvvNum, viewModel.PaymentInputModel.Address, totalPrice, oldTotalPrice);
+                TempData["Message"] = "The payment was successful!";
+                return RedirectToAction("Profile", "Tech");
+            }
+            else
+            {
+                return RedirectToAction("Cart", "Tech");
+            }
+            
         }
     }
 }

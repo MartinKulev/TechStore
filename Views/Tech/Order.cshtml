@@ -1,3 +1,4 @@
+@model OrderViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,10 +132,10 @@
 </head>
 <body>
     <main class="main-container">
-        <h1 class="order-heading">Order: @Model.Order.OrderID</h1>
-        @foreach (var cart in Model.Carts)
+        <h1 class="order-heading">Order: @Model.OrderDisplayModel.Order.OrderID</h1>
+        @foreach (var cart in Model.OrderDisplayModel.Carts)
         {
-            foreach (var product in Model.Products)
+            foreach (var product in Model.OrderDisplayModel.Products)
             {
                 if (cart.ProductID == product.ProductID)
                 {
@@ -164,14 +165,14 @@
         }
         <div class="final-price-container">
             <div>
-                @if (Model.Order.OldTotalPrice == 0)
+                @if (Model.OrderDisplayModel.Order.OldTotalPrice == 0)
                 {
-                    <p class="final-price">Total: $@Model.Order.TotalPrice</p>
+                    <p class="final-price">Total: $@Model.OrderDisplayModel.Order.TotalPrice</p>
                 }
                 else
                 {
-                    <p class="final-old-price">$@Model.Order.OldTotalPrice</p>
-                    <p class="final-price">Total: $@Model.Order.TotalPrice</p>
+                    <p class="final-old-price">$@Model.OrderDisplayModel.Order.OldTotalPrice</p>
+                    <p class="final-price">Total: $@Model.OrderDisplayModel.Order.TotalPrice</p>
                 }
             </div>
         </div>

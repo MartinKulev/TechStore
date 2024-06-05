@@ -1,18 +1,22 @@
-﻿using TechStore.Data.Entities;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using TechStore.Data.ViewModels.DisplayInformation;
+using TechStore.Data.ViewModels.ReadInformation;
 
 namespace TechStore.Data.ViewModels
 {
     public class CartViewModel
     {
-        public CartViewModel(List<Cart> carts, List<Product> products)
+        public CartViewModel() { }
+
+        public CartViewModel(CartDisplayModel cartDisplayModel)
         {
-            Carts = carts;
-            Products = products;
+            CartDisplayModel = cartDisplayModel;
+            ApplyPromocodeModel = new ApplyPromocodeModel();
         }
-        public List<Cart> Carts { get; set; }
-        public List<Product> Products { get; set; }
 
+        [ValidateNever]
+        public CartDisplayModel CartDisplayModel { get; set; }
 
-
+        public ApplyPromocodeModel ApplyPromocodeModel { get; set; }
     }
 }

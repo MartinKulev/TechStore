@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model PaymentViewModel
+<!DOCTYPE html>
 <html>
 <head>
     <title>TechStore</title>
@@ -115,21 +116,21 @@
             <div class="information-container">
                 <div class="information-box">
                     <label class="information-label">Name:</label>
-                    <input class="name-input-box" name="name" required>
+                    <input class="name-input-box" maxlength="70" required asp-for="PaymentInputModel.Name">
                 </div>
                 <div class="information-box">
                     <label class="information-label">Card Number:</label>
-                    <input class="card-input-box" placeholder="XXXX-XXXX-XXXX-XXXX" name="cardNumber" minlength="19" maxlength="19" required>
+                    <input class="card-input-box" placeholder="XXXX-XXXX-XXXX-XXXX" minlength="19" maxlength="19" required asp-for="PaymentInputModel.CardNum">
                 </div>
                 <div class="information-box">
                     <label class="information-label">Expiry Date:</label>
-                    <input class="expiryDate-input-box" placeholder="MM/YY" name="expiryDate" minlength="5" maxlength="5" required>
+                    <input class="expiryDate-input-box" placeholder="MM/YY" minlength="5" maxlength="5" required asp-for="PaymentInputModel.ExpiryDate">
                     <label class="information-label">CVV:</label>
-                    <input class="CVV-input-box" placeholder="XXX" name="cvvNum" minlength="3" maxlength="3" required>
+                    <input class="CVV-input-box" placeholder="XXX" type="text" minlength="3" maxlength="3" required asp-for="PaymentInputModel.CvvNum">
                 </div>
                 <div class="information-box">
                     <label class="information-label">Adress:</label>
-                    <input class="adress-input-box" name="adress" required>
+                    <input class="adress-input-box" maxlength="200" required asp-for="PaymentInputModel.Address">
                 </div>
             </div>
             <div>

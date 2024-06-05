@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using TechStore.Data.Entities;
-using TechStore.Data.ViewModels;
 using TechStore.Services.Interfaces;
+using TechStore.Data.ViewModels;
+using TechStore.Data.ViewModels.DisplayInformation;
+using TechStore.Data.ViewModels.ReadInformation;
 
 namespace TechStore.Controllers
 {
@@ -38,7 +40,9 @@ namespace TechStore.Controllers
         public async Task<IActionResult> Homepage()
         {
             List<Product> productsInPromotion = await productService.GetAllProductsInPromotionAsync();
-            return View(productsInPromotion);
+            var homepageDisplayModel = new HomepageDisplayModel(productsInPromotion);
+            var viewModel = new HomepageViewModel(homepageDisplayModel);
+            return View(viewModel);
         }
 
 
@@ -46,7 +50,9 @@ namespace TechStore.Controllers
         public async Task<IActionResult> Category(string categoryName)
         {
             List<Product> productsByCategory = await productService.GetProductsByCategoryNameAsync(categoryName);
-            return View(productsByCategory);
+            var categoryDisplayModel = new CategoryDisplayModel(productsByCategory);
+            var viewModel = new CategoryViewModel(categoryDisplayModel);
+            return View(viewModel);
         }
 
 
@@ -55,7 +61,8 @@ namespace TechStore.Controllers
         {
             Product productByID = await productService.GetProductByIDAsync(productID);
             List<Review> reviewsByProductID = await reviewService.GetAllReviewsByProductIDAsync(productID);
-            var viewModel = new ProductViewModel(reviewsByProductID, productByID);
+            var productDisplayModel = new ProductDisplayModel(reviewsByProductID, productByID);
+            var viewModel = new ProductViewModel(productDisplayModel);
             return View(viewModel);
         }
 
@@ -91,7 +98,8 @@ namespace TechStore.Controllers
                 TempData["OldTotalPrice"] = "0";
             }
 
-            var viewModel = new CartViewModel(cartItems, productsInCart);
+            var cartDisplayModel = new CartDisplayModel(cartItems, productsInCart);
+            var viewModel = new CartViewModel(cartDisplayModel);
             return View(viewModel);
         }
 
@@ -101,7 +109,8 @@ namespace TechStore.Controllers
             string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
             ApplicationUser userByID = await userService.GetUserByIDAsync(userID);
             List<Order> ordersByUserID = await orderService.GetAllOrdersByUserIDAsync(userID);
-            var viewModel = new ProfileViewModel(userByID, ordersByUserID);
+            var profileDisplayModel = new ProfileDisplayModel(userByID, ordersByUserID);
+            var viewModel = new ProfileViewModel(profileDisplayModel);
             return View(viewModel);
         }
 
@@ -113,7 +122,8 @@ namespace TechStore.Controllers
                 List<Category> categories = await categoryService.GetAllCategoriesAsync();
                 List<Promocode> promocodes = await promocodeService.GetAllPromocodesAsync();
                 List<ApplicationUser> users = await userService.GetAllUsersAsync();
-                var viewModel = new AdminPanelViewModel(promocodes, users, categories);
+                var administrationPanelDisplayModel = new AdministrationPanelDisplayModel(promocodes, users, categories);
+                var viewModel = new AdministrationPanelViewModel(administrationPanelDisplayModel);
                 return View(viewModel);
             }
             else
@@ -142,7 +152,8 @@ namespace TechStore.Controllers
             List<Cart> cartItems = await cartService.GetAllCartItemsByOrderIDAsync(orderID);
             List<Product> products = await productService.GetAllProductsInOrderAsync(cartItems);
             Order orderByID = await orderService.GetOrderByIDAsync(orderID);
-            var viewModel = new OrderViewModel(cartItems, products, orderByID);
+            var orderDisplayModel = new OrderDisplayModel(cartItems, products, orderByID);
+            var viewModel = new OrderViewModel(orderDisplayModel);
             return View(viewModel);
         }
     }

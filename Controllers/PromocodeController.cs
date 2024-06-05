@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TechStore.Services.Interfaces;
 using TechStore.Data.Entities;
+using TechStore.Data.ViewModels;
 
 namespace TechStore.Controllers
 {
@@ -41,19 +42,22 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AppliedPromocode(string promocodeName)
+        public async Task<IActionResult> AppliedPromocode(string promocodeName, CartViewModel cartViewModel)
         {
-            Promocode promocode = await promocodeService.ApplyPromocodeAsync(promocodeName);
-            if (promocode == null)
+            if (ModelState.IsValid)
             {
-                TempData["PromocodeMessage"] = $"Promocode does not exist!";
-                TempData["PromocodeDiscount"] = "0";
-            }
-            else
-            {
-                TempData["PromocodeMessage"] = $"{promocode.Discount}% discount with promocode {promocode.PromocodeName}";
-                TempData["PromocodeDiscount"] = promocode.Discount.ToString();
-            }
+                Promocode promocode = await promocodeService.ApplyPromocodeAsync(promocodeName);
+                if (promocode == null)
+                {
+                    TempData["PromocodeMessage"] = $"Promocode does not exist!";
+                    TempData["PromocodeDiscount"] = "0";
+                }
+                else
+                {
+                    TempData["PromocodeMessage"] = $"{promocode.Discount}% discount with promocode {promocode.PromocodeName}";
+                    TempData["PromocodeDiscount"] = promocode.Discount.ToString();
+                }
+            }           
             return RedirectToAction("Cart", "Tech");
         }
     }

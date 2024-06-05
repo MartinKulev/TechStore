@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model AdministrationPanelViewModel
+<!DOCTYPE html>
 <html>
 <head>
     <title>AdministrationPanel</title>
@@ -417,31 +418,31 @@
                         <div id="imageContainer">
                         </div> *@
                         <div class="product-image-sub-container">
-                            <label class="product-image-label">Photo:</label>
-                            <input class="product-image-input-box" name="imageURL" required></input>
+                            <label class="product-image-label">Image URL:</label>
+                            <input class="product-image-input-box" type="url" name="imageURL" required></input>
                         </div>
                     </div>
                     <div class="product-text-data">
-                        <select class="select-category" name="categoryName" onchange="javascript:changemm(document.search.topmenu,document.search.f5,document.search.f6,'2','1','Избери',27)" required>
+                        <select class="select-category" name="categoryName" onchange="javascript:changemm(document.search.topmenu,document.search.f5,document.search.f6,'2','1','Choose',27)" required>
                             <option selected="" value="">Choose category</option>
-                            @foreach (var category in Model.Categories)
+                            @foreach (var category in Model.AdministrationPanelDisplayModel.Categories)
                             {
                                 <option value="@category.CategoryName">@category.CategoryName</option>
                             }
                         </select>
                         <label class="description-label">Description:</label>
-                        <textarea class="description-box" name="description" required maxlength="150"></textarea>
+                        <textarea class="description-box" name="description" maxlength="150" required asp-for="CreateProductModel.Description"></textarea>
                         <div class="brand-mode-price-container">
                             <label class="brand-mode-price-label">Brand:</label>
-                            <input class="brand-model-price-input-box" name="brand" maxlength="28" required></input>
+                            <input class="brand-model-price-input-box" name="brand" maxlength="28" required asp-for="CreateProductModel.Brand"></input>
                         </div>
                         <div class="brand-mode-price-container">
                             <label class="brand-mode-price-label">Model:</label>
-                            <input class="brand-model-price-input-box" name="model" maxlength="28" required></input>
+                            <input class="brand-model-price-input-box" name="model" maxlength="28" required asp-for="CreateProductModel.Model"></input>
                         </div>
                         <div class="brand-mode-price-container">
                             <label class="brand-mode-price-label">Price:</label>
-                            <input class="brand-model-price-input-box" name="price" maxlength="28" type="number" step=".01" required></input>
+                            <input class="brand-model-price-input-box" name="price" maxlength="28" type="number" step=".01" required asp-for="CreateProductModel.Price"></input>
                         </div>
                         <div class="create-product-button-container">
                             <button class="create-product-button" type="submit">
@@ -463,37 +464,37 @@
                             <label class="info-label">
                                 <p>First name:</p>
                             </label>
-                            <input class="input-box" name="firstName" />
+                            <input class="input-box" name="firstName" maxlength="35" required asp-for="CreateUserModel.FirstName"/>
                         </div>
                         <div class="entity-info-sub-container">
                             <label class="info-label">
                                 <p>Last name:</p>
                             </label>
-                            <input class="input-box" name="lastName" />
+                            <input class="input-box" name="lastName" maxlength="35" required asp-for="CreateUserModel.LastName" />
                         </div>
                         <div class="entity-info-sub-container">
                             <label class="info-label">
                                 <p>Email:</p>
                             </label>
-                            <input class="input-box" name="email" />
+                            <input class="input-box" name="email" maxlength="255" type="email" required asp-for="CreateUserModel.Email" />
                         </div>
                         <div class="entity-info-sub-container">
                             <label class="info-label">
                                 <p>Phone number:</p>
                             </label>
-                            <input class="input-box" name="phoneNumber" />
+                            <input class="input-box" name="phoneNumber" maxlength="26" required asp-for="CreateUserModel.PhoneNumber" />
                         </div>
                         <div class="entity-info-sub-container">
                             <label class="info-label">
                                 <p>Pasword:</p>
                             </label>
-                            <input class="input-box" name="password" />
+                            <input class="input-box" name="password" maxlength="128" required asp-for="CreateUserModel.Password" />
                         </div>
                         <div class="entity-info-sub-container">
                             <label class="info-label">
                                 <p>Confirm Password:</p>
                             </label>
-                            <input class="input-box" name="confirmPassword" />
+                            <input class="input-box" name="confirmPassword" maxlength="128" required asp-for="CreateUserModel.ConfirmPassword"/>
                         </div>
                     </div>
                     <div>
@@ -510,7 +511,7 @@
                     <th>Last name</th>
                     <th>Email</th>
                     <th>Phone number</th>
-                        @foreach (var user in Model.Users)
+                        @foreach (var user in Model.AdministrationPanelDisplayModel.Users)
                         {
                         <tr>
                             <form method="post" asp-action="EditedUser" asp-controller="User">
@@ -536,7 +537,7 @@
                             <td>
                                 <button type="button" class="entity-button">
                                     <p class="entity-data">@user.Email</p>
-                                    <input class="entity-text-box" type="text" name="newEmail" style="display: none;" />
+                                    <input class="entity-text-box" type="email" name="newEmail" style="display: none;" />
                                 </button>
                             </td>
                             <td>
@@ -576,13 +577,13 @@
                             <label class="info-label">
                                 <p>Promocode:</p>
                             </label>
-                            <input class="input-box" name="promocodeName" />
+                            <input class="input-box" name="promocodeName" maxlength="50" required asp-for="CreatePromocodeModel.PromocodeName"/>
                         </div>
                         <div class="entity-info-sub-container">
                             <label class="info-label">
                                 <p>Promocode discount:</p>
                             </label>
-                            <input class="mini-input-box" name="discount" />
+                            <input class="mini-input-box" name="discount" type="number" maxlength="3" required asp-for="CreatePromocodeModel.Discount"/>
                         </div>
                     </div>
                     <div class="create-entity-button-container">
@@ -594,7 +595,7 @@
                         <tr>
                             <th>Promocode</th>
                             <th>Promocode discount</th>
-                            @foreach (var promocode in Model.Promocodes)
+                            @foreach (var promocode in Model.AdministrationPanelDisplayModel.Promocodes)
                             {
                             <tr>
                                 <form method="post" asp-action="EditedPromocode" asp-controller="Promocode">
@@ -639,7 +640,7 @@
                             <label class="info-label">
                                 <p>Category name: </p>
                             </label>
-                            <input class="input-box" name="categoryName" />
+                            <input class="input-box" name="categoryName" asp-for="CreateCategoryModel.CategoryName"/>
                         </div>
                     </div>
                     <div class="create-entity-button-container">
@@ -650,7 +651,7 @@
                     <tbody>
                         <tr>
                             <th>Category name</th>
-                            @foreach (var category in Model.Categories)
+                            @foreach (var category in Model.AdministrationPanelDisplayModel.Categories)
                             {
                             <tr>
                                 <form method="post" asp-action="EditedCategory" asp-controller="Category">

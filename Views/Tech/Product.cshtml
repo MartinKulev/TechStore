@@ -1,7 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@model ProductViewModel
+<!DOCTYPE html>
 <html>
 <head>
-    <title>@Model.Product.Description</title>
+    <title>@Model.ProductDisplayModel.Product.Description</title>
     <style>
         .main-container {
             display: flex;
@@ -377,29 +378,29 @@
     <main class="main-container">
         <section class="product-box">
             <div class="product-image-container">
-                <img class="product-image" src="@Model.Product.ImageURL">
+                <img class="product-image" src="@Model.ProductDisplayModel.Product.ImageURL">
             </div>
             <div class="product-info">
                 <div class="product-data-container">
-                    <div>@Model.Product.Description</div>
-                    <div>• Brand: <span class="product-text-data">@Model.Product.Brand</span></div>
-                    <div>• Model: <span class="product-text-data">@Model.Product.Model</span></div>
-                    <div>• Category: <span class="product-text-data">@Model.Product.CategoryName</span></div>
+                    <div>@Model.ProductDisplayModel.Product.Description</div>
+                    <div>• Brand: <span class="product-text-data">@Model.ProductDisplayModel.Product.Brand</span></div>
+                    <div>• Model: <span class="product-text-data">@Model.ProductDisplayModel.Product.Model</span></div>
+                    <div>• Category: <span class="product-text-data">@Model.ProductDisplayModel.Product.CategoryName</span></div>
                 </div>
                 <div class="product-price-container">
-                    @if (Model.Product.IsInPromotion)
+                    @if (Model.ProductDisplayModel.Product.IsInPromotion)
                     {
-                        <p class="product-old-price">$@Model.Product.Price</p>
-                        <p class="product-price">Price: $@Model.Product.NewPrice</p>
+                        <p class="product-old-price">$@Model.ProductDisplayModel.Product.Price</p>
+                        <p class="product-price">Price: $@Model.ProductDisplayModel.Product.NewPrice</p>
                     }
                     else
                     {
-                        <p class="product-price">Price: $@Model.Product.Price</p>
+                        <p class="product-price">Price: $@Model.ProductDisplayModel.Product.Price</p>
                     }
                     @if (User.IsInRole("Admin"))
                     {
                         <form method="post" asp-action="DeletedProduct" asp-controller="Product">
-                            <button class="product-delete-button" name="productID" value="@Model.Product.ProductID">
+                            <button class="product-delete-button" name="productID" value="@Model.ProductDisplayModel.Product.ProductID">
                                 <div class="product-bin-button">
                                     <i class="product-cart-icon fa-solid fa-trash-can"></i>
                                 </div>
@@ -410,7 +411,7 @@
                     else
                     {
                         <form method="post" asp-action="ProductAddedToCart" asp-controller="Cart">
-                            <button class="product-button" name="productID" value="@Model.Product.ProductID">
+                            <button class="product-button" name="productID" value="@Model.ProductDisplayModel.Product.ProductID">
                                 <div class="product-cart-button">
                                     <i class="product-cart-icon fa-solid fa-cart-shopping"></i>
                                 </div>
@@ -423,14 +424,14 @@
         </section>
         @if (User.IsInRole("Admin"))
         {
-            @if (Model.Product.IsInPromotion)
+            @if (Model.ProductDisplayModel.Product.IsInPromotion)
             {
                 <div class="command-promotion-heading-container">
                     <h2 class="command-promotion-heading">Revert a promotion:</h2>
                 </div>
                 <form class="command-promotion-container" method="post" asp-action="RevertedPromotion" asp-controller="Product">
                     <button class="create-promotion-button">Revert</button>
-                    <input hidden name="productID" value=@Model.Product.ProductID />
+                    <input hidden name="productID" value=@Model.ProductDisplayModel.Product.ProductID />
                 </form>
             }
             else
@@ -444,15 +445,14 @@
                     </div>
                     <input class="create-promotion-input-box" name="newPrice" required />
                     <button class="create-promotion-button">Create</button>
-                    <input hidden name="productID" value=@Model.Product.ProductID />
+                    <input hidden name="productID" value=@Model.ProductDisplayModel.Product.ProductID />
                 </form>
             }
         }
         @if (User.Identity.IsAuthenticated)
         {
             <form class="add-review-container" method="post" asp-action="CreatedReview" asp-controller="Review">
-                @Html.AntiForgeryToken()
-                <input name="productID" value="@Model.Product.ProductID" hidden />
+                <input name="productID" value="@Model.ProductDisplayModel.Product.ProductID" hidden />
                 <div class="information-container">
                     <div class="profile-container">
                         <img class="profile-picture"></img>
@@ -464,26 +464,26 @@
                         <div class="rating">
                             @for (int i = 5; i >= 1; i--)
                             {
-                                <input value="@i" name="rating" id="star_@i" type="radio">
+                                <input value="@i" id="star_@i" type="radio" asp-for="CreateReviewModel.Rating">
                                 <label title="@i" for="star_@i"></label>
                             }
                         </div>
                     </div>
                 </div>
-                <textarea class="review-input-box" placeholder="Write a review about the product..." name="comment" required></textarea>
+                <textarea class="review-input-box" placeholder="Write a review about the product..." maxlength="100" required asp-for="CreateReviewModel.Comment"></textarea>
                 <div class="post-review-button-container">
                     <button class="post-review-button">Post</button>
                 </div>
             </form>
         }
         <section class="reviews-heading-container">
-            <div class="reviews-heading">Reviews(@Model.Reviews.Count):</div>
+            <div class="reviews-heading">Reviews(@Model.ProductDisplayModel.Reviews.Count):</div>
             @if (!User.Identity.IsAuthenticated)
             {
                 <p>(You need to log in to write a review)</p>
             }
         </section>
-        @foreach (var review in Model.Reviews)
+        @foreach (var review in Model.ProductDisplayModel.Reviews)
         {
             <section class="posted-reviews-container">
                 <div class="information-container">

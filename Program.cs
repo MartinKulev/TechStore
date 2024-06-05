@@ -4,10 +4,10 @@ using Microsoft.SqlServer.Server;
 using TechStore.Data;
 using TechStore.Services;
 using TechStore.Data.Entities;
-using TechStore.Filters;
 using TechStore.Services.Interfaces;
 using TechStore.Repositories;
 using TechStore.Repositories.Interfaces;
+using TechStore.Controllers.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 

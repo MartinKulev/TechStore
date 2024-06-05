@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model CartViewModel
+<!DOCTYPE html>
 <html>
 <head>
     <title>TechStore</title>
@@ -229,9 +230,9 @@
 </head>
 <body>
     <main class="main-container">
-        @foreach (var cart in Model.Carts)
+        @foreach (var cart in Model.CartDisplayModel.Carts)
         {
-            foreach (var product in Model.Products)
+            foreach (var product in Model.CartDisplayModel.Products)
             {
                 if (cart.ProductID == product.ProductID)
                 {
@@ -285,7 +286,7 @@
             </div>
             <form class="promocode-container" method="post" asp-action="AppliedPromocode" asp-controller="Promocode">
                 <div class="promocode-apply-container">
-                    <input class="promocode-input-box" name="promocodeName" placeholder="Enter a promocode" required>
+                    <input class="promocode-input-box" placeholder="Enter a promocode" asp-for="ApplyPromocodeModel.PromocodeName" required>
                     <button class="promocode-apply-button">
                         <p class="promocode-apply-button-text">Apply</p>
                     </button>

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace TechStore.Filters
+namespace TechStore.Controllers.Filters
 {
     public class TechFilter : IAsyncResultFilter
     {

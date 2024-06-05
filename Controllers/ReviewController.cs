@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using TechStore.Data.ViewModels;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Controllers
@@ -13,14 +14,20 @@ namespace TechStore.Controllers
             this.reviewService = reviewService;
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> CreatedReview(int productID, int rating, string comment)
+        public async Task<IActionResult> CreatedReview(int productID, ProductViewModel viewModel)
         {
-            var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            await reviewService.CreateReviewAsync(productID, userID, rating, comment);
-            TempData["Message"] = "Successfully posted a review!";
-            return RedirectToAction("Product", "Tech", new { productId = productID });
+            if (ModelState.IsValid)
+            {
+                var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                await reviewService.CreateReviewAsync(productID, userID, viewModel.CreateReviewModel.Rating, viewModel.CreateReviewModel.Comment);
+                TempData["Message"] = "Successfully posted a review!";
+                return RedirectToAction("Product", "Tech", new { productId = productID });
+            }
+            else
+            {
+                return RedirectToAction("Product", "Tech", new { productID = productID });
+            }
         }
     }
 }

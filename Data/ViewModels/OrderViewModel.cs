@@ -1,17 +1,19 @@
-﻿using TechStore.Data.Entities;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using TechStore.Data.ViewModels.DisplayInformation;
+using TechStore.Data.ViewModels.ReadInformation;
 
 namespace TechStore.Data.ViewModels
 {
     public class OrderViewModel
     {
-        public OrderViewModel(List<Cart> carts, List<Product> products, Order order)
+        public OrderViewModel() { }
+
+        public OrderViewModel(OrderDisplayModel orderDisplayModel)
         { 
-            Carts = carts;
-            Products = products;
-            Order = order;
+            OrderDisplayModel = orderDisplayModel;
         }
-        public List<Cart> Carts { get; set; }
-        public List<Product> Products { get; set; }
-        public Order Order { get; set; }
+
+        [ValidateNever]
+        public OrderDisplayModel OrderDisplayModel { get; set; }
     }
 }

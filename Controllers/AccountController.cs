@@ -4,8 +4,8 @@ using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using TechStore.Data.Entities;
-using TechStore.Data.ViewModels;
 using TechStore.Services.Interfaces;
+using TechStore.Data.ViewModels;
 
 namespace TechStore.Controllers
 {
@@ -32,7 +32,7 @@ namespace TechStore.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterModel model)
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +105,7 @@ namespace TechStore.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginModel model, string returnUrl = null)
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             List<int> productIDs = new List<int>();
             if (TempData["Products"] != null)

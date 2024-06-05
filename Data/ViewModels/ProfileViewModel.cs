@@ -1,17 +1,19 @@
-﻿using TechStore.Data.Entities;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using TechStore.Data.ViewModels.DisplayInformation;
+using TechStore.Data.ViewModels.ReadInformation;
 
 namespace TechStore.Data.ViewModels
 {
     public class ProfileViewModel
     {
-        public ProfileViewModel(ApplicationUser user, List<Order> orders)
-        {
-            User = user;
-            Orders = orders;
+        public ProfileViewModel() { }
+
+        public ProfileViewModel(ProfileDisplayModel profileDisplayModel)
+        { 
+            ProfileDisplayModel = profileDisplayModel;
         }
 
-        public ApplicationUser User { get; set; }
-
-        public List<Order> Orders { get; set; }
+        [ValidateNever]
+        public ProfileDisplayModel ProfileDisplayModel { get; set; }
     }
 }
