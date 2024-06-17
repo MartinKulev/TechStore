@@ -42,11 +42,11 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AppliedPromocode(string promocodeName, CartViewModel cartViewModel)
+        public async Task<IActionResult> AppliedPromocode(CartViewModel cartViewModel)
         {
             if (ModelState.IsValid)
             {
-                Promocode promocode = await promocodeService.ApplyPromocodeAsync(promocodeName);
+                Promocode promocode = await promocodeService.ApplyPromocodeAsync(cartViewModel.ApplyPromocodeModel.PromocodeName);
                 if (promocode == null)
                 {
                     TempData["PromocodeMessage"] = $"Promocode does not exist!";
