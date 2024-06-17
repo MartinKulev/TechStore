@@ -36,14 +36,7 @@ namespace TechStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser
-                {
-                    UserName = model.Email,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Email = model.Email,
-                    PhoneNumber = model.PhoneNumber,
-                };
+                ApplicationUser user = new ApplicationUser(model.FirstName, model.LastName, model.Email, model.PhoneNumber);
 
                 var result = await _userManager.CreateAsync(user, model.Password);
 

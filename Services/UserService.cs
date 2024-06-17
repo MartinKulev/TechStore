@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using TechStore.Data;
+using Microsoft.EntityFrameworkCore;
 using TechStore.Data.Entities;
-using TechStore.Repositories.Interfaces;
 using TechStore.Services.Interfaces;
 
 namespace TechStore.Services
@@ -9,40 +8,30 @@ namespace TechStore.Services
     public class UserService : IUserService
     {
         private UserManager<ApplicationUser> userManager;
-        private IUserRepository userRepository;
 
-        public UserService(UserManager<ApplicationUser> userManager, IUserRepository userRepository)
+        public UserService(UserManager<ApplicationUser> userManager)
         {
             this.userManager = userManager;
-            this.userRepository = userRepository;
         }
 
         public async Task CreateUserAsync(string firstName, string lastName, string email, string phoneNumber, string password)
         {
-            var user = new ApplicationUser
-            {
-                UserName = email,
-                FirstName = firstName,
-                LastName = lastName,
-                Email = email,
-                PhoneNumber = phoneNumber,
-                EmailConfirmed = true
-            };
-            await userRepository.CreateUserAsync(user);
+            ApplicationUser user = new ApplicationUser(firstName, lastName, email, phoneNumber);
+            user.EmailConfirmed = true;
 
-            //await userManager.CreateAsync(user, password);
-            //await userManager.AddToRoleAsync(user, "User");
+            await userManager.CreateAsync(user, password);
+            await userManager.AddToRoleAsync(user, "User");
         }
 
         public async Task DeleteUserAsync(string userID)
         {
-            ApplicationUser user = await userRepository.GetUserByIDAsync(userID);
-            await userRepository.DeleteUserAsync(user);
+            ApplicationUser user = await userManager.FindByIdAsync(userID);
+            await userManager.DeleteAsync(user);
         }
 
         public async Task EditUserAsync(string userID, string newUserName, string newFirstName, string newLastName, string newEmail, string newPhoneNumber)
         {
-            ApplicationUser user = await userRepository.GetUserByIDAsync(userID);
+            ApplicationUser user = await userManager.FindByIdAsync(userID);
             if (newUserName != null)
             {
                 user.UserName = newUserName;
@@ -63,17 +52,17 @@ namespace TechStore.Services
             {
                 user.PhoneNumber = newPhoneNumber;
             }
-            await userRepository.UpdateUserAsync(user);
+            await userManager.UpdateAsync(user);
         }
 
         public async Task<List<ApplicationUser>> GetAllUsersAsync()
         {
-            return await userRepository.GetAllUsersAsync();
+            return await userManager.Users.ToListAsync();
         }
 
         public async Task<ApplicationUser> GetUserByIDAsync(string userID)
         {
-            return await userRepository.GetUserByIDAsync(userID);
+            return await userManager.FindByIdAsync(userID);
         }
     }
 }

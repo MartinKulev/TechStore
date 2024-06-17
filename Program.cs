@@ -47,7 +47,6 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IPromocodeRepository, PromocodeRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
