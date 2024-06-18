@@ -2,22 +2,18 @@
 
 namespace TechStore.Repositories.Interfaces
 {
-    public interface IProductRepository
+    public interface IProductRepository : IBaseRepository<Product>
     {
-        Task CreateProductAsync(Product product);
-
         Task<List<Product>> GetProductsByCategoryNameAsync(string category);
 
         Task<Product> GetProductByIDAsync(int productID);
 
         Task<bool> IsProductDisabledAsync(int productID);
 
-        Task<List<Product>> GetMultipleEnabledProductsByProductIDsAsync(List<int> productIDs);
+        Task<List<Product>> GetAllEnabledProductsByProductIDsAsync(List<int> productIDs);
 
-        Task<List<Product>> GetMultipleProductsByProductIDsAsync(List<int> productIDs);
+        Task<List<Product>> GetAllProductsByProductIDsAsync(List<int> productIDs);
 
         Task<List<Product>> GetAllProductsInPromotionAsync();
-
-        Task UpdateProductAsync(Product product);
     }
 }

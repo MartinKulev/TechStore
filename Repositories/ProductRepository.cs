@@ -5,25 +5,13 @@ using TechStore.Repositories.Interfaces;
 
 namespace TechStore.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
         private TechStoreDbContext context;
 
-        public ProductRepository(TechStoreDbContext context)
+        public ProductRepository(TechStoreDbContext context) : base(context)
         {
             this.context = context;
-        }
-
-        public async Task CreateProductAsync(Product product)
-        {
-            await context.AddAsync(product);
-            await context.SaveChangesAsync();
-        }
-
-        public async Task UpdateProductAsync(Product product)
-        {
-            context.Update(product);
-            await context.SaveChangesAsync();
         }
 
         public async Task<List<Product>> GetProductsByCategoryNameAsync(string category)
@@ -41,12 +29,12 @@ namespace TechStore.Repositories
             return await context.Products.AnyAsync(p => p.ProductID == productID && p.IsDisabled);
         }
 
-        public async Task<List<Product>> GetMultipleEnabledProductsByProductIDsAsync(List<int> productIDs)
+        public async Task<List<Product>> GetAllEnabledProductsByProductIDsAsync(List<int> productIDs)
         {
             return await context.Products.Where(p => productIDs.Contains(p.ProductID) && !p.IsDisabled).ToListAsync();
         }
 
-        public async Task<List<Product>> GetMultipleProductsByProductIDsAsync(List<int> productIDs)
+        public async Task<List<Product>> GetAllProductsByProductIDsAsync(List<int> productIDs)
         {
             return await context.Products.Where(p => productIDs.Contains(p.ProductID)).ToListAsync();
         }

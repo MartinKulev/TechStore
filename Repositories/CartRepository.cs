@@ -5,19 +5,13 @@ using TechStore.Repositories.Interfaces;
 
 namespace TechStore.Repositories
 {
-    public class CartRepository : ICartRepository
+    public class CartRepository : BaseRepository<Cart>, ICartRepository
     {
         private TechStoreDbContext context;
 
-        public CartRepository(TechStoreDbContext context)
+        public CartRepository(TechStoreDbContext context) : base(context)
         {
             this.context = context;
-        }
-
-        public async Task CreateCartAsync(Cart cart)
-        {
-            await context.AddAsync(cart);
-            await context.SaveChangesAsync();
         }
 
         public async Task<Cart> GetCartItemByUserIDProductIDAsync(string userID, int productID)
@@ -48,30 +42,6 @@ namespace TechStore.Repositories
         public async Task<bool> DoesCartExistsAsync(string userID, int productID)
         {
             return await context.Carts.AnyAsync(p => p.UserID == userID && p.ProductID == productID && !p.IsOrdered);
-        }
-
-        public async Task UpdateCartAsync(Cart cart)
-        {
-            context.Update(cart);
-            await context.SaveChangesAsync();
-        }
-
-        public async Task UpdateMultipleCartsAsync(List<Cart> carts)
-        {
-            context.UpdateRange(carts);
-            await context.SaveChangesAsync();
-        }
-
-        public async Task DeleteCartAsync(Cart cart)
-        {
-            context.Remove(cart);
-            await context.SaveChangesAsync();
-        }
-
-        public async Task DeleteMultipleCartsAsync(List<Cart> carts)
-        {
-            context.RemoveRange(carts);
-            await context.SaveChangesAsync();
         }
     }
 }

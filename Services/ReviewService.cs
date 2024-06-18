@@ -16,7 +16,7 @@ namespace TechStore.Services
         public async Task CreateReviewAsync(int productID, string userID, int rating, string comment)
         {
             Review review = new Review(productID, userID, rating, comment);
-            await reviewRepository.CreateReviewAsync(review);
+            await reviewRepository.CreateAsync(review);
         }
 
         public async Task<List<Review>> GetAllReviewsByProductIDAsync(int productID)

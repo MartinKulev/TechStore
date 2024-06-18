@@ -5,24 +5,13 @@ using TechStore.Repositories.Interfaces;
 
 namespace TechStore.Repositories
 {
-    public class PromocodeRepository : IPromocodeRepository
+    public class PromocodeRepository : BaseRepository<Promocode>, IPromocodeRepository
     {
         private TechStoreDbContext context;
 
-        public PromocodeRepository(TechStoreDbContext context)
+        public PromocodeRepository(TechStoreDbContext context) : base(context)
         {
             this.context = context;
-        }
-
-        public async Task CreatePromocodeAsync(Promocode promocode)
-        {
-            await context.Promocodes.AddAsync(promocode);
-            await context.SaveChangesAsync();
-        }
-
-        public async Task<List<Promocode>> GetAllPromocodesAsync()
-        {
-            return await context.Promocodes.ToListAsync();
         }
 
         public async Task<Promocode> GetPromocodeByIDAsync(int promocodeID)
@@ -33,18 +22,6 @@ namespace TechStore.Repositories
         public async Task<Promocode> GetPromocodeByPromocodeNameAsync(string promocodeName)
         {
             return await context.Promocodes.FirstOrDefaultAsync(p => p.PromocodeName == promocodeName);
-        }
-
-        public async Task UpdatePromocodeAsync(Promocode promocode)
-        {
-            context.Update(promocode);
-            await context.SaveChangesAsync();
-        }
-
-        public async Task DeletePromocodeAsync(Promocode promocode)
-        {
-            context.Remove(promocode);
-            await context.SaveChangesAsync();
         }
     }
 }

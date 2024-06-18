@@ -5,19 +5,13 @@ using TechStore.Repositories.Interfaces;
 
 namespace TechStore.Repositories
 {
-    public class ReviewRepository : IReviewRepository
+    public class ReviewRepository : BaseRepository<Review>, IReviewRepository
     {
         private TechStoreDbContext context;
 
-        public ReviewRepository(TechStoreDbContext context)
+        public ReviewRepository(TechStoreDbContext context) : base(context)
         {
             this.context = context;
-        }
-
-        public async Task CreateReviewAsync(Review review)
-        {
-            await context.AddAsync(review);
-            await context.SaveChangesAsync();
         }
 
         public async Task<List<Review>> GetAllReviewsByProductIDAsync(int productID)

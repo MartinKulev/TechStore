@@ -5,11 +5,11 @@ using TechStore.Repositories.Interfaces;
 
 namespace TechStore.Repositories
 {
-    public class OrderRepository : IOrderRepository
+    public class OrderRepository : BaseRepository<Order>, IOrderRepository
     {
         private TechStoreDbContext context;
 
-        public OrderRepository(TechStoreDbContext context)
+        public OrderRepository(TechStoreDbContext context) : base(context)
         {
             this.context = context;
         }

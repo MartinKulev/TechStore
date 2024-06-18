@@ -2,10 +2,8 @@
 
 namespace TechStore.Repositories.Interfaces
 {
-    public interface IReviewRepository
+    public interface IReviewRepository : IBaseRepository<Review>
     {
-        Task CreateReviewAsync(Review review);
-
         Task<List<Review>> GetAllReviewsByProductIDAsync(int productID);
     }
 }

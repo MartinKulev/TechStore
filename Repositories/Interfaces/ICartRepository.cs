@@ -2,10 +2,8 @@
 
 namespace TechStore.Repositories.Interfaces
 {
-    public interface ICartRepository
+    public interface ICartRepository : IBaseRepository<Cart>
     {
-        Task CreateCartAsync(Cart cart);
-
         Task<Cart> GetCartItemByUserIDProductIDAsync(string userID, int productID);
 
         Task<List<Cart>> GetAllCartItemsByOrderIDAsync(string orderID);
@@ -17,13 +15,5 @@ namespace TechStore.Repositories.Interfaces
         Task<int> GetCartItemsCountByUserIDAsync(string userID);
 
         Task<bool> DoesCartExistsAsync(string userID, int productID);
-
-        Task UpdateCartAsync(Cart cart);
-
-        Task UpdateMultipleCartsAsync(List<Cart> carts);
-
-        Task DeleteCartAsync(Cart cart);
-
-        Task DeleteMultipleCartsAsync(List<Cart> carts);
     }
 }

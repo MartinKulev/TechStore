@@ -2,7 +2,7 @@
 
 namespace TechStore.Repositories.Interfaces
 {
-    public interface IOrderRepository
+    public interface IOrderRepository : IBaseRepository<Order>
     {
         Task<string> CreateOrderAsync(Order order);
 

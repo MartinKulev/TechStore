@@ -24,14 +24,14 @@ namespace TechStore.Services
         public async Task CreateProductAsync(string imageURL, string categoryName, string description, string brand, string model, decimal price)
         {
             Product product = new Product(imageURL, categoryName, description, brand, model, price);
-            await productRepository.CreateProductAsync(product);
+            await productRepository.CreateAsync(product);
         }
 
         public async Task DeleteProductAsync(int productID)
         {
             Product product = await productRepository.GetProductByIDAsync(productID);
             product.IsDisabled = true;
-            await productRepository.UpdateProductAsync(product);
+            await productRepository.UpdateAsync(product);
             await cartService.DeleteCartsWithDeletedProductAsync(productID);
         }
 
@@ -41,7 +41,7 @@ namespace TechStore.Services
             foreach (Product product in products)
             {
                 product.IsDisabled = true;
-                await productRepository.UpdateProductAsync(product);
+                await productRepository.UpdateAsync(product);
             }
         }
 
@@ -76,13 +76,13 @@ namespace TechStore.Services
         public async Task<List<Product>> GetAllProductsInCartAsync(List<Cart> carts)
         {
             List<int> productIDs = carts.Select(cart => cart.ProductID).ToList();
-            return await productRepository.GetMultipleEnabledProductsByProductIDsAsync(productIDs);
+            return await productRepository.GetAllEnabledProductsByProductIDsAsync(productIDs);
         }
 
         public async Task<List<Product>> GetAllProductsInOrderAsync(List<Cart> carts)
         {
             List<int> productIDs = carts.Select(cart => cart.ProductID).ToList();
-            return await productRepository.GetMultipleProductsByProductIDsAsync(productIDs);
+            return await productRepository.GetAllProductsByProductIDsAsync(productIDs);
         }
 
         public async Task CreatePromotionAsync(decimal newPrice, int productID)
@@ -90,7 +90,7 @@ namespace TechStore.Services
             Product product = await productRepository.GetProductByIDAsync(productID);
             product.IsInPromotion = true;
             product.NewPrice = newPrice;
-            await productRepository.UpdateProductAsync(product);
+            await productRepository.UpdateAsync(product);
         }
 
         public async Task RevertPromotionAsync(int productID)
@@ -98,7 +98,7 @@ namespace TechStore.Services
             Product product = await productRepository.GetProductByIDAsync(productID);
             product.IsInPromotion = false;
             product.NewPrice = 0;
-            await productRepository.UpdateProductAsync(product);
+            await productRepository.UpdateAsync(product);
         }
 
         public async Task<List<Product>> GetAllProductsInPromotionAsync()

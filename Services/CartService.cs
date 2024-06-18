@@ -21,11 +21,11 @@ namespace TechStore.Services
             {
                 Cart existingCart = await cartRepository.GetCartItemByUserIDProductIDAsync(userID, productID);
                 existingCart.Quantity++;
-                await cartRepository.UpdateCartAsync(existingCart);
+                await cartRepository.UpdateAsync(existingCart);
             }
             else
             {
-                await cartRepository.CreateCartAsync(cart);
+                await cartRepository.CreateAsync(cart);
             }
         }
 
@@ -35,11 +35,11 @@ namespace TechStore.Services
             if (cart.Quantity > 1)
             {
                 cart.Quantity--;
-                await cartRepository.UpdateCartAsync(cart);
+                await cartRepository.UpdateAsync(cart);
             }
             else
             {
-                await cartRepository.DeleteCartAsync(cart);
+                await cartRepository.DeleteAsync(cart);
             }
         }
 
@@ -104,7 +104,7 @@ namespace TechStore.Services
         public async Task DeleteCartsWithDeletedProductAsync(int productID)
         {
             List<Cart> carts = await cartRepository.GetAllCartsByProductIDAsync(productID);
-            await cartRepository.DeleteMultipleCartsAsync(carts);
+            await cartRepository.DeleteRangeAsync(carts);
         }
 
         public async Task UpdateCartItemsByUserIDAsync(string userID, string orderID)
@@ -116,7 +116,7 @@ namespace TechStore.Services
                 cart.IsOrdered = true;
             }
 
-            await cartRepository.UpdateMultipleCartsAsync(carts);
+            await cartRepository.UpdateRangeAsync(carts);
         }
     }
 }

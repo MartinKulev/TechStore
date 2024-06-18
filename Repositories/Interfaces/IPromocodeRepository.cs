@@ -2,18 +2,10 @@
 
 namespace TechStore.Repositories.Interfaces
 {
-    public interface IPromocodeRepository
+    public interface IPromocodeRepository : IBaseRepository<Promocode>
     {
-        Task CreatePromocodeAsync(Promocode promocode);
-
-        Task<List<Promocode>> GetAllPromocodesAsync();
-
         Task<Promocode> GetPromocodeByIDAsync(int promocodeID);
 
         Task<Promocode> GetPromocodeByPromocodeNameAsync(string promocodeName);
-
-        Task UpdatePromocodeAsync(Promocode promocode);
-
-        Task DeletePromocodeAsync(Promocode promocode);
     }
 }

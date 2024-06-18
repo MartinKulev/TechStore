@@ -2,16 +2,8 @@
 
 namespace TechStore.Repositories.Interfaces
 {
-    public interface ICategoryRepository
+    public interface ICategoryRepository : IBaseRepository<Category>
     {
-        Task CreateCategoryAsync(Category category);
-
-        Task<List<Category>> GetAllCategoriesAsync();
-
         Task<Category> GetCategoryByCategoryNameAsync(string categoryName);
-
-        Task UpdateCategoryAsync(Category category);
-
-        Task DeleteCategoryAsync(Category category);
     }
 }

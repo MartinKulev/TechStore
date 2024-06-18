@@ -18,13 +18,13 @@ namespace TechStore.Services
         public async Task CreateCategoryAsync(string categoryName)
         {
             Category category = new Category(categoryName);
-            await categoryRepository.CreateCategoryAsync(category);
+            await categoryRepository.CreateAsync(category);
         }
 
         public async Task DeleteCategoryAsync(string categoryName)
         {
             Category category = await categoryRepository.GetCategoryByCategoryNameAsync(categoryName);
-            await categoryRepository.DeleteCategoryAsync(category);
+            await categoryRepository.DeleteAsync(category);
             await productService.DeleteAllProductsByCategoryNameAsync(categoryName);
         }
 
@@ -34,13 +34,13 @@ namespace TechStore.Services
             {
                 Category category = await categoryRepository.GetCategoryByCategoryNameAsync(categoryName);
                 category.CategoryName = newCategoryName;
-                await categoryRepository.UpdateCategoryAsync(category);
+                await categoryRepository.UpdateAsync(category);
             }
         }
 
         public async Task<List<Category>> GetAllCategoriesAsync()
         {
-            return await categoryRepository.GetAllCategoriesAsync();
+            return await categoryRepository.GetAllAsync();
         }
     }
 }
