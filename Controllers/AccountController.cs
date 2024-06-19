@@ -11,17 +11,17 @@ namespace TechStore.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly IEmailService _emailSender;
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly IEmailService emailSender;
         private ICartService cartService;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailService emailSender,
             ICartService cartService)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
-            _emailSender = emailSender;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
+            this.emailSender = emailSender;
             this.cartService = cartService;
         }
 
@@ -38,11 +38,11 @@ namespace TechStore.Controllers
             {
                 ApplicationUser user = new ApplicationUser(model.FirstName, model.LastName, model.Email, model.PhoneNumber);
 
-                var result = await _userManager.CreateAsync(user, model.Password);
+                var result = await userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(user, "User");
+                    await userManager.AddToRoleAsync(user, "User");
                     await SendConfirmationEmail(model.Email, user);
 
                     TempData["Message"] = "A verification link was sent to your email!";
@@ -59,12 +59,12 @@ namespace TechStore.Controllers
 
         private async Task SendConfirmationEmail(string? email, ApplicationUser? user)
         {
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
 
             var ConfirmationLink = Url.Action("ConfirmEmail", "Account",
             new { userID = user.Id, token = token }, protocol: HttpContext.Request.Scheme);
 
-            await _emailSender.SendEmailAsync(email, "Confirm Your Email", $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(ConfirmationLink)}'>clicking here</a>.", true);
+            await this.emailSender.SendEmailAsync(email, "Confirm Your Email", $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(ConfirmationLink)}'>clicking here</a>.", true);
         }
 
         [HttpGet]
@@ -76,13 +76,13 @@ namespace TechStore.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            var user = await _userManager.FindByIdAsync(userID);
+            var user = await userManager.FindByIdAsync(userID);
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{userID}'.");
             }
 
-            var result = await _userManager.ConfirmEmailAsync(user, token);
+            var result = await userManager.ConfirmEmailAsync(user, token);
             if (result.Succeeded)
             {
                 return RedirectToAction("Login");
@@ -108,7 +108,7 @@ namespace TechStore.Controllers
 
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: false, lockoutOnFailure: false);
+                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: false, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {
@@ -145,7 +145,7 @@ namespace TechStore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
-            await _signInManager.SignOutAsync();
+            await signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }
     }

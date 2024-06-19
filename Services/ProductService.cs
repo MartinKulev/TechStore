@@ -9,12 +9,6 @@ namespace TechStore.Services
         private ICartService cartService;
         private IProductRepository productRepository;
 
-        public ProductService(ICartService cartService, IProductRepository productRepository)
-        {
-            this.cartService = cartService;
-            this.productRepository = productRepository;
-        }
-
         public ProductService(IProductRepository productRepository, ICartService cartService)
         {
             this.productRepository = productRepository;

@@ -5,6 +5,7 @@ using TechStore.Services.Interfaces;
 using TechStore.Data.ViewModels;
 using TechStore.Data.ViewModels.DisplayInformation;
 using TechStore.Data.ViewModels.ReadInformation;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TechStore.Controllers
 {
@@ -103,7 +104,7 @@ namespace TechStore.Controllers
             return View(viewModel);
         }
 
-
+        [Authorize]
         public async Task<IActionResult> Profile()
         {
             string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -114,22 +115,15 @@ namespace TechStore.Controllers
             return View(viewModel);
         }
 
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AdministrationPanel()
         {
-            if (User.IsInRole("Admin"))
-            {
-                List<Category> categories = await categoryService.GetAllCategoriesAsync();
-                List<Promocode> promocodes = await promocodeService.GetAllPromocodesAsync();
-                List<ApplicationUser> users = await userService.GetAllUsersAsync();
-                var administrationPanelDisplayModel = new AdministrationPanelDisplayModel(promocodes, users, categories);
-                var viewModel = new AdministrationPanelViewModel(administrationPanelDisplayModel);
-                return View(viewModel);
-            }
-            else
-            {
-                return RedirectToAction("Homepage", "Tech");
-            }
+            List<Category> categories = await categoryService.GetAllCategoriesAsync();
+            List<Promocode> promocodes = await promocodeService.GetAllPromocodesAsync();
+            List<ApplicationUser> users = await userService.GetAllUsersAsync();
+            var administrationPanelDisplayModel = new AdministrationPanelDisplayModel(promocodes, users, categories);
+            var viewModel = new AdministrationPanelViewModel(administrationPanelDisplayModel);
+            return View(viewModel);
         }
 
         public async Task<IActionResult> Payment()
@@ -149,12 +143,21 @@ namespace TechStore.Controllers
         [HttpGet("Tech/Order/{orderID}")]
         public async Task<IActionResult> Order(string orderID)
         {
-            List<Cart> cartItems = await cartService.GetAllCartItemsByOrderIDAsync(orderID);
-            List<Product> products = await productService.GetAllProductsInOrderAsync(cartItems);
-            Order orderByID = await orderService.GetOrderByIDAsync(orderID);
-            var orderDisplayModel = new OrderDisplayModel(cartItems, products, orderByID);
-            var viewModel = new OrderViewModel(orderDisplayModel);
-            return View(viewModel);
+            string userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            Order order = await orderService.GetOrderByIDAsync(orderID);
+            if (order.UserID == userID)
+            {
+                List<Cart> cartItems = await cartService.GetAllCartItemsByOrderIDAsync(orderID);
+                List<Product> products = await productService.GetAllProductsInOrderAsync(cartItems);
+                var orderDisplayModel = new OrderDisplayModel(cartItems, products, order);
+                var viewModel = new OrderViewModel(orderDisplayModel);
+                return View(viewModel);
+            }
+            else
+            {
+                return RedirectToAction("Homepage", "Tech");
+            }
+
         }
     }
 }

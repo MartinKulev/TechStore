@@ -17,25 +17,25 @@ namespace TechStore.Repositories
 
         public async Task CreateAsync(TEntity entity)
         {
-            await this.context.AddAsync(entity);
-            await this.context.SaveChangesAsync();
+            await context.AddAsync(entity);
+            await context.SaveChangesAsync();
         }
 
         public async Task CreateRangeAsync(List<TEntity> entities)
         {
-            await this.context.AddRangeAsync(entities);
-            await this.context.SaveChangesAsync();
+            await context.AddRangeAsync(entities);
+            await context.SaveChangesAsync();
         }
 
         public async Task<List<TEntity>> GetAllAsync()
         {
-            return await this.context.Set<TEntity>().ToListAsync();
+            return await context.Set<TEntity>().ToListAsync();
         }
 
         public async Task UpdateAsync(TEntity entity)
         {
-            this.context.Update(entity);
-            await this.context.SaveChangesAsync();
+            context.Update(entity);
+            await context.SaveChangesAsync();
         }
 
         public async Task UpdateRangeAsync(List<TEntity> entities)
@@ -46,8 +46,8 @@ namespace TechStore.Repositories
 
         public async Task DeleteAsync(TEntity entity)
         {
-            this.context.Remove(entity);
-            await this.context.SaveChangesAsync();
+            context.Remove(entity);
+            await context.SaveChangesAsync();
         }
 
         public async Task DeleteRangeAsync(List<TEntity> entities)

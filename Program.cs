@@ -21,6 +21,7 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddDbContext<TechStoreDbContext>(options =>
+    //options.UseSqlServer("Server=tcp:techstore.database.windows.net,1433;Initial Catalog=TechStore;Persist Security Info=False;User ID=MAdmin;Password=Martin1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));//The connection string is exposed for testing purposes
     options.UseSqlServer("Server=tcp:techstore.database.windows.net,1433;Initial Catalog=TechStore;Persist Security Info=False;User ID=MAdmin;Password=Martin1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));//The connection string is exposed for testing purposes
 
 // Setting up ASP.NET Core Identity
