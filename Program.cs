@@ -20,8 +20,10 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-builder.Services.AddDbContext<TechStoreDbContext>(options =>
-    options.UseMySQL("Server=mysql-210770ab-techstore.b.aivencloud.com;Database=techstoreweb;Uid=avnadmin;Pwd=AVNS_ECNjUML_9rCSuGwr_PA;Port=15039"));
+builder.Configuration.AddJsonFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "GitSecrets.json"), optional: true);
+string? connectionString = builder.Configuration.GetConnectionString("TechStore") ?? builder.Configuration.GetConnectionString("DefaultConnection")!;
+
+builder.Services.AddDbContext<TechStoreDbContext>(options => options.UseMySQL(connectionString));
 
 // Setting up ASP.NET Core Identity
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
